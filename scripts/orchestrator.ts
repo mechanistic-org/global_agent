@@ -2,18 +2,9 @@ const { GoogleGenAI, Type } = require("@google/genai");
 const fs = require("fs");
 const path = require("path");
 
-// Manually parse the .env file
-const envPath = path.resolve("D:/GitHub/eriknorris/.env");
+// Load global config (handles .env hydration dynamically)
+const { getRepoRoot } = require("./global_config");
 let extractedKey = "";
-try {
-	const envContent = fs.readFileSync(envPath, "utf-8");
-	const match = envContent.match(/GEMINI_API_KEY=(.+)/);
-	if (match) {
-		extractedKey = match[1].trim().replace(/['"]/g, "");
-	}
-} catch (e) {
-	console.log("[!] Could not read absolute .env path.");
-}
 
 const apiKey = extractedKey || process.env.GEMINI_API_KEY;
 if (!apiKey) {
@@ -28,7 +19,7 @@ const ai = new GoogleGenAI({ apiKey });
  * THE ZOD EQUIVALENT FOR GEMINI (Structured Outputs)
  * We strictly define the JSON schema we want the CTO to return.
  */
-const CtoAuditSchema: Schema = {
+const CtoAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		architecturalFlaws: {
@@ -58,7 +49,7 @@ const CtoAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE CBDO
  * We strictly define the JSON schema for strategic business analysis.
  */
-const CbdoAuditSchema: Schema = {
+const CbdoAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		narrativeLeverage: {
@@ -87,7 +78,7 @@ const CbdoAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE CFO
  * We strictly define the JSON schema for financial and resource analysis.
  */
-const CfoAuditSchema: Schema = {
+const CfoAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		budgetViability: {
@@ -120,7 +111,7 @@ const CfoAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE PRINCIPAL PHYSICIST (DFMEA EXPERT)
  * We strictly define the JSON schema for material science, kinematics, and failure mode realism.
  */
-const PhysicsAuditSchema: Schema = {
+const PhysicsAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		mechanicalValidity: {
@@ -156,7 +147,7 @@ const PhysicsAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE VP OF LOGISTICS / MFG (COO)
  * We strictly define the JSON schema for supply chain, yield, and factory realities.
  */
-const CooAuditSchema: Schema = {
+const CooAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		supplyChainFeasibility: {
@@ -181,7 +172,7 @@ const CooAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR LEGAL COUNSEL
  * We strictly define the JSON schema for IP, indemnity, and aggressive contract defense.
  */
-const LegalAuditSchema: Schema = {
+const LegalAuditSchema = {
 	type: Type.OBJECT,
 	properties: {
 		ipIndemnificationRisk: {
@@ -207,7 +198,7 @@ const LegalAuditSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE PRINCIPAL ARCHITECT (THE SYNTHESIZER)
  * The Master ECU. Ingests all 6 executive failure states and outputs the Executive Directive.
  */
-const PrincipalArchitectSchema: Schema = {
+const PrincipalArchitectSchema = {
 	type: Type.OBJECT,
 	properties: {
 		executiveDirective: {
@@ -234,7 +225,7 @@ const PrincipalArchitectSchema: Schema = {
  * THE ZOD EQUIVALENT FOR THE HCI VISIONARY (THE FRONTEND MASTER)
  * Injects visceral UI/UX telemetry schematics into the cascade based on pure math.
  */
-const HciVisionarySchema: Schema = {
+const HciVisionarySchema = {
 	type: Type.OBJECT,
 	properties: {
 		telemetryDiagnostics: {
@@ -648,7 +639,7 @@ async function runExpertOrchestration(targetWorkspacePath: string, targetFiles: 
 
 // --- EXECUTION CLI ---
 // To run: npx ts-node orchestrator.ts <WORKSPACE_PATH> <FILE_1,FILE_2,FILE_3>
-const targetWorkspace = process.argv[2] || "D:/GitHub/mechanistic";
+const targetWorkspace = process.argv[2] || getRepoRoot("mechanistic");
 const testFilesArg =
 	process.argv[3] ||
 	"src/dfmea_core/data/vault_p_physics_v26.json,src/dfmea_core/data/vault_l_legal_v26.json,src/dfmea_core/data/vault_f_finance_v26.json";
@@ -658,3 +649,6 @@ const targetFilesList = testFilesArg.split(",").map((f) => f.trim());
 (async () => {
 	await runExpertOrchestration(targetWorkspace, targetFilesList);
 })();
+
+// Export to make this file an isolated module, fixing TypeScript redeclaration lints
+export {};

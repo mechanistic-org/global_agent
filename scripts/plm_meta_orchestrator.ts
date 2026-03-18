@@ -2,18 +2,9 @@ const { GoogleGenAI, Type } = require("@google/genai");
 const fs = require("fs");
 const path = require("path");
 
-// Manually parse the .env file
-const envPath = path.resolve("D:/GitHub/eriknorris/.env");
+// Load global config (handles .env hydration dynamically)
+const { getRepoRoot } = require("./global_config");
 let extractedKey = "";
-try {
-	const envContent = fs.readFileSync(envPath, "utf-8");
-	const match = envContent.match(/GEMINI_API_KEY=(.+)/);
-	if (match) {
-		extractedKey = match[1].trim().replace(/['"]/g, "");
-	}
-} catch (e) {
-	console.log("[!] Could not read absolute .env path.");
-}
 
 const apiKey = extractedKey || process.env.GEMINI_API_KEY;
 if (!apiKey) {
@@ -318,7 +309,7 @@ async function runMetaOrchestration(targetWorkspacePath: string, targetFiles: st
 }
 
 // Ensure the command runs dynamically against the mechanistic core
-const targetWorkspace = "D:/GitHub/mechanistic";
+const targetWorkspace = getRepoRoot("mechanistic");
 const targetFilesList = [
     "src/dfmea_core/data/origin_story.md", 
     "src/dfmea_core/data/vault_p_physics_v28.json",
@@ -331,3 +322,6 @@ const targetFilesList = [
     console.log("Starting Meta-Audit...");
 	await runMetaOrchestration(targetWorkspace, targetFilesList);
 })();
+
+// Export to make this file an isolated module
+export {};

@@ -1,0 +1,6 @@
+Hyphen Lid Project Notes
+This is just a test payload to make sure the daemon catches the file and passes it to Claude.
+Because the filename has PRD in it, the daemon should route it to the PRD schema validator.
+The lid aims to be a zero-compromise mechanical closure.
+Must sustain a 1 meter drop test.
+Must be manufactured via injection molding.

@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Global Agent (Repo)",
+			"path": ".",
+		},
+	],
+	"settings": {
+		"files.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/.astro": true,
+		},
+		"powershell.cwd": "Global Agent (Repo)",
+	},
+}

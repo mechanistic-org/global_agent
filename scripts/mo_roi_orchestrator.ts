@@ -2,18 +2,9 @@ const { GoogleGenAI, Type } = require("@google/genai");
 const fs = require("fs");
 const path = require("path");
 
-// Manually parse the .env file
-const envPath = path.resolve("D:/GitHub/eriknorris/.env");
+// Load global config (handles .env hydration dynamically)
+const { getRepoRoot } = require("./global_config");
 let extractedKey = "";
-try {
-	const envContent = fs.readFileSync(envPath, "utf-8");
-	const match = envContent.match(/GEMINI_API_KEY=(.+)/);
-	if (match) {
-		extractedKey = match[1].trim().replace(/['"]/g, "");
-	}
-} catch (e) {
-	console.log("[!] Could not read absolute .env path.");
-}
 
 const apiKey = extractedKey || process.env.GEMINI_API_KEY;
 if (!apiKey) {
@@ -176,7 +167,7 @@ async function runMetaOrchestration(externalPayloadFiles: string[]) {
 			agents: agentsData
 		};
 
-		const outPath = path.resolve("D:/GitHub/mechanistic/src/dfmea_core/data/vault_s_synthesis_v29.json");
+		const outPath = path.join(getRepoRoot("mechanistic"), "src/dfmea_core/data/vault_s_synthesis_v29.json");
 		fs.writeFileSync(outPath, JSON.stringify(metaSynthesis, null, 2), "utf-8");
 		console.log(`[+] SUCCESS. External ROI Synthesis Secured at ${outPath}`);
 
@@ -185,17 +176,21 @@ async function runMetaOrchestration(externalPayloadFiles: string[]) {
 	}
 }
 
-// Absolute paths explicitly
+// Absolute paths dynamically via getRepoRoot
+const mechanisticRoot = getRepoRoot("mechanistic");
 const targetFilesList = [
     "C:/Users/erik/.gemini/antigravity/brain/fff8a5e9-705f-4d52-a20a-483c6a085350/mo_value_behemoth.md",
-    "D:/GitHub/mechanistic/src/dfmea_core/data/vault_f_finance_v28.json",
-    "D:/GitHub/mechanistic/src/dfmea_core/data/vault_p_physics_v28.json",
-    "D:/GitHub/mechanistic/src/components/dfmea/execute/MechanisticAndonViz.tsx",
-    "D:/GitHub/mechanistic/src/components/dfmea/execute/DependencyLock.tsx",
-    "D:/GitHub/mechanistic/src/components/dfmea/execute/DrawbridgeRoadmap.tsx",
-    "D:/GitHub/mechanistic/src/components/dfmea/execute/VisionTelemetryPreview.tsx"
+    path.join(mechanisticRoot, "src/dfmea_core/data/vault_f_finance_v28.json"),
+    path.join(mechanisticRoot, "src/dfmea_core/data/vault_p_physics_v28.json"),
+    path.join(mechanisticRoot, "src/components/dfmea/execute/MechanisticAndonViz.tsx"),
+    path.join(mechanisticRoot, "src/components/dfmea/execute/DependencyLock.tsx"),
+    path.join(mechanisticRoot, "src/components/dfmea/execute/DrawbridgeRoadmap.tsx"),
+    path.join(mechanisticRoot, "src/components/dfmea/execute/VisionTelemetryPreview.tsx")
 ];
 
 (async () => {
 	await runMetaOrchestration(targetFilesList);
 })();
+
+// Export to make this file an isolated module
+export {};

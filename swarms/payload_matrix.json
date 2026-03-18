@@ -1,0 +1,10 @@
+{
+    "mobile_outfitters": {
+        "description": "Mobile Outfitters PRD audit targets",
+        "prd_target": "projects/mobile_outfitters/Holy Grail PRD-2.pdf"
+    },
+    "default_swarm": {
+        "description": "Default testing swarm payload",
+        "prd_target": "projects/mobile_outfitters/Holy Grail PRD-2.pdf"
+    }
+}

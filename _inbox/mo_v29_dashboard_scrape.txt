@@ -1,0 +1,1746 @@
+--- MECHANISTIC LIVE DASHBOARD V29 EXPORT ---
+
+
+==============================================
+FILE: vault_s_synthesis_v29.json
+==============================================
+
+{
+  "meta": {
+    "generatedAt": "2026-03-07T05:30:29.662Z",
+    "version": "29.1.0_external",
+    "type": "synthesis"
+  },
+  "baselineAgents": [
+    {
+      "role": "CTO",
+      "title": "CTO | System Arch",
+      "status": "NO-GO",
+      "summary": "The baseline PRD guarantees the uncontrolled compilation of physical technical debt. Attempting to build this without an architectural constraint cage ensures an endless cycle of failure.",
+      "data": {}
+    },
+    {
+      "role": "CBDO",
+      "title": "CBDO | Strategy",
+      "status": "NO-GO",
+      "summary": "Executing a physical kiosk without deploying Project Denzel leaves us as a low-margin hardware vendor trapped in a 1x-3x valuation multiple.",
+      "data": {}
+    },
+    {
+      "role": "CFO",
+      "title": "CFO | Budget",
+      "status": "NO-GO",
+      "summary": "Executing this unvalidated baseline architecture ensures an estimated $3.78M in compounding execution burn and kinematic liability.",
+      "data": {}
+    },
+    {
+      "role": "Physicist",
+      "title": "Physicist | Therm",
+      "status": "NO-GO",
+      "summary": "The F2 (Rigidity) and F3 (Compliance) kinematic pathways create a 'Mutual Invalidation Loop'. The machine is thermodynamically and mathematically guaranteed to fail.",
+      "data": {}
+    },
+    {
+      "role": "COO",
+      "title": "COO | Supply Chain",
+      "status": "NO-GO",
+      "summary": "Sending this unvalidated hardware to an Asian Contract Manufacturer triggers the '100 Snowflakes Trap,' resulting in zero global yield predictability.",
+      "data": {}
+    },
+    {
+      "role": "Legal",
+      "title": "Legal Counsel",
+      "status": "NO-GO",
+      "summary": "Writing a standard SOW to execute this doomed PRD legally binds the enterprise to an open-ended R&D liability and catastrophic hardware failure.",
+      "data": {}
+    },
+    {
+      "role": "Architect",
+      "title": "Principal Architect",
+      "status": "NO-GO",
+      "summary": "Internal engineering teams will suffer from 'execution optimism,' attempting to brute-force an impossible $5,000 BOM until capital is completely exhausted.",
+      "data": {}
+    },
+    {
+      "role": "HCI",
+      "title": "HCI Visionary | UX",
+      "status": "NO-GO",
+      "summary": "Standard SaaS UI will mask the catastrophic hardware failure, providing executives with 'friendly padding' to approve budgets for doomed physics.",
+      "data": {}
+    }
+  ],
+  "recoveryAgents": [
+    {
+      "role": "CTO",
+      "title": "CTO | System Arch",
+      "status": "GO",
+      "summary": "The architecture is exceptionally robust, establishing a non-negotiable 'physics-first' validation gate. It programmatically halts downstream engineering via a 'Dependency Lock' until foundational material science risks are mathematically neutralized, making the compilation of physical tech debt impossible. This 'Constraint Cage' strategy forces truth before capital is committed to code or metal, effectively preventing uncontrolled iteration. The system is designed for maximum capital preservation by systematically engineering failure out of the project at the architectural level.",
+      "data": {}
+    },
+    {
+      "role": "CBDO",
+      "title": "CBDO | Strategy",
+      "status": "GO",
+      "summary": "Project Denzel is not a hardware feature; it is the core valuation driver for the entire enterprise. It weaponizes Phase 1 hardware as a Trojan Horse to harvest a proprietary behavioral data set, pivoting us from a commoditized hardware vendor to a high-multiple data ecosystem. This strategy manufactures a 2-to-5 year defensible moat that is mathematically impossible for competitors to replicate. The hardware is merely the collection device for our most valuable asset: the data.",
+      "data": {}
+    },
+    {
+      "role": "CFO",
+      "title": "CFO | Budget",
+      "status": "GO",
+      "summary": "The $87.5K retainer is not an expense; it is a non-negotiable insurance premium that generates a positive quarterly cash flow of $66,100 by throttling unmanaged agency burn. This expenditure systematically neutralizes over $3.78M in identified catastrophic liabilities, preserving capital that would otherwise be incinerated on a mathematically doomed project. Furthermore, this premium funds the creation of our core enterprise asset—the Project Denzel data moat—which is the sole driver of our future valuation multiple. Refusing this is financial malpractice.",
+      "data": {}
+    },
+    {
+      "role": "Physicist",
+      "title": "Physicist | Therm",
+      "status": "GO",
+      "summary": "The unified PRD is not an engineering challenge; it is a violation of physics. The kinematic requirements for rigid F2 lamination and compliant F3 wrapping are mutually exclusive, creating a guaranteed failure state. The Drawbridge Protocol is therefore not a strategic choice but a physical necessity, isolating an impossible multi-variable problem into a solvable sequence. Proceeding without this bifurcation is a mathematical certainty of total project failure.",
+      "data": {}
+    },
+    {
+      "role": "COO",
+      "title": "COO | Supply Chain",
+      "status": "GO",
+      "summary": "This architecture crushes the '100 Snowflakes Trap' by replacing engineering hope with a legally binding CM Backfill Specification. This document, forged from a physics-first validation process, makes ad-hoc CM redesigns contractually impossible, transforming our partners from expensive problem-solvers into compliant assemblers. It is the non-negotiable gate to achieving scalable yield and predictable global deployment. Failure to enforce this is operational malpractice.",
+      "data": {}
+    },
+    {
+      "role": "Legal",
+      "title": "Legal Counsel",
+      "status": "GO",
+      "summary": "This contractual architecture is not a standard SOW; it is a legally and programmatically enforced shield that indemnifies the enterprise against its own technically illiterate mandates. The fee structure is mathematically justified as a fractional insurance premium against a guaranteed $3.78M+ corporate implosion. By tying compensation to averted disasters and creating a defensible data moat, the strategy transforms a doomed project into the company's core valuation driver. This is a masterclass in executable corporate defense.",
+      "data": {}
+    },
+    {
+      "role": "Architect",
+      "title": "Principal Architect",
+      "status": "GO",
+      "summary": "The baseline PRD is not an engineering challenge; it is a violation of physics guaranteed to incinerate capital. The 'Constraint Cage' is a non-negotiable architectural intervention that programmatically halts this failure by enforcing mathematical truth before execution. This strategy pivots a doomed project into our core valuation driver by creating a proprietary data moat, neutralizing over $3.78M in catastrophic liabilities. Failure to execute this is corporate malpractice.",
+      "data": {}
+    },
+    {
+      "role": "HCI",
+      "title": "HCI Visionary | UX",
+      "status": "GO",
+      "summary": "This dashboard is not a tool for decision support; it is a psychological weapon designed to enforce executive compliance with non-negotiable physical and financial laws. It systematically dismantles 'hope-based engineering' by translating abstract Risk Priority Numbers into a hard-coded, programmatic DependencyLock, making it impossible to fund or execute work on kinematically doomed hardware. The monochromatic, unblinking telemetry serves as a constant, unavoidable reminder of the $3.78M wreckage event being averted, while the TelemetryOverview visualizes the high-multiple data moat being built as the reward for this discipline. This HCI strategy transforms the executive team from potential saboteurs of their own enterprise into disciplined stewards of a physics-first architecture.",
+      "data": {}
+    }
+  ],
+  "sowMilestones": [
+    {
+      "id": "1.0",
+      "title": "PHYSICS & KINEMATIC VALIDATION",
+      "weeks": "WEEKS 1-3",
+      "objective": "Mathematically define and validate the evolution of PRD-2. By fundamentally isolating the physical divide between F2 (Rigidity) and F3 (Compliance) film behaviors, we establish a tangible roadmap to immediate hardware viability.",
+      "deliverable": "A fully populated AIAG-VDA DFMEA matrix mapping the F2/F3 kinematic pathways, and the 'Mutual Evolution Loop' architectural briefing.",
+      "criteria": [
+        "The matrix must definitively calculate Risk Priority Numbers (RPN) separating F2 deployment logic from F3 predictive modeling.",
+        "Executive Review Board sign-off acknowledging the 'Mutual Evolution Loop', formally transitioning the PRD-2 baseline into a phased reality."
+      ],
+      "state": "ACTIVE"
+    },
+    {
+      "id": "2.0",
+      "title": "ARCHITECTURAL BIFURCATION (THE CONSTRAINT CAGE)",
+      "weeks": "WEEKS 4-6",
+      "objective": "Restructure the enterprise hardware roadmap based on the constraints proven in Milestone 1.0.",
+      "deliverable": "The Constraint Cage System Boundary Mapping.",
+      "criteria": [
+        "A completed architectural schematic that explicitly severs the F1/F3 continuous compliance requirement into a distinct Phase 2 deployment.",
+        "Establishment of the hard spatial, thermal, and kinematic boundaries that the Phase 1 system is mathematically permitted to operate within."
+      ],
+      "state": "LOCKED"
+    },
+    {
+      "id": "3.0",
+      "title": "PROJECT DENZEL (TELEMETRY & DATA MOAT) INTEGRATION",
+      "weeks": "WEEKS 7-9",
+      "objective": "Weaponize the optical registration constraints into a venture-scale asset.",
+      "deliverable": "The Machine Vision Integration Schematic and Telemetry Logic Map.",
+      "criteria": [
+        "Definition of the edge-computing sensor loop required to capture proprietary machine-vision data on flexible substrate application.",
+        "Documentation of the fail-safe mechanics and HEPA environmental controls sufficient to immediately trigger a 12-month provisional patent priority clock for the enterprise."
+      ],
+      "state": "LOCKED"
+    },
+    {
+      "id": "4.0",
+      "title": "THE CM BACKFILL SPECIFICATION",
+      "weeks": "WEEK 10",
+      "objective": "Secure the supply chain and lock the Strategic Capital Defense policy.",
+      "deliverable": "A hermetically sealed kinematic and tolerance specification document. (Note: No physical BOM or prototype is delivered).",
+      "criteria": [
+        "The specification must strip the Contract Manufacturer of all improvisation variables, dictating the exact geometric and kinematic baselines to prevent the '100 Snowflakes Trap.'",
+        "Financial Trigger: Formal board acceptance of this specification document classifies the SOW as 'Complete,' successfully decoupling Mechanistic LLC from downstream hardware liability and authorizing the release of the $87.5K quarterly Strategic Capital Defense Premium."
+      ],
+      "state": "PENDING"
+    }
+  ]
+}
+
+==============================================
+FILE: vault_f_finance_v28.json
+==============================================
+
+{
+  "metadata": {
+    "version": "29.0.0",
+    "type": "Vault-F (Executable Corporate Defense & ROI Strategy)",
+    "generatedAt": "2026-03-06T20:25:00.000Z"
+  },
+  "roiJustification": {
+    "quarterlyRetainer": 87500,
+    "quarterlyRetainerLabel": "$87,500 / Quarter",
+    "quarterlyRetainerDesc": "This retainer functions strictly as Strategic Capital Deployment. It explicitly funds the active maintenance of the Collaborative Architecture Matrix to govern execution—preventing the inevitable escalation of $282,000/quarter in 'elite agency discovery' down to a managed, predictable $128,400. \n\nThe retainer does not buy hours; it buys the physics validation and technical strategy required to systematically build the foundation for Mobile Outfitters' future, rather than attempting to negotiate with the laws of physics.",
+    "agencyBurnReductionPerQuarter": 153600,
+    "netQuarterlyCashflow": 66100,
+    "evergreenTerms": {
+      "overview": "An evergreen retainer for product development is an ongoing, replenishable partnership agreement where a client maintains a set balance to cover the Principal Architect's governance. As work is completed, the client 'tops off' the retainer to the agreed minimum, ensuring continuous, uninterrupted momentum without new contracts for each phase.",
+      "keyFeatures": [
+        {
+          "title": "Continuous Funding",
+          "description": "Unlike fixed-fee projects, this model keeps a prepaid balance, ensuring engineering is never working in arrears."
+        },
+        {
+          "title": "Automatic Replenishment",
+          "description": "When the balance drops below the $15,000 threshold, the client replenishes it, returning the account to the $87,500 'green' status."
+        },
+        {
+          "title": "Flexibility for Agile",
+          "description": "Ideal for hardware development where physics dictate shifting priorities (e.g., more prototyping one month, more testing the next) without renegotiating contracts."
+        },
+        {
+          "title": "Improved Workflow",
+          "description": "My focus remains entirely on building the defensible moat rather than invoicing, ensuring continuous execution of the Validation Waterfall."
+        }
+      ]
+    },
+    "totalROI": {
+      "firstQuarterTotal": 716100,
+      "recurringQuarterlyCashflow": 66100,
+      "oneTimeAvoidedCatastrophicCosts": 650000,
+      "annualizedROI": "716000+",
+      "currency": "USD"
+    },
+    "avoidedCatastrophicCosts": [
+      {
+        "description": "Agency Burn Throttling",
+        "detail": "Engaging elite execution firms (frogdesign, Whipsaw, Pentagram, Ammunition, Synapse, Function) without a Chief Architect to package the macro-architecture results in unmanaged billable discovery.",
+        "amount": 282000,
+        "period": "Quarterly"
+      },
+      {
+        "description": "The Escalating Kinematic Liability Curve (+$2.85M Avoided)",
+        "detail": "Drawing from decades managing Tier-1 ODMs (Flex, Foxconn, Jabil, Sanmina) and CMs (BYD, Plexus, DBG Tech), I know that sending a functional alpha without a rigorous 'Backfill of Specifications' is a recipe for failure. The financial penalty scales exponentially based on when the physics crash is discovered.",
+        "amount": 2850000,
+        "period": "Cumulative",
+        "escalationStages": [
+          {
+            "stage": "EVT / DVT (Design Validation)",
+            "impact": "CM rejects unbuildable alpha, halts engineering, requires full NRE re-spin.",
+            "cost": 350000
+          },
+          {
+            "stage": "PVT (Production Validation)",
+            "impact": "Injection molds cut. Stepper vibration ruins yield. Tooling scrapped and expedited.",
+            "cost": 850000
+          },
+          {
+            "stage": "Escaped Defects (Retail Frontline)",
+            "impact": "10-second material decay causes 0% yield. Infinite refunds, RMA logistics, brand damage.",
+            "cost": 1650000
+          }
+        ]
+      },
+      {
+        "description": "The Generalist Trap",
+        "detail": "Mechanistic defining interfaces and specifying boundaries empowers your internal team to focus on core competencies, without burning a year attempting to learn aerospace-grade kinematics.",
+        "amount": 150000,
+        "period": "One-Time"
+      }
+    ]
+  },
+  "contingencyBudgets": [
+    {
+      "uuid": "23d1dc19-89c8-47dc-8f66-62ad2c037b2d",
+      "linksToPhysicsNode": "05dabc00-ffaf-4465-9bec-65198e7956d0",
+      "description": "Node A Material Characterization Bench (HEPA/TriACTIVE Testing)",
+      "amount": 15000,
+      "justification": "Mandatory capital required to de-risk Node A film transfer volatility before committing to $5K kinematics BOM limit."
+    }
+  ],
+  "advisoryEquityVesting": {
+    "legacyClaim": "0.25% - 0.5% (Frontier Science & Data Moat Establishment)",
+    "description": "Standard mechanical execution builds generic hardware; the Principal Architect delivers a proprietary enterprise asset. This equity captures the valuation multiple generated by our collaborative Machine Vision Telemetry protocol. By embedding optics to securely harvest your in-vivo retail telemetry, we compile a proprietary behavioral model. This establishes the mathematical foundation for Phase 2 Autonomy, generating a 2-to-5 year defensible data moat that defines the Frontier for Mobile Outfitters.",
+    "baseGrantPercentage": 0.5,
+    "milestoneTranches": [
+      {
+        "tranche": 1,
+        "milestone": "Delivery of the V1 CM Backfill Specification.",
+        "percentageUnlock": 0.16
+      },
+      {
+        "tranche": 2,
+        "milestone": "Delivery of the Machine Vision Telemetry Architecture Document.",
+        "percentageUnlock": 0.17
+      },
+      {
+        "tranche": 3,
+        "milestone": "Delivery of the Provisional Patent Priority Technical Package.",
+        "percentageUnlock": 0.17
+      }
+    ]
+  },
+  "executiveLeverage": {
+    "title": "Predictive Engineering & Milestone Matrix",
+    "description": "In hardware development, true leverage comes from predicting and securing the path forward, rather than paying an agency hourly to fix late-stage integrations. These milestone bonuses are tied exclusively to successfully navigating critical corporate transitions alongside your team:",
+    "gates": [
+      {
+        "uuid": "743a2938-b1f2-4520-8b38-f9fc0a82be56",
+        "vector": "The Special Snowflake Syndrome Problem (ODM/CM Transition)",
+        "description": "Delivering the V1 Backfill Specification provides the CM with strict, validated criteria. This ensures a smooth transition to manufacturing, saving an estimated 12 months runway and $500K+ in potential redesign loops.",
+        "savedEstimate": { "type": "string", "amount": "+$500K Avoided" },
+        "bonusEstimate": { "type": "currency", "amount": 50000 }
+      },
+      {
+        "uuid": "347ccae7-77d4-40df-a856-bc0b80617dfa",
+        "vector": "The Generalist Trap (Internal Resource Packaging)",
+        "description": "Defining macro-architecture so internal generalist can execute without hiring Senior Robotics Engineer.",
+        "savedEstimate": { "type": "string", "amount": "$150,000+" },
+        "bonusEstimate": { "type": "currency", "amount": 20000 }
+      },
+      {
+        "uuid": "21fbee90-845f-4a0b-90a6-9bd6d5c6afb9",
+        "vector": "Throttling Elite Agency Burn",
+        "description": "Acting as the Technical API pre-packages the exact spatial boundaries and deterministic logic. This reduces junior-level agency horsepower by 80%, shrinking quarterly unmanaged burn from $282,000 down to $128,400.",
+        "savedEstimate": { "type": "string", "amount": "$153,600/Qtr Avoided" }
+      },
+      {
+        "uuid": "d34b41a9-b3a6-44c0-9fbb-8acabfef1b83",
+        "vector": "The Validation Dependency Trap (Phase 1 Lock)",
+        "description": "Enforcing the Drawbridge Protocol to focus on F2 Smart Films and flat screens.",
+        "savedEstimate": { "type": "string", "amount": "6 - 9 Months Runway" },
+        "bonusEstimate": { "type": "currency", "amount": 35000 }
+      },
+      {
+        "uuid": "415d1cb3-f119-482f-87d3-ffac5b8d00cf",
+        "vector": "RTOS Governance & Gatekeeper",
+        "description": "Preventing open-source vibration drift; securing closed-loop tracking.",
+        "savedEstimate": { "type": "string", "amount": "2-5 Year Defensible Moat" },
+        "bonusEstimate": { "type": "currency", "amount": 30000 }
+      },
+      {
+        "uuid": "563b2184-b0cf-46d5-a9cf-66eb99a5e80d",
+        "vector": "Pre-Compliance Validation Waterfall",
+        "description": "Standalone fixtures trigger 12-month IP priority clock.",
+        "savedEstimate": { "type": "string", "amount": "Multi-Month Rel. Delay" },
+        "bonusEstimate": { "type": "currency", "amount": 15000 }
+      },
+      {
+        "uuid": "4e1dd40e-5a02-4fc3-a5bc-b2f4cda8dd11",
+        "vector": "Node A: The Dust and Yield Threat",
+        "description": "Initiating the $85 HEPA Positive-Pressure Micro-Environment and the <$2K Material Characterization Bench.",
+        "savedEstimate": { "type": "string", "amount": "De-risks an AP HIGH blocker" }
+      },
+      {
+        "uuid": "7a371c6a-4952-45e3-b31c-b7100b1d3101",
+        "vector": "Node D: Zero-Dexterity Operational Crashes",
+        "description": "Designing the self-centering 'Magic Slot' Poka-Yoke loading bay and 50K-cycle Fatigue Acceptance Test (FAT) fail-safes.",
+        "savedEstimate": { "type": "string", "amount": "Prevents Hardware Destruction" }
+      },
+      {
+        "uuid": "65b9e7b2-03c0-42cf-bb84-4d87ef0e8d08",
+        "vector": "The Fragmented Data Silo (v21/v22 Agentic Platform)",
+        "description": "Transitioning the DFMEA architecture into a multi-dimensional enterprise platform utilizing MCP servers (BigQuery, etc).",
+        "savedEstimate": { "type": "string", "amount": "Enterprise Predictability" }
+      }
+    ]
+  }
+}
+
+
+
+==============================================
+FILE: vault_l_legal_v28.json
+==============================================
+
+{
+  "metadata": {
+    "version": "29.0.0",
+    "type": "Vault-L (Executable Corporate Defense & IP Indemnification)",
+    "generatedAt": "2026-03-06T20:20:00.000Z"
+  },
+  "strategicNarrative": [
+    "ENGAGEMENT STATUS: SHARED SUCCESS PARTNERSHIP",
+    "Hello. I'm Erik. Over the last 30+ years, my career has spanned from a drafting board to advanced 3D CAD tools, designing everything from supercomputers, Xboxes, and PDAs to BBQs, dental chairs, and race car parts.",
+    "I truly appreciate the trust you've placed in Mechanistic. I am here because I love digging in, solving hard problems, and helping teams get things done right.",
+    "Rather than accepting this level of physical mitigation, or attempting to negotiate with physics—Mechanistic will act as your Principal Architect, collaboratively redefining PRD-2 to bridge the gap between your retail vision and the laws of physics. All while defining the Frontier, and validating towards the future of Mobile Outfitters."
+  ],
+  "orgDFMEA": [
+    {
+      "challenge": "The 'Special Snowflake Syndrome' Problem",
+      "description": "Contract Manufacturer (CM) redesigning components ground-up, causing tolerance drift and feature creep.",
+      "mitigation": "Enforce strict 'API' documentation for handoffs to external ME firms (SOE, Function)."
+    },
+    {
+      "challenge": "The 'Generalist Trap'",
+      "description": "Internal product developers stalled on deep industrial automation rather than executing packaged CAD work.",
+      "mitigation": "Clear boundary definitions. Externalize complex mechatronics to specialized firms with defined APIs."
+    },
+    {
+      "challenge": "Firmware & Software Silos",
+      "description": "Misalignment between cloud platform capabilities and hardware RTOS deterministic requirements.",
+      "mitigation": "'Algorithmic Template Gatekeeper' rules enforcing cloud-to-hardware operational boundaries."
+    }
+  ],
+  "engagementTerms": {
+    "unifiedArchitectureMandate": "Engagement is structured as a tightly coupled Architectural Partnership. Hourly billing incentivizes a reactionary posture, chasing downstream failures; this retainer funds the proactive, mathematical alignment of your product vision. Attempting to fractionalize the 'Constraint Cage' or unbundle the Principal Architect's services invites the very 'Validation Dependency Trap' this architecture controls. We do not engage in deconstructed, a la carte execution—our commitment is delivered whole.",
+    "objective": "A focused 90-day sprint to establish the tangible physical boundaries, replacing unmanaged execution burn with a mathematically viable 'Drawbridge' architecture that secures immediate revenue generation while protecting long-term IP.",
+    "limitationOfLiability": "Mechanistic's total aggregate liability arising out of or related to this engagement is capped at the quarterly retainer paid. All consequential, indirect, or incidental damages (including but not limited to lost retail revenue, destroyed customer devices, or CM tooling costs) are explicitly waived, as this engagement functions to actively map and prevent those exact, inevitable physical failures.",
+    "paymentTerms": "The $87,500 quarterly retainer functions as Strategic Capital Deployment. It explicitly funds the active maintenance of the Collaborative Architecture Matrix to govern execution ($66.1K/qtr targeted preservation) and guarantee mathematical viability prior to tooling.",
+    "acceptanceCriteria": {
+      "duration": 5,
+      "unit": "business_days",
+      "clause": "Deliverables are subject to an auto-acceptance protocol: they are deemed formally accepted if no written rejection is received within 5 business days of submission. Payment is specifically for architectural alignment and risk neutralization, not contingent on immediate downstream hardware yield."
+    },
+    "termination": "Client termination without fault triggers an equity acceleration clause and a kill fee equivalent to the remainder of the active quarter."
+  }
+}
+
+
+==============================================
+FILE: vault_p_physics_v28.json
+==============================================
+
+{
+  "metadata": {
+    "version": "28.0.0",
+    "type": "Vault-P (Physics Engineering Constraints)",
+    "generatedAt": "2026-03-01T20:31:38.309Z"
+  },
+  "projectData": {
+    "projectName": "Holy Grail PRD-2",
+    "dashboardVersion": "V28.0",
+    "strategicPivot": "The Denzel Protocol"
+  },
+  "nodes": [
+    {
+      "uuid": "05dabc00-ffaf-4465-9bec-65198e7956d0",
+      "nodeId": "A",
+      "nodeName": "Material Substrate (TriACTIVE PU/PET)",
+      "failures": [
+        {
+          "uuid": "7994b9e0-828f-4752-923a-eee98031a7df",
+          "failureMode": "Physical Transfer",
+          "description": "Soft film separates from rigid liner prematurely due to non-uniform peel force distribution exceeding film's elastic limit, causing localized stress concentrations, creasing, and subsequent self-adhesion (folds in on itself). This is exacerbated by the 15-inch envelope limiting the peel angle optimization.",
+          "severity": 9,
+          "occurrence": 9,
+          "detection": 8,
+          "rpn": 648,
+          "isCriticalBlocker": true,
+          "mitigation": "Redesign kinematic end-effector to employ a multi-point, adaptive vacuum gripper system exclusively manipulating the rigid liner at a controlled, dynamic peel angle (165-175 degrees) with active force feedback, delaying peeling until final lamination.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Permanent optical defects on film (creases/kinks)",
+            "Irreversible material damage, rendering film unusable (scrap rate increase)",
+            "Kinematic system entanglement/jamming due to crumpled film (downtime)",
+            "Risk of micro-fractures in PU layer compromising long-term durability."
+          ]
+        },
+        {
+          "uuid": "c5594e98-0cfd-43ca-8b4b-483e3db713ca",
+          "failureMode": "Inconsistent Adhesive Release Layer",
+          "description": "Variability in silicone release coat thickness or adhesion strength across the TriACTIVE film results in erratic peel force requirements. Localized areas of high adhesion cause 'stick-slip' phenomena during transfer, leading to micro-tears or macroscopic adhesive transfer to the rigid liner, compromising the film's functional adhesive layer and causing premature delamination or inconsistent application.",
+          "severity": 8,
+          "occurrence": 8,
+          "detection": 7,
+          "rpn": 448,
+          "isCriticalBlocker": true,
+          "mitigation": "Mandate raw material specification for release liner adhesion uniformity (\u00b15% deviation across roll width). Implement real-time in-line dynamic peel force sensing during film unwind, with system abort on deviation >10% from baseline profile.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Loss of adhesion on application surface, leading to edge lift or bubbling",
+            "Contamination of rigid liner or kinematic components with transferred adhesive material",
+            "Film tearing during transfer if peel force exceeds tensile strength (localized failure)",
+            "Increased system variability and reduced process window for automated application."
+          ]
+        },
+        {
+          "uuid": "53c48e92-868c-4437-9155-44c345b2a8d4",
+          "failureMode": "Adhesive Open-Time (Environmental Particulate & Bubble Entrapment)",
+          "description": "The TriACTIVE film's aggressive adhesive rapidly cures/sets within 10 seconds of exposure. In a retail environment, airborne particulates (>2\u00b5m) and trapped air pockets (>4 bubbles in a 15mm border, >0.1mm diameter) become irreversibly encapsulated due to the rapid adhesive 'wet-out' and insufficient uniform pressure application within this narrow open-time window. The 15-inch envelope restricts air filtration volume and flow path efficiency.",
+          "severity": 9,
+          "occurrence": 9,
+          "detection": 7,
+          "rpn": 567,
+          "isCriticalBlocker": true,
+          "mitigation": "Integrate a localized ISO Class 5 positive-pressure HEPA micro-environment (0.3m/s laminar flow) directly at the lamination zone, coupled with an active electrostatic ionizer to neutralize static charge on film and device. Utilize a multi-axis articulating elastomer roller system to apply uniform pressure (25-30 kPa) with zero-displacement lateral force across the entire film surface within 3 seconds of contact.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Optical distortion/hazing on device display, impairing user experience",
+            "Localized stress points in film, leading to premature delamination or cracking",
+            "Reduced touch sensitivity/accuracy in affected areas of the device screen",
+            "Aesthetic rejection by end-user, leading to costly re-works or product returns."
+          ]
+        },
+        {
+          "uuid": "8600bd9c-e8b3-4edf-aa4f-035933dde889",
+          "failureMode": "Dimensional Distortion (Thermal Gradient Induced Creep & Cutter Shear)",
+          "description": "Non-uniform ambient temperature (15-35\u00b0C) across the 15-inch film surface creates thermal gradients (>5\u00b0C/100mm), leading to differential thermal expansion (CTE for PU ~100-200ppm/\u00b0C). This, combined with anisotropic material response to shear forces during blade cutting, causes film stretching/compression, resulting in edge 'tails' or 'nubs' exceeding +0.1mm tolerance, or non-linear warping of up to 0.5mm over a 100mm span. The $5K BOM restricts active thermal management.",
+          "severity": 8,
+          "occurrence": 8,
+          "detection": 6,
+          "rpn": 384,
+          "isCriticalBlocker": false,
+          "mitigation": "Implement a real-time, multi-zone IR thermal sensor array across the film bed, feeding into an active tension-control system that dynamically adjusts tension profiles (\u00b12N) to counteract thermal creep. Deploy a heated (pre-tensioned) diamond-tipped cutting blade with a firmware-controlled variable pressure profile (0.5-1.5N) to minimize material drag and thermal shock during cutting.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Misaligned cutouts for cameras/sensors, potentially obscuring or damaging components",
+            "Non-uniform film overlap or underlap at device edges, creating lift points",
+            "Reduced aesthetic quality and perceived value of the applied film",
+            "Increased scrap rate due to out-of-spec dimensions."
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "0ff9a732-6d52-41a5-90df-f0129a9bf424",
+      "nodeId": "B",
+      "nodeName": "Kinematic Hardware (15-inch Box)",
+      "dependencyBlocked": true,
+      "blockedBy": "05dabc00-ffaf-4465-9bec-65198e7956d0",
+      "failures": [
+        {
+          "uuid": "d9a387cd-b13e-4922-86dc-09128e6a2869",
+          "failureMode": "Accumulated Kinematic Tolerance Stack Error",
+          "description": "Cumulative manufacturing tolerances of linear rails (\u00b125\u00b5m/100mm), lead screws (\u00b150\u00b5m/100mm), bearing play (\u00b110\u00b5m), and end-effector orthogonality (\u00b10.05\u00b0) over the 15-inch travel path result in a projected Worst-Case-Tolerance (WCT) stack of up to \u00b10.8mm at the film application point. This exceeds the specified \u00b10.5mm alignment for camera/speaker cutouts and leads to off-center application, especially when compounded by thermal expansion of structural components (e.g., aluminum frame CTE ~23ppm/\u00b0C).",
+          "severity": 9,
+          "occurrence": 8,
+          "detection": 7,
+          "rpn": 504,
+          "isCriticalBlocker": true,
+          "mitigation": "Redesign kinematics with a monolithic, thermally stable (Invar or carbon fiber composite) chassis and implement high-precision (ABEC 7) direct-drive linear motors with absolute encoders (1\u00b5m resolution). Integrate a continuous closed-loop optical registration system (Denzel downward vision) to provide real-time compensation for all axis deviations, recalibrating the toolpath coordinate frame every 100ms.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Complete blocking or partial obscuration of critical device features (camera, sensors, microphone)",
+            "Mechanical interference between misaligned film and device chassis during application",
+            "Aesthetic rejection due to visibly crooked or off-center film application",
+            "Potential for user-induced film removal, damaging the device surface."
+          ]
+        },
+        {
+          "uuid": "ef7e5719-8fa2-443f-88c4-e2a4e0cd384f",
+          "failureMode": "Geometric Interpenetration (Dynamic Collision Envelope)",
+          "description": "The strict 15-inch volumetric envelope creates a highly constrained workspace. The kinematic path planning, particularly for articulated/rotational stages, fails to account for dynamic component flexion, cable management envelopes, and worst-case component manufacturing tolerances (+/-0.1mm on pivot points), resulting in physical collision between moving kinematic elements and fixed internal enclosure boundaries or the loaded device itself. This is exacerbated by controller overshoot (>0.5mm).",
+          "severity": 10,
+          "occurrence": 8,
+          "detection": 4,
+          "rpn": 320,
+          "isCriticalBlocker": true,
+          "mitigation": "Implement a real-time, multi-layered collision avoidance system using a dynamic bounding box model for all kinematic elements and a 3D LiDAR proximity sensor array (\u00b10.1mm resolution) within the 15-inch envelope. The system must maintain a minimum 2mm 'keep-out' zone around all static and dynamic components, with a hard E-stop on any interpenetration prediction.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Catastrophic mechanical damage to kinematic components and/or device under application",
+            "System seizure and total operational failure, requiring manual intervention and repair",
+            "Significant risk of operator injury during collision or subsequent clearing attempt",
+            "Increased cycle time due to collision detection, abort, and recovery procedures."
+          ]
+        },
+        {
+          "uuid": "280b342a-b0ca-4ad5-85e2-a0f9f40c8251",
+          "failureMode": "Laminar Wet-Out Stroke (Controller Overshoot / End-Stop Calibration Drift)",
+          "description": "Due to stepper motor inertia, PID tuning inaccuracies, and wear in mechanical end-stops/sensors (e.g., optical flag misalignment by >0.2mm), the linear carriage for the wet-out stroke exhibits overshoot or undershoot (>0.5mm). This leads to incomplete lamination (undershoot) or collision with the physical enclosure (overshoot), triggering safety interlocks, aborting the application, and potentially damaging components within the tightly constrained 15-inch envelope.",
+          "severity": 8,
+          "occurrence": 8,
+          "detection": 5,
+          "rpn": 320,
+          "isCriticalBlocker": true,
+          "mitigation": "Deploy dual, redundant high-resolution absolute encoders (e.g., magnetic strip encoders with 1\u00b5m resolution) on each linear axis. Implement a predictive control algorithm with feed-forward compensation for motor inertia and dynamic braking. End-stops must be software-defined within a 0.1mm tolerance zone, with physical hard stops as ultimate fail-safes outside the normal operating range.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Partial or incomplete film lamination, leading to large unadhered areas or bubbles",
+            "Mechanical damage to the linear carriage or internal enclosure components",
+            "Increased cycle time due to fault recovery and re-initialization procedures",
+            "Requires manual intervention, contradicting zero-dexterity design philosophy."
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "0ac0ee3b-6739-4900-b9df-d18fa1500629",
+      "nodeId": "C",
+      "nodeName": "Geometry Engine & Parsing",
+      "failures": [
+        {
+          "uuid": "15823e31-3723-4f63-a64a-fe006933c0ad",
+          "failureMode": "Calibration Decay & Drift (Vibration-Induced Optical System Micro-Displacement)",
+          "description": "Cumulative vibration from stepper motors (100-500Hz resonant frequencies, 5-10\u00b5m amplitude) and thermal expansion/contraction of optical mounting hardware causes micro-displacement of the Denzel vision system's camera sensor and lens assembly. This results in a cumulative drift of the toolpath coordinate frame by >0.05mm/hour, leading to progressive misalignment. High-flux lighting further exacerbates this through thermal lensing effects on the camera.",
+          "severity": 10,
+          "occurrence": 7,
+          "detection": 5,
+          "rpn": 350,
+          "isCriticalBlocker": true,
+          "mitigation": "Isolate the Denzel vision system on a vibration-damped optical bench (pneumatic isolators) separate from the kinematic chassis. Implement active thermal stabilization (Peltier cooler) for the camera sensor to maintain \u00b10.1\u00b0C stability. Integrate a secondary, static high-precision fiducial reference (e.g., etched glass reticle) that is continuously monitored by the primary vision system to detect and actively compensate for its own micro-displacements.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Progressive degradation of alignment accuracy, leading to increasing scrap rate over operational shifts",
+            "Requires frequent manual re-calibration, increasing downtime and reducing throughput",
+            "Potential for catastrophic misalignment if drift goes unnoticed, damaging devices",
+            "Reduced lifespan of optical components due to constant vibrational stress."
+          ]
+        },
+        {
+          "uuid": "9050dcb1-bff7-4ef2-a53b-9622c1b32551",
+          "failureMode": "Vision Sensor Saturation/Glare (High-Flux Lighting)",
+          "description": "The high-flux lighting required for precise optical fiducial tracking in variable retail environments creates glare or localized saturation zones on the vision sensor (CMOS imager). This compromises feature extraction algorithms, leading to erroneous fiducial detection or complete loss of tracking, particularly with reflective device surfaces or at varying angles of incidence. This results in coordinate frame calculation errors exceeding \u00b10.5mm.",
+          "severity": 9,
+          "occurrence": 6,
+          "detection": 6,
+          "rpn": 324,
+          "isCriticalBlocker": true,
+          "mitigation": "Implement a dynamically controlled multi-spectral LED lighting array with variable intensity and angle, synchronized with a global shutter vision sensor for optimal image capture. Utilize polarizing filters and an adaptive HDR imaging pipeline (multiple exposures) to eliminate glare and ensure consistent feature visibility across diverse device finishes and ambient lighting conditions.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Inaccurate device registration, leading to film misalignment",
+            "System aborts or repeated calibration cycles due to vision system failure",
+            "Increased processing load on the geometry engine attempting to resolve ambiguous data",
+            "Requires operator intervention to manually reposition the device or restart the process."
+          ]
+        },
+        {
+          "uuid": "139c05fa-6225-442d-a401-0be62b9d6aea",
+          "failureMode": "Geometric Algorithm Topological Error (Boolean Logic)",
+          "description": "The core geometry parsing algorithm, when converting CAD templates into toolpaths, exhibits a topological error (e.g., incorrect Boolean difference operation or floating point precision issues). This causes internal cutouts (e.g., for camera holes) to be misinterpreted as 'floating islands' which the cloud-level gatekeeper then attempts to 'connect to edge' by creating an unintended, visually prominent cut-path to the film boundary. This compromises film integrity and aesthetics.",
+          "severity": 8,
+          "occurrence": 6,
+          "detection": 4,
+          "rpn": 192,
+          "isCriticalBlocker": true,
+          "mitigation": "Refactor the core geometry engine to use a robust manifold mesh processing library for all boolean operations, ensuring topological integrity. Implement a secondary validation layer using computational topology to verify all generated toolpaths for isolated internal features before sending to the cloud gatekeeper. The cloud gatekeeper acts as a final filter, flagging any remaining non-edge-connected internal cuts for manual review by an engineering team.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Creation of unwanted and aesthetically unacceptable 'bridge' cuts on the film",
+            "Compromises structural integrity of the film, making it prone to tearing during application",
+            "Increases material waste as defectively cut films must be discarded",
+            "Requires manual rework of CAD templates or algorithm patches, leading to delays."
+          ]
+        }
+      ]
+    },
+    {
+      "uuid": "7c28029f-051d-4765-b1b4-91c50bef73f6",
+      "nodeId": "D",
+      "nodeName": "Zero-Dexterity Operational Crashes",
+      "failures": [
+        {
+          "uuid": "9e16b7e2-e9a2-4a63-b5ab-eeccfe37ae11",
+          "failureMode": "Foreign Object Debris (FOD) Introduction via 'Magic Slot'",
+          "description": "Despite the 'Poka-Yoke' design, the 'Magic Slot' loading bay is susceptible to deliberate or accidental insertion of foreign objects (e.g., coins, paper clips, food particles, small personal items). The internal sensors (e.g., optical break-beam, capacitive) are not robust enough to reliably detect all classes of FOD >2mm, leading to system jams, damage to kinematic components, or contamination of the device under application. This is a primary challenge for zero-dexterity design.",
+          "severity": 10,
+          "occurrence": 8,
+          "detection": 6,
+          "rpn": 480,
+          "isCriticalBlocker": true,
+          "mitigation": "Integrate a multi-modal FOD detection system: 3D structured light scanner for volumetric analysis (>1mm objects), an array of load cells for weight anomaly detection (\u00b15g deviation from expected device weight), and an acoustic signature analysis system to identify unusual sounds during loading, with immediate E-stop and visual alert on any positive detection.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Mechanical damage to the device being loaded or the internal mechanism of the 'Magic Slot'",
+            "System seizure and operational shutdown, requiring expert technician intervention",
+            "Contamination of the HEPA micro-environment, negating its effectiveness",
+            "Safety hazard for operators attempting to retrieve trapped foreign objects."
+          ]
+        },
+        {
+          "uuid": "be2d59a0-b49d-4fba-9515-8d5e27a4d1b3",
+          "failureMode": "Unsanctioned Device Variant Loading (Non-API Compliant)",
+          "description": "A frontline worker or 'elite agency' attempts to load a device variant (e.g., a new phone model, a counterfeit, a device with non-standard accessories like a pop-socket) that has not been registered or lacks kinematic API protocols. The system's optical recognition fails to identify the device (false negative rate >5%), or misidentifies it, leading to the application of an incorrect film template, or mechanical collision due to incorrect kinematic pathing for the unknown form factor.",
+          "severity": 9,
+          "occurrence": 7,
+          "detection": 7,
+          "rpn": 441,
+          "isCriticalBlocker": true,
+          "mitigation": "Implement an AI-driven, real-time 3D object recognition system using a high-resolution depth camera to create a dynamic mesh of the loaded object. This mesh is compared against a securely maintained cloud database of sanctioned device CAD models and known accessory profiles. Only devices with a >99.5% confidence match and associated kinematic API are permitted to proceed; all others trigger an immediate 'UNSANCTIONED DEVICE' warning and system halt.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Application of a misfitting film, rendering it useless and wasting material",
+            "Mechanical damage to the loaded device due to incompatible kinematic movements",
+            "System aborts, requiring manual removal of the device and system reset",
+            "Reputational damage for 'Magic Slot' and zero-dexterity promise if common accessories cause failure."
+          ]
+        },
+        {
+          "uuid": "3d1adb6c-a79f-4d2f-9759-e552714fb308",
+          "failureMode": "Sub-Threshold Voltage Sag / Brownout (Actuator Control Loss)",
+          "description": "Power grid fluctuations (e.g., voltage sag below 90% nominal for >100ms or frequency deviation >2Hz) occur frequently in retail environments. While a full outage triggers fail-safe clamps, a 'brownout' can lead to erratic stepper motor behavior, loss of positional encoder data integrity, or insufficient current for fail-safe clamp activation. This results in the partial trapping of the device, uncontrolled kinematic movement, or an incomplete power-free abort sequence (e.g., clamps engage slowly, causing friction damage). The $5K BOM limits robust UPS integration.",
+          "severity": 9,
+          "occurrence": 5,
+          "detection": 8,
+          "rpn": 360,
+          "isCriticalBlocker": true,
+          "mitigation": "Integrate a medical-grade Uninterruptible Power Supply (UPS) capable of providing stable power for at least 30 seconds of full operation (beyond the 'abort' sequence duration). Implement a 'Power Quality Monitor' that continuously tracks voltage, current, and frequency, initiating a controlled, graceful shutdown and full fail-safe activation upon detecting any deviation >5% from nominal for >50ms, regardless of whether a full outage occurs.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Device partially trapped, leading to cosmetic or functional damage during manual extraction",
+            "Incomplete or misaligned film application, requiring re-work",
+            "Premature wear or damage to kinematic components due to uncontrolled movements",
+            "Safety hazard if system state is ambiguous during power recovery."
+          ]
+        },
+        {
+          "uuid": "72176819-5fb8-4b75-98d4-3f25223091b1",
+          "failureMode": "Acoustic Resonance & Structural Noise Amplification (Enclosure)",
+          "description": "The 15-inch enclosure, despite baffling, inadvertently acts as a resonant cavity, amplifying specific frequencies generated by stepper motors (e.g., 200Hz, 400Hz) and linear bearings. This leads to intermittent noise spikes exceeding the 75dB limit by 5-10dB, particularly at specific kinematic speeds or loads. The internal geometry and material choices (e.g., thin aluminum panels for weight/cost) contribute to structural vibration and sound radiation. This is difficult to model precisely without extensive empirical testing.",
+          "severity": 8,
+          "occurrence": 6,
+          "detection": 7,
+          "rpn": 336,
+          "isCriticalBlocker": false,
+          "mitigation": "Perform finite element analysis (FEA) to identify dominant resonant frequencies and mode shapes of the 15-inch enclosure. Implement constrained layer damping (CLD) patches at identified vibration hotspots. Utilize decoupled motor mounts (elastomeric isolators) and active noise cancellation technology (anti-phase sound waves via embedded microphones and speakers) to specifically target and suppress resonant frequencies below the 75dB threshold.",
+          "isMitigated": false,
+          "knockOnEffects": [
+            "Violation of local noise regulations, leading to fines or operational restrictions",
+            "Negative impact on retail environment ambiance, deterring customers",
+            "Operator discomfort and potential hearing fatigue over extended periods",
+            "Brand reputation damage if the system is perceived as 'noisy' or 'cheap'."
+          ]
+        }
+      ]
+    }
+  ],
+  "validationWaterfall": {
+    "stages": [
+      {
+        "id": 1,
+        "name": "Lo-Fi Characterization: Fundamental Physics Mapping",
+        "objective": "Initial Material Characterization DOE to empirically measure baseline limits. Instead of merely logging failures, we get our hands dirty to map the precise boundaries of the TriACTIVE PU/PET film. By quantifying thermal expansion and dynamic peel force, we collaborate to define the exact parameters required for continuous \u00B10.5mm alignment before committing capital to CM tooling.",
+        "validations": [
+          "HEPA Micro-Environment Feasibility Study",
+          "TriACTIVE Adhesion 10-Second Cure Decay Mapping",
+          "Dynamic Peel Force & Elastic Limit Thresholds",
+          "Coefficient of Thermal Expansion (CTE) Distortion Mapping"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "The Data Moat: In-Vivo Expansion & Telemetry",
+        "objective": "Transitioning from lo-fi validation to deep data integration. We deploy Campaign Denzel optics to securely mine existing retail and failure signals. By attenuating this real-world operator data, we perform a thorough gap analysis to organically evolve PRD-2. We are stocking the existing moat with frontier insights derived from your own operational realities.",
+        "validations": [
+          "Machine Vision Pilot (Secure Operator Telemetry Integration)",
+          "Zero-Dexterity Alignment (Magic Slot Real-World Stress Test)",
+          "Vibration-Induced Optical Micro-Displacement Tracking"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "CM Integration & Tangible Certification",
+        "objective": "This final phase bridges prototyping into NPI and assembly ramp. We deliver detailed physical BOMs, strict manufacturing tolerance specs, and clear regulatory paths. By proving the physical viabilities iteratively and transparently, we lock the Contract Manufacturer into a predictable yield model governed by our Shared Success framework.",
+        "validations": [
+          "HALT / HASS (Highly Accelerated Life Testing) on Alpha Prototypes",
+          "50K Cycle Real-World Stress Test (Fail-Safe Verification)",
+          "CMF & Regulatory Pre-Compliance Strategy (UL, CE, REACH, RoHS)"
+        ]
+      }
+    ]
+  },
+  "pDiagrams": {
+    "A": {
+      "inputs": "TriACTIVE PU/PET Film",
+      "process": "Dry-Apply Roller Lamination",
+      "outputs": "Applied Screen Protector",
+      "errors": "\u00e2\u2030\u00a4 4 air bubbles in 15mm border | \u00c2\u00b10.2mm size accuracy | \u00c2\u00b10.1mm shape accuracy",
+      "noises": [
+        "Temp Swings (15-35\u00c2\u00b0C)",
+        "Retail Dust Particle Size Dist.",
+        "Adhesive Decay Curve",
+        "Modulus Variance"
+      ],
+      "controls": [
+        "HEPA Micro-Environment",
+        "Active tension-control bed",
+        "Low-friction slip sheets",
+        "Rigid Liner Handling"
+      ]
+    },
+    "B": {
+      "inputs": "Raw Device + Film",
+      "process": "15\u00e2\u20ac\u00b3 Benchtop Enclosure Kinematics",
+      "outputs": "150-second cycle completion",
+      "errors": "Cycle time > 150s | Mechanical collision | Tolerance stacking out of sync",
+      "noises": [
+        "15\u00e2\u20ac\u00b3 Enclosure limits",
+        "Operator impatience",
+        "Laminar stroke limits",
+        "Mechanical tolerance stack"
+      ],
+      "controls": [
+        "Rotational/articulated stages",
+        "Parallelized operations",
+        "Retail Theater via Denzel"
+      ]
+    },
+    "C": {
+      "inputs": "Video Feed & Template",
+      "process": "Geometry Engine & Parsing",
+      "outputs": "Toolpath Coordinate Frame",
+      "errors": "Alignment error > \u00c2\u00b10.5mm | Cuts floating islands",
+      "noises": [
+        "Calibration decay",
+        "High-flux lighting",
+        "Stepper vibration drift"
+      ],
+      "controls": [
+        "Continuous closed-loop optical fiducial tracking",
+        "Campaign Denzel in vivo data flywheel",
+        "Cloud-level U-shape conversion"
+      ]
+    },
+    "D": {
+      "inputs": "Operator Action",
+      "process": "Retail Edge Environment",
+      "outputs": "Successful alignment setup",
+      "errors": "Device trapped | Safety interlock | 75dB noise violation",
+      "noises": [
+        "Zero-dexterity operator mishandling",
+        "Power grid fluctuations",
+        "75dB noise limit"
+      ],
+      "controls": [
+        "Poka-Yoke 'Magic Slot' loading bay",
+        "Normally-open fail-safe clamps",
+        "Acoustic baffling"
+      ]
+    }
+  }
+}
+
+==============================================
+FILE: MechanisticAndonViz.tsx
+==============================================
+
+import {
+  AlertTriangle,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  ShieldAlert,
+  XCircle,
+} from "lucide-react";
+import React, { useState } from "react";
+
+import vaultS from "../../../dfmea_core/data/vault_s_synthesis_v29.json";
+
+export const MechanisticAndonViz: React.FC = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const baselineAgents = vaultS.baselineAgents || [];
+  const recoveryAgents = vaultS.recoveryAgents || [];
+
+  return (
+    <div className="mb-8 w-full border border-neutral-800 font-mono transition-all duration-300">
+      {/* HEADER RIBBON (Always visible) */}
+      <button
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="group flex w-full flex-col sm:flex-row items-center justify-between p-4 transition-colors bg-[#0d1117] hover:bg-neutral-900/80"
+      >
+        {/* Center: Status Pills Split */}
+        <div className="flex flex-1 flex-col lg:flex-row items-center justify-center gap-6 py-2">
+          
+          {/* Track A: Baseline */}
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-[10px] font-bold text-red-500 tracking-widest border-b border-red-900/50 pb-1">HOLY GRAIL PRD-2 (BASELINE)</span>
+            <div className="flex flex-wrap justify-center gap-2">
+              {baselineAgents.map((agent: any, idx: number) => {
+                return (
+                  <div key={`base-${idx}`} className="group/pill relative">
+                    <div className="flex cursor-default items-center gap-1.5 rounded border px-2 py-0.5 text-[10px] sm:text-xs font-bold tracking-widest uppercase shadow-sm transition-colors border-red-500/30 bg-red-500/10 text-red-500 hover:bg-red-500/20">
+                      <AlertTriangle className="h-3 w-3" />
+                      <span className="hidden md:inline">{agent.role}</span>
+                    </div>
+                    {/* Hover Card */}
+                    <div className="pointer-events-none absolute left-1/2 top-full z-[100] mt-2 hidden w-64 -translate-x-1/2 xl:w-80 group-hover/pill:block">
+                      <div className="relative flex flex-col gap-2 rounded border p-4 shadow-2xl backdrop-blur-md overflow-hidden border-red-500/30 bg-[#0d1117]/95 text-left">
+                        <div className="absolute top-0 left-0 h-full w-1 bg-red-500/80"></div>
+                        <div className="flex items-start justify-between">
+                          <span className="text-[10px] font-bold tracking-widest uppercase text-red-500">{agent.title}</span>
+                          <span className="text-[10px] font-bold text-red-500">{agent.status}</span>
+                        </div>
+                        <div className="text-[11px] leading-relaxed text-neutral-300">{agent.summary}</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* V Divider */}
+          <div className="hidden lg:block w-px h-12 bg-neutral-800"></div>
+
+          {/* Track B: Recovery */}
+          <div className="flex flex-col items-center gap-2">
+             <span className="text-[10px] font-bold text-emerald-500 tracking-widest border-b border-emerald-900/50 pb-1">MECHANISTIC PHASE 1 (RECOVERY)</span>
+             <div className="flex flex-wrap justify-center gap-2">
+               {recoveryAgents.map((agent: any, idx: number) => {
+                 return (
+                   <div key={`rec-${idx}`} className="group/pill relative">
+                     <div className="flex cursor-default items-center gap-1.5 rounded border px-2 py-0.5 text-[10px] sm:text-xs font-bold tracking-widest uppercase shadow-sm transition-colors border-emerald-500/30 bg-emerald-500/10 text-emerald-500 hover:bg-emerald-500/20">
+                       <CheckCircle2 className="h-3 w-3" />
+                       <span className="hidden md:inline">{agent.role}</span>
+                     </div>
+                     {/* Hover Card */}
+                     <div className="pointer-events-none absolute left-1/2 top-full z-[100] mt-2 hidden w-64 -translate-x-1/2 xl:w-80 group-hover/pill:block">
+                       <div className="relative flex flex-col gap-2 rounded border p-4 shadow-2xl backdrop-blur-md border-emerald-500/30 bg-[#0d1117]/95 text-left">
+                         <div className="flex items-start justify-between">
+                           <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-500">{agent.title}</span>
+                           <span className="text-[10px] font-bold text-emerald-500">{agent.status}</span>
+                         </div>
+                         <div className="text-[11px] leading-relaxed text-neutral-300">{agent.summary}</div>
+                       </div>
+                     </div>
+                   </div>
+                 );
+               })}
+             </div>
+          </div>
+
+        </div>
+
+        {/* Right: Expand Control */}
+        <div className="hidden sm:flex w-[80px] shrink-0 items-center justify-end gap-3">
+          <span className="text-[10px] font-bold tracking-widest text-neutral-500 uppercase transition-colors group-hover:text-neutral-300">
+            EXPAND
+          </span>
+          {isExpanded ? (
+            <ChevronUp className="h-4 w-4 text-neutral-400 group-hover:text-white" />
+          ) : (
+            <ChevronDown className="h-4 w-4 text-neutral-400 group-hover:text-white" />
+          )}
+        </div>
+      </button>
+
+      {/* EXPANDED EVIDENCE LOCKER */}
+      {isExpanded && (
+        <div className="border-t border-neutral-800 bg-[#0d1117] p-6">
+          <div className="mb-8 flex items-center gap-4 text-[10px] tracking-widest text-neutral-500 before:h-px before:flex-1 before:bg-neutral-800 after:h-px after:flex-1 after:bg-neutral-800">
+            C-SUITE BASELINE INVALIDATION LOGS (HOLY GRAIL PRD-2)
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 mb-12">
+            {baselineAgents.map((agent: any, idx: number) => (
+               <div key={`base-log-${idx}`} className="relative flex flex-col gap-2 rounded border p-4 overflow-hidden border-red-500/20 bg-red-500/5">
+                 <div className="absolute top-0 left-0 h-full w-1 bg-red-500"></div>
+                 <div className="flex items-start justify-between">
+                   <span className="text-[10px] font-bold tracking-widest uppercase text-red-500">
+                     {agent.title}
+                   </span>
+                   <span className="text-[10px] font-bold text-red-500">{agent.status}</span>
+                 </div>
+                 <div className="text-[11px] leading-relaxed text-neutral-400">
+                   {agent.summary}
+                 </div>
+               </div>
+            ))}
+          </div>
+
+          <div className="mb-8 flex items-center gap-4 text-[10px] tracking-widest text-neutral-500 before:h-px before:flex-1 before:bg-neutral-800 after:h-px after:flex-1 after:bg-neutral-800">
+            C-SUITE RECOVERY VALIDATION LOGS (MECHANISTIC PHASE 1)
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {recoveryAgents.map((agent: any, idx: number) => (
+               <div key={`rec-log-${idx}`} className="relative flex flex-col gap-2 rounded border p-4 border-emerald-500/20 bg-emerald-500/5">
+                 <div className="flex items-start justify-between">
+                   <span className="text-[10px] font-bold tracking-widest uppercase text-emerald-500">
+                     {agent.title}
+                   </span>
+                   <span className="text-[10px] font-bold text-emerald-500">{agent.status}</span>
+                 </div>
+                 <div className="text-[11px] leading-relaxed text-neutral-400">
+                   {agent.summary}
+                 </div>
+               </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+==============================================
+FILE: DependencyLock.tsx
+==============================================
+
+import { AlertTriangle, Cpu,Lock, ShieldAlert } from "lucide-react";
+import React from "react";
+
+/**
+ * [V28 DIRECTIVE / HCI VISIONARY]
+ * SaaS aesthetics stripped. Monochromatic command-and-control telemetry.
+ * Displays the mathematical impossibility of solving upstream material chaos (Node A)
+ * with downstream kinematic geometry (Node B).
+ */
+export const DependencyLock_NodeA_to_NodeB: React.FC = () => {
+  // Hardcoded RPNs from Vault-P V27 Synthesis
+  const nodeA_RPN_01 = 648; // Physical Transfer Fault
+  const nodeA_RPN_02 = 567; // Adhesive Open-Time Violation
+  const nodeB_WCT = 504; // Kinematic Tolerance Stack Error
+
+  // Boolean trigger
+  const isLocked = nodeA_RPN_01 > 500 || nodeA_RPN_02 > 500;
+
+  return (
+    <div className="w-full border border-neutral-800 bg-black p-6 font-mono text-xs text-green-500/80 shadow-2xl xl:p-8 relative overflow-hidden">
+      {/* Visual scanning line effect */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.5)_51%)] bg-[length:100%_4px] opacity-20"></div>
+
+      <div className="relative z-10 mx-auto max-w-4xl space-y-6">
+        
+        {/* HEADER */}
+        <div className="flex items-center justify-between border-b border-green-900/40 pb-4">
+          <div className="flex items-center gap-3">
+            <Cpu className="h-5 w-5 text-green-500" />
+            <span className="text-[10px] font-bold tracking-widest text-green-400">
+              SYS.ARCH // PHASING_ARCHITECTURE // VALIDATION_GATE_ACTIVE
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 animate-pulse bg-red-500"></div>
+            <span className="text-[10px] font-bold tracking-widest text-red-500">LIVE TELEMETRY</span>
+          </div>
+        </div>
+
+        {/* TOP PANE: NODE A */}
+        <div className="border border-green-900/30 bg-green-950/10 p-4 relative">
+          <div className="absolute top-0 right-0 p-2 text-[10px] text-green-800">PANE 1</div>
+          <h3 className="mb-4 text-sm font-bold text-green-400 border-b border-green-900/30 pb-2 inline-block">
+            NODE A: TriACTIVE PU/PET SUBSTRATE (ROOT)
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <div className="text-[10px] text-green-700">ERR_01: PHYSICAL TRANSFER FAULT</div>
+              <div className="flex items-end gap-2 text-red-500">
+                <span className={`text-2xl font-black leading-none ${nodeA_RPN_01 > 300 ? 'text-red-500' : nodeA_RPN_01 > 100 ? 'text-amber-500' : 'text-emerald-500'}`}>{nodeA_RPN_01}</span>
+                <span className="mb-1 text-[10px]">RPN</span>
+              </div>
+              <div className="text-[10px] text-red-500/80 uppercase">Sev:9 | Occ:9 | Det:8</div>
+              <div className="mt-1 text-[11px] leading-tight text-neutral-400">
+                Film self-adhesion exceeds elastic limit.
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-[10px] text-green-700">ERR_02: ADHESIVE OPEN-TIME VIOLATION</div>
+              <div className="flex items-end gap-2 text-red-500">
+                <span className={`text-2xl font-black leading-none ${nodeA_RPN_02 > 300 ? 'text-red-500' : nodeA_RPN_02 > 100 ? 'text-amber-500' : 'text-emerald-500'}`}>{nodeA_RPN_02}</span>
+                <span className="mb-1 text-[10px]">RPN</span>
+              </div>
+              <div className="text-[10px] text-red-500/80 uppercase">Sev:9 | Occ:9 | Det:7</div>
+              <div className="mt-1 text-[11px] leading-tight text-neutral-400">
+                10-second rapid wet-out guarantees particulate encapsulation.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* LOGIC BRIDGE */}
+        <div className="flex flex-col items-center justify-center space-y-2 py-4">
+          <div className="h-6 w-[2px] bg-red-800"></div>
+          <div className="border border-red-900 bg-red-950/30 px-4 py-2 text-center shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+            <div className="text-[10px] font-bold tracking-widest text-amber-500 animate-pulse">PHASING ARCHITECTURE: VALIDATION GATE ACTIVE</div>
+            <code className="mt-1 block text-[11px] text-amber-400/80">
+              if (NODE_A_YIELD &lt; 95%) &#123; SEQUENCE_PHASE_2() &#125;
+            </code>
+            <div className="mt-1 text-[9px] text-amber-500/60 uppercase text-center block w-full">Systemic Wreckage Averted</div>
+          </div>
+          <div className="h-6 w-[2px] bg-red-800"></div>
+        </div>
+
+        {/* BOTTOM PANE: NODE B - GRAYED OUT / OVERLAY */}
+        <div className={`relative border border-neutral-800 p-4 ${isLocked ? 'opacity-40 grayscale' : ''}`}>
+           <div className="absolute top-0 right-0 p-2 text-[10px] text-neutral-600">PANE 2</div>
+          <h3 className="mb-4 text-sm font-bold text-neutral-400 border-b border-neutral-800 pb-2 inline-block">
+            NODE B: KINEMATIC HARDWARE (15" WCT STACK)
+          </h3>
+          
+          <div className="space-y-1">
+              <div className="text-[10px] text-neutral-600">BLK_01: ACCUMULATED TOLERANCE ERROR</div>
+              <div className="flex items-end gap-2 text-neutral-400">
+                <span className="text-2xl font-black leading-none">{nodeB_WCT}</span>
+                <span className="mb-1 text-[10px]">RPN</span>
+              </div>
+              <div className="text-[10px] text-neutral-600 uppercase">Sev:9 | Occ:8 | Det:7</div>
+              <div className="mt-1 text-[11px] leading-tight text-neutral-500 max-w-sm">
+                Travel path deviations yield ±0.8mm WCT, mathematically failing the PRD ±0.5mm alignment requirement.
+              </div>
+          </div>
+
+          {/* FATAL OVERLAY */}
+          {isLocked && (
+            <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/80 backdrop-blur-[2px]">
+              <div className="flex items-center gap-3 border border-amber-900/50 bg-amber-950/80 px-4 py-3 shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                <ShieldAlert className="h-5 w-5 text-amber-500 shrink-0" />
+                <div className="text-[11px] font-bold leading-tight tracking-widest text-amber-500 max-w-sm">
+                  PHASE 2 KINEMATICS GATED: UPSTREAM MATERIAL VOLATILITY [NODE A] REQUIRES OPTIMIZATION. DRAWBRIDGE PROTOCOL ACTIVE.
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+
+==============================================
+FILE: DrawbridgeRoadmap.tsx
+==============================================
+
+import { Box, FileKey2, GitBranch, Network } from "lucide-react";
+import React from "react";
+
+export const DrawbridgeRoadmap: React.FC = () => {
+  return (
+    <div className="w-full font-mono text-neutral-300 mb-8 border border-emerald-900/30 bg-[#0d1117] p-6 lg:p-8">
+      <div className="mb-6 border-b border-emerald-900/30 pb-4">
+        <div className="flex items-center gap-3">
+          <GitBranch className="h-5 w-5 text-emerald-500" />
+          <h3 className="text-sm font-bold tracking-widest text-emerald-400 uppercase">
+            Product Realization Roadmap // The Drawbridge Protocol
+          </h3>
+        </div>
+          Strategic sequencing of the PRD vision. This timeline ensures immediate physical validation and market entry for F2 Smart Films, while collaboratively securing the foundation for long-term F3 autonomy.
+      </div>
+
+      <div className="relative space-y-6">
+        {/* Vertical line connecting nodes */}
+        <div className="absolute left-[31px] top-8 bottom-8 w-[2px] bg-neutral-800 z-0"></div>
+
+        {/* Phase 1 */}
+        <div className="relative z-10 rounded border border-neutral-800 bg-[#0a0f14] p-5 shadow-lg">
+          <div className="absolute top-1/2 -left-[14px] h-4 w-4 -translate-y-1/2 rounded-full border-2 border-emerald-500 bg-[#0a0f14] shadow-[0_0_15px_rgba(16,185,129,0.3)]"></div>
+          <div className="ml-8 flex items-start gap-4">
+            <Box className="h-6 w-6 text-emerald-500 shrink-0 mt-1" />
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <h4 className="text-sm font-bold text-emerald-400 uppercase">Phase 1: Tangible Prototype Execution</h4>
+                <span className="rounded bg-emerald-500/10 px-2 py-0.5 text-[9px] font-bold tracking-widest text-emerald-500 uppercase self-start sm:self-auto">Months 1-3</span>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-neutral-400">
+                Deploy the validated Lo-Fi characterization units to establish the physical baseline. This instantly secures the foundation required to cut and apply flat F2 Smart Films, mitigating fundamental material risks before significant capital is committed to tooling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* The Data Moat */}
+        <div className="relative z-10 rounded border border-blue-900/30 bg-blue-950/10 p-5 shadow-lg">
+          <div className="absolute top-1/2 -left-[14px] h-4 w-4 -translate-y-1/2 rounded-full border-2 border-blue-500 bg-[#0a0f14] shadow-[0_0_15px_rgba(59,130,246,0.3)]"></div>
+          <div className="ml-8 flex items-start gap-4">
+            <Network className="h-6 w-6 text-blue-500 shrink-0 mt-1" />
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <h4 className="text-sm font-bold text-blue-400 uppercase">The Data Moat: Collaborative Telemetry</h4>
+                <span className="rounded bg-blue-500/10 px-2 py-0.5 text-[9px] font-bold tracking-widest text-blue-500 uppercase self-start sm:self-auto">Continuous</span>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-neutral-400">
+                Early hardware deployments act as a secure telemetry layer. Downward-facing optics passively harvest operator bypass data to collaboratively construct a robust behavioral model, organically evolving PRD-2 without impacting daily retail flow.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Phase 2 */}
+        <div className="relative z-10 rounded border border-amber-900/30 bg-amber-950/10 p-5 shadow-lg">
+          <div className="absolute top-1/2 -left-[14px] h-4 w-4 -translate-y-1/2 rounded-full border-2 border-amber-500 bg-[#0a0f14] shadow-[0_0_15px_rgba(245,158,11,0.3)]"></div>
+          <div className="ml-8 flex items-start gap-4">
+            <FileKey2 className="h-6 w-6 text-amber-500 shrink-0 mt-1" />
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <h4 className="text-sm font-bold text-amber-500 uppercase">Phase 2: Vision-Driven Autonomy</h4>
+                <span className="rounded bg-amber-500/10 px-2 py-0.5 text-[9px] font-bold tracking-widest text-amber-500 uppercase self-start sm:self-auto">Months 9-12+</span>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-neutral-400">
+                With baseline volatility solved and retail behavioral telemetry secured, the Drawbridge lowers. We confidently integrate compound-curve robotics (F3) governed by the new proprietary Machine Vision data, securing your long-term 2-5 year market advantage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+==============================================
+FILE: FormalSow.tsx
+==============================================
+
+import vaultS from "../../../dfmea_core/data/vault_s_synthesis_v29.json";
+import { InteractiveRoiDashboard } from "../proposal_ui/InteractiveRoiDashboard";
+import { DrawbridgeRoadmap } from "./DrawbridgeRoadmap";
+import { MechanisticAndonViz } from "./MechanisticAndonViz";
+import { RecoveryPertChart } from "./RecoveryPertChart";
+import { RoiSankeyDiagram } from "./RoiSankeyDiagram";
+
+interface VaultF {
+  roiJustification: {
+    quarterlyRetainer: number;
+    quarterlyRetainerLabel: string;
+    quarterlyRetainerDesc: string;
+    evergreenTerms?: {
+      overview: string;
+      keyFeatures: Array<{
+        title: string;
+        description: string;
+      }>;
+    };
+    totalROI: {
+      firstQuarterTotal: number;
+      recurringQuarterlyCashflow: number;
+      oneTimeAvoidedCatastrophicCosts: number;
+      annualizedROI: string;
+      currency: string;
+    };
+    avoidedCatastrophicCosts: Array<{
+      description: string;
+      detail: string;
+      amount: number;
+      period: string;
+      escalationStages?: Array<{
+        stage: string;
+        impact: string;
+        cost: number;
+      }>;
+    }>;
+  };
+  advisoryEquityVesting?: {
+    legacyClaim: string;
+    description: string;
+    baseGrantPercentage: number;
+    milestoneTranches: Array<{
+      tranche: number;
+      milestone: string;
+      percentageUnlock: number;
+    }>;
+  };
+  executiveLeverage?: {
+    title: string;
+    description: string;
+    gates: Array<{
+      uuid: string;
+      vector: string;
+      description: string;
+      savedEstimate: any;
+      bonusEstimate?: {
+        type: string;
+        amount: number;
+      };
+    }>;
+  };
+}
+
+interface VaultL {
+  strategicNarrative: string[];
+  engagementTerms: {
+    objective: string;
+    unifiedArchitectureMandate: string;
+    limitationOfLiability: string;
+    paymentTerms: string;
+    acceptanceCriteria: { clause: string };
+    termination: string;
+  };
+}
+
+interface VaultP {
+  nodes: any[];
+  validationWaterfall?: {
+    stages: Array<{
+      id: number;
+      name: string;
+      objective: string;
+      validations: string[];
+    }>;
+  };
+}
+
+interface Props {
+  data: VaultL; // Vault-L
+  vaultF?: VaultF;
+  vaultP?: VaultP;
+}
+
+const HIGHLIGHT_MAP: Record<string, string> = {
+  "SHARED SUCCESS PARTNERSHIP": "text-emerald-400 animate-pulse",
+  "30+ years": "text-blue-400",
+  "supercomputers, Xboxes, and PDAs to BBQs, dental chairs, and race car parts": "text-amber-400",
+  "Principal Architect": "text-emerald-500",
+  "Engine Control Unit (ECU)": "text-blue-500",
+  "Frontier": "text-blue-400",
+  "Strategic Capital Deployment": "text-emerald-500",
+  "Executable Corporate Defense": "text-blue-500",
+  "Drawbridge Protocol": "text-amber-400",
+  "Data Moat": "text-blue-400",
+  "$3.78M+": "text-emerald-400 animate-pulse",
+  "RPN 800": "text-slate-400 font-bold", // HOLD
+  "RPN 630": "text-slate-400 font-bold", // HOLD
+  "RPN 432": "text-red-500",
+  "RPN 320": "text-red-500",
+  "RPN 210": "text-amber-500",
+  "RPN 196": "text-amber-500",
+  "RPN 576": "text-red-500",
+  "RPN 504": "text-red-500",
+  "RPN 480": "text-red-500",
+  "RPN 360": "text-red-500"
+};
+
+export const FormalSow: React.FC<Props> = ({ data, vaultF, vaultP }) => {
+  if (!data) return null;
+
+  // Helper to split text by multiple known keywords and preserve them
+  const renderHighlightedText = (text: string) => {
+    // Create a regex that naturally splits by any of the keys in HIGHLIGHT_MAP
+    const keywords = Object.keys(HIGHLIGHT_MAP);
+    const regex = new RegExp(`(${keywords.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+    const parts = text.split(regex);
+
+    return parts.map((part, i) => {
+      const colorClass = HIGHLIGHT_MAP[part];
+      if (colorClass) {
+        return (
+          <span key={i} className={`font-bold ${colorClass}`}>
+            {part}
+          </span>
+        );
+      }
+      return <span key={i}>{part}</span>;
+    });
+  };
+
+  return (
+    <div className="flex flex-col gap-8 pb-16 font-mono">
+      <MechanisticAndonViz />
+      
+      {/* Executive Summary */}
+      <div className="border border-neutral-800 bg-[#0d1117] p-6 lg:p-10">
+
+        <div className="space-y-4 text-body-primary">
+          {data.strategicNarrative.map((para: string, idx: number) => (
+            <p key={idx}>{renderHighlightedText(para)}</p>
+          ))}
+        </div>
+      </div>
+
+      {/* The Recovery Plan: Dependency Network */}
+      {vaultP && vaultP.validationWaterfall && vaultS.sowMilestones && (
+        <div className="flex flex-col gap-0 border border-neutral-800 bg-[#0d1117] p-6 lg:p-10 mb-8">
+          <div className="mb-4 border-b border-neutral-800 pb-4 flex justify-between items-center">
+            <h3 className="flex items-center gap-3 text-heading-base text-blue-400">
+              <span className="flex h-8 w-8 items-center justify-center bg-blue-400/10 text-sm">
+                I
+              </span>
+              THE ROADMAP: EMPIRICAL ALIGNMENT (ECU)
+            </h3>
+            {/* The PDF Link Button */}
+            <a href="/mechanistic_msa_draft_v1.md" download className="border border-emerald-500/50 hover:bg-emerald-500/10 text-emerald-500 px-4 py-2 text-xs font-bold tracking-widest transition-colors flex gap-2 items-center">
+                <span>DOWNLOAD LEGAL MSA (PDF)</span>
+            </a>
+          </div>
+          
+          <div className="mb-8 text-body-primary">
+            <p>
+              This ECU dashboard dynamically tracks our progress against the Master Service Agreement. We will use this interface to systematically isolate, test, and validate every critical assumption—from napkin math to automated cycle testing—before a single production PO is issued to a Contract Manufacturer.
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <RecoveryPertChart milestones={vaultS.sowMilestones as any} waterfall={vaultP.validationWaterfall} />
+            <div className="mt-4 text-center text-[11px] text-neutral-500 italic max-w-3xl mx-auto border-t border-neutral-800/50 pt-4">
+              Enforcing this Dependency Network intercepts the kinematic liability curve before the metal is cut, preventing the initial $350K EVT/DVT tooling penalty and securing the 2-to-5 year Defensible Moat. The Phase 1 SOW Milestones (nested above) govern exactly when and how capital is released.
+            </div>
+          </div>
+          
+          <div className="mt-8 border-t border-neutral-800 pt-8">
+            <DrawbridgeRoadmap />
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+            {vaultS.sowMilestones.map((m: any, i: number) => (
+              <div
+                key={i}
+                className="relative overflow-hidden border border-neutral-800 bg-[#111820] p-6 lg:p-8 flex flex-col"
+              >
+                <div className="mb-4 flex items-start justify-between">
+                  <div className="flex flex-col gap-1">
+                    <span className="font-mono text-sm font-bold tracking-widest text-[#3a86ff]">
+                      MILESTONE {m.id}
+                    </span>
+                    <h4 className="text-heading-sm text-white">
+                      {m.title}
+                    </h4>
+                  </div>
+                  <div
+                    className={`shrink-0 rounded px-2 py-1 font-mono text-xs font-bold tracking-widest ${
+                      m.state === "ACTIVE"
+                        ? "bg-[#3a86ff]/10 text-[#3a86ff]"
+                        : "bg-neutral-800 text-neutral-400"
+                    }`}
+                  >
+                    {m.state}
+                  </div>
+                </div>
+
+                <div className="mb-4 text-xs font-bold tracking-widest text-neutral-500">
+                  // {m.weeks}
+                </div>
+
+                <div className="flex-1 space-y-4 font-mono text-sm">
+                  <div>
+                    <span className="mb-1 block text-xs font-bold tracking-widest text-neutral-500">
+                      OBJECTIVE:
+                    </span>
+                    <span className="text-neutral-300">{m.objective}</span>
+                  </div>
+
+                  <div>
+                    <span className="mb-1 block text-xs font-bold tracking-widest text-neutral-500">
+                      PRIMARY DELIVERABLE:
+                    </span>
+                    <span className="text-emerald-400">{m.deliverable}</span>
+                  </div>
+
+                  {m.criteria && (
+                    <div className="border-t border-neutral-800/50 pt-4 mt-auto">
+                      <span className="mb-2 block text-xs font-bold tracking-widest text-neutral-500">
+                        ACCEPTANCE CRITERIA:
+                      </span>
+                      <ul className="flex flex-col gap-2">
+                        {m.criteria.map((c: string, cIdx: number) => (
+                          <li
+                            key={cIdx}
+                            className="flex items-start gap-2 text-xs text-neutral-400"
+                          >
+                            <span className="text-[#3a86ff] shrink-0 mt-[3px]">
+                              ▸
+                            </span>
+                            <span className="leading-relaxed">{c}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      )}
+
+      {/* Investment Structure & Terms */}
+      <div className="border border-neutral-800 bg-[#0d1117] p-6 lg:p-10">
+        <h3 className="mb-8 flex items-center gap-3 border-b border-neutral-800 pb-4 text-heading-base text-blue-400">
+          <span className="flex h-8 w-8 items-center justify-center bg-blue-400/10 text-sm">
+            II
+          </span>
+          ENGAGEMENT TERMS
+        </h3>
+
+        <div className="space-y-8">
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              A. Project Objective
+            </h4>
+            <p className="border-l-2 border-emerald-500 bg-[#111820] p-4 font-mono text-body-primary">
+              {data.engagementTerms.objective}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              B. The Unified Architecture Mandate
+            </h4>
+            <p className="border-l-2 border-amber-500 bg-[#111820] p-4 font-mono text-body-primary">
+              {data.engagementTerms.unifiedArchitectureMandate}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              C. Limitation of Liability
+            </h4>
+            <p className="border-l-2 border-red-500 bg-[#111820] p-4 font-mono text-body-primary">
+              {data.engagementTerms.limitationOfLiability}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              D. Auto-Acceptance Protocol
+            </h4>
+            <div className="border-l-2 border-blue-500 bg-[#111820] p-4 font-mono text-body-primary">
+              <p>
+                {data.engagementTerms.acceptanceCriteria?.clause || "Deliverables are deemed accepted if no written rejection is received within 5 business days of submission. Payment is not contingent on hardware yield."}
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              E. Payment Terms
+            </h4>
+            <p className="border-l-2 border-emerald-500 bg-[#111820] p-4 font-mono text-body-primary">
+              {data.engagementTerms.paymentTerms}
+            </p>
+          </div>
+
+          <div>
+            <h4 className="mb-2 text-heading-sm text-white">
+              F. Termination & Execution
+            </h4>
+            <p className="border-l-2 border-neutral-500 bg-[#111820] p-4 font-mono text-body-primary">
+              {data.engagementTerms.termination}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Compensation Structure */}
+      {vaultF && (
+        <div className="mt-8 border border-neutral-800 bg-[#0d1117] p-6 lg:p-10">
+          <div className="mb-8 border-b border-neutral-800 pb-4">
+            <h3 className="flex items-center gap-3 text-heading-base text-emerald-500">
+              <span className="flex h-8 w-8 items-center justify-center bg-emerald-500/10 text-sm">
+                III
+              </span>
+              COMPENSATION STRUCTURE
+            </h3>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            {/* A. Evergreen Retainer - Full Width */}
+            <div className="w-full">
+              <h4 className="mb-2 text-heading-sm text-white">
+                A. Evergreen Retainer
+              </h4>
+              <div className="flex flex-col gap-4 border-l-2 border-emerald-500 bg-[#111820] p-4 text-base">
+                <div>
+                  <div className="font-mono text-2xl font-bold text-emerald-500 mb-2">
+                    {vaultF.roiJustification.quarterlyRetainerLabel}
+                  </div>
+                </div>
+
+                {vaultF.roiJustification.evergreenTerms && (
+                  <div className="mt-1 border-t border-neutral-800/50 pt-3">
+                    <div className="mb-1 text-label text-white flex items-center gap-2">
+                       <span className="w-2 h-2 rounded-full bg-emerald-500 block"></span>
+                       Evergreen Retainer Mechanics
+                    </div>
+                    <p className="text-body-secondary mb-2">
+                      {vaultF.roiJustification.evergreenTerms.overview}
+                    </p>
+                    <ul className="flex flex-col gap-1.5 text-body-secondary ml-4 list-disc marker:text-emerald-500/50">
+                      {vaultF.roiJustification.evergreenTerms.keyFeatures.map((feature, fIdx) => (
+                        <li key={fIdx}>
+                          <strong className="text-emerald-400/80">{feature.title}:</strong> {feature.description}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* B & C - 2 Column Split Below A */}
+            <div className="grid gap-8 lg:grid-cols-2">
+              {vaultF.advisoryEquityVesting && (
+                <div className="w-full">
+                  <h4 className="mb-2 text-heading-sm text-white">
+                    B. Equity
+                  </h4>
+                  <div className="flex flex-col gap-4 border-l-2 border-amber-500 bg-[#111820] p-4 text-base h-full">
+                    <div>
+                      <div className="font-mono text-xl xl:text-2xl font-bold text-amber-500">
+                        Frontier Science - Data Moat - Advisory Equity: 0.5%
+                      </div>
+                      <div className="mt-2 text-body-secondary">
+                        {vaultF.advisoryEquityVesting.description}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-2 border-t border-neutral-800 pt-4 mt-2">
+                      {vaultF.advisoryEquityVesting.milestoneTranches.map((t) => (
+                        <div key={t.tranche} className="text-base text-neutral-400 flex flex-col sm:flex-row gap-1 sm:gap-2">
+                          <span className="font-bold text-amber-500 whitespace-nowrap">Tranche {t.tranche} ({t.percentageUnlock}%):</span>
+                          <span className="leading-relaxed">{t.milestone}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {vaultF.executiveLeverage && vaultF.executiveLeverage.gates && (
+                <div className="w-full">
+                  <h4 className="mb-2 text-heading-sm text-white">
+                    C. Milestone Bonuses
+                  </h4>
+                  <div className="flex flex-col gap-4 border-l-2 border-blue-500 bg-[#111820] p-4 text-base h-full">
+                    <div>
+                      <div className="font-mono text-2xl font-bold text-blue-500">
+                        Predictive Yield & Leverage
+                      </div>
+                      <div className="mt-2 text-body-secondary text-sm">
+                        {vaultF.executiveLeverage.description}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 border-t border-neutral-800 pt-4 mt-2">
+                      {vaultF.executiveLeverage.gates.map((g: any, i: number) => {
+                        const hasBonus = !!g.bonusEstimate;
+                        const formattedBonus = hasBonus
+                          ? new Intl.NumberFormat("en-US", {
+                              style: "currency",
+                              currency: "USD",
+                              maximumFractionDigits: 0,
+                            }).format(g.bonusEstimate.amount)
+                          : "Included in Retainer";
+
+                        return (
+                          <details
+                            key={i}
+                            className="group flex flex-col border-b border-neutral-800/50 pb-3 last:border-0 last:pb-0"
+                          >
+                            <summary className="flex cursor-pointer list-none flex-col justify-between gap-2 lg:flex-row lg:items-center [&::-webkit-details-marker]:hidden">
+                              <span className="pr-4 text-sm font-semibold text-neutral-300 transition-colors group-hover:text-blue-400">
+                                {g.vector}
+                              </span>
+                              <div
+                                className={`relative inline-flex shrink-0 self-start overflow-hidden rounded-full border px-3 py-1 text-xs tracking-wider lg:self-auto ${
+                                  hasBonus
+                                    ? "border-amber-500/30 bg-amber-500/10 font-bold text-amber-500"
+                                    : "border-neutral-500/30 bg-neutral-500/10 font-mono italic text-neutral-400"
+                                }`}
+                              >
+                                {formattedBonus}
+                              </div>
+                            </summary>
+                            <div className="mt-3 border-l-2 border-blue-500/30 pl-4 text-sm leading-relaxed text-neutral-400">
+                              {g.description}
+                            </div>
+                          </details>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* UNIFIED COMPENSATION DASHBOARD */}
+          <div className="mt-12 border-t border-neutral-800 pt-8">
+            <h4 className="mb-6 text-heading-sm text-white tracking-widest flex items-center gap-2">
+              <span className="h-2 w-2 bg-emerald-500 block"></span>
+              COMPENSATION STRUCTURE DASHBOARD
+            </h4>
+
+            <div className="mb-8">
+              <RoiSankeyDiagram vaultF={vaultF as any} />
+            </div>
+            
+            {/* 1. Evergreen Retainer */}
+            <div className="mb-8">
+              <div className="text-[10px] text-neutral-500 mb-4 tracking-widest border-b border-neutral-800 pb-2">
+                EVERGREEN RETAINER (ACTIVE FUNDING)
+              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border border-neutral-800 bg-[#0d1117]">
+                <div className="flex items-center gap-3 mb-2 sm:mb-0">
+                  <div className="w-4 h-4 border border-neutral-600 shrink-0"></div>
+                  <div>
+                    <span className="text-[10px] text-neutral-500 mr-2">RETAINER_BASE</span>
+                    <span className="font-bold text-neutral-300">Quarterly Intervention Protocol</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 text-[10px] pl-7 sm:pl-0">
+                  <span className="text-emerald-500 font-bold text-xs">$87,500 / QTR</span>
+                  <span className="px-2 py-0.5 font-bold tracking-widest bg-neutral-800 text-neutral-500">PENDING</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. Advisory Equity */}
+            {vaultF.advisoryEquityVesting && (
+              <div className="mb-8">
+                <div className="text-[10px] text-neutral-500 mb-4 tracking-widest border-b border-neutral-800 pb-2">
+                  ADVISORY EQUITY VESTING TRANCHES (API TRIGGERS)
+                </div>
+                <div className="space-y-2">
+                  {vaultF.advisoryEquityVesting.milestoneTranches.map((t, idx) => (
+                    <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border border-neutral-800 bg-[#0d1117]">
+                      <div className="flex items-center gap-3 mb-2 sm:mb-0">
+                        <div className="w-4 h-4 border border-neutral-600 shrink-0"></div>
+                        <div>
+                          <span className="text-[10px] text-neutral-500 mr-2">TRANCHE_0{t.tranche}_GATE</span>
+                          <span className="font-bold text-neutral-300">{t.milestone}</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-[10px] pl-7 sm:pl-0">
+                        <span className="text-amber-500 font-bold text-xs">{t.percentageUnlock}% UNLOCK</span>
+                        <span className="px-2 py-0.5 font-bold tracking-widest bg-neutral-800 text-neutral-500">PENDING</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 3. Milestone Bonuses */}
+            {vaultF.executiveLeverage && vaultF.executiveLeverage.gates && (
+              <div className="mb-4">
+                <div className="text-[10px] text-neutral-500 mb-4 tracking-widest border-b border-neutral-800 pb-2">
+                  PREDICTIVE YIELD & MILESTONE BONUSES
+                </div>
+                <div className="space-y-2">
+                  {vaultF.executiveLeverage.gates.map((g: any, idx: number) => {
+                    const hasBonus = !!g.bonusEstimate;
+                    if (!hasBonus) return null;
+                    const formattedBonus = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(g.bonusEstimate.amount);
+                    return (
+                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border border-neutral-800 bg-[#0d1117]">
+                        <div className="flex items-center gap-3 mb-2 sm:mb-0">
+                          <div className="w-4 h-4 border border-neutral-600 shrink-0"></div>
+                          <div>
+                            <span className="text-[10px] text-neutral-500 mr-2">BONUS_GATE</span>
+                            <span className="font-bold text-neutral-300">{g.vector}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-4 text-[10px] pl-7 sm:pl-0">
+                          <span className="text-blue-400 font-bold text-xs">{formattedBonus}</span>
+                          <span className="px-2 py-0.5 font-bold tracking-widest bg-neutral-800 text-neutral-500">PENDING</span>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {vaultF && (
+        <div className="mt-8">
+          <InteractiveRoiDashboard />
+        </div>
+      )}
+
+    </div>
+  );
+};
+
