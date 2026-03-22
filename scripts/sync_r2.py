@@ -7,13 +7,34 @@ from botocore.exceptions import NoCredentialsError
 # Import centralized configuration mapping
 from global_config import get_repo_root
 
-def get_r2_credentials():
-    """Extracts R2 credentials from the global environment."""
+# ─── Canonical Project → R2 Bucket Map ───────────────────────────────────────
+# All projects use the {project}-assets/R2_STAGING/ local staging pattern.
+# Add new projects here as they are onboarded.
+BUCKET_MAP = {
+    'eriknorris':  'assets-eriknorris-com',
+    'portfolio':   'assets-eriknorris-com',   # portfolio-assets still feeds eriknorris bucket
+    'mechanistic': 'assets-mechanistic-com',
+    'mootmoat':    'assets-mootmoat-com',
+    'moreplay':    'assets-moreplay-com',
+    'MO':          'assets-mo',
+    'hyphen':      'assets-hyphen-com',
+}
+
+def get_r2_credentials(target: str) -> dict:
+    """Extracts R2 credentials from the global environment.
+    
+    Bucket name is resolved from BUCKET_MAP based on --target,
+    not from a single R2_BUCKET_NAME env var (which caused cross-bucket uploads).
+    """
+    bucket = BUCKET_MAP.get(target)
+    if not bucket:
+        known = ', '.join(BUCKET_MAP.keys())
+        raise ValueError(f"Unknown target '{target}'. Known targets: {known}")
     return {
-        'ACCOUNT_ID': os.getenv('R2_ACCOUNT_ID'),
-        'ACCESS_KEY_ID': os.getenv('R2_ACCESS_KEY_ID'),
+        'ACCOUNT_ID':       os.getenv('R2_ACCOUNT_ID'),
+        'ACCESS_KEY_ID':    os.getenv('R2_ACCESS_KEY_ID'),
         'SECRET_ACCESS_KEY': os.getenv('R2_SECRET_ACCESS_KEY'),
-        'BUCKET_NAME': os.getenv('R2_BUCKET_NAME')
+        'BUCKET_NAME':      bucket,
     }
 
 def get_r2_client(creds):
@@ -47,17 +68,33 @@ def get_remote_files(s3, bucket_name):
 
 def get_target_directory(target_repo: str) -> str:
     """
-    Resolves the exact asset directory for the specified repository.
-    Handles legacy naming conventions (e.g. quantum-assets vs eriknorris-assets).
+    Resolves the local R2_STAGING directory for the specified project.
+    
+    All projects use the universal pattern:
+      D:\\GitHub\\{project}-assets\\R2_STAGING\\
+    
+    The 'eriknorris' special case (which originated this pattern) is now
+    handled the same as every other project.
     """
-    if target_repo == 'eriknorris':
-        # eriknorris uniquely uses a sibling repo 'eriknorris-assets/R2_STAGING'
-        base_path = get_repo_root('eriknorris-assets') # Relies on dynamic fallback in global_config
-        return str(base_path / 'R2_STAGING')
-    else:
-        # Standard Next.js/Astro static assets directory
-        base_path = get_repo_root(target_repo)
-        return str(base_path / 'public' / 'assets')
+    # Handle naming quirks between target alias and local dir name
+    dir_name_map = {
+        'eriknorris':  'eriknorris-assets',
+        'portfolio':   'portfolio-assets',
+        'mechanistic': 'mechanistic-assets',
+        'mootmoat':    'mootmoat-assets',
+        'moreplay':    'moreplay-assets',
+        'MO':          'MO-assets',
+        'hyphen':      'hyphen-assets',
+    }
+    dir_name = dir_name_map.get(target_repo, f"{target_repo}-assets")
+    base_path = get_repo_root(dir_name)
+    staging = base_path / 'R2_STAGING'
+    if not staging.exists():
+        raise FileNotFoundError(
+            f"R2_STAGING not found at '{staging}'. "
+            f"Create the directory first: mkdir '{staging}'"
+        )
+    return str(staging)
 
 def sync_assets():
     parser = argparse.ArgumentParser(description="Global Sync Assets to Cloudflare R2")
@@ -67,13 +104,20 @@ def sync_assets():
     parser.add_argument('--force', action='store_true', help="Force upload even if sizes match")
     args = parser.parse_args()
 
-    creds = get_r2_credentials()
-    if not all(creds.values()):
-        print("❌ Missing R2 credentials in global .env file.")
+    try:
+        creds = get_r2_credentials(args.target)
+    except ValueError as e:
+        print(f"❌ {e}")
+        return
+
+    env_creds = [creds['ACCOUNT_ID'], creds['ACCESS_KEY_ID'], creds['SECRET_ACCESS_KEY']]
+    if not all(env_creds):
+        print("❌ Missing R2 credentials in global .env file. Required: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY")
         return
 
     s3 = get_r2_client(creds)
     if not s3: return
+
 
     try:
         staging_dir = get_target_directory(args.target)
