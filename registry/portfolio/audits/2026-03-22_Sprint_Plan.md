@@ -1,0 +1,128 @@
+# Sprint Plan — 2026-03-22
+> Generated: 2026-03-21 23:26 PDT  
+> Source: Live GitHub issue pull across all 5 active repos  
+> Use this to orient the next session. All links are live GitHub issue URLs.
+
+---
+
+## ✅ Session Accomplishments (2026-03-22)
+
+- **GitHub Project #5 fully wired** — 16 tickets assigned to iterations 1-4 with Priority/Size/Node/Impact metadata
+- **Created global_agent#61** — NanoClaw Ephemeral Container Layer (Sprint 4, P1, Epic)
+- **Created global_agent#62** — Conversation Miner Reinstatement with flag-routing (Sprint 3, P1, Enhancement)
+- **Session workflows written** — `session_open.md`, `session_close.md`, `create_issue.md` in `.agent/workflows/`
+- **Notion MCP wired** — key in `.env`, `master_mcp_config.json` updated to `@notionhq/notion-mcp-server`
+- **Colophon registry started** — `registry/global_agent/colophon.md` + first LinkedIn draft filed
+- **LinkedIn post #3 published** — "Turns out Linus Torvalds knew" (git as agent memory substrate)
+- **Portfolio-archive fully scanned** — 26 dirs catalogued; backfill corpus identified for #62
+
+### Previous (2026-03-21)
+- **Closed global_agent#48** — `diag.py` health harness live
+- **Closed global_agent#50** — GCP Service Account fully wired
+- **`gws auth login`** refreshed — token valid
+
+---
+
+## 🔴 Sprint Now — Execute First
+
+| # | Repo | Title | Notes |
+|---|---|---|---|
+| [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Dennis is waiting. `mo.mechanistic.com` already live + SSL. Only blocked on v32 finalization in `D:\GitHub\MO`. CF Access app ID: `f02b3e55-32a6-4be7-ba88-308a05d035ec` — just add new hostname, policy already correct |
+| [mechanistic#6](https://github.com/mechanistic-org/mechanistic/issues/6) | `mechanistic` | **Fix routing — mechanistic.com redirects to /holy-grail** | Live prod bug. Should 301 → eriknorris.com. Fix on CF redirect rules, not in code |
+| [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | Currently public (security by obscurity). CF Zero Trust → Self-hosted app → hyphen.mechanistic.com. Create "Hyphen Whitelist" policy with `erik@eriknorris.com` only |
+| [portfolio#58](https://github.com/mechanistic-org/portfolio/issues/58) | `portfolio` | **Fix Keystatic audio_url field validation error** | Blocks ALL 119 projects in Keystatic. Add `audio_url: fields.text(...)` to `keystatic.config.tsx` AND Zod schema in `content.config.ts` |
+
+---
+
+## 🟡 Sprint 2 — Infrastructure & Platform Stability
+
+| # | Repo | Title | Notes |
+|---|---|---|---|
+| [portfolio#53](https://github.com/mechanistic-org/portfolio/issues/53) | `portfolio` | **Legacy Cleanup — Ghost Code & Import Paths** | `p1`. Prereq for C\|24 Stitch Loop. Ruthless audit of broken imports from `eriknorris*` rename |
+| [global_agent#47](https://github.com/mechanistic-org/global_agent/issues/47) | `global_agent` | **Always-On Router (NSSM/PM2 + Ollama keepalive)** | `p1`. Router still manual-boot. Ollama keepalive: `ollama run <model> --keepalive -1` on startup |
+| [global_agent#54](https://github.com/mechanistic-org/global_agent/issues/54) | `global_agent` | **R2 Endpoint Standardization — Custom Domains, CORS** | 6 buckets need audit. One-liner quick to run via wrangler |
+| [portfolio#57](https://github.com/mechanistic-org/portfolio/issues/57) | `portfolio` | **R2_STAGING vs R2_MASTER slug delta (103 vs 94)** | Quick diff: `Compare-Object (ls R2_MASTER) (ls R2_STAGING)`. SC48 vs sc48 case bug confirmed |
+
+---
+
+## 🟠 Sprint 3 — Portfolio Product & Agent Infrastructure
+
+| # | Repo | Title | Notes |
+|---|---|---|---|
+| [global_agent#62](https://github.com/mechanistic-org/global_agent/issues/62) | `global_agent` | **Reinstate Conversation Miner with Flag-Routing** | P1. Automates session close mining → routes to linkedin_drafts/, colophon, ChromaDB, testimonials. Hot-start comment on issue. `--backfill` flag = separate session over `portfolio-archive/` (26 dirs). |
+| [portfolio#47](https://github.com/mechanistic-org/portfolio/issues/47) | `portfolio` | **Resume C\|24 Component Stitch Loop** | Epic. Blocked until legacy cleanup (#53) done. Last halted mid-component |
+| [portfolio#51](https://github.com/mechanistic-org/portfolio/issues/51) | `portfolio` | **Document 3 Stitch Workflow Paths in laws/** | Quick law doc → `law_003_ui_generation_paths.md`. Enables agent self-selection |
+| [portfolio#44](https://github.com/mechanistic-org/portfolio/issues/44) | `portfolio` | **Physical Transfer to Hybrid Engine Organization** | Epic wrapper — superseded by current multi-repo setup, review for closure |
+
+---
+
+## 🔵 Sprint 4 — Sovereign OS Agent Architecture
+
+> 🔑 **Key Architectural Principle:** The FastMCP Router (`mcp_router_node.py`) is **PERSISTENT** (tool server infrastructure). The Agent is **EPHEMERAL** (NanoClaw missile — boots, executes, burns). These are separate concerns.
+
+### NanoClaw Ephemeral Container Pattern ("Burn & Relight")
+
+```
+[TRIGGER: GitHub card → "Ready for Swarm"]
+    ↓
+[RELIGHT: docker run --rm -e TICKET_ID=52 en-os:latest]
+    ↓
+[CONTEXT HYDRATION: compressed issue + ChromaDB vectors + persona]
+    ↓
+[EXECUTE: agent calls mcp_router_node.py tools via SSE]
+    ↓
+[COMMIT: write output + post GitHub comment]
+    ↓
+[BURN: container exits, --rm destroys it. Nothing persists in memory.]
+```
+
+**Durable surfaces only:** GitHub Issues (source of truth) + Registry flat-files/ChromaDB (disk, mounted read-only).
+
+| # | Repo | Title | Notes |
+|---|---|---|---|
+| [global_agent#61](https://github.com/mechanistic-org/global_agent/issues/61) | `global_agent` | **NanoClaw Ephemeral Container Layer — Dockerfile + run_agent.py** | Builds the 3 missing pieces: `Dockerfile` (python:3.11-slim image), `run_agent.py` (entrypoint that reads TICKET_ID, hydrates context, calls SSE tools, exits), `launch_nanoclaw.ps1` (ignition wrapper). Depends on #47 being live. |
+| [global_agent#47](https://github.com/mechanistic-org/global_agent/issues/47) | `global_agent` | **Always-On Router (NSSM/PM2 + Ollama keepalive)** | `p1`. Router must be daemonized before NanoClaw can connect reliably. |
+| [global_agent#51](https://github.com/mechanistic-org/global_agent/issues/51) | `global_agent` | **Epic: GitHub-Driven Agent Lifecycles (Pillar 1)** | GitHub polling daemon → calls `launch_nanoclaw.ps1` on card state change |
+| [global_agent#53](https://github.com/mechanistic-org/global_agent/issues/53) | `global_agent` | **Pillar 3: 3-Strike Circuit Breakers** | Router hashes NanoClaw tool calls → 3x failure → `docker rm -f` → fresh container + Smart Error |
+| [global_agent#55](https://github.com/mechanistic-org/global_agent/issues/55) | `global_agent` | **Stratified Intelligence Indexing (PROJECT_INTELLIGENCE.md)** | NotebookLM/Gem URLs into `PROJECT_INTELLIGENCE.md` → push to ChromaDB (becomes the context NanoClaw hydrates from) |
+| [global_agent#49](https://github.com/mechanistic-org/global_agent/issues/49) | `global_agent` | **SKILL.md Versioning / Drift Prevention** | `p2`. Auto-sync `gws` skills from upstream |
+
+
+---
+
+## ⚪ Backlog / Docs (Low Urgency, Agent-Executable)
+
+| # | Repo | Title |
+|---|---|---|
+| [global_agent#56](https://github.com/mechanistic-org/global_agent/issues/56) | `global_agent` | Registry audit — 14 unread handbook/system/meta docs |
+| [portfolio#56](https://github.com/mechanistic-org/portfolio/issues/56) | `portfolio` | Archive `scaffold_projects.py` — read for Red Gold first |
+| [portfolio#55](https://github.com/mechanistic-org/portfolio/issues/55) | `portfolio` | Update `engine_room.md` — add Sovereign OS layer |
+| [portfolio#54](https://github.com/mechanistic-org/portfolio/issues/54) | `portfolio` | Rewrite `quickstart.md` for multi-project era |
+| [mechanistic#4](https://github.com/mechanistic-org/mechanistic/issues/4) | `mechanistic` | Finalize proposal, MSA, SOW-1 (empty body — needs triage) |
+| [mechanistic#8](https://github.com/mechanistic-org/mechanistic/issues/8) | `mechanistic` | Hardware Sourcing Integration (NotebookLM RAG pivot) |
+| [mechanistic#9](https://github.com/mechanistic-org/mechanistic/issues/9) | `mechanistic` | Engineering Design Review Agent (Epic 2) |
+| [mechanistic#10](https://github.com/mechanistic-org/mechanistic/issues/10) | `mechanistic` | DFMEA update — PRD-2 vs PRD-3 Green Recovery synthesis |
+
+---
+
+## 🧰 Infrastructure State (as of 2026-03-22)
+
+| Service | State |
+|---|---|
+| Ollama | ✅ Running — 7 models hot in VRAM |
+| ChromaDB | ✅ Running — `forensic_telemetry` collection live |
+| GWS Auth | ✅ Valid |
+| SA Key | ✅ Active in gcloud |
+| `diag.py` | ✅ Live |
+| FastMCP Router | Manual boot — tracked by #47 |
+| Notion MCP | ✅ Wired — `@notionhq/notion-mcp-server` in master_mcp_config.json |
+| GitHub Project #5 | ✅ Fully iterated — 16 tickets with complete metadata |
+| `mo.mechanistic.com` | ✅ Active + SSL — v32 pending |
+| `hyphen.mechanistic.com` | ✅ Live — unprotected (Sprint Now) |
+| `mechanistic.com` | ⚠️ Routing bug → /holy-grail (Sprint Now) |
+
+---
+
+## 🚀 Next Session Start
+
+Run `/session_open` → board shows Sprint Now P0s. Current priority: **global_agent#62** (Conversation Miner) — hot-start comment on the issue has everything needed to begin immediately.

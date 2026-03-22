@@ -6,7 +6,7 @@
 
 ## The Laws (`GROK_LOG`)
 
-1.  **The Air Gap:** All heavy media lives in `D:\GitHub\ErikNorris-assets\R2_STAGING`.
+1.  **The Air Gap:** All heavy media lives in `D:\GitHub\portfolio-assets\R2_STAGING`.
 2.  **Symlinks are the Bridge:** We access assets _only_ via the symlink `public/assets/r2`.
 3.  **No Assets in SRC:** `src/` is for code. Never copy binaries there.
 4.  **Law of Continuity:** A 404 on an existing project is a _failure of retrieval_, not an absence. Check the symlink first.

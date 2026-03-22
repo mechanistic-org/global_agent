@@ -1,0 +1,25 @@
+name: Inject Design Context
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  inject-design:
+    if: github.event.label.name == 'in-progress'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Inject Dark Hangar Constants
+        run: |
+          if [ ! -f DESIGN.md ]; then
+            echo "# Dark Hangar Design System" > DESIGN.md
+            echo "See mechanistic-org/global_agent/laws/law_002_design_system.md for authoritative tokens." >> DESIGN.md
+            git config --global user.name "AI Engineer (Node 0)"
+            git config --global user.email "bot@mechanistic.org"
+            git add DESIGN.md
+            git commit -m "chore: Natively bound Dark Hangar Design constraints to execution branch"
+            git push
+          fi

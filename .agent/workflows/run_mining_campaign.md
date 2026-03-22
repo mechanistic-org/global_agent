@@ -78,7 +78,7 @@ This is an intentional pause in the automated pipeline. As the data is extracted
 3. Paste or save these ad-hoc "Discrete Reports" into `src/content/_raw_nlm/{PROJECT_SLUG}_adhoc.md`.
 
 ## 6. Generate the PODCAST (Stealth Protocol V3)
-Trigger the audio generation using the phonetic keys and 'The Tribunal' persona from `D:\GitHub\eriknorris\public\assets\prompts\PODCAST_NLM-INPUT.txt`.
+Trigger the audio generation using the phonetic keys and 'The Tribunal' persona from `D:\GitHub\portfolio\public\assets\prompts\PODCAST_NLM-INPUT.txt`.
 
 ```python
 # Append this to the run_campaign.py script, or run it separately.
@@ -114,11 +114,11 @@ if match:
             break
         time.sleep(15)
         
-    audio_path = rf"D:\GitHub\eriknorris-assets\R2_STAGING\{{PROJECT_SLUG}}\{{PROJECT_SLUG}}-briefing.m4a"
+    audio_path = rf"D:\GitHub\portfolio-assets\R2_STAGING\{{PROJECT_SLUG}}\{{PROJECT_SLUG}}-briefing.m4a"
     if os.path.exists(audio_path):
         import datetime
         timestamp = datetime.datetime.now().strftime("%m-%d-%y_%H%M")
-        safe_path = rf"D:\GitHub\eriknorris-assets\R2_STAGING\{{PROJECT_SLUG}}\{{PROJECT_SLUG}}-briefing_{timestamp}.m4a"
+        safe_path = rf"D:\GitHub\portfolio-assets\R2_STAGING\{{PROJECT_SLUG}}\{{PROJECT_SLUG}}-briefing_{timestamp}.m4a"
         print(f"File exists. Prevents clobbering handcrafted audio. Downloading to {safe_path} instead.")
         audio_path = safe_path
 
@@ -128,7 +128,7 @@ else:
     print("Could not find Artifact ID in output.")
 ```
 
-*Note: The script initiates the background compilation and downloads the final `.m4a` asset into your local Sovereign Asset Bucket folder at: `D:\GitHub\eriknorris-assets\R2_STAGING\{PROJECT_SLUG}\` while aggressively preventing the overwrite of any hand-crafted `-briefing` files.*
+*Note: The script initiates the background compilation and downloads the final `.m4a` asset into your local Sovereign Asset Bucket folder at: `D:\GitHub\portfolio-assets\R2_STAGING\{PROJECT_SLUG}\` while aggressively preventing the overwrite of any hand-crafted `-briefing` files.*
 
 ---
 

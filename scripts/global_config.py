@@ -7,7 +7,6 @@ GLOBAL_AGENT_ROOT = Path(__file__).resolve().parent.parent
 GITHUB_ROOT = GLOBAL_AGENT_ROOT.parent
 
 # Sibling repositories
-ERIKNORRIS_ROOT = GITHUB_ROOT / "eriknorris"
 MECHANISTIC_ROOT = GITHUB_ROOT / "mechanistic"
 MOOTMOAT_ROOT = GITHUB_ROOT / "mootmoat"
 # Handle portfolio differently since it's typically D:/portfolio based on user environments
@@ -31,7 +30,6 @@ if master_env_path.exists():
 def get_repo_root(repo_name: str) -> Path:
     repos = {
         'global_agent': GLOBAL_AGENT_ROOT,
-        'eriknorris': ERIKNORRIS_ROOT,
         'mechanistic': MECHANISTIC_ROOT,
         'mootmoat': MOOTMOAT_ROOT,
         'portfolio': PORTFOLIO_ROOT

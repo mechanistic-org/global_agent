@@ -32,7 +32,6 @@ if (fs.existsSync(masterEnvPath)) {
 export const GITHUB_ROOT = path.resolve(GLOBAL_AGENT_ROOT, '..');
 
 // Common Ecosystem Repositories
-export const ERIKNORRIS_ROOT = path.join(GITHUB_ROOT, 'eriknorris');
 export const MECHANISTIC_ROOT = path.join(GITHUB_ROOT, 'mechanistic');
 export const MOOTMOAT_ROOT = path.join(GITHUB_ROOT, 'mootmoat');
 export const PORTFOLIO_ROOT = path.join(GITHUB_ROOT, 'portfolio');
@@ -40,7 +39,6 @@ export const PORTFOLIO_ROOT = path.join(GITHUB_ROOT, 'portfolio');
 export function getRepoRoot(repoName: string): string {
     const repos: { [key: string]: string } = {
         'global_agent': GLOBAL_AGENT_ROOT,
-        'eriknorris': ERIKNORRIS_ROOT,
         'mechanistic': MECHANISTIC_ROOT,
         'mootmoat': MOOTMOAT_ROOT,
         'portfolio': PORTFOLIO_ROOT

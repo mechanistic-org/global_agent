@@ -94,7 +94,7 @@ Trigger this workflow by running `/scaffold_project` or asking to "Scaffold a ne
     ```
 
 4.  **Enforce Asset Sovereignty**:
-    - Check if the directory `d:\GitHub\eriknorris-assets\R2_STAGING\{slug}` exists.
+    - Check if the directory `d:\GitHub\portfolio-assets\R2_STAGING\{slug}` exists.
     - If NOT, remind the user: _"Please create the Sovereign Asset folder at `...R2_STAGING\{slug}` and ensure `public/assets/r2` is symlinked."_
 
 5.  **Completion**: Notify the user that the project shell is ready at `src/content/projects/{slug}/index.mdx`.

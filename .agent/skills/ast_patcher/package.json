@@ -1,0 +1,15 @@
+{
+  "name": "ast-patcher",
+  "version": "1.0.0",
+  "description": "Isolated AST patcher for Astro components. Invoked via subprocess from mcp_router_node.py.",
+  "main": "patcher.js",
+  "type": "module",
+  "scripts": {
+    "test": "node patcher.js --test"
+  },
+  "dependencies": {
+    "@astrojs/compiler": "^2.4.0",
+    "gray-matter": "^4.0.3",
+    "ts-morph": "^23.0.0"
+  }
+}

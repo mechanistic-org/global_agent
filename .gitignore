@@ -7,3 +7,11 @@ __pycache__/
 # Logs and Outputs
 *.log
 pipeline_output.json
+
+# AST Patcher: ephemeral temp payloads — never commit
+scripts/.tmp/
+.agent/skills/ast_patcher/node_modules/
+
+gcp-oauth.keys.json
+
+.gdrive_tokens.json

@@ -14,7 +14,7 @@ When an Agent completes a visual or systemic verification task (e.g., creating a
 1. **Extract to Sovereignty** (Move the file out of the `.gemini/brain` and into the R2 Staging Drive):
 ```powershell
 // turbo
-Move-Item "C:\Users\erik\.gemini\antigravity\brain\$CONVERSATION_ID\*.webp" "D:\GitHub\eriknorris-assets\R2_STAGING\forensics\"
+Move-Item "C:\Users\erik\.gemini\antigravity\brain\$CONVERSATION_ID\*.webp" "D:\GitHub\portfolio-assets\R2_STAGING\forensics\"
 ```
 
 2. **Format the Live URL** (Construct the immutable production path):

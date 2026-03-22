@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "registry_server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "d:\\GitHub\\global_agent\\scripts\\mcp_registry_server.py"
+      ]
+    },
+    "grok_server": {
+      "command": "uv",
+      "args": [
+        "run",
+        "d:\\GitHub\\global_agent\\scripts\\mcp_grok_server.py"
+      ]
+    },
+    "graph_bridge": {
+      "command": "uv",
+      "args": [
+        "run",
+        "d:\\GitHub\\global_agent\\scripts\\mcp_graph_bridge.py"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<PLACEHOLDER>"
+      }
+    },
+    "gws": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+      ],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "D:\\Assets\\mechanistic-gmail-mcp-5e0f2d2d80eb.json"
+      }
+    },
+    "notion": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ${NOTION_API_KEY}\", \"Notion-Version\": \"2022-06-28\"}"
+      }
+    }
+  }
+}
