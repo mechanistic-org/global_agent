@@ -5,13 +5,18 @@
 
 ---
 
-## ✅ Session Accomplishments (2026-03-22 — Session 2)
+## ✅ Session Accomplishments (2026-03-22 — Session 3)
 
-- **~~global_agent#66 CLOSED~~** — `push_forensic_doc` Pydantic interlock: split signature `markdown_body` + `frontmatter_dict`, Python-owned YAML via `yaml.safe_dump`, schema routing matrix, `ValidationError` as agent-readable string
-- **~~global_agent#62 CLOSED~~** — `scripts/mine_session.py` live: Gemini extraction + channel-based routing (linkedin_drafts, colophon, ChromaDB fallback, law_candidates). `session_close.md` updated with mine step (step 4).
-- **Gemini API key rotated** — old key leaked in conversation log, new key in `D:\Assets\Gemini_API_key.txt` + `.env` updated
-- **`json_repair` library** — added to handle invalid escape sequences in Gemini JSON responses
-- **First live mine run** — 6 Gold items extracted from this session, 2 colophon entries appended, 1 law candidate written
+- **~~portfolio#58 CLOSED~~** — Keystatic `audio_url` validation error fixed. Added `audio_url`, `notebook_url`, `nlm_url`, `transcript`, `realm` to `keystatic.config.tsx`. Unblocked all 119 projects.
+- **~~mechanistic#6 CLOSED~~** — N/A, transient CF edge cache condition. No config changes.
+- **global_agent#70 FILED** — GWS OAuth `invalid_client` root cause: stale `client_secret.json`. Fix: replaced with `client_secret_2_...json` from `D:\Assets`.
+- **portfolio#61 FILED** — Keystatic ↔ Zod schema parity check (tech debt, deferred until schema stabilizes).
+- **GWS Auth fixed** — new `client_secret_2` works. Token valid for session.
+
+### Previous (Session 2 — 2026-03-22)
+- **~~global_agent#66 CLOSED~~** — `push_forensic_doc` Pydantic interlock live
+- **~~global_agent#62 CLOSED~~** — `scripts/mine_session.py` live: Gemini extraction + channel routing
+- **Gemini API key rotated** — new key in `D:\Assets\Gemini_API_key.txt` + `.env` updated
 
 ### Previous (2026-03-21)
 - **Closed global_agent#48** — `diag.py` health harness live
@@ -24,10 +29,12 @@
 
 | # | Repo | Title | Notes |
 |---|---|---|---|
-| [portfolio#58](https://github.com/mechanistic-org/portfolio/issues/58) | `portfolio` | **Fix Keystatic audio_url field validation error** | 🔥 TOP PRIORITY next session. Add `audio_url: fields.text(...)` to `keystatic.config.tsx` AND Zod schema in `content.config.ts`. Blocks ALL 119 projects in Keystatic |
-| [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Dennis is waiting |
-| [mechanistic#6](https://github.com/mechanistic-org/mechanistic/issues/6) | `mechanistic` | **Fix routing — mechanistic.com redirects to /holy-grail** | Live prod bug. CF redirect rules |
-| [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | CF Zero Trust → Self-hosted app |
+| ~~[portfolio#58](https://github.com/mechanistic-org/portfolio/issues/58)~~ | `portfolio` | ~~**Fix Keystatic audio_url field validation error**~~ | ✅ CLOSED Session 3 |
+| ~~[mechanistic#6](https://github.com/mechanistic-org/mechanistic/issues/6)~~ | `mechanistic` | ~~**Fix routing**~~ | ✅ CLOSED — transient |
+| [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Punted — tackle when ready |
+| [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | Punted — tackle when ready |
+
+**🔥 NEXT SESSION START → `portfolio#57` (R2 slug delta, quick) OR `portfolio#53` (legacy cleanup, strategic)**
 
 ---
 
