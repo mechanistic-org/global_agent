@@ -1,9 +1,34 @@
 from mcp.server.fastmcp import FastMCP
 import os
+import yaml
 import chromadb
 from chromadb.utils import embedding_functions
+from pydantic import BaseModel, Field, ValidationError
+from typing import Optional
 
 mcp = FastMCP("sovereign-registry")
+
+# ─── Pydantic Frontmatter Schemas ───────────────────────────────────────────
+
+class ColophonFrontmatter(BaseModel):
+    """Schema for colophon/ and linkedin_drafts/ collection directories."""
+    title: str = Field(min_length=5)
+    pubDate: str                    # e.g. "2026-03-22"
+    audio_url: Optional[str] = ""  # URL or empty string
+    isDraft: bool = True
+    tags: list[str] = []
+
+class StandardRegistryFrontmatter(BaseModel):
+    """Default schema for all other registry collection directories."""
+    title: str
+    date: str                       # e.g. "2026-03-22"
+    context_node: str = ""
+
+# Maps collection dir name → schema class. Falls back to StandardRegistryFrontmatter.
+SCHEMA_ROUTING: dict = {
+    "colophon": ColophonFrontmatter,
+    "linkedin_drafts": ColophonFrontmatter,
+}
 
 # Constant constraint boundary
 REGISTRY_ROOT = os.path.abspath(r"D:\GitHub\global_agent\registry")
@@ -78,38 +103,75 @@ def read_forensic_doc(filepath: str) -> str:
         return f"Structural File Read completely failed: {str(e)}"
 
 @mcp.tool()
-def push_forensic_doc(project_name: str, component_name: str, markdown_content: str) -> str:
+def push_forensic_doc(
+    project_name: str,
+    component_name: str,
+    markdown_body: str,
+    frontmatter_dict: dict,
+) -> str:
     """
-    The Active Core Engine Constraint loop. Forces a Swarm to dump structural intelligence 
+    The Active Core Engine Constraint loop. Forces a Swarm to dump structural intelligence
     into the flat-file registry AND mechanically embeds the string matrix directly into local ChromaDB memory stores.
+
+    Args:
+        project_name:    Registry collection directory (e.g. 'colophon', 'linkedin_drafts', 'global_agent').
+        component_name:  Filename stem — .md extension added automatically.
+        markdown_body:   Prose body content ONLY. Do NOT include frontmatter here.
+        frontmatter_dict: Structured dict of frontmatter fields. Python serializes this — never hand-format YAML.
+
+    Returns a ValidationError description string on bad input (agent must self-correct and retry).
+    Returns SUCCESS string on successful disk write + ChromaDB embed.
     """
-    # Mathematical token compression bounds limits
-    if len(markdown_content) > 3000:
-        return "ERROR: Executing Documentation is natively too massive. Context Window limits breached. Compress output to under 3000 indices."
-        
+    # ── Pydantic validation ──────────────────────────────────────────────────
+    schema_class = SCHEMA_ROUTING.get(project_name, StandardRegistryFrontmatter)
+    try:
+        validated = schema_class(**frontmatter_dict)
+    except ValidationError as e:
+        # Return structured error so agent can self-correct without human intervention.
+        errors = e.errors(include_url=False)
+        error_lines = []
+        for err in errors:
+            loc = " -> ".join(str(x) for x in err["loc"])
+            error_lines.append(f"  - Field '{loc}': {err['msg']} (type={err['type']})'")
+        return (
+            f"ValidationError: frontmatter_dict failed schema '{schema_class.__name__}' for "
+            f"collection '{project_name}'.\n"
+            "Fix the following fields and retry:\n" + "\n".join(error_lines) +
+            f"\nExpected fields: {list(schema_class.model_fields.keys())}"
+        )
+
+    # ── Token size guard ────────────────────────────────────────────────────
+    if len(markdown_body) > 3000:
+        return "ERROR: markdown_body is too large. Compress to under 3000 characters."
+
+    # ── Compose final document (Python owns all YAML) ────────────────────────
+    frontmatter_yaml = yaml.safe_dump(
+        validated.model_dump(), default_flow_style=False, sort_keys=False, allow_unicode=True
+    ).strip()
+    full_document = f"---\n{frontmatter_yaml}\n---\n\n{markdown_body}"
+
+    # ── Write to disk ────────────────────────────────────────────────────────
     target_dir = os.path.join(REGISTRY_ROOT, project_name)
     os.makedirs(target_dir, exist_ok=True)
-    
-    filename = component_name if component_name.endswith('.md') else f"{component_name}.md"
+
+    filename = component_name if component_name.endswith(".md") else f"{component_name}.md"
     filepath = os.path.join(target_dir, filename)
-    
     doc_id = f"{project_name}_{component_name}"
-    
+
     try:
-        # Write flat-file text bound
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(markdown_content)
-            
-        # Inject structural multi-dimension geometry into the Hub layer
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(full_document)
+
+        # ── Embed into ChromaDB ──────────────────────────────────────────────
         collection.upsert(
-            documents=[markdown_content],
+            documents=[full_document],
             metadatas=[{"project": project_name, "component": component_name}],
-            ids=[doc_id]
+            ids=[doc_id],
         )
-            
-        return f"SUCCESS: Formal physical timestamp generated AND dynamically embedded into Matrix local registry layer for {component_name}."
+
+        return f"SUCCESS: '{component_name}' written to '{project_name}/' and embedded in ChromaDB."
     except Exception as e:
-        return f"CRITICAL: FastMCP Context ingestion violently rejected. {str(e)}"
+        return f"CRITICAL: Registry write failed. {str(e)}"
 
 @mcp.tool()
 def read_design_system() -> str:

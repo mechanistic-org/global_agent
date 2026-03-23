@@ -48,19 +48,30 @@ git push
 ```
 
 // turbo
-4. **Push a forensic doc** with key decisions made this session (decisions only — not a summary of work):
+4. **Mine the session** — extract Gold and route to registry:
+```powershell
+cd D:\GitHub\global_agent
+python scripts\mine_session.py --conversation-id <uuid>
+# or 'python scripts\mine_session.py' for the most recent brain dir
+# add --dry-run to preview without writing files
+```
+Routes items to: `linkedin_drafts/`, `colophon.md`, ChromaDB, `testimonials/`, `law_candidates/`.
+
+// turbo
+5. **Push a forensic doc** with key decisions made this session (decisions only — not a summary of work):
 ```python
-# Via MCP tool in next session, or paste into chat:
+# Via MCP tool call — split signature from #66:
 push_forensic_doc(
     project_name="session_logs",
     component_name="YYYY-MM-DD_[ticket]",
-    markdown_content="## Decisions\n- [decision 1]\n- [decision 2]\n\n## Blockers\n- [any]\n\n## Next: [what the next session should pick up]"
+    markdown_body="## Decisions\n- [decision 1]\n- [decision 2]\n\n## Blockers\n- [any]\n\n## Next: [what next session picks up]",
+    frontmatter_dict={"title": "Session [ticket#] Decisions", "date": "YYYY-MM-DD", "context_node": "session_close"}
 )
 ```
 
-5. **Update Sprint_Plan.md** — mark completed items `~~strikethrough~~`, promote next Sprint Now item if applicable.
+6. **Update Sprint_Plan.md** — mark completed items `~~strikethrough~~`, promote next Sprint Now item if applicable.
 
-6. **Close this conversation. Open a new one for the next ticket.**
+7. **Close this conversation. Open a new one for the next ticket.**
 
 ## Drift Symptoms — Close Immediately If You See These
 
