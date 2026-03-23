@@ -1,0 +1,94 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The `push_forensic_doc` function was refactored to prevent agent-hallucinated YAML frontmatter. The new signature splits `markdown_body` and `frontmatter_dict`, with Python now owning all YAML serialization via `yaml.safe_dump`. Pydantic schemas (`ColophonFrontmatter`, `StandardRegistryFrontmatter`) validate the structured frontmatter before any write occurs, ensuring data integrity.",
+    "one_liner": "Pydantic validation was implemented for `push_forensic_doc` to eliminate agent-hallucinated YAML frontmatter and ensure structured data integrity.",
+    "source_context": "global_agent#66 \u2014 Pydantic Validation Interlock",
+    "tags": [
+      "architecture",
+      "validation",
+      "pydantic",
+      "yaml",
+      "agent-safety",
+      "ChromaDB"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must never hand-format YAML frontmatter directly within markdown content. Instead, structured data should be passed as a dictionary to a dedicated function, which will handle serialization and Pydantic validation to prevent hallucinations and ensure data integrity.",
+    "one_liner": "Agents must not hand-format YAML frontmatter; structured data must be passed for programmatic serialization and validation.",
+    "source_context": "Problem: `push_forensic_doc` accepts `markdown_content: str` \u2014 agent hand-formats YAML frontmatter inline, which is a hallucination vector.",
+    "tags": [
+      "agent-behavior",
+      "rule",
+      "yaml",
+      "validation",
+      "hallucination-prevention"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A new `Conversation Miner` script (`scripts/mine_session.py`) was developed to automatically extract structured 'Gold' (decisions, problems solved, etc.) from conversation brain artifacts. It leverages the Gemini API with a structured extraction prompt and routes the extracted items to various destinations based on their designated channel.",
+    "one_liner": "A new Conversation Miner extracts structured 'Gold' from agent conversations using the Gemini API and routes it to specific destinations.",
+    "source_context": "global_agent#62 \u2014 Conversation Miner",
+    "tags": [
+      "architecture",
+      "AI",
+      "extraction",
+      "workflow",
+      "Gemini",
+      "conversation-mining"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The Conversation Miner implements a robust routing table that directs extracted 'Gold' items to specific destinations based on their `channel` flag. For example, `linkedin` items go to drafts, `colophon` items are appended, `internal` items are pushed to ChromaDB, and `law` items are stored as candidates.",
+    "one_liner": "The Conversation Miner routes extracted 'Gold' items to specific destinations based on a channel-based routing table.",
+    "source_context": "Routing table:",
+    "tags": [
+      "architecture",
+      "routing",
+      "workflow",
+      "data-flow",
+      "configuration"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Pydantic `ValidationError` messages are now returned as actionable strings, rather than raising exceptions. This design allows agents to read field-level errors, self-correct their `frontmatter_dict`, and retry the operation without requiring human intervention, significantly improving agent autonomy.",
+    "one_liner": "Actionable Pydantic validation error strings enable agents to self-correct and retry without human intervention.",
+    "source_context": "`ValidationError` returned as an actionable string \u2014 not raised. Agent reads the field-level errors, self-corrects `frontmatter_dict`, and retries without human intervention.",
+    "tags": [
+      "agent-interaction",
+      "error-handling",
+      "pydantic",
+      "design-pattern",
+      "autonomy"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A `GEMINI_API_KEY` was detected as leaked in conversation logs by Google AI, necessitating immediate deletion and generation of a new key. This incident underscores the critical importance of securely managing API keys and preventing their exposure in any persistent logs or artifacts.",
+    "one_liner": "A Gemini API key leak in conversation logs necessitated immediate rotation, highlighting the importance of secure key management.",
+    "source_context": "GEMINI_API_KEY in `.env` is flagged as leaked (Google AI detects it was exposed in conversation logs).",
+    "tags": [
+      "security",
+      "API-key",
+      "lesson-learned",
+      "incident",
+      "data-protection"
+    ]
+  }
+]

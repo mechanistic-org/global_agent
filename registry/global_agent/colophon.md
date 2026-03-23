@@ -38,3 +38,13 @@ Running capture of insight nuggets, narrative moments, and LinkedIn-ready observ
 
 **Portfolio relevance:** [Which project, which section, how it fits]
 ```
+
+
+## 2026-03-22 — Pydantic validation was implemented for `push_forensic_doc` to eliminate agent-hallucinated YAML frontmatter and ensure structured data integrity.
+
+The `push_forensic_doc` function was refactored to prevent agent-hallucinated YAML frontmatter. The new signature splits `markdown_body` and `frontmatter_dict`, with Python now owning all YAML serialization via `yaml.safe_dump`. Pydantic schemas (`ColophonFrontmatter`, `StandardRegistryFrontmatter`) validate the structured frontmatter before any write occurs, ensuring data integrity.
+
+
+## 2026-03-22 — A new Conversation Miner extracts structured 'Gold' from agent conversations using the Gemini API and routes it to specific destinations.
+
+A new `Conversation Miner` script (`scripts/mine_session.py`) was developed to automatically extract structured 'Gold' (decisions, problems solved, etc.) from conversation brain artifacts. It leverages the Gemini API with a structured extraction prompt and routes the extracted items to various destinations based on their designated channel.

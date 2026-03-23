@@ -5,16 +5,13 @@
 
 ---
 
-## ✅ Session Accomplishments (2026-03-22)
+## ✅ Session Accomplishments (2026-03-22 — Session 2)
 
-- **GitHub Project #5 fully wired** — 16 tickets assigned to iterations 1-4 with Priority/Size/Node/Impact metadata
-- **Created global_agent#61** — NanoClaw Ephemeral Container Layer (Sprint 4, P1, Epic)
-- **Created global_agent#62** — Conversation Miner Reinstatement with flag-routing (Sprint 3, P1, Enhancement)
-- **Session workflows written** — `session_open.md`, `session_close.md`, `create_issue.md` in `.agent/workflows/`
-- **Notion MCP wired** — key in `.env`, `master_mcp_config.json` updated to `@notionhq/notion-mcp-server`
-- **Colophon registry started** — `registry/global_agent/colophon.md` + first LinkedIn draft filed
-- **LinkedIn post #3 published** — "Turns out Linus Torvalds knew" (git as agent memory substrate)
-- **Portfolio-archive fully scanned** — 26 dirs catalogued; backfill corpus identified for #62
+- **~~global_agent#66 CLOSED~~** — `push_forensic_doc` Pydantic interlock: split signature `markdown_body` + `frontmatter_dict`, Python-owned YAML via `yaml.safe_dump`, schema routing matrix, `ValidationError` as agent-readable string
+- **~~global_agent#62 CLOSED~~** — `scripts/mine_session.py` live: Gemini extraction + channel-based routing (linkedin_drafts, colophon, ChromaDB fallback, law_candidates). `session_close.md` updated with mine step (step 4).
+- **Gemini API key rotated** — old key leaked in conversation log, new key in `D:\Assets\Gemini_API_key.txt` + `.env` updated
+- **`json_repair` library** — added to handle invalid escape sequences in Gemini JSON responses
+- **First live mine run** — 6 Gold items extracted from this session, 2 colophon entries appended, 1 law candidate written
 
 ### Previous (2026-03-21)
 - **Closed global_agent#48** — `diag.py` health harness live
@@ -27,10 +24,10 @@
 
 | # | Repo | Title | Notes |
 |---|---|---|---|
-| [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Dennis is waiting. `mo.mechanistic.com` already live + SSL. Only blocked on v32 finalization in `D:\GitHub\MO`. CF Access app ID: `f02b3e55-32a6-4be7-ba88-308a05d035ec` — just add new hostname, policy already correct |
-| [mechanistic#6](https://github.com/mechanistic-org/mechanistic/issues/6) | `mechanistic` | **Fix routing — mechanistic.com redirects to /holy-grail** | Live prod bug. Should 301 → eriknorris.com. Fix on CF redirect rules, not in code |
-| [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | Currently public (security by obscurity). CF Zero Trust → Self-hosted app → hyphen.mechanistic.com. Create "Hyphen Whitelist" policy with `erik@eriknorris.com` only |
-| [portfolio#58](https://github.com/mechanistic-org/portfolio/issues/58) | `portfolio` | **Fix Keystatic audio_url field validation error** | Blocks ALL 119 projects in Keystatic. Add `audio_url: fields.text(...)` to `keystatic.config.tsx` AND Zod schema in `content.config.ts` |
+| [portfolio#58](https://github.com/mechanistic-org/portfolio/issues/58) | `portfolio` | **Fix Keystatic audio_url field validation error** | 🔥 TOP PRIORITY next session. Add `audio_url: fields.text(...)` to `keystatic.config.tsx` AND Zod schema in `content.config.ts`. Blocks ALL 119 projects in Keystatic |
+| [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Dennis is waiting |
+| [mechanistic#6](https://github.com/mechanistic-org/mechanistic/issues/6) | `mechanistic` | **Fix routing — mechanistic.com redirects to /holy-grail** | Live prod bug. CF redirect rules |
+| [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | CF Zero Trust → Self-hosted app |
 
 ---
 
@@ -49,7 +46,7 @@
 
 | # | Repo | Title | Notes |
 |---|---|---|---|
-| [global_agent#62](https://github.com/mechanistic-org/global_agent/issues/62) | `global_agent` | **Reinstate Conversation Miner with Flag-Routing** | P1. Automates session close mining → routes to linkedin_drafts/, colophon, ChromaDB, testimonials. Hot-start comment on issue. `--backfill` flag = separate session over `portfolio-archive/` (26 dirs). |
+| [global_agent#62](https://github.com/mechanistic-org/global_agent/issues/62) | `global_agent` | ~~**Reinstate Conversation Miner with Flag-Routing**~~ | ✅ CLOSED 2026-03-22 |
 | [portfolio#47](https://github.com/mechanistic-org/portfolio/issues/47) | `portfolio` | **Resume C\|24 Component Stitch Loop** | Epic. Blocked until legacy cleanup (#53) done. Last halted mid-component |
 | [portfolio#51](https://github.com/mechanistic-org/portfolio/issues/51) | `portfolio` | **Document 3 Stitch Workflow Paths in laws/** | Quick law doc → `law_003_ui_generation_paths.md`. Enables agent self-selection |
 | [portfolio#44](https://github.com/mechanistic-org/portfolio/issues/44) | `portfolio` | **Physical Transfer to Hybrid Engine Organization** | Epic wrapper — superseded by current multi-repo setup, review for closure |
