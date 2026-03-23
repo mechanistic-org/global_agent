@@ -10,6 +10,8 @@
 			"**/node_modules": true,
 			"**/dist": true,
 			"**/.astro": true,
+			"**/venv": true,
+			"**/.venv*": true
 		},
 		"powershell.cwd": "Global Agent (Repo)",
 	},
