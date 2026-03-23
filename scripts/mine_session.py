@@ -201,7 +201,17 @@ def extract_gold(text: str) -> list[dict]:
         raw = response.text.strip()
         # Strip any accidental markdown fences
         raw = re.sub(r"^```json\s*|\s*```$", "", raw, flags=re.MULTILINE).strip()
-        return json.loads(raw)
+
+        # Use json_repair to handle invalid escape sequences / minor JSON malformation
+        # that Gemini occasionally emits (backslashes in content strings, trailing commas etc.)
+        from json_repair import repair_json
+        repaired = repair_json(raw, return_objects=True)
+        if isinstance(repaired, list):
+            return repaired
+        # repair_json may return a dict if only one object — wrap it
+        if isinstance(repaired, dict):
+            return [repaired]
+        return []
     except json.JSONDecodeError as e:
         print(f"ERROR: Gemini returned non-JSON response: {e}")
         print("Raw response:", response.text[:500])
