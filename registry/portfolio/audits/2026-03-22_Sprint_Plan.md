@@ -5,8 +5,16 @@
 
 ---
 
-## ✅ Session Accomplishments (2026-03-22 — Session 3)
+## ✅ Session Accomplishments (2026-03-23 — Session 4)
 
+- **portfolio#53 IN PROGRESS (partial)** — Wave 1-3 archival cleanup complete: `eriknorris` paths fixed (84 files), 60 scripts archived + 10 migrated to `global_agent`, 22 components + dead pages archived, `package.json` prebuild hooks fixed. Deployed to production (`2f47fd6`). Remaining: activate keep-and-activate components (HomeManifesto, SystemAssembly etc.).
+- **global_agent#71 FILED** — GitHub Projects consolidation strategy: migrate #4/#7/#8/#9 → #5, delete redundant boards.
+- **nuke_r2_bucket.py + nuke_cloudflare_deployments.py** migrated to `global_agent/scripts/`.
+- **8 infra scripts** migrated to `global_agent/scripts/` (configure_r2_cors, download_r2, trigger_cascade_swarm, inventory_scanner, sync_agency_memory, sync_danko, sync_d_control, port_digime).
+
+**🔥 NEXT SESSION START → `portfolio#47` (C|24 Stitch Loop — now unblocked) OR `global_agent#71` (Projects consolidation)**
+
+### Previous (Session 3 — 2026-03-22)
 - **~~portfolio#58 CLOSED~~** — Keystatic `audio_url` validation error fixed. Added `audio_url`, `notebook_url`, `nlm_url`, `transcript`, `realm` to `keystatic.config.tsx`. Unblocked all 119 projects.
 - **~~mechanistic#6 CLOSED~~** — N/A, transient CF edge cache condition. No config changes.
 - **global_agent#70 FILED** — GWS OAuth `invalid_client` root cause: stale `client_secret.json`. Fix: replaced with `client_secret_2_...json` from `D:\Assets`.
@@ -34,7 +42,7 @@
 | [MO#8](https://github.com/mechanistic-org/MO/issues/8) | `MO` | **Holy Grail v32 → mo.mechanistic.com Migration + CF Access** | Client-facing. Punted — tackle when ready |
 | [hyphen#7](https://github.com/mechanistic-org/hyphen/issues/7) | `hyphen` | **Add CF Access Protection to hyphen.mechanistic.com** | Punted — tackle when ready |
 
-**🔥 NEXT SESSION START → `portfolio#57` (R2 slug delta, quick) OR `portfolio#53` (legacy cleanup, strategic)**
+**🔥 NEXT SESSION START → `portfolio#47` (C|24 Stitch Loop, now unblocked) OR `global_agent#71` (Projects consolidation)**
 
 ---
 
@@ -42,7 +50,7 @@
 
 | # | Repo | Title | Notes |
 |---|---|---|---|
-| [portfolio#53](https://github.com/mechanistic-org/portfolio/issues/53) | `portfolio` | **Legacy Cleanup — Ghost Code & Import Paths** | `p1`. Prereq for C\|24 Stitch Loop. Ruthless audit of broken imports from `eriknorris*` rename |
+| [~~portfolio#53~~](https://github.com/mechanistic-org/portfolio/issues/53) | `portfolio` | **Legacy Cleanup — Ghost Code & Import Paths** | `p1`. ⚠️ IN PROGRESS — Waves 1-3 done. Activate keep-and-activate components remaining. |
 | [global_agent#47](https://github.com/mechanistic-org/global_agent/issues/47) | `global_agent` | **Always-On Router (NSSM/PM2 + Ollama keepalive)** | `p1`. Router still manual-boot. Ollama keepalive: `ollama run <model> --keepalive -1` on startup |
 | [global_agent#54](https://github.com/mechanistic-org/global_agent/issues/54) | `global_agent` | **R2 Endpoint Standardization — Custom Domains, CORS** | 6 buckets need audit. One-liner quick to run via wrangler |
 | [portfolio#57](https://github.com/mechanistic-org/portfolio/issues/57) | `portfolio` | **R2_STAGING vs R2_MASTER slug delta (103 vs 94)** | Quick diff: `Compare-Object (ls R2_MASTER) (ls R2_STAGING)`. SC48 vs sc48 case bug confirmed |

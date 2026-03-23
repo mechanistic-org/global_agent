@@ -48,3 +48,13 @@ The `push_forensic_doc` function was refactored to prevent agent-hallucinated YA
 ## 2026-03-22 — A new Conversation Miner extracts structured 'Gold' from agent conversations using the Gemini API and routes it to specific destinations.
 
 A new `Conversation Miner` script (`scripts/mine_session.py`) was developed to automatically extract structured 'Gold' (decisions, problems solved, etc.) from conversation brain artifacts. It leverages the Gemini API with a structured extraction prompt and routes the extracted items to various destinations based on their designated channel.
+
+
+## 2026-03-23 — Adopted an 'archive-first' strategy for portfolio cleanup, prioritizing data retention and auditability.
+
+The portfolio cleanup plan establishes an 'archive-first' strategy, ensuring no data is ever truly deleted but instead moved to a dedicated archive directory. This architectural decision prioritizes data retention and auditability over permanent deletion, forming a core principle for future data management.
+
+
+## 2026-03-23 — Consolidated infrastructure and operational scripts into `global_agent/scripts/` to centralize agent tooling.
+
+Infrastructure and operational scripts, such as `nuke_r2_bucket.py` and `configure_r2_cors.py`, are being strategically migrated to `global_agent/scripts/`. This consolidation centralizes agent-related tooling and infrastructure configuration, enhancing discoverability, maintainability, and reusability for future agent development.

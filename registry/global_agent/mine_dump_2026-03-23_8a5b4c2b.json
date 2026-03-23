@@ -1,0 +1,128 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The portfolio cleanup plan establishes an 'archive-first' strategy, ensuring no data is ever truly deleted but instead moved to a dedicated archive directory. This architectural decision prioritizes data retention and auditability over permanent deletion, forming a core principle for future data management.",
+    "one_liner": "Adopted an 'archive-first' strategy for portfolio cleanup, prioritizing data retention and auditability.",
+    "source_context": "Archive-first strategy: nothing gets deleted, everything moves to `D:\\GitHub\\portfolio-archive`.",
+    "tags": [
+      "architecture",
+      "data management",
+      "strategy",
+      "cleanup"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The portfolio archival cleanup is structured into three independently verifiable waves, with human judgment explicitly required for Waves 2 and 3. This phased approach mitigates risk, ensures careful review of critical assets, and provides clear verification steps before more invasive archival operations proceed.",
+    "one_liner": "Implemented a three-wave, human-verified archival process to mitigate risk and ensure thorough review.",
+    "source_context": "Three staged waves, each independently verifiable. Waves 2 and 3 need human judgment calls.",
+    "tags": [
+      "project management",
+      "risk mitigation",
+      "cleanup",
+      "process"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Wave 1 of the archival cleanup successfully addresses 84 files containing stale `eriknorris` path references by executing the pre-existing and verified `tmp_fix_paths.py` script. This automated, safe fix ensures foundational build integrity before proceeding with more complex archival stages.",
+    "one_liner": "Automated the fix for 84 stale `eriknorris` path references using a pre-existing, verified script.",
+    "source_context": "84 files contain stale `eriknorris*` path refs. `tmp_fix_paths.py` already exists and is correct.",
+    "tags": [
+      "code fix",
+      "automation",
+      "cleanup",
+      "technical debt"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Wave 3 of the cleanup plan leverages an import graph scan to precisely identify components with zero references from active pages. This systematic, data-driven approach ensures that only truly unused components are targeted for archival, preventing accidental removal of critical or in-use assets.",
+    "one_liner": "Utilized an import graph scan to accurately identify and archive unused components, safeguarding active assets.",
+    "source_context": "Approach: Run an import graph scan to find components with zero references from active pages.",
+    "tags": [
+      "tooling",
+      "code quality",
+      "cleanup",
+      "dependency analysis"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A comprehensive triage process categorized 109 scripts into 'KEEP', 'MIGRATE', 'MIGRATE-REVIEW', and 'ARCHIVE' based on their current utility and future relevance. This structured approach effectively manages technical debt, consolidates infrastructure tools, and safely archives obsolete code, streamlining the codebase.",
+    "one_liner": "Systematically triaged 109 scripts into distinct categories to manage technical debt and streamline the codebase.",
+    "source_context": "109 scripts total. Mark each row: KEEP / MIGRATE / ARCHIVE / NEEDS-REVIEW.",
+    "tags": [
+      "code organization",
+      "technical debt",
+      "cleanup",
+      "script management"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Infrastructure and operational scripts, such as `nuke_r2_bucket.py` and `configure_r2_cors.py`, are being strategically migrated to `global_agent/scripts/`. This consolidation centralizes agent-related tooling and infrastructure configuration, enhancing discoverability, maintainability, and reusability for future agent development.",
+    "one_liner": "Consolidated infrastructure and operational scripts into `global_agent/scripts/` to centralize agent tooling.",
+    "source_context": "MIGRATE \u2192 `global_agent/scripts/` (Infrastructure/Ops)",
+    "tags": [
+      "architecture",
+      "agent tooling",
+      "code organization",
+      "infrastructure"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A dedicated 'MIGRATE-REVIEW' category was established for scripts identified as having potential 'gold' \u2013 agent-usable patterns, valuable integrations, or significant logic \u2013 requiring content review before migration. This process ensures that valuable insights and reusable code patterns are extracted and preserved, rather than being lost during cleanup.",
+    "one_liner": "Created a 'MIGRATE-REVIEW' category to extract agent-usable patterns and valuable insights from existing scripts.",
+    "source_context": "MIGRATE-REVIEW \u2192 `global_agent/scripts/` (Mine First, Then Migrate) These have potential gold \u2014 review content before moving.",
+    "tags": [
+      "knowledge extraction",
+      "agent development",
+      "code review",
+      "process"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Despite having zero active references, several high-value components like `HomeManifesto.astro` and various `DataViz` elements are strategically designated 'Keep-for-Now'. This decision preserves in-progress work, R&D efforts, and components deemed critical for future activation or agent analytics, preventing premature archival and supporting ongoing development.",
+    "one_liner": "Strategically retained high-value, zero-reference components for future activation, R&D, and agent analytics.",
+    "source_context": "Keep-for-Now \u2014 High Value, Zero-Ref (in-progress or intentional)",
+    "tags": [
+      "strategic planning",
+      "technical debt management",
+      "R&D",
+      "component management"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "During the component audit, it was discovered that the import graph scanner does not accurately follow barrel re-exports, leading to false positives for 'single-ref' components within the Starwind library. This critical insight highlights a limitation in current tooling and informs future development for more accurate dependency analysis and code scanning.",
+    "one_liner": "Identified a critical tooling limitation: import graph scanner fails to follow barrel re-exports, impacting dependency analysis.",
+    "source_context": "DO NOT TOUCH \u2014 Starwind library (lines 147\u2013202): All the `Starwind/*/ComponentName.astro` single-refs are barrel-exported via `index.ts` \u2014 the scanner doesn't follow barrel re-exports. These are all live.",
+    "tags": [
+      "tooling limitation",
+      "dependency analysis",
+      "technical insight",
+      "code scanning"
+    ]
+  }
+]
