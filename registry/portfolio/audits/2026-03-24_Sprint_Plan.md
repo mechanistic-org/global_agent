@@ -5,7 +5,11 @@
 ---
 
 ## ✅ Session Accomplishments (2026-03-24 — Session 7)
-> *(Fill in at session close)*
+- **`[global_agent#81](https://github.com/mechanistic-org/global_agent/issues/81) CLOSED`** — Untracked `.chroma_db` from git to fix hanging pushes; enforced sequential execution in `session_close` workflow to prevent SQLite lock.
+- **`[global_agent#63](https://github.com/mechanistic-org/global_agent/issues/63) CLOSED`** — Reseeded ChromaDB natively from registry docs (30 items).
+- **`[global_agent#70](https://github.com/mechanistic-org/global_agent/issues/70) CLOSED`** — Added auto-refresh to `diag.py` to prevent stale GWS OAuth tokens blocking sessions.
+- **`[global_agent#64](https://github.com/mechanistic-org/global_agent/issues/64) CLOSED`** — Replaced hardcoded paths with `$ENOS_ROOT` in `mcp_registry_server.py`.
+- **Board Triage** — Bumped MO#8 and hyphen#7 to `Ready` via GraphQL mutations to bypass missing `gh` functionality.
 
 ---
 
@@ -28,11 +32,11 @@ The live board (`gh project item-list 5`) is stale — it only surfaced 3 Backlo
 
 | # | Issue | What | Why It Hurts |
 |---|---|---|---|
-| 1 | [global_agent#81](https://github.com/mechanistic-org/global_agent/issues/81) | **Fix `.gitignore` — exclude `registry/.chroma_db/`** | Git is tracking a SQLite binary. Every push/pull includes 80MB+ of ChromaDB state. Kills push time, corrupts history. |
-| 2 | [global_agent#81](https://github.com/mechanistic-org/global_agent/issues/81) | **ChromaDB SQLite lock fix — sequential session_close steps** | `mine_session.py` + `push_forensic_doc` race on the same SQLite WAL → session_close hangs 10–30 min. Option 1: run sequentially. |
-| 3 | [global_agent#63](https://github.com/mechanistic-org/global_agent/issues/63) | **Seed ChromaDB from scratch after gitignore fix** | After untracking `.chroma_db/`, reseed from `forensic_telemetry` registry docs. Document the init command. |
-| 4 | [global_agent#70](https://github.com/mechanistic-org/global_agent/issues/70) | **GWS OAuth auto-refresh in `diag.py`** | Every session open requires manual `gws auth login`. Blocks GWS MCP tools 100% of the time at session start if token is stale. |
-| 5 | [global_agent#64](https://github.com/mechanistic-org/global_agent/issues/64) | **Define `$ENOS_ROOT` — replace hardcoded `D:\GitHub\global_agent` paths** | Scripts break on any other machine / path. Portability prereq for Docker/NanoClaw. |
+| 1 | [global_agent#81](https://github.com/mechanistic-org/global_agent/issues/81) | ~~**Fix `.gitignore` — exclude `registry/.chroma_db/`**~~ | Git is tracking a SQLite binary. Every push/pull includes 80MB+ of ChromaDB state. Kills push time, corrupts history. |
+| 2 | [global_agent#81](https://github.com/mechanistic-org/global_agent/issues/81) | ~~**ChromaDB SQLite lock fix — sequential session_close steps**~~ | `mine_session.py` + `push_forensic_doc` race on the same SQLite WAL → session_close hangs 10–30 min. Option 1: run sequentially. |
+| 3 | [global_agent#63](https://github.com/mechanistic-org/global_agent/issues/63) | ~~**Seed ChromaDB from scratch after gitignore fix**~~ | After untracking `.chroma_db/`, reseed from `forensic_telemetry` registry docs. Document the init command. |
+| 4 | [global_agent#70](https://github.com/mechanistic-org/global_agent/issues/70) | ~~**GWS OAuth auto-refresh in `diag.py`**~~ | Every session open requires manual `gws auth login`. Blocks GWS MCP tools 100% of the time at session start if token is stale. |
+| 5 | [global_agent#64](https://github.com/mechanistic-org/global_agent/issues/64) | ~~**Define `$ENOS_ROOT` — replace hardcoded `D:\GitHub\global_agent` paths**~~ | Scripts break on any other machine / path. Portability prereq for Docker/NanoClaw. |
 
 ### Wave 0 Execution Order
 ```
