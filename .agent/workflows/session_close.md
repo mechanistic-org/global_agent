@@ -57,6 +57,9 @@ python scripts\mine_session.py --conversation-id <uuid>
 ```
 Routes items to: `linkedin_drafts/`, `colophon.md`, ChromaDB, `testimonials/`, `law_candidates/`.
 
+> [!WARNING]
+> **Sequential Execution Required:** You MUST wait for Step 4 (`mine_session.py`) to fully exit before starting Step 5. They both write to ChromaDB. Running them concurrently will cause a SQLite WAL lock deadlock and hang the session close.
+
 // turbo
 5. **Push a forensic doc** with key decisions made this session (decisions only — not a summary of work):
 ```python
