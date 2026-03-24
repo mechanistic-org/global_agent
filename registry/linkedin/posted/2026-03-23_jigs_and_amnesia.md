@@ -4,6 +4,9 @@ pubDate: 2026-03-23
 status: draft-v2
 tags: [ai-engineering, StateMachines, mental-models, tooling]
 source: hired-gun-synthesis
+post_url: ""
+thread_id: "arc_001_architecture"
+arc_position: 3
 ---
 
 I've written about the substrate (git) and the loop (self-review). Today the question is: what keeps the machine from wandering?

@@ -1,0 +1,1 @@
+Breadcrumb: If you missed the foundation of this architecture (handing the machine the keys to its own Git memory), that context is here: [Link to Post 2 or 3]. The production output of this linter is currently live-firing over at https://mootmoat.com and https://moreplay.com. You can't run automated publishing lines without a hard gatekeeper.

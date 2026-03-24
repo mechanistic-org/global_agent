@@ -4,6 +4,9 @@ pubDate: 2026-03-22
 status: ready
 tags: [agent-memory, autonomous-systems, solopreneur]
 source: manual-draft
+post_url: ""
+thread_id: "arc_001_architecture"
+arc_position: 2
 ---
 
 Three hours ago I published about git as agent memory.
