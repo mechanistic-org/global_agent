@@ -30,7 +30,8 @@ SCHEMA_ROUTING: dict = {
 }
 
 # Constant constraint boundary
-REGISTRY_ROOT = os.path.abspath(r"D:\GitHub\global_agent\registry")
+ENOS_ROOT = os.environ.get("ENOS_ROOT", r"D:\GitHub\global_agent")
+REGISTRY_ROOT = os.path.abspath(os.path.join(ENOS_ROOT, "registry"))
 
 # Initialize ChromaDB mapping locally inside the registry for offline execution
 chroma_client = chromadb.PersistentClient(path=os.path.join(REGISTRY_ROOT, ".chroma_db"))
@@ -174,7 +175,8 @@ def push_forensic_doc(
 
 @mcp.tool()
 def read_design_system() -> str:
-    design_path = os.path.abspath(r"D:\GitHub\global_agent\laws\law_002_design_system.md")
+    ENOS_ROOT = os.environ.get("ENOS_ROOT", r"D:\GitHub\global_agent")
+    design_path = os.path.abspath(os.path.join(ENOS_ROOT, "laws", "law_002_design_system.md"))
     try:
         with open(design_path, 'r', encoding='utf-8') as f:
             return f.read()

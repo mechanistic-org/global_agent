@@ -137,6 +137,22 @@ def check_gws_auth() -> dict:
                 result["status"] = "OK"
                 result["detail"] = f"Token valid | project: {project} | method: {status_data.get('auth_method','oauth2')}"
             else:
+                # Attempt auto-refresh (issue #70)
+                try:
+                    subprocess.run([_GWS_BIN, "auth", "refresh"], capture_output=True, timeout=15, shell=True)
+                    proc2 = subprocess.run([_GWS_BIN, "auth", "status"], capture_output=True, text=True, timeout=15, shell=True)
+                    output2 = (proc2.stdout + proc2.stderr).strip()
+                    json_start2 = output2.find("{")
+                    json_end2   = output2.rfind("}") + 1
+                    if json_start2 >= 0 and json_end2 > json_start2:
+                        status_data2 = json.loads(output2[json_start2:json_end2])
+                        if status_data2.get("token_valid", False):
+                            result["status"] = "OK"
+                            result["detail"] = f"Token auto-refreshed | project: {project} | method: {status_data2.get('auth_method','oauth2')}"
+                            return result
+                except Exception:
+                    pass
+
                 err_msg = f"token_error: {token_error}" if token_error else "token_valid=false"
                 result["detail"] = f"{err_msg} | project: {project} — Run: gws auth login"
         else:
