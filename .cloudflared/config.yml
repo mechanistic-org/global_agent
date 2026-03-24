@@ -1,0 +1,37 @@
+# Cloudflare Tunnel config for EN-OS Event Bridge
+# Tunnel: enos-webhook → hooks.mechanistic.com → localhost:8001
+
+# ── Setup (one-time) ──────────────────────────────────────────────────────
+# 1. Install cloudflared:
+#    winget install Cloudflare.cloudflared
+#
+# 2. Authenticate (opens browser):
+#    cloudflared tunnel login
+#
+# 3. Create the tunnel:
+#    cloudflared tunnel create enos-webhook
+#    → saves <UUID>.json to ~/.cloudflared/
+#
+# 4. Add CNAME in Cloudflare DNS:
+#    Name: hooks       (→ hooks.mechanistic.com)
+#    Target: <UUID>.cfargotunnel.com
+#    Proxy: DNS only (grey cloud)
+#
+# 5. Update `credentials-file` below with your actual tunnel UUID path.
+
+tunnel: enos-webhook
+credentials-file: C:\Users\erik\.cloudflared\<TUNNEL_UUID>.json
+
+ingress:
+  # ── Webhook endpoint ───────────────────────────────────────────────────
+  - hostname: hooks.mechanistic.com
+    service: http://localhost:8001
+    originRequest:
+      noTLSVerify: false
+
+  # ── Future: FastMCP SSE (uncomment when externalized) ─────────────────
+  # - hostname: router.mechanistic.com
+  #   service: http://localhost:8000
+
+  # ── Catch-all (required) ──────────────────────────────────────────────
+  - service: http_status:404
