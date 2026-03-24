@@ -2,6 +2,13 @@
 > Generated: 2026-03-23 | Refactored with exact waves and issue links.
 > Source: Live GitHub Project #5 pull (Consolidated with #4, #7, #8, #9)
 
+## ✅ Session Accomplishments (2026-03-24 — Session 6)
+- **`[global_agent#73](https://github.com/mechanistic-org/global_agent/issues/73) CLOSED`** — Always-On Router shipped. `webhook_daemon.py` (FastAPI + HMAC), `cloudflared` tunnel, `hooks.mechanistic.com` CNAME, GitHub webhook wired. Live end-to-end test PASS: `/execute` comment → HMAC validated → Trigger A → SIMULATION: `docker run nanoclaw:latest`.
+- **Walk notes ingested** — 6 Drive docs synthesized into `registry/global_agent/intelligence/2026-03-23_walk-notes_architectural-review.md`. State machine blueprint, daemon.py code, PRD linter/FMEA specs now in registry.
+- **`/process_walk_notes` workflow** — codified in `.agent/workflows/process_walk_notes.md` with Windows gws shim fix.
+- **`gws-shared/SKILL.md`** — Root cause of recurring gws Windows arg-splitting bug documented with Node.js shim fix.
+- **`venv/` purged from git history** — `git filter-repo` removed torch/chromadb DLLs (100MB+) from all 14 unpushed commits. Force-pushed clean history.
+
 ## ✅ Session Accomplishments (2026-03-23 — Session 5)
 - **LinkedIn Trilogy shipped** — Posts 1, 2, 3 live. 3,907 impressions / +390,700% in 2 days.
 - **`law_004_linkedin_persona.md`** — Voice law codified: public commit log of active cognition.
@@ -11,6 +18,7 @@
 - **Ticket #80** — `/publish_post` workflow process scoped.
 - **`[global_agent#72](https://github.com/mechanistic-org/global_agent/issues/72) CLOSED`** — Allan Evans Reply finalized and posted.
 - **`[global_agent#71](https://github.com/mechanistic-org/global_agent/issues/71) CLOSED`** — Projects #4, #7, #8, #9 successfully migrated to #5 and deleted.
+
 
 ## 🔴 Sprint Now — Execute First
 | Issue | Title | Project Status |
