@@ -1,0 +1,87 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `Sprint_Plan.md` document was identified as a redundant and stale artifact, duplicating information already rigorously structured in the live GitHub Project board. A decision was made to eliminate this static Markdown cache entirely to ensure a single source of truth and prevent confusion.",
+    "one_liner": "Eliminated redundant `Sprint_Plan.md` artifact by leveraging live GitHub Project data.",
+    "source_context": "The `Sprint_Plan.md` document is a redundant, stale artifact.",
+    "tags": [
+      "technical debt",
+      "workflow improvement",
+      "data integrity",
+      "GitHub Projects"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The `global_agent` workflow is being pivoted from generating static Markdown to directly querying the GitHub GraphQL API for Project #5. This architectural decision ensures agents always access the absolute ground truth for sprint management, improving accuracy and efficiency by removing a layer of indirection.",
+    "one_liner": "Switched to direct GitHub GraphQL API integration for live sprint board management.",
+    "source_context": "We will execute a modified version of **global_agent#65**, pivoting away from generating markdown and instead wiring the session directly to the live board.",
+    "tags": [
+      "architecture",
+      "API integration",
+      "GitHub GraphQL",
+      "workflow automation"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A new Python script, `global_agent/scripts/sprint_board.py`, is being developed to query the GitHub GraphQL API directly for Project #5. This script will automatically identify the current iteration, filter tasks, sort by priority, and provide clean terminal output for agents, ensuring real-time, actionable scope at the start of a session.",
+    "one_liner": "New `sprint_board.py` script fetches and formats live GitHub sprint data for agents.",
+    "source_context": "[NEW] `global_agent/scripts/sprint_board.py` We will build a lightweight Python script that queries the GitHub GraphQL API directly for Project #5.",
+    "tags": [
+      "scripting",
+      "Python",
+      "GitHub API",
+      "workflow tool",
+      "real-time data"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must always read the absolute ground truth from live systems, such as the GitHub Project board, for critical operational context rather than relying on stale or redundant static artifacts. This principle guarantees data integrity and ensures agents operate with the most current information.",
+    "one_liner": "Agents must prioritize live data sources over static artifacts for operational truth.",
+    "source_context": "This guarantees the Agent *always* reads the absolute ground truth from the live board on boot.",
+    "tags": [
+      "agent design",
+      "data integrity",
+      "workflow principle",
+      "source of truth"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The agent's boot ritual (`session_open.md`) is being updated to remove references to old static sprint plans. Instead, it will directly execute `sprint_board.py` to fetch and display the live GitHub sprint board status at the start of every session, providing immediate, actionable scope and ensuring agents are always up-to-date.",
+    "one_liner": "Agent boot ritual updated to fetch live sprint board data directly.",
+    "source_context": "[MODIFY] `global_agent/.agent/workflows/session_open.md` We will rip out the old `gh project item-list` one-liner...",
+    "tags": [
+      "workflow automation",
+      "agent boot",
+      "operational efficiency",
+      "GitHub Projects"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `sprint_board.py` script is being further refined to calculate 'Current,' 'Next,' and 'Later' iterations based on date arithmetic. This enhancement will group tickets strictly by priority and display future buckets, providing automated triage and improved runway visibility for agents during session start.",
+    "one_liner": "`sprint_board.py` enhanced for automated triage and future sprint visibility.",
+    "source_context": "Rewrite `sprint_board.py` to calculate the Current (\"Now\") and Next Iterations based on date arithmetic.",
+    "tags": [
+      "feature enhancement",
+      "triage automation",
+      "sprint planning",
+      "agent tooling"
+    ]
+  }
+]

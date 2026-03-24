@@ -88,3 +88,8 @@ To ensure immediate responsiveness for GitHub webhooks, the `nanoclaw` container
 ## 2026-03-24 — Created an automated, HMAC-signed local smoke test script for the webhook daemon, ensuring security and functionality.
 
 A dedicated `test_webhook.py` script was developed to provide an automated local smoke test for the FastAPI daemon. This utility sends a POST request with a correctly generated HMAC signature to `localhost:8001/webhook`, verifying the `202 Accepted` response and ensuring core functionality and security validation work as expected.
+
+
+## 2026-03-24 — Switched to direct GitHub GraphQL API integration for live sprint board management.
+
+The `global_agent` workflow is being pivoted from generating static Markdown to directly querying the GitHub GraphQL API for Project #5. This architectural decision ensures agents always access the absolute ground truth for sprint management, improving accuracy and efficiency by removing a layer of indirection.
