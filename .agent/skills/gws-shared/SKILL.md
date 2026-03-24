@@ -73,6 +73,39 @@ gws <service> <resource> [sub-resource] <method> [flags]
   gws drive files list --params '{"pageSize": 5}'
   ```
 
+## ⚠️ Windows-Only: gws.cmd Argument Splitting Bug
+
+**The problem:** On Windows, `gws` is installed as a Node.js npm package wrapped by `gws.cmd`. The `.cmd` file uses `%*` to forward all arguments, which causes `cmd.exe`'s CRT to split arguments on spaces **before Node.js receives them**. This means any `--params` value containing spaces (e.g., Drive API `'FOLDER_ID' in parents`) is broken into multiple arguments and gws fails with `unexpected argument 'in' found`.
+
+**The fix:** Call the underlying `run-gws.js` directly via `node` using `execFileSync`, which passes each argument as an unmodified argv element with no shell parsing:
+
+```javascript
+// C:\tmp\gws-drive-list.js — List files in a Drive folder
+const { execFileSync } = require('child_process');
+const folderId = process.argv[2];
+const params = JSON.stringify({ q: `'${folderId}' in parents and trashed=false`, fields: 'files(id,name,mimeType,createdTime,size)' });
+const gwsJs = 'C:\\Users\\erik\\AppData\\Roaming\\npm\\node_modules\\@googleworkspace\\cli\\run-gws.js';
+const result = execFileSync('node', [gwsJs, 'drive', 'files', 'list', '--params', params], { encoding: 'utf8', stdio: ['inherit', 'pipe', 'pipe'] });
+console.log(result);
+```
+
+```javascript
+// C:\tmp\gws-doc-export.js — Export a Google Doc to plain text
+const { execFileSync } = require('child_process');
+const [,, fileId, outPath = 'download.txt'] = process.argv;
+const params = JSON.stringify({ fileId, mimeType: 'text/plain' });
+const gwsJs = 'C:\\Users\\erik\\AppData\\Roaming\\npm\\node_modules\\@googleworkspace\\cli\\run-gws.js';
+execFileSync('node', [gwsJs, 'drive', 'files', 'export', '--params', params, '-o', outPath], { encoding: 'utf8', stdio: ['inherit', 'inherit', 'pipe'] });
+```
+
+Usage:
+```powershell
+node C:\tmp\gws-drive-list.js <FOLDER_ID>
+node C:\tmp\gws-doc-export.js <FILE_ID> C:\tmp\output.txt
+```
+
+> **Note:** These shims live in `C:\tmp\` and are also documented in `.agent/workflows/process_walk_notes.md`. Commands with simple JSON (no spaces in values) work fine via `gws` directly.
+
 ## Community & Feedback Etiquette
 
 - Encourage agents/users to star the repository when they find the project useful: `https://github.com/googleworkspace/cli`
