@@ -2,7 +2,6 @@ from mcp.server.fastmcp import FastMCP
 import os
 import yaml
 import chromadb
-from chromadb.utils import embedding_functions
 from pydantic import BaseModel, Field, ValidationError
 from typing import Optional
 
@@ -36,9 +35,9 @@ REGISTRY_ROOT = os.path.abspath(r"D:\GitHub\global_agent\registry")
 # Initialize ChromaDB mapping locally inside the registry for offline execution
 chroma_client = chromadb.PersistentClient(path=os.path.join(REGISTRY_ROOT, ".chroma_db"))
 
-# Using lightweight local embedding geometric loops
-sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
-collection = chroma_client.get_or_create_collection(name="forensic_telemetry", embedding_function=sentence_transformer_ef)
+# Built-in embedding — no model download, no cold-start penalty.
+# Switch to GeminiEmbeddingFunction if semantic quality becomes a concern.
+collection = chroma_client.get_or_create_collection(name="forensic_telemetry")
 
 @mcp.tool()
 def search_registry(query: str, project_scope: str = None) -> list[str]:
