@@ -1,0 +1,63 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The overarching goal of this task is to establish a robust method for persisting LinkedIn session state. This addresses the critical engineering challenge of maintaining consistent and reliable interactions with external platforms, ensuring continuity and preventing data loss across operations. It implies a need for careful consideration of session management strategies.",
+    "one_liner": "Establishing a robust system for persisting LinkedIn session state is crucial for reliable automation and continuous platform interaction.",
+    "source_context": "# Persisting LinkedIn Session State",
+    "tags": [
+      "linkedin",
+      "state-management",
+      "automation",
+      "system-design"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A specific workflow has been implemented for managing LinkedIn comments, involving the archiving of posted self-comments from a `drafts/comments/` directory to a `posted/comments/` directory. This structured approach ensures a clear audit trail for content, separates active drafts from published material, and streamlines the content lifecycle management process. It's a practical application of file-system based state management.",
+    "one_liner": "A structured archiving workflow for LinkedIn comments ensures content lifecycle management and auditability.",
+    "source_context": "Archive posted self-comment from `drafts/comments/` \u2192 `posted/comments/`",
+    "tags": [
+      "workflow",
+      "linkedin",
+      "content-management",
+      "file-system",
+      "audit-trail"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A significant architectural pattern involves creating a 'full arc ledger' for LinkedIn threads, exemplified by `registry/linkedin/threads/trilogy_001.md`. This system is designed to comprehensively track the entire lifecycle and interconnectedness of multi-part LinkedIn content or campaigns. It provides a historical record, contextual understanding, and a centralized source of truth for complex content strategies, showcasing a deliberate design choice for content orchestration.",
+    "one_liner": "We're establishing a 'full arc ledger' system to meticulously track the complete lifecycle and context of LinkedIn content threads.",
+    "source_context": "Create `registry/linkedin/threads/trilogy_001.md` \u2014 the full arc ledger",
+    "tags": [
+      "linkedin",
+      "architecture",
+      "content-strategy",
+      "design-pattern",
+      "documentation",
+      "ledger"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "All system state, including operational data and configurations, must be committed to Git. This fundamental principle ensures robust version control, provides a complete audit trail for changes, and enables collaborative development and easy rollback capabilities. Adhering to this rule is critical for system reliability, maintainability, and disaster recovery.",
+    "one_liner": "All system state must be committed to Git to ensure version control, traceability, and reliability.",
+    "source_context": "Commit all state to git",
+    "tags": [
+      "git",
+      "version-control",
+      "best-practice",
+      "reliability",
+      "data-management",
+      "law"
+    ]
+  }
+]

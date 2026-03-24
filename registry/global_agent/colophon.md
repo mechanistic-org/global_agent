@@ -68,3 +68,8 @@ A structured, continuous system has been established for tracking LinkedIn posts
 ## 2026-03-23 — Local filesystem structure created (`registry/linkedin/`) for managing LinkedIn content lifecycle.
 
 A local filesystem structure under `registry/linkedin/` has been designed to manage LinkedIn content continuity. This includes dedicated directories for `ideas/` (raw Gold), `drafts/` (active refinement), and `posted/` (archive for performance analysis and repetition prevention).
+
+
+## 2026-03-23 — We're establishing a 'full arc ledger' system to meticulously track the complete lifecycle and context of LinkedIn content threads.
+
+A significant architectural pattern involves creating a 'full arc ledger' for LinkedIn threads, exemplified by `registry/linkedin/threads/trilogy_001.md`. This system is designed to comprehensively track the entire lifecycle and interconnectedness of multi-part LinkedIn content or campaigns. It provides a historical record, contextual understanding, and a centralized source of truth for complex content strategies, showcasing a deliberate design choice for content orchestration.
