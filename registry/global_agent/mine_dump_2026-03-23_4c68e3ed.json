@@ -1,0 +1,74 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A structured, continuous system has been established for tracking LinkedIn posts, encompassing ideas, drafts, scheduling, and campaigns. This system integrates seamlessly with existing engineering workflows, treating marketing content as a first-class engineering task.",
+    "one_liner": "New system established for structured, continuous LinkedIn content tracking integrated with engineering workflows.",
+    "source_context": "Goal: Establish a structured, continuous system for tracking LinkedIn posts...",
+    "tags": [
+      "architecture",
+      "system_design",
+      "linkedin",
+      "workflow",
+      "marketing_engineering"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The existing GitHub Project board will be leveraged for tracking LinkedIn content pieces, using a `[Content]` prefix for issues. These content tasks will be sized as `Task` and categorized by `Node` (`portfolio` or `global_agent`) and `Impact` (`Revenue` or `Aesthetic`).",
+    "one_liner": "GitHub Project board adopted for tracking LinkedIn content with specific issue tagging and categorization.",
+    "source_context": "Proposed System - Global Ticketing (GitHub Board)... We will use your existing GitHub Project board.",
+    "tags": [
+      "github",
+      "workflow",
+      "tooling",
+      "linkedin",
+      "ticketing",
+      "process"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A local filesystem structure under `registry/linkedin/` has been designed to manage LinkedIn content continuity. This includes dedicated directories for `ideas/` (raw Gold), `drafts/` (active refinement), and `posted/` (archive for performance analysis and repetition prevention).",
+    "one_liner": "Local filesystem structure created (`registry/linkedin/`) for managing LinkedIn content lifecycle.",
+    "source_context": "Proposed System - Local Storage & Continuity (`registry/linkedin/`)... We need a local filesystem structure...",
+    "tags": [
+      "architecture",
+      "filesystem",
+      "data_management",
+      "linkedin",
+      "design_pattern"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The Allan Evans reply has been designated as the inaugural piece of content to be tracked within the new LinkedIn content system. It will be captured as a `[Content]` ticket on the GitHub board and its drafted text saved to `registry/linkedin/drafts/allan_evans_reply.md`, serving as a concrete example of the workflow.",
+    "one_liner": "Allan Evans reply is the first content piece tracked by the new LinkedIn system, validating the workflow.",
+    "source_context": "Goal... capture the Allan Evans reply as the first ticket.",
+    "tags": [
+      "linkedin",
+      "workflow_execution",
+      "example",
+      "onboarding"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "Routine updates on task completion, including updating GitHub issue status, committing changes, running the session miner, pushing forensic docs, and updating the sprint plan.",
+    "one_liner": "Standard task completion updates.",
+    "source_context": "Session Close - [x] Update GitHub issue status (#72)...",
+    "tags": [
+      "routine",
+      "status_update"
+    ]
+  }
+]

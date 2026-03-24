@@ -58,3 +58,13 @@ The portfolio cleanup plan establishes an 'archive-first' strategy, ensuring no 
 ## 2026-03-23 — Consolidated infrastructure and operational scripts into `global_agent/scripts/` to centralize agent tooling.
 
 Infrastructure and operational scripts, such as `nuke_r2_bucket.py` and `configure_r2_cors.py`, are being strategically migrated to `global_agent/scripts/`. This consolidation centralizes agent-related tooling and infrastructure configuration, enhancing discoverability, maintainability, and reusability for future agent development.
+
+
+## 2026-03-23 — New system established for structured, continuous LinkedIn content tracking integrated with engineering workflows.
+
+A structured, continuous system has been established for tracking LinkedIn posts, encompassing ideas, drafts, scheduling, and campaigns. This system integrates seamlessly with existing engineering workflows, treating marketing content as a first-class engineering task.
+
+
+## 2026-03-23 — Local filesystem structure created (`registry/linkedin/`) for managing LinkedIn content lifecycle.
+
+A local filesystem structure under `registry/linkedin/` has been designed to manage LinkedIn content continuity. This includes dedicated directories for `ideas/` (raw Gold), `drafts/` (active refinement), and `posted/` (archive for performance analysis and repetition prevention).
