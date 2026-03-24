@@ -73,3 +73,18 @@ A local filesystem structure under `registry/linkedin/` has been designed to man
 ## 2026-03-23 — We're establishing a 'full arc ledger' system to meticulously track the complete lifecycle and context of LinkedIn content threads.
 
 A significant architectural pattern involves creating a 'full arc ledger' for LinkedIn threads, exemplified by `registry/linkedin/threads/trilogy_001.md`. This system is designed to comprehensively track the entire lifecycle and interconnectedness of multi-part LinkedIn content or campaigns. It provides a historical record, contextual understanding, and a centralized source of truth for complex content strategies, showcasing a deliberate design choice for content orchestration.
+
+
+## 2026-03-24 — Established a secure, zero-firewall-exposure architecture for GitHub webhooks using Cloudflare Tunnel and FastAPI.
+
+The Always-On Router architecture establishes a secure bridge for GitHub events to internal NanoClaw containers. It leverages a Cloudflare Tunnel to route external GitHub webhooks to a local FastAPI daemon, ensuring zero local firewall exposure while validating HMAC signatures and triggering container execution.
+
+
+## 2026-03-24 — Decoupled `nanoclaw` execution from webhook response for immediate `202 Accepted` feedback.
+
+To ensure immediate responsiveness for GitHub webhooks, the `nanoclaw` container execution is fully detached using `subprocess.Popen(docker run --rm nanoclaw:latest)`. This allows the FastAPI daemon to return a `202 Accepted` response instantly, preventing webhook timeouts and decoupling the execution from the request lifecycle.
+
+
+## 2026-03-24 — Created an automated, HMAC-signed local smoke test script for the webhook daemon, ensuring security and functionality.
+
+A dedicated `test_webhook.py` script was developed to provide an automated local smoke test for the FastAPI daemon. This utility sends a POST request with a correctly generated HMAC signature to `localhost:8001/webhook`, verifying the `202 Accepted` response and ensuring core functionality and security validation work as expected.

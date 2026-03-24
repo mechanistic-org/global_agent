@@ -1,0 +1,78 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The `.chroma_db` directory was successfully untracked from git, and the `.gitignore` file was updated to reflect this change. This action ensures proper repository hygiene by preventing transient database files from being committed, maintaining a clean and focused version history.",
+    "one_liner": "Improved repository hygiene by untracking `.chroma_db` and updating `.gitignore`.",
+    "source_context": "#81: Untrack .chroma_db from git and fix .gitignore",
+    "tags": [
+      "git",
+      "devops",
+      "chromadb",
+      "configuration",
+      "best-practice"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "A critical SQLite lock race condition affecting `session_close.md` was identified and successfully resolved. The solution involved implementing sequential execution for database operations, effectively preventing concurrent access issues and ensuring the integrity and stability of session data.",
+    "one_liner": "Resolved a critical SQLite lock race condition in `session_close.md` through sequential execution.",
+    "source_context": "#81: Fix session_close.md SQLite lock race condition (sequential execution)",
+    "tags": [
+      "sqlite",
+      "race-condition",
+      "concurrency",
+      "bugfix",
+      "database",
+      "stability"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "ChromaDB was reseeded from the registry documentation to ensure the vector database contains the most current and accurate information. This is a routine maintenance task to keep the knowledge base up-to-date.",
+    "one_liner": "Reseeded ChromaDB from registry documentation for data freshness.",
+    "source_context": "#63: Reseed ChromaDB from registry docs",
+    "tags": [
+      "chromadb",
+      "data-management",
+      "maintenance"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Automatic OAuth token refresh for Google Workspace (GWS) was successfully implemented within `diag.py`. This enhancement significantly improves the reliability of diagnostic tools by eliminating the need for manual token renewals, thereby streamlining operations and enhancing developer experience.",
+    "one_liner": "Automated GWS OAuth token refresh in `diag.py`, boosting diagnostic tool reliability and developer experience.",
+    "source_context": "#70: GWS OAuth auto-refresh in diag.py",
+    "tags": [
+      "oauth",
+      "gws",
+      "automation",
+      "authentication",
+      "developer-experience",
+      "reliability"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The `$ENOS_ROOT` environment variable has been formally defined and integrated across the codebase, replacing all previously hardcoded paths. This architectural decision enhances system portability, simplifies environment configuration, and significantly improves overall code maintainability for the EN-OS project.",
+    "one_liner": "Standardized path management with `$ENOS_ROOT`, improving system portability and maintainability.",
+    "source_context": "#64: Define $ENOS_ROOT and replace hardcoded paths",
+    "tags": [
+      "architecture",
+      "configuration",
+      "portability",
+      "maintainability",
+      "environment-variables",
+      "best-practice"
+    ]
+  }
+]

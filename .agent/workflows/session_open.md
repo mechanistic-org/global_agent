@@ -9,14 +9,9 @@ Run this at the start of **every new conversation**. Paste `/session_open` as yo
 ## Steps
 
 // turbo
-1. Read the current sprint board from GitHub Projects:
+1. Fetch the live prioritized sprint board (Project #5):
 ```powershell
-gh project item-list 5 --owner mechanistic-org --format json --limit 20 2>&1 | python -c "import sys,json; items=json.load(sys.stdin).get('items',[]); [print(f'[{i[\"status\"]}] {i[\"title\"]} (#{i.get(\"number\",\"?\")})'  ) for i in items if i.get('status') in ['Ready','In progress','Backlog']]"
-```
-
-2. Read the local sprint plan cache:
-```
-D:\GitHub\global_agent\registry\portfolio\audits\2026-03-22_Sprint_Plan.md
+python D:\GitHub\global_agent\scripts\sprint_board.py --current-iteration
 ```
 
 // turbo
@@ -35,4 +30,4 @@ cd D:\GitHub\global_agent && python scripts\diag.py
 
 - Do NOT start executing work until step 4 is stated clearly.
 - If diag shows Ollama ❌, models are cold — run `ollama run qwen2.5-coder:32b --keepalive -1` before firing any agent.
-- The GitHub Project board (Project 5, `mechanistic-org`) is the **primary sprint surface**. The local Sprint_Plan.md is a cache — read it for human context, trust GitHub for status.
+- The GitHub Project board (Project 5, `mechanistic-org`) is the **exclusive sprint surface**. Do not look for static markdown sprint plans.

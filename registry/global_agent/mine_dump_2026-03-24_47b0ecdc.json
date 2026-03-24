@@ -1,0 +1,126 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The Always-On Router architecture establishes a secure bridge for GitHub events to internal NanoClaw containers. It leverages a Cloudflare Tunnel to route external GitHub webhooks to a local FastAPI daemon, ensuring zero local firewall exposure while validating HMAC signatures and triggering container execution.",
+    "one_liner": "Established a secure, zero-firewall-exposure architecture for GitHub webhooks using Cloudflare Tunnel and FastAPI.",
+    "source_context": "BLUF: Bridge GitHub events \u2192 NanoClaw containers with zero local firewall exposure. A Cloudflare Tunnel routes external GitHub webhooks to a local FastAPI daemon...",
+    "tags": [
+      "architecture",
+      "security",
+      "webhooks",
+      "cloudflare",
+      "fastapi",
+      "nanoclaw"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must always use timing-safe comparison functions, such as `hmac.compare_digest()`, when validating cryptographic secrets like webhook HMAC signatures. This prevents timing attacks that could reveal secret information.",
+    "one_liner": "Codified the rule: Always use timing-safe comparisons for cryptographic secrets like HMACs.",
+    "source_context": "HMAC SHA256 validation via `hmac.compare_digest()` (timing-safe)",
+    "tags": [
+      "security",
+      "hmac",
+      "best practice",
+      "webhooks",
+      "law"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "To ensure immediate responsiveness for GitHub webhooks, the `nanoclaw` container execution is fully detached using `subprocess.Popen(docker run --rm nanoclaw:latest)`. This allows the FastAPI daemon to return a `202 Accepted` response instantly, preventing webhook timeouts and decoupling the execution from the request lifecycle.",
+    "one_liner": "Decoupled `nanoclaw` execution from webhook response for immediate `202 Accepted` feedback.",
+    "source_context": "`subprocess.Popen(docker run --rm nanoclaw:latest)` \u2014 fully detached, returns `202 Accepted` immediately",
+    "tags": [
+      "architecture",
+      "performance",
+      "docker",
+      "webhooks",
+      "async",
+      "fastapi"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A simulation mode was designed for the `nanoclaw` ignition state, logging intent and simulating execution until the `nanoclaw:latest` Docker image is available. This is controlled by a `NANOCLAW_ENABLED` environment variable, allowing for robust development and testing ahead of full dependency readiness.",
+    "one_liner": "Implemented a simulation mode for `nanoclaw` execution, enabling development ahead of dependency availability.",
+    "source_context": "NanoClaw (Docker) is not built yet (#61). ... A `NANOCLAW_ENABLED` env var gates real execution.",
+    "tags": [
+      "design pattern",
+      "dependency management",
+      "testing",
+      "environment variables",
+      "robustness"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Operational documentation must explicitly call out manual user authentication steps for external services, such as running `cloudflared tunnel login` in a browser, and manual DNS configuration (e.g., CNAME records). These steps cannot be fully automated and are critical for successful deployment.",
+    "one_liner": "Codified the rule: Operational docs must clearly delineate manual authentication and DNS setup for external services.",
+    "source_context": "cloudflared setup requires Cloudflare auth \u2014 I can write all the config files and commands but you need to run `cloudflared tunnel login` once in a browser. The subdomain `os.mechanistic.com` needs to be added as a CNAME in your Cloudflare DNS pointing to the tunnel UUID.",
+    "tags": [
+      "operations",
+      "cloudflare",
+      "authentication",
+      "manual steps",
+      "documentation",
+      "law"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A strategy was established to handle the complexity of GitHub's GraphQL-backed `projects_v2_item` payloads. The daemon implements best-effort parsing with a fallback log for inspection, acknowledging that the traversal path may require iterative adjustment after initial live testing.",
+    "one_liner": "Adopted a best-effort parsing strategy with logging for complex GitHub Project V2 GraphQL payloads, anticipating iterative refinement.",
+    "source_context": "GitHub's `projects_v2_item` payloads are GraphQL-backed and complex. The daemon will include best-effort parsing with a fallback log for inspection. After first live test, the traversal path may need one adjustment.",
+    "tags": [
+      "github api",
+      "graphql",
+      "parsing",
+      "risk management",
+      "iterative development",
+      "strategy"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A dedicated `test_webhook.py` script was developed to provide an automated local smoke test for the FastAPI daemon. This utility sends a POST request with a correctly generated HMAC signature to `localhost:8001/webhook`, verifying the `202 Accepted` response and ensuring core functionality and security validation work as expected.",
+    "one_liner": "Created an automated, HMAC-signed local smoke test script for the webhook daemon, ensuring security and functionality.",
+    "source_context": "`test_webhook.py` is included in this implementation \u2014 it sends a POST to `localhost:8001/webhook` with correct HMAC signature and verifies `202 Accepted` response.",
+    "tags": [
+      "testing",
+      "automation",
+      "security",
+      "webhooks",
+      "fastapi",
+      "development"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The subdomain for the Cloudflare Tunnel was refined from `os.mechanistic.com` to `hooks.mechanistic.com`. This decision was captured in the task checklist, indicating a specific configuration choice for clarity and purpose.",
+    "one_liner": "Refined the Cloudflare Tunnel subdomain to `hooks.mechanistic.com` for clearer purpose.",
+    "source_context": "Confirm subdomain: `hooks.mechanistic.com`",
+    "tags": [
+      "configuration",
+      "dns",
+      "cloudflare",
+      "decision"
+    ]
+  }
+]

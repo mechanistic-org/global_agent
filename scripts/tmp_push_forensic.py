@@ -1,0 +1,23 @@
+import sys
+import os
+sys.path.insert(0, os.path.abspath('scripts'))
+import mcp_registry_server
+
+body = """## Decisions
+- Untracked `.chroma_db` from Git entirely to fix bloat/timeout. Added to `.gitignore`.
+- Enforced sequential execution for `session_close.md` to structurally prevent SQLite WAL deadlocks in ChromaDB between mining and pushing.
+- Configured `diag.py` to auto-refresh stale GWS OAuth tokens, resolving the manual-blocking issue at session start.
+- Replaced hardcoded paths with `$ENOS_ROOT` in `mcp_registry_server.py` for portability.
+
+## Blockers
+- None.
+
+## Next
+- Next session can pick up the Wave 1 Sprint Plan tasks (e.g., Ollama NSSM keepalive)."""
+
+print(mcp_registry_server.push_forensic_doc(
+    project_name="session_logs",
+    component_name="2026-03-24_wave0",
+    markdown_body=body,
+    frontmatter_dict={"title": "Session wave0 Decisions", "date": "2026-03-24", "context_node": "session_close"}
+))
