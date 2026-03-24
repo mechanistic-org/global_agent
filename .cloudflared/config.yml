@@ -20,7 +20,7 @@
 # 5. Update `credentials-file` below with your actual tunnel UUID path.
 
 tunnel: enos-webhook
-credentials-file: C:\Users\erik\.cloudflared\<TUNNEL_UUID>.json
+credentials-file: C:\Users\erik\.cloudflared\2a58039c-75a0-46cf-920d-699b3a27a644.json
 
 ingress:
   # ── Webhook endpoint ───────────────────────────────────────────────────
