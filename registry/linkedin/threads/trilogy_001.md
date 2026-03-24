@@ -37,7 +37,20 @@ Governed by `laws/law_004_linkedin_persona.md`.
 
 - [ ] A fourth post following the thread to the next inevitable question: *fine, the jigs are in place — what does the first autonomous boot actually look like?* (Connects to #73 FastAPI Daemon work.)
 
+## Analytics Snapshot (2026-03-23, ~Day 2)
+
+| Metric | Value |
+|---|---|
+| Post impressions (7 days) | **3,907** |
+| Impressions lift | **+390,700%** |
+| Followers | 663 (+0.4% / 7 days) |
+| Profile viewers (90 days) | 51 |
+| Search appearances | **8** (previous week) |
+| Weekly actions completed | **3 of 3** ✅ (1 post + 2 comments) |
+
+**Signal:** 8 search appearances means organic discovery beyond the follow graph. The algorithm is indexing the content by topic.
+
 ## Demographic Signal (Post #3, 58min)
 
-- 35 impressions / 17 members reached
+- 35 impressions / 17 members reached at 58 minutes
 - 65% San Francisco Bay Area — aerospace/engineering first-degree connections likely from Mobile Outfitters context.
