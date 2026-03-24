@@ -16,3 +16,10 @@ scripts/.tmp/
 gcp-oauth.keys.json
 
 .gdrive_tokens.json
+
+# ChromaDB — binary SQLite, never commit (causes git push hangs)
+registry/.chroma_db/
+.chroma_db/
+
+# Temp download artifacts
+download.txt
