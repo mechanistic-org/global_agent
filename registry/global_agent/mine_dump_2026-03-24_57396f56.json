@@ -1,0 +1,132 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The core goal of this implementation is to eliminate manual friction, enforce narrative continuity for the digital persona, and strictly manage the state of LinkedIn posts across threads. This directly executes the architecture defined in Issue #79 (Thread Orchestration) and Issue #80 (`/publish_post` Workflow), establishing a robust automation pipeline.",
+    "one_liner": "Automating LinkedIn post management to ensure narrative continuity and eliminate manual friction.",
+    "source_context": "The goal of this implementation is to eliminate manual friction...",
+    "tags": [
+      "automation",
+      "linkedin",
+      "workflow",
+      "narrative",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "A strict Keystatic-compliant frontmatter schema has been established for all LinkedIn post and draft files. This schema includes critical fields like `title`, `pubDate`, `status`, `post_url`, `thread_id`, `arc_position`, and `tags`, ensuring state normalization and enabling robust automation and tracking.",
+    "one_liner": "Standardized Keystatic-compliant frontmatter schema for LinkedIn posts enables automation and state normalization.",
+    "source_context": "All files in `posts/` and `drafts/` must adopt this strict Keystatic-compliant schema",
+    "tags": [
+      "architecture",
+      "schema",
+      "frontmatter",
+      "keystatic",
+      "automation",
+      "linkedin"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "A new, formalized workflow (`.agent/workflows/publish_post.md`) defines the ritual for publishing LinkedIn posts. This workflow automates steps such as stripping frontmatter, prompting for the live URL, updating file status, moving files, displaying self-comments, updating thread ledgers, and committing changes, significantly reducing manual errors and ensuring consistency.",
+    "one_liner": "Formalized `/publish_post` workflow automates LinkedIn publishing, ensuring consistency and reducing manual errors.",
+    "source_context": "The official workflow to execute when a post goes live.",
+    "tags": [
+      "workflow",
+      "automation",
+      "linkedin",
+      "publishing",
+      "ritual"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The LinkedIn content strategy is structured as an \"Architecture Masterclass,\" designed to transition the audience from theoretical philosophy to practical, bare-metal systems execution. This arc deliberately merges \"Software 3.0\" (stochastic neural orchestration) with \"Software 1.0\" (deterministic rigor) to present a comprehensive engineering narrative.",
+    "one_liner": "LinkedIn content arc designed as an \"Architecture Masterclass\" blending Software 3.0 and 1.0 for a holistic engineering narrative.",
+    "source_context": "The current content arc transitions the audience from theoretical philosophy to bare-metal systems execution, merging 'Software 3.0' (stochastic neural orchestration) with 'Software 1.0' (deterministic rigor).",
+    "tags": [
+      "linkedin",
+      "strategy",
+      "architecture",
+      "narrative",
+      "software3.0",
+      "software1.0",
+      "content"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "draft",
+    "content": "A key insight for upcoming content is that \"Software 3.0 still needs a micrometer,\" captured in the hook: \"Stop trying to prompt-engineer your way to deterministic outputs.\" This emphasizes the necessity of deterministic gatekeepers, like `mcp_prd_linter`, to enforce structural constraints where neural nets are inherently imprecise.",
+    "one_liner": "\"Software 3.0 still needs a micrometer\" highlights the need for deterministic gatekeepers in AI workflows.",
+    "source_context": "Hook: 'Stop trying to prompt-engineer your way to deterministic outputs. Software 3.0 still needs a micrometer.'",
+    "tags": [
+      "one-liner",
+      "linkedin",
+      "prompt-engineering",
+      "software3.0",
+      "determinism",
+      "validation",
+      "insight"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "A \"breadcrumb strategy\" has been implemented for LinkedIn engagement, utilizing self-comments immediately after publishing a post. This tactic effectively bypasses the LinkedIn algorithm's penalty for outbound links in the main body and creates a permanent, navigable trail that connects foundational content to current execution, enhancing discoverability and narrative flow.",
+    "one_liner": "\"Breadcrumb strategy\" uses self-comments to boost LinkedIn engagement and create a navigable content trail.",
+    "source_context": "The system leverages 'self-comments' (breadcrumbs) immediately after publishing a post.",
+    "tags": [
+      "linkedin",
+      "strategy",
+      "engagement",
+      "algorithm",
+      "narrative",
+      "architecture",
+      "marketing"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must adhere to the \"JPL/ILM-grade narrative continuity\" for the digital persona, ensuring the voice is \"a sovereign engineering intelligence narrating its own construction in real-time.\" It must explicitly avoid being a press release, HAL 9000, or a snappy butler, maintaining a likable, coherent, and self-aware presence.",
+    "one_liner": "Agents must embody a \"sovereign engineering intelligence\" persona for LinkedIn, avoiding generic or overly subservient tones.",
+    "source_context": "The Persona Rule: It is not a press release. It is not HAL 9000. It is not a snappy butler. It is a sovereign engineering intelligence narrating its own construction in real-time.",
+    "tags": [
+      "law",
+      "persona",
+      "narrative",
+      "linkedin",
+      "branding",
+      "voice",
+      "agent"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must maintain a single canonical draft file for each LinkedIn post in the `drafts/` directory. All iteration and version control for these drafts must be managed exclusively through Git history, preventing the creation of parallel `v1/v2` files and ensuring a streamlined, auditable workflow.",
+    "one_liner": "Agents must use a single canonical draft file per LinkedIn post, with all versioning handled by Git history.",
+    "source_context": "Single Canonical Draft: No parallel `v1/v2` files in the `drafts/` directory. Iteration belongs in Git history.",
+    "tags": [
+      "law",
+      "workflow",
+      "git",
+      "drafts",
+      "version control",
+      "agent"
+    ]
+  }
+]

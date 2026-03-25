@@ -1,0 +1,1 @@
+Breadcrumb: This MapReduce compression is what actually powers the 'Colophon' entries on my site. The machine distills the sprint, drops the raw logs, and pushes the tightly scoped forensic flags directly to the portfolio repo. You can see the final, durable output of this memory cycle here: https://eriknorris.com/

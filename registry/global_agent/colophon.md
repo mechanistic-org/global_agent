@@ -93,3 +93,13 @@ A dedicated `test_webhook.py` script was developed to provide an automated local
 ## 2026-03-24 — Switched to direct GitHub GraphQL API integration for live sprint board management.
 
 The `global_agent` workflow is being pivoted from generating static Markdown to directly querying the GitHub GraphQL API for Project #5. This architectural decision ensures agents always access the absolute ground truth for sprint management, improving accuracy and efficiency by removing a layer of indirection.
+
+
+## 2026-03-24 — Standardized Keystatic-compliant frontmatter schema for LinkedIn posts enables automation and state normalization.
+
+A strict Keystatic-compliant frontmatter schema has been established for all LinkedIn post and draft files. This schema includes critical fields like `title`, `pubDate`, `status`, `post_url`, `thread_id`, `arc_position`, and `tags`, ensuring state normalization and enabling robust automation and tracking.
+
+
+## 2026-03-24 — "Breadcrumb strategy" uses self-comments to boost LinkedIn engagement and create a navigable content trail.
+
+A "breadcrumb strategy" has been implemented for LinkedIn engagement, utilizing self-comments immediately after publishing a post. This tactic effectively bypasses the LinkedIn algorithm's penalty for outbound links in the main body and creates a permanent, navigable trail that connects foundational content to current execution, enhancing discoverability and narrative flow.
