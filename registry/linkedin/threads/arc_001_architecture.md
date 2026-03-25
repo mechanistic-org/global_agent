@@ -7,6 +7,10 @@ posts:
   - id: 2026-03-22_git_as_agent_substrate.md
     arc_position: 1
     post_url: ""
+    assets:
+      - type: "notebook_lm_audio"
+        host: "youtube"
+        url: "https://youtu.be/F7sYr5G3MKg"
   - id: 2026-03-22_the-loop-is-closing.md
     arc_position: 2
     post_url: ""
