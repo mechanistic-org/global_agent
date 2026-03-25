@@ -3,7 +3,8 @@ interlocutor: "Michael Poimboeuf"
 topic: "AI Constraints and Hallucinations"
 project_node: "arc_001_architecture"
 stance_taken: "Grounding the AI constraint philosophy in our shared history of shipping rigorous products at Digidesign."
-status: draft
+status: published
+url: "https://www.linkedin.com/feed/update/urn:li:activity:7442663496259059712?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7442663496259059712%2C7442670305908609024%29&replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7442663496259059712%2C7442692963270524928%29"
 ---
 
 ## Inbound Context
