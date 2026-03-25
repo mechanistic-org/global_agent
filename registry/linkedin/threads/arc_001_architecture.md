@@ -6,7 +6,7 @@ description: "Transitioning audience from Git-as-State philosophy to mechanical 
 posts:
   - id: 2026-03-22_git_as_agent_substrate.md
     arc_position: 1
-    post_url: ""
+    post_url: "https://www.linkedin.com/feed/update/urn:li:activity:7441577236518006784"
     assets:
       - type: "notebook_lm_audio"
         host: "youtube"
