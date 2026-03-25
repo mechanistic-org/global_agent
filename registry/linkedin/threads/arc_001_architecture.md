@@ -18,7 +18,7 @@ posts:
     post_url: "https://www.linkedin.com/posts/eriknorris_trying-to-prompt-engineer-your-way-to-deterministic-activity-7442338591734841344-46gl"
   - id: 2026-03-24_mechanical-fmea.md
     arc_position: 5
-    post_url: ""
+    post_url: "https://www.linkedin.com/posts/eriknorris_theres-a-specific-feeling-i-get-when-i-first-share-7442663494254010369-B4Fv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
   - id: 2026-03-24_surviving-context-collapse.md
     arc_position: 6
     post_url: ""
