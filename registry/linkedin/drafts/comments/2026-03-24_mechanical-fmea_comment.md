@@ -1,1 +1,5 @@
-Breadcrumb: Building the FMEA generator was a direct reaction to the hallucination issues I outlined in the previous post about the 'Micrometer' [Link to Post 4]. Having built disc changers like the DV700 and wearable optics where tolerances are unforgiving, watching an LLM try to guess a Risk Priority Number was terrifying. Keep the math out of the neural net. The agent code for this lives in the mechanistic-org/global_agent repo.
+Breadcrumb: This is the same architectural pattern as the gatekeeper [link to Post #4] — just applied one layer deeper. The linter enforces the schema. The FMEA generator enforces the math. In both cases the constraint is identical: the LLM is not allowed to touch the deterministic layer.
+
+Having built hardware where tolerances are unforgiving, watching a model guess an RPN wasn't just architecturally wrong. It was viscerally wrong.
+
+The agent code lives in mechanistic-org/global_agent if you want to see the split in practice.

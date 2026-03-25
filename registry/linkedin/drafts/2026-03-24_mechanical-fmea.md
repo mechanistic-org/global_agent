@@ -8,22 +8,45 @@ arc_position: 5
 tags: ["mechanical-engineering", "FMEA", "software-3.0"]
 ---
 
-1. The Hook (The Scroll-Stopper)
-I wouldn’t let an LLM design the mechanism for a modular disc vault, and I definitely won't let it calculate my Risk Priority Numbers. In the mechanical engineering world, rigor isn't optional. We use FMEA (Failure Mode and Effects Analysis) to mathematically quantify risk. But in the rush to adopt AI agents, developers are asking stochastic language models to perform deterministic risk analysis end-to-end.
-If you let a neural net calculate your failure modes, you aren't doing engineering. You're rolling dice.
+The first time I watched an LLM calculate a Risk Priority Number, I felt the same thing I feel when I see a machinist eyeballing a tolerance.
 
-2. The Outline / Body Narrative
-The Problem: The Math Gap in Software 3.0
-Large Language Models are brilliant semantic engines, but they are terrible calculators. A Risk Priority Number (RPN) is a rigid equation: Severity × Occurrence × Detection.
-When I started building out the EN-OS to automate the PRD cycles for my consultancy, I realized the agent could easily hallucinate the math or casually change a risk score based on the "temperature" of the prompt. That is unacceptable. You can't version-control a vibe.
+Pure dread.
 
-The Solution: Splitting the Cognitive Load (mcp_fmea_generator)
-To solve this, I split the pipeline. The AI handles the semantics; Python handles the math.
-1. Semantic Extraction: The ephemeral agent (NanoClaw) reads the Product Requirements Document and uses its vast context to extract the semantic "Causes" and "Effects" of potential failures.
-2. Deterministic Handoff: It hands those raw text strings and base integer estimates to a FastMCP Python script.
-3. The Hard Math: Standard, Software 1.0 Python calculates the RPN and generates a perfectly formatted Markdown matrix.
-4. The Git Substrate: That static matrix is committed directly to the repo.
+I've built disc changers that hold 700 DVDs. I've built wearable optics. In physical engineering, an RPN isn't a suggestion — it's the number that decides whether a failure mode gets a design review or gets shipped.
 
-The Takeaway
-We are combining the fuzzy reasoning of Software 3.0 with the bare-metal determinism of Git and Python. Because the FMEA is generated as a static Markdown table, every single risk fluctuation is perfectly diffable over time.
-If an RPN score changes next sprint, git blame tells me exactly when and why, with zero AI hallucination. Keep the math out of the neural net.
+Severity × Occurrence × Detection.
+
+That's the whole equation. No "approximately." No "based on my interpretation of the prompt."
+
+This is what LLMs fundamentally are: volatile, highly entropic engines. You shouldn't trust them. You must strictly constrain them. And you should never, under any circumstances, let one touch your math.
+
+**The Math Gap**
+
+When I started running PRD automation through the EN-OS, the model was brilliant at the semantic work. Identifying failure modes. Describing downstream effects. Reasoning about root causes.
+
+The moment I asked it to score and calculate, it drifted.
+
+Change a word in the system prompt, get a different RPN. Run the same document twice, get two different risk matrices. One version flags a failure mode as Severity 8. The next run calls it a 6. Neither is wrong by the model's logic. Both are unacceptable by any engineering standard.
+
+You can't version-control a vibe.
+
+**The Split: `mcp_fmea_generator`**
+
+You don't prompt an LLM to "be precise." You build a mechanical gauge — a structural constraint cage — that physically prevents it from committing slop before it ever touches the disk.
+
+In this case, that means a clean architectural boundary.
+
+1. The agent reads the PRD and extracts the semantic layer: Causes, Effects, failure language.
+2. It passes raw text strings and base integer estimates to a FastMCP Python script.
+3. Standard Python calculates the RPN. The math is the math.
+4. A formatted Markdown matrix commits directly to the Git substrate.
+
+The model reasons. Python calculates. Git records.
+
+**The Audit Trail**
+
+Because the FMEA lives as static Markdown in the repo, every risk change is perfectly diffable. If an RPN shifts next sprint, `git blame` shows exactly when and why — with zero model involvement in the record.
+
+In mechanical engineering, you don't ask the machinist to remember the tolerance. You stamp it into the part.
+
+Same rule. Different substrate.

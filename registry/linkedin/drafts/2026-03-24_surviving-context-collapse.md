@@ -8,24 +8,43 @@ arc_position: 6
 tags: ["context-collapse", "map-reduce", "LLM-memory"]
 ---
 
-1. The Hook (The Scroll-Stopper)
 To build a truly autonomous AI agent, you have to teach it how to aggressively forget.
-Shoving three weeks of chronological GitHub issues into an LLM's context window is a recipe for hallucinations. The attention mechanism degrades, the agent loses the plot, and suddenly you are fighting "tool amnesia."
-If you want your machine to remember the architectural decisions of a sprint, it cannot memorize the noise. It needs to forget in order to remember.
 
-2. The Outline / Body Narrative
-The Problem: The Context Window Trap
-When I started handing my Git memory over to an ephemeral agent, the initial instinct was to feed it everything. If I was iterating a PRD for a food automation lid or designing a complex mechanical assembly, I assumed the agent needed the entire chronological log to generate the final sprint documentation.
-This is a failure of architecture. Pushing raw, unedited ticket histories into the context window (the AI's RAM) guarantees context drift.
+Most people building with LLMs are thinking about this backwards.
 
-The Solution: The session_close MapReduce Pattern
-Instead of stuffing the context window, the EN-OS architecture relies on a strict MapReduce compression cycle during container teardown.
-When a session ends, the machine runs mine_session.py before the container burns down:
-1. The Map Phase: A quick, targeted agent scans the raw chronological logs of the session.
-2. The Extraction: It identifies only the delta—the net-new engineering decisions, the blocked dependencies, and the "Forensic Flags."
-3. The Reduce Phase: It compresses that intelligence into a single, tightly scoped Markdown artifact and pushes it to the Git substrate (and ChromaDB).
-4. The Purge: It throws the raw chronological logs away.
-When it is time to generate the final Colophon entry for the portfolio, the agent doesn't read the noise. It only reads the pre-computed forensic flags.
+The instinct is to feed the agent everything. Full ticket history. Complete chronological logs. Every decision, every thread, every constraint the session produced. The reasoning feels sound — more context, better output.
 
-The Takeaway
-Intelligence requires compression. You cannot brute-force compound context by buying a larger context window. You survive context collapse by pre-computing your semantic highlights and trusting the immutable Git layer to hold the rest.
+What you're actually doing is thrashing the cache.
+
+**The Cache Problem**
+
+A context window is not infinite storage. It's working memory — a cache. And like any cache, it has a hard ceiling. Push past it and you don't get graceful degradation. You get saturation. The attention mechanism starts drowning in chronological noise, signal decays, and the model begins confusing what's current with what's stale.
+
+I watched this happen in production.
+
+The agent would reference a decision from three sessions ago with complete confidence and get the details wrong. It would re-propose architecture we'd already rejected. It would answer questions about the current sprint using constraints from a previous one. Nothing was hallucinated exactly — it was all *in there*. The cache was just full, unsorted, and overflowing.
+
+Buying a larger context window doesn't fix this. That's not a ceiling problem. That's a cache management problem.
+
+**What Cache Management Actually Requires: Intentional Flushing**
+
+Every production cache strategy has a flush cycle. You don't accumulate indefinitely — you decide what's worth writing back to persistent memory and you purge the rest.
+
+This is what the EN-OS runs at container teardown: `mine_session.py`. Before the ephemeral agent dies and the context window burns, the machine flushes deliberately.
+
+1. **Map:** A targeted pass scans the raw chronological session logs.
+2. **Extract:** It pulls only the delta — net-new decisions, blocked dependencies, Forensic Flags. The signal, not the noise.
+3. **Reduce:** It compresses that signal into a single scoped Markdown artifact and pushes it to Git and ChromaDB.
+4. **Purge:** The raw logs are discarded.
+
+The next agent that boots doesn't read a transcript. It reads a briefing. A pre-computed, tightly scoped write-back from the previous session's cache flush.
+
+**What Survives the Flush**
+
+The Colophon entries on my portfolio are the visible output of this cycle. Not manually written. Not summarized after the fact. The machine distills the sprint, the cache flushes, and what persists is only what was worth writing back.
+
+The codebase is the factory floor. The LLM is just the engine inside the press.
+
+When you architect the flush correctly, you stop fighting the context window. You let the cache do what caches are supposed to do — hold what's hot, release what's cold, and write the important parts to disk before the power goes out.
+
+The machine has to know how to aggressively forget. That's not a limitation. That's the architecture.

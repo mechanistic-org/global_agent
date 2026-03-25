@@ -18,6 +18,7 @@ Channels:
     internal    → push_forensic_doc → ChromaDB (via mcp_registry_server)
     testimonial → registry/portfolio/testimonials/<slug>.json
     law         → registry/global_agent/law_candidates/<slug>.md
+    docs        → portfolio/src/content/docs/_inbox/YYYY-MM-DD_<slug>.md
     discard     → dropped silently
 """
 
@@ -42,6 +43,7 @@ LINKEDIN_DIR   = REGISTRY_ROOT / "global_agent" / "linkedin_drafts"
 COLOPHON_FILE  = REGISTRY_ROOT / "global_agent" / "colophon.md"
 TESTIMONIALS_DIR = REGISTRY_ROOT / "portfolio" / "testimonials"
 LAW_CANDIDATES_DIR = REGISTRY_ROOT / "global_agent" / "law_candidates"
+DOCS_INBOX_DIR = Path(r"D:\GitHub\portfolio\src\content\docs\_inbox")
 
 load_dotenv(REPO_ROOT / ".env")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -58,7 +60,7 @@ client/team wins, code breakthroughs, lessons about tools/systems, and moments w
 Read the provided text and return a JSON array of extracted items. Each item MUST have this exact schema:
 
 {
-  "channel": "linkedin | colophon | internal | testimonial | law | discard",
+  "channel": "linkedin | colophon | internal | testimonial | law | docs | discard",
   "confidence": "captured | inferred",
   "destination": "registry | portfolio | draft | discard",
   "content": "full extracted content, 2-5 sentences",
@@ -73,6 +75,7 @@ Channel definitions:
 - internal: Technical decision, constraint, or fact worth embedding in ChromaDB for future agent context
 - testimonial: Client praise, user feedback, or external validation
 - law: A rule or principle that should be codified (e.g. 'agents never hand-format YAML')
+- docs: A systemic update, architecture decision, or new protocol that should be codified in the master portfolio documentation
 - discard: Not useful, routine status updates, noise
 
 Confidence:
@@ -165,6 +168,16 @@ def route_item(item: dict, today: str, dry_run: bool = False) -> str:
         filepath = LAW_CANDIDATES_DIR / f"{today}_{slug}.md"
         filepath.write_text(f"# LAW CANDIDATE — {today}\n\n**Rule:** {one_liner}\n\n{content}\n\n**Tags:** {', '.join(tags)}\n", encoding="utf-8")
         return f"  LAW: {filepath.name}"
+
+    elif channel == "docs":
+        DOCS_INBOX_DIR.mkdir(parents=True, exist_ok=True)
+        slug = _slug(one_liner)
+        filepath = DOCS_INBOX_DIR / f"{today}_{slug}.md"
+        # Astro Starlight requires title and description in frontmatter
+        description = (content[:97] + '...') if len(content) > 100 else content
+        frontmatter = f"---\ntitle: \"{one_liner}\"\ndescription: \"{description}\"\n---\n\n"
+        filepath.write_text(frontmatter + content + f"\n\n**Tags:** {', '.join(tags)}\n", encoding="utf-8")
+        return f"  DOCS: {filepath.name} (Quarantined in _inbox)"
 
     return f"  UNKNOWN channel '{channel}': {one_liner[:60]}"
 
