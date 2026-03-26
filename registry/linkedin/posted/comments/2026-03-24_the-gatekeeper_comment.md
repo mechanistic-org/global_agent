@@ -1,1 +1,7 @@
-Breadcrumb: If you missed the foundation of this architecture (handing the machine the keys to its own Git memory, natively), that context is here: https://www.linkedin.com/posts/eriknorris_git-as-agent-memory-i-handed-the-machines-activity-7441639233418743808-Bhpu?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I. You can't run automated manufacturing lines for digital products without a hard gatekeeper.
+Breadcrumb: The foundation — handing the machine the keys to its own Git memory: https://www.linkedin.com/feed/update/urn:li:activity:7441577236518006784
+
+The pattern here scales. The linter enforces schema. The next layer enforces math. In both cases the constraint is identical: the LLM is not allowed to touch the deterministic layer.
+
+If you want to see the split in practice, the agent code lives in mechanistic-org/global_agent.
+
+Next: what happens when you apply this same boundary to an FMEA matrix — and why letting a model calculate an RPN is viscerally wrong: https://www.linkedin.com/posts/eriknorris_theres-a-specific-feeling-i-get-when-i-first-share-7442663494254010369-B4Fv

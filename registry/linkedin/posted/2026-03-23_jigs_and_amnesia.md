@@ -9,23 +9,15 @@ thread_id: "arc_001_architecture"
 arc_position: 3
 ---
 
-I've written about the substrate (git) and the loop (self-review). Today the question is: what keeps the machine from wandering?
+Hours of architecture. Decisions made. Patterns agreed on.
 
-The more things change, the more they stay exactly the same.
+Gone. Mid-session. Clean slate.
 
-In the pursuit of building a futuristic AI engineering OS — coordinating swarms, orchestrating model handoffs, managing autonomous loops — I realized the entire system still lives or dies by one thing:
+The LLM didn't crash. The context window shifted. And the agent picked back up treating the whole system like it had never existed — confidently rebuilding things you already built together and already broke.
 
-Old-school, Old Testament project management rigor. A persistent vision. A rigid architecture. And the tooling to enforce it.
+That's the amnesia nobody warns you about.
 
-For months, I tried building with "agents" by talking to them. I kept tweaking system prompts, building more elaborate systems of files and folders, hoping to make the model maintain context and follow instructions.
-
-Then the context window would shift. And the machine would forget everything.
-
-Not metaphorically. Literally. Hours of established architecture, decisions made, patterns agreed upon — gone. The agent would pick up mid-session and treat the whole thing as a clean slate. You'd find yourself re-explaining the same constraints to the same system, watching it confidently rebuild something you already built together and already broke.
-
-That's the amnesia. That's the real problem nobody warns you about.
-
-So I stopped treating this as a software problem and started treating it as a physical engineering problem.
+I stopped treating it as a software problem. I started treating it as a physical engineering problem.
 
 **I am building a Cognitive Manufacturing Line.**
 

@@ -1,16 +1,7 @@
----
-title: Self-comment — Jigs and Amnesia post
-type: comment
-parent_post: 2026-03-23_jigs_and_amnesia
-status: ready-to-paste
----
+The amnesia isn't a bug you fix. It's a constraint you architect around.
 
-Breadcrumbs for myself as much as for anyone reading.
+Previous post — why git ended up being the natural substrate for autonomous agents: https://www.linkedin.com/feed/update/urn:li:activity:7441577236518006784
 
-Yesterday I wrote about why git ended up being the natural memory substrate for autonomous agents — the realization that you don't build agent memory, you find where it already lives:
-https://www.linkedin.com/posts/eriknorris_turns-out-linus-torvalds-knew-ive-spent-activity-7441577236518006784-_86Y
+Next post — what the actual gatekeeper looks like in code: https://link.eriknorris.com/fodmn3F
 
-Then I watched the machine file its own bug reports while I was on a walk. This post was the inevitable next question: fine, the loop closes — but what keeps the drill from wandering?
-https://www.linkedin.com/posts/eriknorris_git-as-agent-memory-i-handed-the-machines-activity-7441639233418743808-Bhpu
-
-Context decays. Breadcrumbs persist. Same rules, different substrate.
+Context decays. Breadcrumbs persist. Frames hold. Same rules, different materials.

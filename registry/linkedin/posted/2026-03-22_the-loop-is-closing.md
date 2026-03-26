@@ -9,24 +9,17 @@ thread_id: "arc_001_architecture"
 arc_position: 2
 ---
 
-Three hours ago I published about git as agent memory.
+I left the machine running and went for a walk.
 
-Then I tested the thesis.
+When I came back, it had filed its own bug reports.
 
-I handed the machine's own documentation to an external AI and said: find the bugs.
+Three real bugs. Six tickets. Fully triaged. Done before I got back to my desk.
 
-It found 3 real ones in under 2 minutes.
-→ Paths that break on any machine but mine
-→ No live query to the sprint board — the agent was reading a stale cache
-→ The sprint plan being manually updated by the agent (race condition with truth)
+Not metaphorically. Literally. I typed one command, dropped a folder of docs, and the sprint board updated itself while I was outside.
 
-Six tickets. Fully triaged. Filed before I could open a second tab.
+The part nobody talks about isn't the AI writing code.
 
-Then I went for a walk.
-
-I talked to a different AI about the architecture the whole time. Saved the outputs as I went.
-
-When I came back I dropped those docs into a shared folder and typed one command.
+It's the machine reviewing the system that runs the machine — and routing the findings back into its own memory.
 
 Six more tickets appeared on the sprint board. Fully prioritized. While I was outside.
 
