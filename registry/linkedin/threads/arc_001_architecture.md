@@ -23,8 +23,11 @@ posts:
   - id: 2026-03-24_mechanical-fmea.md
     arc_position: 5
     post_url: "https://www.linkedin.com/posts/eriknorris_theres-a-specific-feeling-i-get-when-i-first-share-7442663494254010369-B4Fv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
-  - id: 2026-03-24_surviving-context-collapse.md
+  - id: 2026-03-26_the_cache_problem.md
     arc_position: 6
+    post_url: "https://www.linkedin.com/posts/eriknorris_the-machine-has-to-forget-solving-context-activity-7443056894203621376-mqFp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+  - id: 2026-03-24_surviving-context-collapse.md
+    arc_position: 7
     post_url: ""
 ---
 

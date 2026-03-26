@@ -9,23 +9,23 @@ thread_id: "arc_001_architecture"
 arc_position: 2
 ---
 
-I left the machine running and went for a walk.
+Three bugs. Decomposed to six tickets. Fully triaged. Prioritized. Organized into iterations.
 
-When I came back, it had filed its own bug reports.
+I asked my machine to explain and describe itself and fed that markdown file to Gemini 3.1 Pro and asked it to find the bugs. It found 3 in ~2 minutes.
 
-Three real bugs. Six tickets. Fully triaged. Done before I got back to my desk.
+→ Paths that break on any machine but mine
+→ No live query to the sprint board — the agent was reading a stale cache
+→ The sprint plan being manually updated by the agent (race condition with truth)
 
-Not metaphorically. Literally. I typed one command, dropped a folder of docs, and the sprint board updated itself while I was outside.
+Nice. Then I went for a walk.
 
-The part nobody talks about isn't the AI writing code.
+I talked to a different AI about the architecture the whole time. Saved the outputs as I went.
 
-It's the machine reviewing the system that runs the machine — and routing the findings back into its own memory.
+When I came back I dropped those docs into a shared folder and typed one command.
 
-Six more tickets appeared on the sprint board. Fully prioritized. While I was outside.
+Six more tickets appeared on the sprint board. Fully prioritized, parsed to the correct iterations. On rails.
 
-The machine read its own critique and scheduled the fixes.
-
-That's the part nobody talks about:
+The machine read its own critique and scheduled the fixes. That's the part nobody talks about:
 
 It's not the AI writing code that matters.
 

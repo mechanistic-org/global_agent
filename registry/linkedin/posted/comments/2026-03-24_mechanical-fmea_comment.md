@@ -5,9 +5,9 @@ Having built hardware where tolerances are non-negotiable, watching a model gues
 The agent code is in mechanistic-org/global_agent if you want to see the split in practice.
 
 Arc so far:
-→ Git as substrate: https://www.linkedin.com/feed/update/urn:li:activity:7441577236518006784
-→ The loop closing: https://link.eriknorris.com/oz3KzKD
-→ Jigs and amnesia: https://link.eriknorris.com/sYapFBd
-→ The gatekeeper: https://link.eriknorris.com/fodmn3F
+→ Git as substrate: https://link.eriknorris.com/oz3KzKD
+→ The loop closing: https://link.eriknorris.com/sYapFBd
+→ Jigs and amnesia: https://link.eriknorris.com/fodmn3F
+→ The gatekeeper: https://link.eriknorris.com/eJj1yz3
 
 Next: the cache problem — why the machine has to be taught to aggressively forget.

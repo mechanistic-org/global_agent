@@ -1,8 +1,8 @@
 ---
 title: "The Machine Has to Forget (The Cache Problem)"
 pubDate: 2026-03-26
-status: draft
-thread_id: "arc_001_architecture"
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_the-machine-has-to-forget-solving-context-activity-7443056894203621376-mqFp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
 arc_position: 6
 tags: ["architecture", "agent-memory", "software-3.0", "cache"]
 ---
@@ -54,4 +54,6 @@ Everything else is contamination.
 
 ---
 
-*Next: the full architecture map — what EN-OS actually looks like as a system, and what it still can't do.*
+_Next: the full architecture map — what EN-OS actually looks like as a system, and what it still can't do._
+
+https://youtu.be/8Nsw6SB2WSY

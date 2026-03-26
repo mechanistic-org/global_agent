@@ -9,11 +9,9 @@ thread_id: "arc_001_architecture"
 arc_position: 3
 ---
 
-Hours of architecture. Decisions made. Patterns agreed on.
+Hours of architecture. Decisions made. Patterns agreed on. Gone.
 
-Gone. Mid-session. Clean slate.
-
-The LLM didn't crash. The context window shifted. And the agent picked back up treating the whole system like it had never existed — confidently rebuilding things you already built together and already broke.
+Mid-session. Clean slate. The LLM didn't crash. The context window shifted. And the agent picked back up treating the whole system like it had never existed — confidently rebuilding things you already built together and already broke.
 
 That's the amnesia nobody warns you about.
 
@@ -21,9 +19,11 @@ I stopped treating it as a software problem. I started treating it as a physical
 
 **I am building a Cognitive Manufacturing Line.**
 
-In a machine shop, if you want a drill to hit dead-center on ten thousand parts, you don't give the motor a 10-page instruction manual. You build a jig. You fabricate a rigid metal frame that physically prevents the bit from wandering.
+In a machine shop, if you want a drill to hit dead-center, you don't give the motor a 10-page instruction manual. You build a jig.
 
-For now — and the irony is not lost on me — we still need to build the exact same tooling for LLMs. The most sophisticated autonomous stack in your lab is, at this moment, being held together by the cognitive equivalent of Post-It notes and physical jigs. Not because it's elegant. Because the machine still forgets.
+For now — and the irony is not lost on me — we still need to build the exact same tooling for LLMs. The most sophisticated autonomous stack in your lab is, at this moment, being held together by the cognitive equivalent of Post-It notes and physical jigs.
+
+Not because it's elegant. Because the machine still forgets.
 
 They are volatile, highly entropic engines. You shouldn't trust them to format a PRD or calculate an FMEA matrix. You don't ask for precision. You build constraint cages.
 
