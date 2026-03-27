@@ -1,0 +1,43 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "A custom JavaScript shim, `gws-doc-export.js`, was developed to facilitate the export of Google Docs. This tool was created to streamline the process of extracting content from Google Docs, likely addressing specific formatting needs or limitations of direct export methods.",
+    "one_liner": "A custom JS shim was created to enable reliable Google Doc exports for processing.",
+    "source_context": "- [x] Create `gws-doc-export.js` shim",
+    "tags": [
+      "tooling",
+      "google-docs",
+      "export",
+      "javascript"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A structured process has been established for extracting intelligence from Google Docs. This involves exporting the document, reading its content, synthesizing key information into a registry intelligence note, and subsequently identifying and creating new GitHub tickets based on the insights derived.",
+    "one_liner": "A defined process exists for converting Google Doc intelligence into registry notes and GitHub tickets.",
+    "source_context": "- [x] Synthesize registry intelligence note\n- [x] Identify and create new GitHub tickets",
+    "tags": [
+      "process",
+      "workflow",
+      "documentation",
+      "github",
+      "intelligence-extraction"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "All listed tasks within the 'Process Walk Notes' were successfully completed, including the creation of a shim, document export, reading, note synthesis, ticket creation, and committing the note.",
+    "one_liner": "All process walk tasks were successfully completed as planned.",
+    "source_context": "Process Walk Notes\n- [x] Create `gws-doc-export.js` shim\n- [x] Export Google Doc `1ULTJy9XFGgRCexmrSQYvx_2gzlFrrDXyJwOZGY7mrDY` to `C:\\tmp\\walk_doc1.txt`\n- [x] Read exported doc\n- [x] Synthesize registry intelligence note\n- [x] Identify and create new GitHub tickets\n- [x] Commit registry note",
+    "tags": [
+      "status",
+      "routine"
+    ]
+  }
+]
