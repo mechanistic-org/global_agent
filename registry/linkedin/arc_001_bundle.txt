@@ -1,0 +1,372 @@
+# ARC 001 SOURCE BUNDLE
+
+## POST 1 (2026-03-22_git_as_agent_substrate.md)
+# Git as Agent Memory Substrate
+
+**Date:** 2026-03-22
+**Type:** LinkedIn Draft
+**Status:** Ready to post
+
+---
+
+I've spent months building an autonomous AI engineering OS.
+
+The hardest problem wasn't the models. It wasn't the tooling. It was **memory** — how do you give an AI agent durable, reliable context that survives across sessions, machine restarts, and complete environment teardowns?
+
+The answer I landed on: **GitHub.**
+
+Not as a workaround. As the substrate.
+
+Every property you need for persistent agentic context — durability, auditability, diffing, branching, multi-party write access, free API — git already has.
+
+GitHub Issues with structured bodies IS a schema.
+Project boards with iterations IS a task queue.
+Commits ARE timestamped forensic logs.
+
+The agents I'm building don't maintain conversation state. They boot cold, read a GitHub Issue, execute one task, post a comment, and die. The container burns. The commit survives.
+
+I didn't build a workaround. I found the natural substrate.
+
+Git was built for humans to track software work. It turns out that's identical to what an AI agent swarm needs to think.
+
+The infrastructure was already there. We just weren't running agents on top of it yet.
+
+---
+
+*#AgenticAI #GitOps #SovereignOS #AIEngineering #DevOps*
+
+
+### COMMENT FOR POST 1
+Five posts in. Here's what the arc has covered:
+
+I started with where an agent puts its memory. The answer was Git. The agents boot cold, execute one task, commit, and die. The container burns. The commit survives.
+
+But the machine still had amnesia. Context windows shift and architecture vanished mid-session. 
+
+The solution isn't better prompts. It's physical jigs. 
+
+The gatekeeper (a FastMCP linter) intercepts every commit for schema compliance. The FMEA split keeps math out of the neural net entirely. 
+
+The through-line:
+**You don't prompt for precision. You build the constraint.**
+
+The LLM is the spindle. Python is the inspector. Git is the factory floor.
+
+Full arc:
+→ Git as substrate: https://link.eriknorris.com/egHwYwe
+→ The loop closing: https://link.eriknorris.com/oz3KzKD
+→ Jigs and amnesia: https://link.eriknorris.com/sYapFBd
+→ The gatekeeper: https://link.eriknorris.com/fodmn3F
+→ Mechanical FMEA: https://link.eriknorris.com/eJj1yz3
+
+Next up: the cache problem — why the machine has to be taught to aggressively forget.
+
+
+================================================================================
+
+## POST 2 (2026-03-22_the-loop-is-closing.md)
+---
+title: The loop is closing
+pubDate: 2026-03-22
+status: ready
+tags: [agent-memory, autonomous-systems, solopreneur]
+source: manual-draft
+post_url: ""
+thread_id: "arc_001_architecture"
+arc_position: 2
+---
+
+Three bugs. Decomposed to six tickets. Fully triaged. Prioritized. Organized into iterations.
+
+I asked my machine to explain and describe itself and fed that markdown file to Gemini 3.1 Pro and asked it to find the bugs. It found 3 in ~2 minutes.
+
+→ Paths that break on any machine but mine
+→ No live query to the sprint board — the agent was reading a stale cache
+→ The sprint plan being manually updated by the agent (race condition with truth)
+
+Nice. Then I went for a walk.
+
+I talked to a different AI about the architecture the whole time. Saved the outputs as I went.
+
+When I came back I dropped those docs into a shared folder and typed one command.
+
+Six more tickets appeared on the sprint board. Fully prioritized, parsed to the correct iterations. On rails.
+
+The machine read its own critique and scheduled the fixes. That's the part nobody talks about:
+
+It's not the AI writing code that matters.
+
+It's the machine reviewing the system that runs the machine — and routing the findings back into its own memory.
+
+The loop is closing.
+
+
+### COMMENT FOR POST 2
+The two questions this raised, in order:
+
+First: fine, the loop closes — but what keeps the drill from wandering when the context shifts? That's the jigs and amnesia problem: https://link.eriknorris.com/sYapFBd
+
+Second: what happens when the machine is allowed to commit bad output to the durable substrate? That's the gatekeeper problem: https://link.eriknorris.com/fodmn3F
+
+Both answers come from the same place — you stop asking the model to behave and start building the frame it runs inside.
+
+
+================================================================================
+
+## POST 3 (2026-03-23_jigs_and_amnesia.md)
+---
+title: Jigs, Amnesia, and the Old Testament of Project Management
+pubDate: 2026-03-23
+status: draft-v2
+tags: [ai-engineering, StateMachines, mental-models, tooling]
+source: hired-gun-synthesis
+post_url: ""
+thread_id: "arc_001_architecture"
+arc_position: 3
+---
+
+Hours of architecture. Decisions made. Patterns agreed on. Gone.
+
+Mid-session. Clean slate. The LLM didn't crash. The context window shifted. And the agent picked back up treating the whole system like it had never existed — confidently rebuilding things you already built together and already broke.
+
+That's the amnesia nobody warns you about.
+
+I stopped treating it as a software problem. I started treating it as a physical engineering problem.
+
+**I am building a Cognitive Manufacturing Line.**
+
+In a machine shop, if you want a drill to hit dead-center, you don't give the motor a 10-page instruction manual. You build a jig.
+
+For now — and the irony is not lost on me — we still need to build the exact same tooling for LLMs. The most sophisticated autonomous stack in your lab is, at this moment, being held together by the cognitive equivalent of Post-It notes and physical jigs.
+
+Not because it's elegant. Because the machine still forgets.
+
+They are volatile, highly entropic engines. You shouldn't trust them to format a PRD or calculate an FMEA matrix. You don't ask for precision. You build constraint cages.
+
+My OS doesn't ask the agent to "be precise." The agent is forced to run its output through a strict validation gate. If it hallucinates a field, misses a metric, or uses passive voice, the runtime physically rejects the payload and returns the structural error.
+
+The machine is forced to iterate mechanically until its output fits the exact physical tolerance of the schema.
+
+It's just a motor inside a frame. GitHub is the factory floor. The MCP scripts are the jigs.
+
+I'm trying to stop having a conversation with my command line, and focus on building the machine.
+
+Stop talking to the machine. Start building the frames.
+
+
+### COMMENT FOR POST 3
+[Comment file not found: 2026-03-23_jigs_and_amnesia_comment.md]
+
+
+================================================================================
+
+## POST 4 (2026-03-24_the-gatekeeper.md)
+---
+title: "The Machine Needs a Micrometer (The Gatekeeper)"
+pubDate: 2026-03-24
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_trying-to-prompt-engineer-your-way-to-deterministic-activity-7442338591734841344-46gl"
+thread_id: "arc_001_architecture"
+arc_position: 4
+tags: ["architecture", "llm-constraints", "software-3.0"]
+---
+
+Trying to prompt-engineer your way to deterministic outputs is like trying to tighten a bolt with a rubber wrench.
+
+LLMs are incredible reasoning engines, but they are fundamentally stochastic. They are sloppy. If you are building automated manufacturing lines for digital products—where a missed Keystatic schema breaks the build—you cannot rely on "vibes" and polite prompts to enforce your tolerances.
+
+Software 3.0 still needs a micrometer.
+
+The Problem: The Hallucination of Structure
+When I handed the keys to my Git memory over to an ephemeral agent, the immediate bottleneck wasn't creativity; it was compliance. The agent was great at drafting Product Requirements (PRDs) for the mechanistic-org repositories, but it would inevitably hallucinate a markdown frontmatter tag or drift from the required schema.
+
+The standard AI-bro advice is to "tweak the system prompt."
+
+The engineering reality is that you don't fix a loose tolerance by asking the machine nicely. You fix it with a hard gate.
+
+The Solution: The Deterministic Gatekeeper (mcp_prd_linter)
+In the EN-OS architecture, the LLM is the spindle, but standard Python is the quality control inspector.
+
+Before the NanoClaw agent is allowed to commit anything to the durable Git substrate, it must pass its payload through a FastMCP tool I built called the mcp_prd_linter.
+
+1. The Agent writes the prose and structures the markdown.
+2. The Linter (a hard-coded Python script) intercepts the payload and checks it against the exact Keystatic schema.
+3. The Rejection: If it detects fluff, missing variables, or structural drift, it instantly rejects the payload and returns a hard error code back to the agent.
+4. The Loop: The agent is forced to read the error and rewrite the document until it compiles perfectly.
+
+The Takeaway: Orchestration over Prompting
+You let the neural net do what it does best: semantic reasoning and extraction. But you build a deterministic, Software 1.0 wall around your state machine. The agent is allowed to be creative, but it is not allowed to commit bad code.
+
+
+### COMMENT FOR POST 4
+Breadcrumb: The foundation — handing the machine the keys to its own Git memory: https://link.eriknorris.com/oz3KzKD
+
+The pattern here scales. The linter enforces schema. The next layer enforces math. In both cases the constraint is identical: the LLM is not allowed to touch the deterministic layer.
+
+If you want to see the split in practice, the agent code lives in mechanistic-org/global_agent.
+
+Next: what happens when you apply this same boundary to an FMEA matrix — and why letting a model calculate an RPN is viscerally wrong: https://link.eriknorris.com/eJj1yz3
+
+
+================================================================================
+
+## POST 5 (2026-03-24_mechanical-fmea.md)
+---
+title: "Applying Mechanical FMEA to Agentic Workflows"
+pubDate: 2026-03-25
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_theres-a-specific-feeling-i-get-when-i-first-share-7442663494254010369-B4Fv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+thread_id: "arc_001_architecture"
+arc_position: 5
+tags: ["mechanical-engineering", "FMEA", "software-3.0"]
+---
+
+There's a specific feeling I get when I first encounter a deep, gnarly, unresolved tolerance stack.
+
+Existential dread — because the gap is real.
+Pure excitement — because now there's actually something to solve.
+In that order, and simultaneously. A sudden, vanishing vertigo.
+
+The first time I watched an LLM calculate a Risk Priority Number, I recognized the feeling immediately —
+
+Just the dread.
+
+I've built disc changers that hold 300 DVD, wearable optics, and industrial automation systems. In physical engineering, an RPN isn't a suggestion — it's the number that decides whether a failure mode gets a design review or gets shipped.
+
+Severity × Occurrence × Detection.
+
+That's the whole equation. No "approximately." No "based on my interpretation of the prompt."
+
+LLMs are volatile, highly entropic engines. You must strictly constrain them. Never let one touch your math.
+
+**The Math Gap**
+
+When I started running PRD automation through the EN-OS, the model was brilliant at the semantic work. Identifying failure modes. Describing downstream effects. Reasoning about root causes.
+
+The moment I asked it to score and calculate, it drifted.
+
+Change a word in the system prompt, get a different RPN. Run the same document twice, get two different risk matrices. One version flags a failure mode as Severity 8. The next run calls it a 6. Neither is wrong by the model's logic. Both are unacceptable by any engineering standard.
+
+You can't version-control a vibe.
+
+**The Split: `mcp_fmea_generator`**
+
+You don't prompt an LLM to "be precise." You build a mechanical gauge — a structural constraint cage — that physically prevents it from committing slop before it ever touches the disk.
+
+In this case, that means a clean architectural boundary.
+
+1. The agent reads the PRD and extracts the semantic layer: Causes, Effects, failure language.
+2. It passes raw text strings and base integer estimates to a FastMCP Python script.
+3. Standard Python calculates the RPN. The math is the math.
+4. A formatted Markdown matrix commits directly to the Git substrate.
+
+The model reasons. Python calculates. Git records.
+
+**The Audit Trail**
+
+Because the FMEA lives as static Markdown in the repo, every risk change is perfectly diffable. If an RPN shifts next sprint, `git blame` shows exactly when and why — with zero model involvement in the record.
+
+In mechanical engineering, the machinist doesn't specify the tolerance. The specification does.
+
+Same rule. Different substrate.
+
+
+### COMMENT FOR POST 5
+This is the same architectural pattern as the gatekeeper — applied one layer deeper. The linter enforces the schema. The FMEA generator enforces the math. In both cases: the LLM is not allowed to touch the deterministic layer.
+
+Having built hardware where tolerances are non-negotiable, watching a model guess an RPN wasn't just architecturally wrong. It was viscerally wrong.
+
+The agent code is in mechanistic-org/global_agent if you want to see the split in practice.
+
+Arc so far:
+→ Git as substrate: https://link.eriknorris.com/oz3KzKD
+→ The loop closing: https://link.eriknorris.com/sYapFBd
+→ Jigs and amnesia: https://link.eriknorris.com/fodmn3F
+→ The gatekeeper: https://link.eriknorris.com/eJj1yz3
+
+Next: the cache problem — why the machine has to be taught to aggressively forget.
+
+
+================================================================================
+
+## POST 6 (2026-03-26_the_cache_problem.md)
+---
+title: "The Machine Has to Forget (The Cache Problem)"
+pubDate: 2026-03-26
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_the-machine-has-to-forget-solving-context-activity-7443056894203621376-mqFp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+arc_position: 6
+tags: ["architecture", "agent-memory", "software-3.0", "cache"]
+---
+
+Stale data is worse than no data.
+
+A machine with no memory boots cold and reads the source of truth.
+A machine with a stale cache boots confident — and reads the wrong thing.
+
+The second failure mode almost killed the EN-OS.
+
+**The Problem**
+
+When I first wired the agents into the GitHub substrate, the architecture worked: boot cold, read an Issue, execute, commit, die. The container burns. The commit survives.
+
+The problem appeared at the second layer.
+
+The sprint board was being read, but not queried live. The agent was pulling a cached summary that had been written to disk the previous session. When the sprint changed, the agent kept operating off the old state — confidently, cleanly, completely wrong.
+
+No hallucination. No error. Just a machine executing perfectly against the wrong ground truth.
+
+It didn't throw an error. It produced valid commits against stale requirements. By the time I caught it, two tasks had been closed that were still open. One was open that had already been completed. The sprint board had a race condition with reality.
+
+**The Inversion**
+
+Jigs prevent the machine from wandering. The cache problem is the opposite: the machine is locked to a track that no longer exists.
+
+The fix isn't more memory. It's mandatory forgetting.
+
+Every agent in the EN-OS now follows one rule before it reads anything:
+
+**Assume the cache is wrong. Always query live.**
+
+No reading from disk summaries. No trusting last session's state. Every boot, every task, every tool call — the agent is required to fetch current state from the authoritative source before it's allowed to act.
+
+The architecture enforces this the same way it enforces schema compliance: not by asking the agent to be careful, but by building a gate that physically prevents stale reads from being used as context.
+
+**The Lesson**
+
+In manufacturing, you don't measure a part against the last part you made. You measure it against the specification.
+
+Same rule. The spec is the live GitHub state. Not the cached summary. Not the last commit message. Not what the agent remembers from the previous run.
+
+The machine doesn't get to remember across sessions. It gets to read the substrate.
+
+Durability lives in Git. Freshness lives in the query.
+
+Everything else is contamination.
+
+---
+
+_Next: the full architecture map — what EN-OS actually looks like as a system, and what it still can't do._
+
+https://youtu.be/8Nsw6SB2WSY
+
+
+### COMMENT FOR POST 6
+This was the hardest bug to track down because the machine wasn't hallucinating—it was executing perfectly against a reality that had already changed.
+
+The fix was architectural: we stripped its ability to perform "lazy reads." The system now physically prevents an agent from acting unless it has queried the live GitHub state within the current boot cycle.
+
+No cache. No stale state. Just the substrate.
+
+Arc so far:
+→ Git as substrate: https://link.eriknorris.com/egHwYwe
+→ The loop closing: https://link.eriknorris.com/oz3KzKD
+→ Jigs and amnesia: https://link.eriknorris.com/sYapFBd
+→ The gatekeeper: https://link.eriknorris.com/fodmn3F
+→ Mechanical FMEA: https://link.eriknorris.com/eJj1yz3
+
+Next: the full architecture map — what EN-OS actually looks like as a system, and what it still can't do.
+
+
+================================================================================
+

@@ -1,0 +1,80 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The team has initiated the creation of a formal ticket to define and document their strategy for deploying LinkedIn assets and managing associated comments. This signifies a move towards a more structured and deliberate approach to professional social media engagement and content distribution.",
+    "one_liner": "A formal strategy for LinkedIn asset and comment deployment is being established and documented.",
+    "source_context": "[x] Create LinkedIn Asset + Comment Deployment Strategy Ticket",
+    "tags": [
+      "linkedin strategy",
+      "content deployment",
+      "process improvement"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "This item refers to a routine update of a draft post, which does not represent a decision, breakthrough, or significant learning moment.",
+    "one_liner": "Routine update to a draft post, not considered 'Gold'.",
+    "source_context": "[x] Update Post #5 (Mechanical FMEA) draft",
+    "tags": []
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "This item refers to a routine update of a draft comment, which does not represent a decision, breakthrough, or significant learning moment.",
+    "one_liner": "Routine update to a draft comment, not considered 'Gold'.",
+    "source_context": "[x] Update Comment #5 draft",
+    "tags": []
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "This item refers to a routine update of a draft post, which does not represent a decision, breakthrough, or significant learning moment.",
+    "one_liner": "Routine update to a draft post, not considered 'Gold'.",
+    "source_context": "[x] Update Post #6 (Surviving Context Collapse) draft",
+    "tags": []
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "This item refers to a routine update of a draft comment, which does not represent a decision, breakthrough, or significant learning moment.",
+    "one_liner": "Routine update to a draft comment, not considered 'Gold'.",
+    "source_context": "[x] Update Comment #6 draft",
+    "tags": []
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "draft",
+    "content": "A new tactical approach involves drafting self-comments for LinkedIn posts, specifically referenced in relation to 'Linus Posts.' This strategy aims to enhance engagement, provide immediate additional context, or guide the conversation directly from the post creator.",
+    "one_liner": "A new LinkedIn tactic involves drafting self-comments for posts to boost engagement.",
+    "source_context": "[x] Create/Update Linus Post Self-Comment draft",
+    "tags": [
+      "linkedin engagement",
+      "content strategy",
+      "social media tactics"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The asset strategy, specifically outlining the use of infographics and MP4 formats for content, has been formally documented within the Arc 001 architecture registry. This establishes a clear, codified guideline for the types of content assets to be produced and managed.",
+    "one_liner": "The content asset strategy, including infographics and MP4s, is now documented in the Arc 001 architecture registry.",
+    "source_context": "[x] Document asset strategy (infographics/mp4) in Arc 001 architecture registry",
+    "tags": [
+      "architecture",
+      "asset management",
+      "documentation",
+      "content strategy",
+      "infographics",
+      "mp4"
+    ]
+  }
+]
