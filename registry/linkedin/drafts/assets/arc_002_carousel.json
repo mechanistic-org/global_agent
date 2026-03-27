@@ -1,0 +1,24 @@
+{
+  "slides": [
+    {
+      "comment": "Slide 1: Overview - The full architecture",
+      "x_pct": 0, "y_pct": 0, "w_pct": 1, "h_pct": 1,
+      "padding": 50
+    },
+    {
+      "comment": "Slide 2: The Sandbox Frame",
+      "x_pct": 0.40, "y_pct": 0.40, "w_pct": 0.40, "h_pct": 0.40,
+      "padding": 120
+    },
+    {
+      "comment": "Slide 3: The Substrate and Sensor Frame",
+      "x_pct": 0.65, "y_pct": 0.65, "w_pct": 0.35, "h_pct": 0.35,
+      "padding": 80
+    },
+    {
+      "comment": "Slide 4: The Starter Motor (Fatal Flaw)",
+      "x_pct": 0, "y_pct": 0, "w_pct": 0.4, "h_pct": 0.3,
+      "padding": 60
+    }
+  ]
+}
