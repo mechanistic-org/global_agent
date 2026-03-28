@@ -3,223 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Constraint-Based Venn Diagram</title>
+    <title>Schematic: Forensic Synthesis</title>
     <style>
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: #050a0f;
+            color: #4CAF50;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
             padding: 20px;
-            overflow-x: hidden;
-            background-image: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
+            overflow: hidden;
+            /* Blueprint Grid effect */
+            background-image: 
+                linear-gradient(rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(76, 175, 80, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(76, 175, 80, 0.02) 1px, transparent 1px);
+            background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+            background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
         }
         .container {
             position: relative;
             width: 1000px;
             height: 900px;
         }
-        .circle {
+        .wire-circle {
             position: absolute;
             border-radius: 50%;
-            mix-blend-mode: screen;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: inset 0 0 60px rgba(0,0,0,0.8), 0 0 30px rgba(0,0,0,0.3);
-            border: 2px solid rgba(255,255,255,0.05);
-            backdrop-filter: blur(2px);
+            border: 1px solid rgba(76, 175, 80, 0.6);
+            background: transparent;
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.1) inset;
         }
-        .circle:hover {
-            transform: scale(1.02);
-            filter: brightness(1.2);
-            z-index: 50 !important;
+        .wire-circle::after {
+            content: "+";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(76, 175, 80, 0.4);
+            font-size: 10px;
         }
 
         /* Domain 1: Center */
         .dom-1 {
-            width: 500px;
-            height: 500px;
-            left: 250px;
-            top: 200px;
-            background: rgba(46, 160, 67, 0.15); /* Green */
-            border-color: rgba(46, 160, 67, 0.4);
-            z-index: 10;
+            width: 500px; height: 500px;
+            left: 250px; top: 150px;
+            border-color: #58a6ff;
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.1) inset;
         }
+        .dom-1::after { color: #58a6ff; content: "D1_ORIGIN"; }
+        
         /* Domain 2: Top Left */
         .dom-2 {
-            width: 450px;
-            height: 450px;
-            left: 100px;
-            top: 50px;
-            background: rgba(210, 153, 34, 0.15); /* Orange */
-            border-color: rgba(210, 153, 34, 0.4);
-            z-index: 11;
+            width: 450px; height: 450px;
+            left: 100px; top: 50px;
         }
         /* Domain 3: Top Right */
         .dom-3 {
-            width: 450px;
-            height: 450px;
-            right: 100px;
-            top: 50px;
-            background: rgba(88, 166, 255, 0.15); /* Blue */
-            border-color: rgba(88, 166, 255, 0.4);
-            z-index: 12;
+            width: 450px; height: 450px;
+            right: 100px; top: 50px;
         }
         /* Domain 4: Bottom Center */
         .dom-4 {
-            width: 450px;
-            height: 450px;
-            left: 275px;
-            bottom: 50px;
-            background: rgba(248, 81, 73, 0.15); /* Red */
-            border-color: rgba(248, 81, 73, 0.4);
-            z-index: 13;
+            width: 450px; height: 450px;
+            left: 275px; bottom: 100px;
         }
 
         .node {
             position: absolute;
-            background: rgba(13, 17, 23, 0.85);
-            border: 1px solid #30363d;
-            border-left: 3px solid #f0f6fc;
-            border-radius: 6px;
-            padding: 16px;
-            font-size: 13px;
-            line-height: 1.5;
-            width: 240px;
+            background: #050a0f;
+            border: 1px solid #4CAF50;
+            padding: 12px;
+            font-size: 11px;
+            line-height: 1.4;
+            width: 250px;
             z-index: 99;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
+            box-shadow: 0 0 10px #050a0f;
         }
-        .node:hover {
-            border-color: #8b949e;
-            transform: translateY(-2px);
+        .node::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 4px;
+            background: #4CAF50;
         }
         .node h4 { 
-            margin: 0 0 10px 0; 
-            color: #f0f6fc; 
-            font-size: 13px; 
+            margin: 0 0 8px 0; 
+            color: #fff; 
+            font-size: 11px; 
             text-transform: uppercase; 
             letter-spacing: 1px;
+            border-bottom: 1px dashed rgba(76, 175, 80, 0.4);
+            padding-bottom: 4px;
         }
         
         .label {
             position: absolute;
-            font-weight: 700;
-            font-size: 16px;
-            color: #ffffff;
+            font-size: 12px;
+            color: #fff;
             letter-spacing: 1.5px;
             z-index: 20;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
             pointer-events: none;
+            text-transform: uppercase;
         }
 
-        .l-dom1 { left: 400px; top: 580px; text-align: center; opacity: 0.6; }
-        .l-dom2 { left: 180px; top: 120px; }
-        .l-dom3 { right: 180px; top: 120px; text-align: right; }
-        .l-dom4 { left: 420px; bottom: 110px; text-align: center; }
+        .l-dom1 { left: 400px; top: 520px; text-align: center; color: #58a6ff; }
+        .l-dom2 { left: 160px; top: 120px; }
+        .l-dom3 { right: 160px; top: 120px; text-align: right; }
+        .l-dom4 { left: 400px; bottom: 130px; text-align: center; }
 
-        /* Positioning intersections geometrically */
-        /* Overlap 1 & 2 (Left middleish) */
-        .n-a { left: 160px; top: 300px; border-left-color: #d29922;} 
+        /* Intersections */
+        .n-a { left: 120px; top: 320px; } 
+        .n-c { right: 120px; top: 320px; } 
+        .n-b { left: 200px; bottom: 180px; } 
         
-        /* Overlap 1 & 3 (Right middleish) */
-        .n-c { right: 160px; top: 300px; border-left-color: #58a6ff;} 
-        
-        /* Overlap 1 & 4 (Bottom leftish) */
-        .n-b { left: 240px; bottom: 180px; border-left-color: #f85149;} 
-
-        /* Overlap Center */
         .n-d { 
-            left: 380px; 
-            top: 360px; 
-            width: 240px; 
-            background: rgba(30, 30, 35, 0.95);
-            border: 1px solid #f0f6fc;
-            border-top: 3px solid #f0f6fc;
-            border-left: 1px solid #f0f6fc;
-            text-align: center;
+            left: 375px; 
+            top: 350px; 
+            border-color: #58a6ff;
         }
-        
+        .n-d::before { background: #58a6ff; }
+        .n-d h4 { color: #58a6ff; border-bottom: 1px dashed rgba(88, 166, 255, 0.4); }
+
         header { 
             position: absolute; 
             top: 20px; 
-            left: 40px; 
-            z-index: 100;
+            left: 20px; 
+            width: 400px;
         }
         h1 { 
             margin: 0;
-            color: #f0f6fc; 
-            font-weight: 200;
+            color: #fff; 
+            font-weight: 400;
             letter-spacing: 2px;
-            font-size: 28px;
+            font-size: 18px;
+            border-bottom: 1px solid #4CAF50;
+            padding-bottom: 10px;
         }
-        .subtitle { 
-            margin-top: 10px;
-            color: #8b949e; 
-            max-width: 400px; 
-            line-height: 1.6; 
-            font-size: 14px;
-        }
-        .logic {
+        .spec-table {
             margin-top: 15px;
-            padding-left: 15px;
-            border-left: 2px solid #30363d;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 12px;
-            color: #58a6ff;
+            font-size: 10px;
+            border-collapse: collapse;
+            width: 100%;
         }
+        .spec-table td {
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(76, 175, 80, 0.2);
+        }
+        .spec-table td:first-child { color: #fff; width: 120px; }
         
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>THE CONSTRAINT-BASED VENN</h1>
-            <div class="subtitle">A Forensic Synthesis showing the underlying architecture of a career mapped not as isolated skills, but as parallel systems operating under shared physics.</div>
-            <div class="logic">
-                Constraint identified.<br/>
-                Resources inventoried.<br/>
-                Solution designed.<br/>
-                Work executed.
-            </div>
+            <h1>SCHEMATIC: THE FORENSIC VENN</h1>
+            <table class="spec-table">
+                <tr><td>ENG_ID:</td><td>EN-OS_V_CURRENT</td></tr>
+                <tr><td>ARCHITECT:</td><td>ERIK CAMERON NORRIS</td></tr>
+                <tr><td>METHODOLOGY:</td><td>PARALLEL PROCESSING</td></tr>
+                <tr><td>CORE_LOGIC_1:</td><td>CONSTRAINT IDENTIFIED</td></tr>
+                <tr><td>CORE_LOGIC_2:</td><td>RESOURCES INVENTORIED</td></tr>
+                <tr><td>CORE_LOGIC_3:</td><td>SOLUTION DESIGNED</td></tr>
+                <tr><td>CORE_LOGIC_4:</td><td>WORK EXECUTED</td></tr>
+            </table>
         </header>
         
-        <!-- The Ranges (Domains) -->
-        <div class="circle dom-1"></div>
-        <div class="circle dom-2"></div>
-        <div class="circle dom-3"></div>
-        <div class="circle dom-4"></div>
+        <div class="wire-circle dom-1"></div>
+        <div class="wire-circle dom-2"></div>
+        <div class="wire-circle dom-3"></div>
+        <div class="wire-circle dom-4"></div>
 
-        <!-- The Domain Labels -->
-        <div class="label l-dom1">DOMAIN 1<br/><span style="font-size:12px; font-weight:normal; letter-spacing:0.5px;">Physical Architecture</span></div>
-        <div class="label l-dom2">DOMAIN 2<br/><span style="font-size:12px; font-weight:normal; letter-spacing:0.5px; opacity:0.8;">Kinetic &<br/>Combustion</span></div>
-        <div class="label l-dom3">DOMAIN 3<br/><span style="font-size:12px; font-weight:normal; letter-spacing:0.5px; opacity:0.8;">Systemic Sovereignty<br/>& Code Logic</span></div>
-        <div class="label l-dom4">DOMAIN 4<br/><span style="font-size:12px; font-weight:normal; letter-spacing:0.5px; opacity:0.8;">Optical Physics & Capture</span></div>
+        <div class="label l-dom1">DOMAIN 1: MATTER/HEAT<br/><span style="font-size:10px; opacity:0.7;">Physical Architecture</span></div>
+        <div class="label l-dom2">DOMAIN 2: MOTION/FAULT<br/><span style="font-size:10px; opacity:0.7;">Kinetic Diagnostics<br/>& Combustion Logic</span></div>
+        <div class="label l-dom3">DOMAIN 3: DATA/AI<br/><span style="font-size:10px; opacity:0.7;">Systemic Sovereignty<br/>& Code Logic</span></div>
+        <div class="label l-dom4">DOMAIN 4: LIGHT/SOUND<br/><span style="font-size:10px; opacity:0.7;">Sensory Architecture<br/>& Waveform Physics</span></div>
 
-        <!-- The Forensic Nodes (Intersections) -->
         <div class="node n-a">
             <h4>Node A: Diagnostic Method</h4>
-            Diagnostics logic transferred directly from mechanics to tech failure isolation. The machine is a system with knowable properties and discoverable rules.
+            (Overlap: Dom1 & Dom2).<br/>
+            Diagnostics logic transferred directly from mechanics to tech failure isolation. Machine as knowable system.
         </div>
         
         <div class="node n-c">
             <h4>Node C: Persistent Commit</h4>
-            Physical engineering rigor translated into digital infrastructure. Realization that agent context must survive container burnout exactly as hardware tooling survives.
+            (Overlap: Dom1 & Dom3).<br/>
+            Physical engineering rigor translated into digital infrastructure. Git as native AI container state.
         </div>
         
         <div class="node n-b">
             <h4>Node B: Zero Tolerance</h4>
-            Environments that do not forgive mistakes. Intersection of high-speed kinematics, life-safety medical engineering, and human optical boundary conditions.
+            (Overlap: Dom1, Dom2 & Dom4).<br/>
+            Life-safety constraint environments. Intersection of kinematics, medical engineering, and human optical boundaries.
         </div>
         
         <div class="node n-d">
             <h4>Node D: Total Parallelism</h4>
-            The core execution node. Exemplified by simultaneous 1990s operation of Mechanistic consultancy, Red Automotive, and SCCA racing. Parallel processing is constitutional.
+            (Central Overlap).<br/>
+            The core execution node. Exemplified by 1990s concurrent operation of consultancy, Red Auto, and SCCA racing.
         </div>
     </div>
 </body>

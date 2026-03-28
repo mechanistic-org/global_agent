@@ -69,8 +69,10 @@ He had gotten the SGI job through Jen — the woman who would become his wife fo
 
 In 1993 he left SGI and founded Mechanistic. The name was deliberate. It means something about the way he sees the world: as systems, as mechanisms, as structures with knowable properties operating according to discoverable rules. He was twenty-five, living in La Honda, working alone, integrating seamlessly into client development teams while maintaining his own sovereign infrastructure.
 
+**The Mechanistic Era (1993–2003)**
 Over the next decade he touched twenty-two successful commercial products from start to finish. SwitchBlade and Frantic Frames inline speed skates. The Sunbeam Toast Logic Window Toaster. The Acer Aspire telephone. The Microsoft Xbox. The HP Jornada 430. The Motorola MP3 player. The Netscreen-500 security appliance. The KaVo X-Unit Dental System. Products that people held in their hands and used and sometimes loved without knowing his name. This is the nature of the work. The maker disappears into the made thing.
 
+**Total System Parallelism**
 He also owned and operated Red Automotive Repair in Mountain View — general repair and racing specialty, setups for SCCA SOLO and the NASA Camaro/Mustang Challenge. He was a competitive SCCA SoloII OSP class autocross racer. He was running a consultancy and a repair shop and racing cars and designing products simultaneously. The parallel processing was not new. The parallel processing was constitutional.
 
 The early 2000s brought the end of the marriage. A divorce from Jen in early 2002. And then, in September of that year, something that sounds administrative but was not: he legally changed his name from Lincicum to Norris. Not a reinvention. A return. Erik Cameron Norris — the name on the birth certificate from El Camino Hospital in Mountain View — restored. The stepfather's name had stuck for thirty-four years. He changed it back to match what had always been true.
@@ -79,7 +81,10 @@ Some commits don't have a `git revert`. Some do. This one did.
 
 ---
 
-In 2003 he joined Digidesign — the professional audio company, makers of Pro Tools, the software that records most of the music that has been recorded in the last thirty years. His job was the physical architecture of the tools that make the tools: the ICON, the D-Command, the C|24, the Mbox 2, the 003. Digital audio workstations used by producers and engineers to make records. He was building the physical infrastructure of music. He was also, as system administrator for the company's Pro/INTRALINK and Windchill CAD servers, already wrestling with the problem of persistent, auditable, durable professional data. He didn't have that language for it yet. The problem was already there.
+**The Architecture of Sound & State**
+In 2003 he joined Digidesign — the professional audio company, makers of Pro Tools, the software that records most of the music that has been recorded in the last thirty years. His job was the physical architecture of the tools that make the tools: the ICON, the D-Command, the C|24, the Mbox 2, the 003. Digital audio workstations used by producers and engineers to make records. He was building the physical infrastructure of music. 
+
+He was also, as system administrator for the company's Pro/INTRALINK and Windchill CAD servers, already wrestling with the problem of persistent, auditable, durable professional data. He didn't have that language for it yet. The problem was already there.
 
 He married Ann on May 6, 2006.
 
@@ -111,7 +116,7 @@ The request is still pending.
 
 ---
 
-He is fifty-seven years old. He was born at El Camino Hospital in Mountain View to a physicist who froze roses and filed patents for particle beam weapons and then returned to his work. He was raised on an oyster farm at the end of a highway in British Columbia by a man who wasn't his father and loved him anyway. He left at fourteen with nowhere particular to go and built a life with whatever the tolerance allowed — gas station to library floor to studio apartment on Alma Street to five products at SGI to twenty-two products at Mechanistic to six generations of Kaleidescape hardware to the retina-projecting Glyph to the git-backed agent swarm running on infrastructure Linus Torvalds built in 1991 without knowing that's what he was building.
+He is fifty-seven years old. He was born at El Camino Hospital in Mountain View to a physicist who froze roses and filed patents for particle beam weapons and then returned to his work. He was raised on an oyster farm at the end of a highway in British Columbia by a man who wasn't his father and loved him anyway. He left at fourteen with nowhere particular to go and built a life with whatever the tolerance allowed — gas station to library floor to studio apartment on Alma Street to five products at SGI to twenty-two products at Mechanistic to six generations of Kaleidescape hardware to the retina-projecting Glyph to the git-backed agent swarm running on the underlying Linux infrastructure Torvalds built in 1991 without knowing that's what he was building.
 
 The first words were a structural description of how meaning moves through language. The operating system has not changed. The tooling is considerably better.
 
