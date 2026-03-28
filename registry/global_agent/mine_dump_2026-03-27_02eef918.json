@@ -1,0 +1,88 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The core strategy for EN-OS is to \"weaponize\" the current state of the portfolio. Instead of waiting for perfection, the process of building the portfolio itself, using EN-OS, becomes highly engaging content. This approach turns a perceived weakness into a powerful demonstration of EN-OS's problem-solving capabilities for a single engineer, aligning with the \"Building the Engine to Build the House\" philosophy.",
+    "one_liner": "The strategy is to \"weaponize\" the portfolio's current state by making its creation, powered by EN-OS, the content itself.",
+    "source_context": "The Strategy: \"Building the Engine to Build the House\"",
+    "tags": [
+      "strategy",
+      "content_marketing",
+      "portfolio",
+      "EN-OS_application"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Arc 002 marks a significant architectural shift for EN-OS, moving from static, memory-based infrastructure to an active \"Nervous System\" powered by event-driven webhooks. This transition establishes advanced capabilities, enabling more dynamic and responsive system behavior. It's a fundamental upgrade to the system's core infrastructure, enhancing its ability to handle complex, real-time events.",
+    "one_liner": "EN-OS's architecture evolved to an event-driven \"Nervous System\" using webhooks, enhancing dynamic capabilities.",
+    "source_context": "Arc 002... shifts from static infrastructure (memory) to active \"Nervous System\" infrastructure (event-driven webhooks).",
+    "tags": [
+      "architecture",
+      "event_driven",
+      "nervous_system",
+      "EN-OS_core"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A new visual strategy dictates abandoning static diagrams for marketing purposes. Instead, the EN-OS Mission Control Dashboard, a live telemetry UI, will serve as the primary content. This approach collapses the distance between \"what is built\" and \"what is shown,\" allowing the system's actual interface exhaust to prove its architecture and functionality directly. It honors the core \"X-Ray View\" philosophy by providing authentic, real-time insights.",
+    "one_liner": "The new visual strategy uses the live EN-OS Mission Control Dashboard as content, proving architecture through its own interface.",
+    "source_context": "The visual strategy is now purely native: The system generates its own telemetry UI.",
+    "tags": [
+      "content_strategy",
+      "architecture_visualization",
+      "dashboard",
+      "transparency",
+      "X-Ray_View"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "draft",
+    "content": "Analysis of Arc 001 metrics revealed a significant audience shift, with Founders and Software Engineers now forming the majority of highly-engaged viewers. This insight confirms the success of breaching traditional domains and validates the strategic positioning. It highlights the unique value of an \"AI-Augmented Architect\" who solves complex physical product problems, a rare and highly valuable intersection for this new audience.",
+    "one_liner": "Arc 001 successfully shifted the audience to Founders and SWEs, validating the \"AI-Augmented Architect\" strategic positioning.",
+    "source_context": "You are commanding the attention of Founders and Software Engineers.\" and \"Your moat is that you are a Principal Mechanical/Systems engineer who wields Agentic AI like a force multiplier.",
+    "tags": [
+      "audience_insight",
+      "marketing_strategy",
+      "persona",
+      "linkedin_success"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The core mechanic of \"building the tools *is* the content\" has been validated as a highly effective strategy. This \"thinking out loud / building in public\" approach provides undeniable proof of competence, turning every bug fix, cache problem, or philosophical stance into a micro-case study. Practitioners must prioritize demonstrating practical expertise over theoretical discussions by sharing their raw build process.",
+    "one_liner": "The \"building in public\" approach, where the process of creating AI tools becomes the content, is a highly effective strategy for proving competence.",
+    "source_context": "You nailed the underlying mechanic: building the tools *is* the content.",
+    "tags": [
+      "content_strategy",
+      "build_in_public",
+      "proof_of_competence",
+      "marketing_principle"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The Hyphen / LID Case Study is identified as a critical bridge project to strategically shift audience perception. It will transition the narrative from \"Erik builds cool AI infrastructure for himself\" to \"Erik uses this AI infrastructure to solve massive, complex physical product problems for clients.\" This real-world application is essential for demonstrating tangible business value and expanding the perceived scope of EN-OS's capabilities.",
+    "one_liner": "The LID Case Study is crucial for shifting audience perception from AI infrastructure builder to an elite systems architect solving real-world client problems.",
+    "source_context": "The Hyphen / LID Case Study: DO THIS. Asking to use a real project as a case study is the perfect bridge.",
+    "tags": [
+      "case_study",
+      "client_win",
+      "perception_shift",
+      "business_value",
+      "strategic_project"
+    ]
+  }
+]

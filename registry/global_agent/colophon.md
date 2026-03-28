@@ -103,3 +103,13 @@ A strict Keystatic-compliant frontmatter schema has been established for all Lin
 ## 2026-03-24 — "Breadcrumb strategy" uses self-comments to boost LinkedIn engagement and create a navigable content trail.
 
 A "breadcrumb strategy" has been implemented for LinkedIn engagement, utilizing self-comments immediately after publishing a post. This tactic effectively bypasses the LinkedIn algorithm's penalty for outbound links in the main body and creates a permanent, navigable trail that connects foundational content to current execution, enhancing discoverability and narrative flow.
+
+
+## 2026-03-27 — EN-OS's architecture evolved to an event-driven "Nervous System" using webhooks, enhancing dynamic capabilities.
+
+Arc 002 marks a significant architectural shift for EN-OS, moving from static, memory-based infrastructure to an active "Nervous System" powered by event-driven webhooks. This transition establishes advanced capabilities, enabling more dynamic and responsive system behavior. It's a fundamental upgrade to the system's core infrastructure, enhancing its ability to handle complex, real-time events.
+
+
+## 2026-03-27 — The new visual strategy uses the live EN-OS Mission Control Dashboard as content, proving architecture through its own interface.
+
+A new visual strategy dictates abandoning static diagrams for marketing purposes. Instead, the EN-OS Mission Control Dashboard, a live telemetry UI, will serve as the primary content. This approach collapses the distance between "what is built" and "what is shown," allowing the system's actual interface exhaust to prove its architecture and functionality directly. It honors the core "X-Ray View" philosophy by providing authentic, real-time insights.

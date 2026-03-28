@@ -9,6 +9,12 @@ Run this workflow to execute the actual posting maneuver. This ensures the EN-OS
 - A finished markdown draft in `registry/linkedin/drafts/`
 - A drafted cross-comment in `registry/linkedin/drafts/comments/`
 
+## Visual & Asset Laws
+
+1. **The Brand Image Law:** *Every* post must have a high-quality, well-considered, relevant, and impactful image that correctly represents the Erik Norris brand. Never post plain text.
+2. **The Hybrid Asset Strategy (TBD/Optional):** The optimal strategy for complex interactive visualizations is a native video hook (uploaded directly to LinkedIn for algorithmic reach) + a sovereign redirect link in the comments (pointing to the live interactive view on `assets.eriknorris.com`).
+   - **Current Stance:** Do *not* require video or interactive motion graphics for every post. Until the creation of PDF carousels or video captures is trivialized by new tooling, stick to high-impact static images to avoid the time trap.
+
 ## Steps
 
 1. Read the canonical draft file and display the **clean plain-text** (stripped of frontmatter) to the operator for easy copy-pasting to the LinkedIn UI.
