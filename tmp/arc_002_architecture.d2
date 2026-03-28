@@ -1,0 +1,144 @@
+direction: right
+
+# --- Styling Classes ---
+classes: {
+  human: {
+    shape: person
+    style: {
+      fill: "#ff7b72"
+      stroke: "#b31d28"
+      stroke-width: 2
+      font-color: "white"
+      bold: true
+    }
+  }
+  
+  host_component: {
+    shape: rectangle
+    style: {
+      fill: "#1f6feb"
+      stroke: "#388bfd"
+      border-radius: 4
+      font-color: "white"
+      bold: true
+    }
+  }
+
+  container: {
+    shape: cylinder
+    style: {
+      fill: "#238636"
+      stroke: "#2ea043"
+      font-color: "white"
+      bold: true
+    }
+  }
+  
+  substrate: {
+    shape: package
+    style: {
+      fill: "#0d1117"
+      stroke: "#8b949e"
+      stroke-width: 3
+      font-color: "white"
+      bold: true
+    }
+  }
+
+  checkpoint: {
+    shape: hexagon
+    style: {
+      fill: "#8957e5"
+      stroke: "#a371f7"
+      font-color: "white"
+      bold: true
+    }
+  }
+}
+
+# --- Nodes ---
+
+# The Fatal Flaw
+Starter Motor: "Me\n(The Human Starter Motor)" {
+  class: human
+  tooltip: "The manual trigger that runs `python run.py`. The gap solved in Arc 002."
+}
+
+# The Nervous System
+EN-OS Host System: {
+  style: {
+    fill: transparent
+    stroke: "#30363d"
+    stroke-dash: 5
+  }
+  
+  Synapse: "Cloudflare Tunnel\n(The Ingress Bridge)" {
+    class: host_component
+  }
+
+  Router: "NanoClaw Webhook Daemon\n(The Always-On Router)" {
+    class: host_component
+  }
+
+  # The Execution Sandbox
+  Sandbox: "Ephemeral Docker Container\n(The Sandbox)" {
+    class: container
+    
+    Spindle: "Claude / Swarm Node\n(The Spindle)" {
+      shape: rectangle
+      style: {
+        fill: "#161b22"
+        stroke: "#c9d1d9"
+        font-color: "white"
+      }
+    }
+  }
+
+  Jigs: "FastMCP / Zod Linters\n(The Jigs)" {
+    class: checkpoint
+  }
+}
+
+Substrate: "GitHub Registry\n(The Substrate)" {
+  class: substrate
+}
+
+Sensor: "Cache Flush\n(The Sensor)" {
+  class: checkpoint
+}
+
+# --- Data Flow ---
+
+Starter Motor -> EN-OS Host System.Synapse: "Manual Trigger ( Arc 001 )" {
+  style: {
+    stroke: "#ff7b72"
+    stroke-dash: 5
+    stroke-width: 2
+    animated: true
+  }
+}
+
+GitHub Webhook -> EN-OS Host System.Synapse: "Event Push ( Arc 002 )" {
+  style: {
+    stroke: "#3fb950"
+    stroke-width: 2
+  }
+}
+
+EN-OS Host System.Synapse -> EN-OS Host System.Router: "Secure Local Routing"
+EN-OS Host System.Router -> EN-OS Host System.Sandbox: "Spins up Container"
+EN-OS Host System.Sandbox.Spindle -> EN-OS Host System.Jigs: "Proposes Output"
+EN-OS Host System.Jigs -> Substrate: "Commits Validated Exhaust" {
+  style: {
+    stroke: "#2ea043"
+    stroke-width: 3
+  }
+}
+
+# The Sensor verification loop
+Substrate -> Sensor: "Live State"
+Sensor -> EN-OS Host System.Sandbox.Spindle: "Forces Ground Truth Query" {
+  style: {
+    stroke-dash: 3
+  }
+}

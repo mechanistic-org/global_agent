@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 #2: Radial Tidy Tree</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .node circle { stroke-width: 2px; }
+        .node text { font-size: 14px; fill: #c9d1d9; font-weight: 600; font-family: monospace; }
+        .link { fill: none; stroke: #30363d; stroke-width: 2px; }
+        .human-link { stroke: #ff7b72; stroke-dasharray: 5,5; stroke-width: 3px; opacity: 0.8; }
+        .orbit { fill: none; stroke: #21262d; stroke-width: 1px; stroke-dasharray: 4,4; }
+    </style>
+</head>
+<body>
+    <svg width="600" height="600"></svg>
+    <script>
+        const svg = d3.select("svg");
+        const cx = 300, cy = 300;
+        
+        // Draw orbital rings
+        svg.append("circle").attr("class", "orbit").attr("cx", cx).attr("cy", cy).attr("r", 100);
+        svg.append("circle").attr("class", "orbit").attr("cx", cx).attr("cy", cy).attr("r", 200);
+
+        const nodes = [
+            {id: "Substrate", x: cx, y: cy, color: "#3fb950", r: 40, label: "Substrate (Core)"},
+            {id: "Spindle", x: cx - 80, y: cy - 60, color: "#58a6ff", r: 30, label: "Spindle"},
+            {id: "Jigs", x: cx + 80, y: cy - 60, color: "#58a6ff", r: 30, label: "Jigs"},
+            {id: "Sensor", x: cx, y: cy + 100, color: "#d2a8ff", r: 25, label: "Sensor"},
+            {id: "Human", x: cx - 200, y: cy + 150, color: "#ff7b72", r: 20, label: "Manual Trigger"}
+        ];
+
+        const links = [
+            {source: nodes[1], target: nodes[0]},
+            {source: nodes[2], target: nodes[0]},
+            {source: nodes[3], target: nodes[0]},
+            {source: nodes[1], target: nodes[2]},
+            {source: nodes[4], target: nodes[1], class: "human-link"}
+        ];
+
+        svg.selectAll(".link")
+            .data(links)
+            .enter().append("line")
+            .attr("class", d => d.class ? `link ${d.class}` : "link")
+            .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+
+        const node = svg.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+
+        node.append("circle")
+            .attr("r", d => d.r)
+            .style("fill", "#161b22")
+            .style("stroke", d => d.color);
+
+        node.append("text")
+            .attr("dy", d => d.r + 20)
+            .attr("text-anchor", "middle")
+            .text(d => d.label);
+    </script>
+</body>
+</html>

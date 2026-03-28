@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 #1: Animated State Machine</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .node circle { stroke-width: 2px; }
+        .node text { font-size: 14px; fill: #c9d1d9; font-weight: 600; text-anchor: middle; font-family: monospace; }
+        .link { fill: none; stroke: #30363d; stroke-width: 3px; }
+        .pulse { fill: #ff7b72; filter: drop-shadow(0 0 8px #ff7b72); }
+    </style>
+</head>
+<body>
+    <svg width="800" height="400"></svg>
+    <script>
+        const svg = d3.select("svg");
+        const nodes = [
+            {id: "Human", x: 100, y: 200, color: "#ff7b72", r: 35, label: "Me"},
+            {id: "Spindle", x: 300, y: 200, color: "#58a6ff", r: 30, label: "Spindle"},
+            {id: "Jigs", x: 500, y: 200, color: "#58a6ff", r: 30, label: "Jigs"},
+            {id: "Substrate", x: 700, y: 200, color: "#3fb950", r: 35, label: "Substrate"},
+            {id: "Sensor", x: 400, y: 320, color: "#d2a8ff", r: 25, label: "Sensor"}
+        ];
+        
+        const links = [
+            {source: nodes[0], target: nodes[1]}, // Human -> Spindle
+            {source: nodes[1], target: nodes[2]}, // Spindle -> Jigs
+            {source: nodes[2], target: nodes[3]}, // Jigs -> Substrate
+            {source: nodes[4], target: nodes[1]}, // Sensor -> Spindle (cache validation)
+            {source: nodes[3], target: nodes[4]}  // Substrate -> Sensor
+        ];
+
+        // Draw Links
+        svg.selectAll(".link")
+            .data(links)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", d => {
+                const dx = d.target.x - d.source.x, dy = d.target.y - d.source.y;
+                const dr = Math.sqrt(dx * dx + dy * dy) * 1.5; // curved lines
+                return `M${d.source.x},${d.source.y}A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
+            });
+
+        // Draw Nodes
+        const node = svg.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+
+        node.append("circle")
+            .attr("r", d => d.r)
+            .style("fill", "#161b22")
+            .style("stroke", d => d.color);
+
+        node.append("text")
+            .attr("dy", d => d.r + 20)
+            .text(d => d.label);
+
+        // Animation Loop
+        function runPulse() {
+            // Pulse on Human
+            node.filter(d => d.id === "Human").select("circle")
+                .transition().duration(500).style("fill", "#ff7b72")
+                .transition().duration(500).style("fill", "#161b22");
+
+            svg.selectAll(".link").each(function(d, i) {
+                if(d.source.id === "Human") {
+                    const length = this.getTotalLength();
+                    const pulse = svg.append("circle").attr("r", 6).attr("class", "pulse");
+                    pulse.transition()
+                        .delay(500)
+                        .duration(1500)
+                        .attrTween("transform", function() {
+                            return function(t) {
+                                const p = svg.selectAll(".link").filter(l => l === d).node().getPointAtLength(t * length);
+                                return `translate(${p.x},${p.y})`;
+                            }
+                        })
+                        .on("end", function() {
+                            d3.select(this).remove();
+                            // Cascade light up
+                            node.filter(n => n.id !== "Human").select("circle")
+                                .transition().duration(300).style("fill", n => n.color)
+                                .transition().delay(1000).duration(800).style("fill", "#161b22");
+                        });
+                }
+            });
+            setTimeout(runPulse, 4000);
+        }
+        runPulse();
+    </script>
+</body>
+</html>

@@ -17,10 +17,14 @@ In a physical factory, you wire a limit switch to the conveyor belt. In the EN-O
 
 The brain wakes up inside its container. Blind to everything except the task it was handed.
 
-**Why This Is Terrifying — And Why It Works**
-Connecting a highly entropic, stochastic LLM to a live internet trigger is a recipe for chaos. If the model hallucinates, it now does it autonomously, without asking permission, reacting to every typo on the sprint board.
+**The Danger of the Live Wire**
+Connecting a stochastic LLM to a live internet trigger is terrifying. 
 
-This is exactly why Arc 001 had to happen first.
+The first time I wired this up, I didn't have adequate circuit breakers. A webhook fired and woke Node 0 (the global agent). Node 0 read the repository and autonomously decided to trigger the UI generative framework. It booted up 17 localized sub-agents in a serial cascade, all trying to read and write to the same Astro components at once. 
+
+It instantly locked up 128GB of local RAM, brought the CPU to its knees, and burned through an entire daily allocation of API tokens in about 45 seconds before executing a single successful merge. 
+
+This is exactly why Arc 001 (The Constraint Cages) had to happen first.
 
 I can only let the machine wake itself up because I already built the micrometer. When NanoClaw wakes the agent, the agent is immediately locked inside the constraint cages built weeks ago. It reads the live substrate — no cache. It does the work. It attempts to commit. If the output is slop, the mcp_prd_linter physically rejects it before it touches the disk.
 
@@ -31,6 +35,7 @@ It doesn't stay awake waiting for the next job. It shuts down completely, leavin
 
 We took our hands off the spindle. The line is live.
 
-Next: The Lights-Out Run — the first time the system woke up, executed a job, and updated the portfolio while I was completely offline.
+---
+_Next: The first real part off the line. We take the always-on OS and feed it a real, high-stakes hardware project: The Hyphen Universal Dispenser Lid._
 
 #AgenticAI #SovereignOS #EventDriven #FastAPI #Software30

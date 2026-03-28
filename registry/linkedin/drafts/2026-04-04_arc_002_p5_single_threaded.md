@@ -13,23 +13,23 @@ It works. It is entirely single-threaded.
 
 Right now, the EN-OS is brilliant at manufacturing one part at a time. A sprint ticket moves to "Done," the documentation agent wakes up, reads the diff, formats the Colophon, commits, burns. Linear. Safe. Correct.
 
-That is not how real engineering happens.
+That is not how real engineering happens. Real engineering is a roundtable.
 
 **The Swarm Problem**
-Change a physical tolerance on a CAD model. That isn't an isolated event — it cascades. The Bill of Materials needs to update. The mechanical FMEA risk matrix needs recalculating. The firmware requirements may need adjusting. Three separate domains, triggered by one commit, all dependent on each other's outputs.
+Change a physical tolerance on a CAD model, and the impact isn't isolated—it cascades. The Bill of Materials needs to update. The mechanical FMEA risk matrix needs recalculating. The firmware requirements must be adjusted. These aren't serial tasks; they require multi-disciplinary negotiation. 
 
-Right now, the Cloudflare router receives that event and wakes up one agent.
+Right now, the Cloudflare router receives an event and wakes up one agent.
 
-What it can't do yet is wake up a coordinated swarm. If a mechanical reviewer, a software architect, and a documentation compiler all boot simultaneously against the same Git substrate, they read states that are changing under them. Two agents commit to the same branch. One reads a file the other just invalidated. The substrate — the one layer the entire OS trusts as ground truth — develops a race condition with itself.
+What it can't do yet is host a roundtable. If a mechanical reviewer, a software architect, and a documentation compiler all boot simultaneously against the same Git substrate, they read states that are changing under them. Two agents commit to the same branch. One reads a file the other just invalidated. The substrate — the one layer the entire OS trusts as ground truth — develops a race condition with itself.
 
 The constraint cages were built to keep one agent honest. They weren't designed for three agents disagreeing about what's real.
 
 **The Next Threshold**
-You can't find multi-agent failure modes in test scripts or portfolio updates. The real breaks only appear under actual load — a product with physical constraints, software logic, and genuine stakes.
+You can't solve multi-agent failure modes with toy scripts. You only find the breaking points when you force the system to orchestrate a genuine, multi-disciplinary engineering push. 
 
 The machine has memory. It has a nervous system.
-Now we give it something real to build.
+Now, we have to teach it how to collaborate.
 
-Next: MootMoat — taking the EN-OS out of the lab and using it to drive a real-world, multi-disciplinary engineering push.
+Next: Arc 003 — The Roundtable. Taking the EN-OS out of single-threaded safety and forcing the Swarm to negotiate.
 
 #AgenticAI #SovereignOS #AgentSwarm #Software30 #BuildInPublic

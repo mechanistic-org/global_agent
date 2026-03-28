@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arc 002: EN-OS X-Ray DAG</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: flex-start; padding-top: 180px; height: 100vh; margin: 0; box-sizing: border-box; }
+        .box { fill: #161b22; stroke: #30363d; stroke-width: 2px; rx: 8; }
+        .sandbox-box { fill: rgba(88, 166, 255, 0.05); stroke: #58a6ff; stroke-width: 2px; stroke-dasharray: 4,4; rx: 8; }
+        .node rect { stroke-width: 2px; rx: 6; }
+        .node text { font-size: 14px; fill: #ffffff; font-weight: bold; text-anchor: middle; font-family: monospace; }
+        .link { fill: none; stroke: #8b949e; stroke-width: 2px; marker-end: url(#arrow); }
+        .webhook-link { stroke: #a371f7; stroke-width: 2px; stroke-dasharray: 4,4; marker-end: url(#arrow-purple); }
+        .human-link { stroke: #ff7b72; stroke-width: 3px; stroke-dasharray: 4,4; marker-end: url(#arrow-red); }
+    </style>
+</head>
+<body>
+    <svg width="650" height="750">
+        <defs>
+            <marker id="arrow" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,-5L10,0L0,5" fill="#8b949e" />
+            </marker>
+            <marker id="arrow-purple" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,-5L10,0L0,5" fill="#a371f7" />
+            </marker>
+            <marker id="arrow-red" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,-5L10,0L0,5" fill="#ff7b72" />
+            </marker>
+        </defs>
+    </svg>
+    <script>
+        const svg = d3.select("svg");
+        
+        // Host Machine Constraints Box
+        svg.append("rect").attr("class", "box").attr("x", 50).attr("y", 100).attr("width", 550).attr("height", 450);
+        svg.append("text").attr("x", 65).attr("y", 125).attr("fill", "#8b949e").attr("text-anchor", "start").style("font-family", "monospace").text("EN-OS HOST MACHINE");
+
+        // NanoClaw Sandbox Box
+        svg.append("rect").attr("class", "sandbox-box").attr("x", 180).attr("y", 280).attr("width", 240).attr("height", 240);
+        svg.append("text").attr("x", 190).attr("y", 300).attr("fill", "#58a6ff").attr("text-anchor", "start").style("font-size", "12px").style("font-family", "monospace").text("NANOCLAW SANDBOX");
+
+        const nodes = [
+            {id: "Human", x: 200, y: 30, w: 200, h: 40, color: "#ff7b72", fill: "#3b1d1e", label: "[ HUMAN STARTER MOTOR ]"},
+            {id: "Ingress", x: 220, y: 140, w: 160, h: 40, color: "#a371f7", fill: "#3c1e70", label: "Cloudflare Ingress"},
+            {id: "Router", x: 200, y: 210, w: 200, h: 40, color: "#58a6ff", fill: "#1f3a5f", label: "FastAPI Router"},
+            {id: "Brain", x: 220, y: 330, w: 160, h: 40, color: "#58a6ff", fill: "#1f3a5f", label: "Claude (Brain)"},
+            {id: "Gatekeeper", x: 220, y: 410, w: 160, h: 40, color: "#d2a8ff", fill: "#442a66", label: "FastMCP Jigs"},
+            {id: "Cache", x: 440, y: 410, w: 140, h: 40, color: "#d2a8ff", fill: "#442a66", label: "ChromaDB Cache"},
+            {id: "Substrate", x: 200, y: 580, w: 200, h: 50, color: "#3fb950", fill: "#194a20", label: "GitHub Substrate"}
+        ];
+
+        const links = [
+            {x1: 300, y1: 70, x2: 300, y2: 210, class: "human-link"}, // Human -> Router
+            {x1: 300, y1: 180, x2: 300, y2: 210, class: "webhook-link"}, // Ingress -> Router
+            {x1: 300, y1: 250, x2: 300, y2: 330}, // Router -> Brain
+            {x1: 300, y1: 370, x2: 300, y2: 410}, // Brain -> Gatekeeper
+            {x1: 300, y1: 450, x2: 300, y2: 580}, // Gatekeeper -> Substrate
+            {x1: 380, y1: 430, x2: 440, y2: 430}, // Gatekeeper -> Cache
+            // Feedback loop Substrate -> Ingress
+            {x1: 200, y1: 605, x2: 120, y2: 605, class: "webhook-link"},
+            {x1: 120, y1: 605, x2: 120, y2: 160, class: "webhook-link"},
+            {x1: 120, y1: 160, x2: 220, y2: 160, class: "webhook-link"}
+        ];
+
+        svg.selectAll(".link")
+            .data(links)
+            .enter().append("line")
+            .attr("class", d => d.class ? `link ${d.class}` : "link")
+            .attr("x1", d => d.x1).attr("y1", d => d.y1)
+            .attr("x2", d => d.x2).attr("y2", d => d.y2);
+
+        const node = svg.selectAll(".node")
+            .data(nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+
+        node.append("rect")
+            .attr("width", d => d.w)
+            .attr("height", d => d.h)
+            .style("fill", d => d.fill)
+            .style("stroke", d => d.color);
+
+        node.append("text")
+            .attr("dx", d => d.w / 2)
+            .attr("dy", d => d.h / 2 + 5)
+            .text(d => d.label);
+    </script>
+</body>
+</html>

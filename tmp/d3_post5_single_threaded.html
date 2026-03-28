@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post 5: The Single-Threaded Factory</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .node rect { stroke-width: 2px; rx: 6; }
+        .node text { font-size: 13px; fill: #ffffff; font-weight: bold; text-anchor: middle; font-family: monospace; }
+        .link { fill: none; stroke: #ff7b72; stroke-width: 3px; stroke-dasharray: 4,4; marker-end: url(#arrow-red); }
+    </style>
+</head>
+<body>
+    <svg width="700" height="400">
+        <defs>
+            <marker id="arrow-red" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,-5L10,0L0,5" fill="#ff7b72" /></marker>
+        </defs>
+    </svg>
+    <script>
+        const svg = d3.select("svg");
+
+        const nodes = [
+            {id: "Trigger", x: 50, y: 170, w: 180, h: 45, color: "#a371f7", fill: "#3c1e70", label: "Single Event Trigger"},
+            {id: "Mech", x: 300, y: 70, w: 160, h: 45, color: "#d29922", fill: "#3b2a00", label: "Mechanical Agent"},
+            {id: "Soft", x: 300, y: 170, w: 160, h: 45, color: "#58a6ff", fill: "#1f3a5f", label: "Firmware Agent"},
+            {id: "Doc", x: 300, y: 270, w: 160, h: 45, color: "#d2a8ff", fill: "#442a66", label: "Documentation Agent"},
+            {id: "Substrate", x: 550, y: 170, w: 120, h: 45, color: "#f85149", fill: "#3b1d1e", label: "RACE COLLISION"}
+        ];
+
+        const links = [
+            {x1: 230, y1: 192, x2: 300, y2: 92},
+            {x1: 230, y1: 192, x2: 300, y2: 192},
+            {x1: 230, y1: 192, x2: 300, y2: 292},
+            {x1: 460, y1: 92, x2: 550, y2: 180},
+            {x1: 460, y1: 192, x2: 550, y2: 192},
+            {x1: 460, y1: 292, x2: 550, y2: 204}
+        ];
+
+        svg.selectAll(".link")
+            .data(links).enter().append("line")
+            .attr("class", "link")
+            .attr("x1", d => d.x1).attr("y1", d => d.y1)
+            .attr("x2", d => d.x2).attr("y2", d => d.y2);
+
+        const node = svg.selectAll(".node")
+            .data(nodes).enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.x},${d.y})`);
+
+        node.append("rect")
+            .attr("width", d => d.w).attr("height", d => d.h)
+            .style("fill", d => d.fill).style("stroke", d => d.color);
+
+        node.append("text").attr("dx", d => d.w / 2).attr("dy", d => d.h / 2 + 5).text(d => d.label);
+    </script>
+</body>
+</html>
