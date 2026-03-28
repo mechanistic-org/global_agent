@@ -1,14 +1,15 @@
 [
   {
     "channel": "discard",
-    "confidence": "inferred",
+    "confidence": "captured",
     "destination": "discard",
-    "content": "The provided text explicitly states, 'No readable artifacts found in conversation tempmediaStorage'. Consequently, no 'Gold' items such as decisions, problems solved, or architectural patterns could be extracted from this input.",
-    "one_liner": "No content was available for mining 'Gold' from the conversation artifacts.",
+    "content": "The provided input explicitly stated that no readable artifacts were found in the conversation's temporary media storage. Consequently, no 'Gold' could be extracted from this empty or unreadable source material.",
+    "one_liner": "No conversation artifacts found for mining.",
     "source_context": "[No readable artifacts found in conversation tempmediaStorage]",
     "tags": [
-      "no_content",
-      "empty_input"
+      "no_data",
+      "empty_input",
+      "unreadable_source"
     ]
   }
 ]
