@@ -1,0 +1,12 @@
+# EN-OS Watchdog Ingestion Test Spec
+
+## Overview
+This is a synthetic engineering document created to test the NanoClaw autonomous ingestion pipeline. 
+If the pipeline executes correctly, this document should be parsed by Gemini, converted into a `forensic_inbox` markdown node, and successfully inserted into ChromaDB.
+
+## Constraints
+1. The ingestion must happen purely ephemerally. NanoClaw must boot, read the asset, process, and die.
+2. The FastMCP router must be actively listening at http://host.docker.internal:8000/sse.
+3. The original file must be seamlessly extracted to the `archive/` folder without collisions.
+
+End of File.

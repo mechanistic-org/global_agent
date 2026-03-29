@@ -25,15 +25,22 @@ Write-Host " Target Issue : $TargetIssue"
 Write-Host " Target Repo  : $TargetRepo"
 Write-Host "===============================================" -ForegroundColor Cyan
 
+$githubToken = (gh auth token).Trim()
+if (-Not $githubToken) {
+    Write-Host "CRITICAL: 'gh auth token' returned empty. Please login via 'gh auth login'." -ForegroundColor Red
+    exit 1
+}
+
 # Remove network host requirement and explicitly inject ROUTER_SSE_URL for Docker Desktop bridging
 docker run --rm `
   --env-file $EnvFile `
   -e TARGET_ISSUE=$TargetIssue `
   -e TARGET_REPO=$TargetRepo `
+  -e GITHUB_TOKEN=$githubToken `
   -e ROUTER_SSE_URL="http://host.docker.internal:8000/sse" `
   -v "${RegistryDir}:/registry" `
   -v "${OutputDir}:/output" `
-  nanoclaw:latest
+  en-os:latest
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "NanoClaw execution completed successfully." -ForegroundColor Green

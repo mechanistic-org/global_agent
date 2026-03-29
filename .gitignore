@@ -23,3 +23,7 @@ registry/.chroma_db/
 
 # Temp download artifacts
 download.txt
+
+# Epic 67 Watchdog Dropzones
+inbox/
+archive/

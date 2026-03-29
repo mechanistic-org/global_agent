@@ -203,13 +203,25 @@ def check_service_account() -> dict:
 CHECKS = [check_ollama, check_chromadb, check_gws_auth, check_service_account]
 
 def run_all() -> list[dict]:
-    results = []
-    for check_fn in CHECKS:
-        r = check_fn()
-        results.append(r)
-    return results
+    import concurrent.futures
+    results_map = {}
+    # Run checks in parallel to drastically reduce diag time
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(CHECKS)) as executor:
+        future_to_idx = {executor.submit(fn): idx for idx, fn in enumerate(CHECKS)}
+        for future in concurrent.futures.as_completed(future_to_idx):
+            idx = future_to_idx[future]
+            try:
+                results_map[idx] = future.result()
+            except Exception as e:
+                results_map[idx] = {"name": CHECKS[idx].__name__, "status": "FAIL", "detail": f"Thread exception: {e}"}
+                
+    return [results_map[i] for i in range(len(CHECKS))]
 
 def print_report(results: list[dict]) -> bool:
+    import sys
+    # Avoid powershell encoding crashes
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding='utf-8')
     """Pretty-print results. Returns True if all checks passed."""
     all_ok = all(r["status"] == "OK" for r in results)
     print()

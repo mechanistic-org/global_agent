@@ -13,4 +13,9 @@ pydantic>=2.0.0
 
 # ── Registry / ChromaDB ───────────────────────────────────────────────────
 chromadb>=0.4.0
+sentence-transformers>=2.2.0
 google-generativeai>=0.5.0
+
+# ── Local File Watchdog (#67) ─────────────────────────────────────────────
+watchdog>=4.0.0
+pypdf>=4.0.0

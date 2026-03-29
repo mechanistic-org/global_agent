@@ -123,3 +123,8 @@ A new visual strategy dictates abandoning static diagrams for marketing purposes
 ## 2026-03-28 — `pm2-windows-startup` enabled native, silent PM2 auto-boot on Windows, simplifying system management.
 
 To achieve native and silent auto-boot capabilities on Windows, the `pm2-windows-startup` tool was strategically utilized. This integration configured the Windows Host Registry to automatically launch the PM2 process list, eliminating the need for a scheduled task wrapper and ensuring a seamless, robust system startup experience.
+
+
+## 2026-03-28 — `winget` enables silent Docker Desktop installation, simplifying initial deployment.
+
+The `winget` package manager provides a robust method for performing a silent, unassisted installation of Docker Desktop on Windows hosts. This approach significantly streamlines the initial deployment phase, reducing manual intervention and enabling automated setup scripts.

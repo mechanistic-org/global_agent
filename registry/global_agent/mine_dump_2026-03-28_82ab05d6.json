@@ -1,0 +1,76 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Installing Docker Desktop on Windows is a multi-faceted process that frequently necessitates user interaction for User Account Control (UAC) prompts. Beyond the initial installation, a system reboot is often required for proper `docker-users` group membership, and a manual launch of the GUI is essential to accept the Terms of Service before the Docker daemon can successfully start.",
+    "one_liner": "Docker Desktop installation on Windows is complex, requiring reboots and manual GUI interaction beyond silent installation.",
+    "source_context": "implementation_plan.md, walkthrough.md",
+    "tags": [
+      "docker",
+      "windows",
+      "installation",
+      "troubleshooting",
+      "environment setup"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The `winget` package manager provides a robust method for performing a silent, unassisted installation of Docker Desktop on Windows hosts. This approach significantly streamlines the initial deployment phase, reducing manual intervention and enabling automated setup scripts.",
+    "one_liner": "`winget` enables silent Docker Desktop installation, simplifying initial deployment.",
+    "source_context": "implementation_plan.md, walkthrough.md",
+    "tags": [
+      "docker",
+      "winget",
+      "automation",
+      "installation",
+      "windows"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must always instruct users to reboot their machine or restart all terminal sessions, and manually launch Docker Desktop to accept the Terms of Service after a fresh installation on Windows, before attempting any CLI verification commands.",
+    "one_liner": "Always reboot and manually launch Docker Desktop GUI after Windows installation before CLI verification.",
+    "source_context": "walkthrough.md (Next Steps)",
+    "tags": [
+      "docker",
+      "windows",
+      "rule",
+      "installation",
+      "agent guidance"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The NanoClaw container orchestration, identified as Epic #61, has a critical dependency on a properly installed and configured Docker Desktop environment. Without a functional Docker Desktop instance on the host machine, NanoClaw's container operations cannot proceed.",
+    "one_liner": "NanoClaw's container orchestration requires a functional Docker Desktop installation.",
+    "source_context": "implementation_plan.md",
+    "tags": [
+      "nanoclaw",
+      "docker",
+      "dependency",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "A common blocker encountered after silent Docker Desktop installation on Windows is the `ObjectNotFound` error for the `docker` CLI. This occurs because active terminal sessions do not automatically refresh `Path` environment variables. Additionally, a system reboot is often required for the user's profile to be appended to the `docker-users` security group, and the Docker Desktop GUI must be manually launched once to accept the Terms of Service and initialize the virtualization engine.",
+    "one_liner": "Docker Desktop on Windows requires session restarts, reboots, and manual GUI interaction for post-installation verification.",
+    "source_context": "walkthrough.md",
+    "tags": [
+      "docker",
+      "windows",
+      "troubleshooting",
+      "environment variables",
+      "post-install"
+    ]
+  }
+]
