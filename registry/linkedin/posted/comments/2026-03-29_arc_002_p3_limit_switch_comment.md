@@ -13,8 +13,15 @@ The question this raises: what happens when the system actually works? What is t
 Next post: The Lights-Out Run.
 
 Arc 002 so far: 
-→ The Architecture Map + The Starter Motor: [link] 
-→ Scheduled Amnesia: [link] 
+→ The Architecture Map + The Starter Motor: https://link.eriknorris.com/OasiFcx
+→ Scheduled Amnesia: https://link.eriknorris.com/7k4M207
 → Wiring the Limit Switch: [this post]
 
-Arc 001 (the full substrate build): [link]
+Arc 001 (the full substrate build):
+→ Git as substrate: https://link.eriknorris.com/oz3KzKD
+→ The loop closing: https://link.eriknorris.com/sYapFBd
+→ Jigs and amnesia: https://link.eriknorris.com/fodmn3F
+→ The gatekeeper: https://link.eriknorris.com/egHwYwe
+→ Mechanical FMEA: https://link.eriknorris.com/ejJ1yz3
+→ The cache problem: https://link.eriknorris.com/lsR2UB9
+

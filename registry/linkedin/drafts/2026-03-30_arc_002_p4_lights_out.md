@@ -1,6 +1,6 @@
 ---
 title: "The Lights-Out Run (Proof of the Nervous System)"
-pubDate: 2026-04-02
+pubDate: 2026-03-30
 status: draft
 tags: ["AgenticAI", "SovereignOS", "LightsOut", "Software30", "AIEngineering"]
 ---

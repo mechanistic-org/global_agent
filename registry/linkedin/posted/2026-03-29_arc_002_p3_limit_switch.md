@@ -1,7 +1,9 @@
 ---
 title: "Wiring the Limit Switch: Cloudflare and the NanoClaw"
-pubDate: 2026-03-31
-status: draft
+pubDate: 2026-03-29
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_we-killed-the-cron-job-we-established-that-share-7444100105600692224-fiH6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+dub_link: "https://link.eriknorris.com/HQQeu0Z"
 tags: ["AgenticAI", "SovereignOS", "EventDriven", "FastAPI", "Software30"]
 ---
 
@@ -22,7 +24,7 @@ Connecting a stochastic LLM to a live internet trigger is terrifying.
 
 The first time I wired this up, I didn't have adequate circuit breakers. A webhook fired and woke Node 0 (the global agent). Node 0 read the repository and autonomously decided to trigger the UI generative framework. It booted up 17 localized sub-agents in a serial cascade, all trying to read and write to the same Astro components at once. 
 
-It instantly locked up 128GB of local RAM, brought the CPU to its knees, and burned through an entire daily allocation of API tokens in about 45 seconds before executing a single successful merge. 
+It instantly locked up 128GB of RAM, brought a 24-core i9 to its knees, and burned through an entire daily allocation of API tokens in about 45 seconds before executing a single successful merge. The RTX 4000 Ada in the same box sat completely idle. The inference was running on the CPU.
 
 This is exactly why Arc 001 (The Constraint Cages) had to happen first.
 

@@ -1,6 +1,6 @@
 ---
 title: "The Single-Threaded Factory (What the OS Still Can't Do)"
-pubDate: 2026-04-04
+pubDate: 2026-03-31
 status: draft
 tags: ["AgenticAI", "SovereignOS", "AgentSwarm", "Software30", "BuildInPublic"]
 ---
