@@ -1,0 +1,13 @@
+=== POSTS DATA ===
+  Overall Performance  3/22/2026 - 3/28/2026
+0         Impressions                  20000
+1     Members reached                  11869
+
+Columns: ['Overall Performance', '3/22/2026 - 3/28/2026']
+
+=== AUDIENCE DATA ===
+  Overall Performance  3/22/2026 - 3/28/2026
+0         Impressions                  20001
+1     Members reached                  11870
+
+Columns: ['Overall Performance', '3/22/2026 - 3/28/2026']

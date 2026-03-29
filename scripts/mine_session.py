@@ -132,19 +132,29 @@ def route_item(item: dict, today: str, dry_run: bool = False) -> str:
         return f"  COLOPHON: appended — {one_liner[:60]}"
 
     elif channel == "internal":
-        # Write to ChromaDB via mcp_registry_server import
+        # Write to ChromaDB via enos-router FastMCP SSE bridge
         try:
-            sys.path.insert(0, str(REPO_ROOT / "scripts"))
-            # Only import when actually routing to avoid MCP server startup
-            from mcp_registry_server import push_forensic_doc
+            import asyncio
+            from mcp.client.sse import sse_client
+            from mcp.client.session import ClientSession
+
             slug = _slug(one_liner)
-            result = push_forensic_doc(
-                project_name="global_agent",
-                component_name=f"mined_{today}_{slug}",
-                markdown_body=content,
-                frontmatter_dict={"title": one_liner, "date": today, "context_node": "conversation_miner"}
-            )
-            return f"  INTERNAL: {result[:80]}"
+            
+            async def _push_via_mcp():
+                async with sse_client("http://127.0.0.1:8000/sse") as (read_stream, write_stream):
+                    async with ClientSession(read_stream, write_stream) as session:
+                        await session.initialize()
+                        call_result = await session.call_tool("push_forensic_doc", arguments={
+                            "project_name": "global_agent",
+                            "component_name": f"mined_{today}_{slug}",
+                            "markdown_body": content,
+                            "frontmatter_dict": {"title": one_liner, "date": today, "context_node": "conversation_miner"}
+                        })
+                        # Extract the string response correctly from TextContent
+                        return call_result.content[0].text if call_result.content else "SUCCESS"
+            
+            result = asyncio.run(_push_via_mcp())
+            return f"  INTERNAL (SSE): {result[:80]}"
         except Exception as e:
             # Fallback: write to registry flat file
             fallback_dir = REGISTRY_ROOT / "global_agent" / "mined"

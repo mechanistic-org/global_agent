@@ -1,0 +1,15 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "This is a test string originating from an internal system. It serves as a clear example of the type of information that the EN-OS Conversation Miner is designed to identify and extract as 'Gold' from various engineering conversation artifacts.",
+    "one_liner": "An explicit test string from an internal system was identified as Gold.",
+    "source_context": "Gold: This is a test string from internal system",
+    "tags": [
+      "test",
+      "internal system",
+      "example"
+    ]
+  }
+]
