@@ -11,7 +11,13 @@ The question this raises immediately: if you rip out the cron job, how do you ac
 Next post: The Cloudflare Router.
 
 Arc 002 so far: 
-→ The Architecture Map + The Starter Motor: [link] 
+→ The Architecture Map + The Starter Motor: https://link.eriknorris.com/OasiFcx
 → Scheduled Amnesia: [this post]
 
-Arc 001 (the full substrate build): [link]
+Arc 001 (the full substrate build):
+→ Git as substrate: https://link.eriknorris.com/oz3KzKD
+→ The loop closing: https://link.eriknorris.com/sYapFBd
+→ Jigs and amnesia: https://link.eriknorris.com/fodmn3F
+→ The gatekeeper: https://link.eriknorris.com/egHwYwe
+→ Mechanical FMEA: https://link.eriknorris.com/ejJ1yz3
+→ The cache problem: https://link.eriknorris.com/lsR2UB9

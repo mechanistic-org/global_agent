@@ -1,7 +1,9 @@
 ---
 title: "Scheduled Amnesia: Why Polling Fails the Autonomous Test"
-pubDate: 2026-03-29
-status: draft
+pubDate: 2026-03-28
+status: posted
+post_url: "https://www.linkedin.com/posts/eriknorris_agenticai-sovereignos-aiengineering-share-7443422892115075072-PUeb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+dub_link: "https://link.eriknorris.com/OasiFcx"
 tags: ["AgenticAI", "SovereignOS", "EventDriven", "Software30", "AIEngineering"]
 ---
 
