@@ -5,17 +5,21 @@
 # 🔴 NOW — Active Iteration & Overdue Blockers
 
   🔥 P0: BLOCKERS & PREREQUISITES (DO THIS FIRST)
+  - [Ready] global_agent#86 — [Task] Execute Arc 002 LinkedIn Rollout (The Nervous System) (Iteration 1)
   - [Backlog] global_agent#47 — Persistence & Auto-Boot Architecture (The "Always On" Router) (Iteration 1)
-  - [Backlog] global_agent#61 — [Epic] NanoClaw Ephemeral Container Layer â€” Dockerfile + run_agent.py (Iteration 1)
+  - [Backlog] global_agent#61 — [Epic] NanoClaw Ephemeral Container Layer — Dockerfile + run_agent.py (Iteration 1)
 
   ⚡ P1: HIGH PRIORITY
   - [Ready] hyphen#7 — [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
 
   🛠️ P2: STANDARD WORK
-  - [Ready] MO#8 — [Deploy] Holy Grail v32 â†’ mo.mechanistic.com Migration + CF Access Update (Iteration 1)
+  - [Ready] MO#8 — [Deploy] Holy Grail v32 → mo.mechanistic.com Migration + CF Access Update (Iteration 1)
 
 
 # 🟡 NEXT — Upcoming Iterations
+  - [Iteration 2] P1 | global_agent#94 — [Task] Execute Arc 003 LinkedIn Rollout (The Roundtable)
+  - [Iteration 2] P2 | global_agent#95 — [Task] Execute Arc 004 LinkedIn Rollout (MootMoat — The Sovereign Identity Protocol)
+  - [Iteration 2] P2 | global_agent#96 — [Task] Execute Arc 005 LinkedIn Rollout (The Portfolio — Live Proof of the Machine)
   - [Iteration 2] P1 | portfolio#53 — Legacy Portfolio Cleanup (Ghost Code & Import Paths)
   - [Iteration 2] P2 | global_agent#54 — [Backlog] R2 Endpoint Standardization â€” Custom Domains, CORS, and Public URL Audit
   - [Iteration 2] P2 | global_agent#67 — [Enhancement] ingest_watchdog.py â€” local inbox folder auto-routes to ChromaDB via NanoClaw
