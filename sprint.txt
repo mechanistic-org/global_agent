@@ -6,8 +6,6 @@
 
   🔥 P0: BLOCKERS & PREREQUISITES (DO THIS FIRST)
   - [Ready] global_agent#86 — [Task] Execute Arc 002 LinkedIn Rollout (The Nervous System) (Iteration 1)
-  - [Backlog] global_agent#47 — Persistence & Auto-Boot Architecture (The "Always On" Router) (Iteration 1)
-  - [Backlog] global_agent#61 — [Epic] NanoClaw Ephemeral Container Layer — Dockerfile + run_agent.py (Iteration 1)
 
   ⚡ P1: HIGH PRIORITY
   - [Ready] hyphen#7 — [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
