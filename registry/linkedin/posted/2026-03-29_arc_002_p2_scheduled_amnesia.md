@@ -5,6 +5,7 @@ status: posted
 post_url: "https://www.linkedin.com/posts/eriknorris_agenticai-sovereignos-aiengineering-share-7443422892115075072-PUeb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
 dub_link: "https://link.eriknorris.com/OasiFcx"
 tags: ["AgenticAI", "SovereignOS", "EventDriven", "Software30", "AIEngineering"]
+asset: "assets/d3_post2_scheduled_amnesia.html"
 ---
 
 If you want a machine to run without a human pulling the lever, the standard Software 1.0 instinct is to put it on a timer.
