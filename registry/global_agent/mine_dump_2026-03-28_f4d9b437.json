@@ -1,0 +1,126 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The primary objective of Epic #67 is to eliminate the manual effort involved in tracking and sorting unstructured raw assets like PDFs and voice dumps. This is achieved by implementing an autonomous daemon, `ingest_watchdog.py`, which monitors a local `inbox/` folder. Upon file detection, it automatically ingests the content, models it using Gemini, stores it in ChromaDB, and moves the processed file to an `archive/` folder.",
+    "one_liner": "An autonomous watchdog daemon automates the ingestion and processing of unstructured local assets.",
+    "source_context": "The goal of this epic is to eliminate the friction of manually tracking and sorting unstructured raw assets...",
+    "tags": [
+      "automation",
+      "ingestion",
+      "architecture",
+      "watchdog",
+      "ChromaDB",
+      "Gemini"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "To manage the lifecycle of incoming and processed files, new `inbox/` and `archive/` directories have been introduced. The `inbox/` serves as a dedicated drop-zone for raw files, while `archive/` stores successfully processed assets. Both directories are explicitly added to `.gitignore` to prevent unstructured data from being committed to version control, ensuring a clean and focused central registry.",
+    "one_liner": "Dedicated `inbox/` and `archive/` directories, ignored by Git, streamline asset management and data hygiene.",
+    "source_context": "File Structure Updates: [NEW] `inbox/` (Dir), [NEW] `archive/` (Dir), [MODIFY] `.gitignore`",
+    "tags": [
+      "file management",
+      "architecture",
+      "git",
+      "data hygiene",
+      "version control"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `requirements.txt` has been updated to include two critical libraries: `watchdog` and `pypdf`. The `watchdog` library enables cross-platform background filesystem event monitoring, which is fundamental for the `ingest_watchdog.py` daemon's ability to detect new files. `pypdf` facilitates local text extraction from PDF assets, a key capability for processing diverse input types.",
+    "one_liner": "`watchdog` and `pypdf` libraries are integrated for robust filesystem monitoring and PDF text extraction.",
+    "source_context": "[MODIFY] `requirements.txt` - Add `watchdog` library... Add `pypdf`...",
+    "tags": [
+      "dependencies",
+      "tools",
+      "python",
+      "filesystem",
+      "pdf",
+      "libraries"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The core ingestion process is orchestrated by NanoClaw, a containerized agent triggered by the watchdog daemon. NanoClaw extracts text using `pypdf`, then feeds this raw data to the Gemini 2.5 Flash model for structuring into a forensic memory document. Finally, it leverages the `enos_router` tool to push the formatted content into both ChromaDB and the markdown registry, ensuring a robust and repeatable data pipeline.",
+    "one_liner": "NanoClaw, a containerized agent, orchestrates file ingestion, Gemini modeling, and data storage via `enos_router`.",
+    "source_context": "NanoClaw Execution (The Brain): The daemon triggers `docker run...`",
+    "tags": [
+      "architecture",
+      "containerization",
+      "agent",
+      "Gemini",
+      "ChromaDB",
+      "data pipeline",
+      "NanoClaw"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `ingest_watchdog.py` daemon incorporates robust failure handling to prevent data loss. If the NanoClaw container exits with a non-zero status code (e.g., Code 1), the watchdog observes this failure, emits a `logger.error()`, and crucially abandons the standard archiving process. This design ensures that problematic files remain in the `inbox/` for human review, preventing silent failures and maintaining data integrity.",
+    "one_liner": "Robust failure handling ensures files remain in `inbox/` for review upon ingestion errors, preventing data loss.",
+    "source_context": "Failure: The watchdog observes Code 1, emits a `logger.error()`, and abandons the standard process, leaving the file firmly in `inbox/` for human review.",
+    "tags": [
+      "error handling",
+      "data integrity",
+      "watchdog",
+      "architecture",
+      "resilience"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "During testing, NanoClaw encountered a `Connection Refused` error when attempting to communicate with the host router, causing it to exit with Code 1. This incident, while a failure in communication, served as a critical validation of the watchdog's robust error handling. The daemon successfully caught the non-zero exit code and, as designed, left the `test_spec.txt` file in the `inbox/` for manual review, preventing any data loss and proving the resilience of the system's architecture.",
+    "one_liner": "Watchdog's robust error handling prevented data loss when NanoClaw failed to connect to the host router during testing.",
+    "source_context": "[!WARNING] During my test, the FastMCP router on the host was either fully shut down or securely bound to `127.0.0.1` (refusing external Docker bridge traffic). This resulted in NanoClaw firing an `Exception in TaskGroup (Connection Refused)` and exiting with **Code 1**.",
+    "tags": [
+      "error handling",
+      "validation",
+      "data integrity",
+      "watchdog",
+      "NanoClaw",
+      "docker",
+      "networking",
+      "technical win"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must always respect the established system architecture, especially regarding error handling and data integrity. Upon encountering a critical failure, agents must exit with an appropriate error code (e.g., Code 1) and ensure that the calling process can gracefully manage the failure state, preventing data loss or silent corruption. This principle ensures system resilience and reliable data processing.",
+    "one_liner": "Agents must exit with error codes on failure, allowing calling processes to prevent data loss and ensure data integrity.",
+    "source_context": "However, because the script respects your architecture, the Watchdog caught the failure and strictly left `test_spec.txt` securely sitting inside the `inbox/` directory for manual review, preventing data loss. The daemon mechanism itself is rock solid.",
+    "tags": [
+      "agent design",
+      "error handling",
+      "architecture",
+      "data integrity",
+      "law"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "The `task.md` document outlines a series of completed checklist items related to the implementation of Epic #67, including the creation of directories, updates to dependencies, and the development of new scripts. This content primarily serves as routine project management and status updates, not providing unique 'Gold' for deeper extraction.",
+    "one_liner": "Routine checklist of completed tasks for Epic #67 implementation.",
+    "source_context": "=== task.md ===",
+    "tags": [
+      "project management",
+      "status update"
+    ]
+  }
+]

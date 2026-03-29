@@ -128,3 +128,13 @@ To achieve native and silent auto-boot capabilities on Windows, the `pm2-windows
 ## 2026-03-28 — `winget` enables silent Docker Desktop installation, simplifying initial deployment.
 
 The `winget` package manager provides a robust method for performing a silent, unassisted installation of Docker Desktop on Windows hosts. This approach significantly streamlines the initial deployment phase, reducing manual intervention and enabling automated setup scripts.
+
+
+## 2026-03-28 — An autonomous watchdog daemon automates the ingestion and processing of unstructured local assets.
+
+The primary objective of Epic #67 is to eliminate the manual effort involved in tracking and sorting unstructured raw assets like PDFs and voice dumps. This is achieved by implementing an autonomous daemon, `ingest_watchdog.py`, which monitors a local `inbox/` folder. Upon file detection, it automatically ingests the content, models it using Gemini, stores it in ChromaDB, and moves the processed file to an `archive/` folder.
+
+
+## 2026-03-28 — NanoClaw, a containerized agent, orchestrates file ingestion, Gemini modeling, and data storage via `enos_router`.
+
+The core ingestion process is orchestrated by NanoClaw, a containerized agent triggered by the watchdog daemon. NanoClaw extracts text using `pypdf`, then feeds this raw data to the Gemini 2.5 Flash model for structuring into a forensic memory document. Finally, it leverages the `enos_router` tool to push the formatted content into both ChromaDB and the markdown registry, ensuring a robust and repeatable data pipeline.
