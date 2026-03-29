@@ -127,8 +127,11 @@ if __name__ == "__main__":
     print("-------------------------------------------------------")
     
     # FastMCP natively exposes an SSE bridge. 
-    # The Antigravity IDE UI will point strictly to this URL.
+    # Use environment var from PM2 to determine transport mode.
     try:
-        router_node.run()
+        transport_mode = os.environ.get("MCP_TRANSPORT", "stdio")
+        if transport_mode == "sse":
+            print("Booting as SSE Server on Port 8000")
+        router_node.run(transport=transport_mode)
     except Exception as e:
         print(f"CRITICAL BOOT FAILURE: {e}")

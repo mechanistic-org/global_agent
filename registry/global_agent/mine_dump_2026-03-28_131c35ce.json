@@ -1,0 +1,139 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `session_close` ritual in `mine_session.py` was experiencing hangs because `chromadb.PersistentClient` kept the underlying SQLite WAL lock open indefinitely. This prevented the OS from manipulating the `.chroma_db` directory and caused deadlocks with other processes, impacting system stability and resource management.",
+    "one_liner": "Identified and addressed ChromaDB SQLite locking issues in `mine_session.py`.",
+    "source_context": "Fix ChromaDB SQLite locking hangs (#82)",
+    "tags": [
+      "ChromaDB",
+      "SQLite",
+      "locking",
+      "mine_session.py",
+      "bugfix",
+      "system stability"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "An explicit `teardown_chromadb` function was implemented in `mine_session.py` to forcefully release SQLite WAL locks held by ChromaDB. This critical sequence ensures the connection is properly closed at the end of the script's run loop, effectively preventing persistent locks and deadlocks that previously plagued the system.",
+    "one_liner": "Implemented explicit ChromaDB teardown in `mine_session.py` to prevent SQLite lock hangs.",
+    "source_context": "Proposed Changes: [MODIFY] `scripts/mine_session.py`",
+    "tags": [
+      "ChromaDB",
+      "SQLite",
+      "resource management",
+      "teardown",
+      "mine_session.py",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A potential concurrency issue was identified where the `enos_router` daemon, running via PM2, might hold an active lock on `.chroma_db`. This could lead to 'database is locked' errors if `mine_session.py` attempts concurrent access, highlighting a need for `mine_session.py` to communicate via SSE as an MCP client for robust inter-process interaction.",
+    "one_liner": "Identified potential ChromaDB concurrency issues between `enos_router` and `mine_session.py`, suggesting SSE for inter-process communication.",
+    "source_context": "Open Questions: [!WARNING] Since we just set up `enos_router` to run in the background...",
+    "tags": [
+      "ChromaDB",
+      "concurrency",
+      "SQLite",
+      "enos_router",
+      "mine_session.py",
+      "SSE",
+      "architecture",
+      "problem identification"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "`mine_session.py` was refactored to adopt the FastMCP architecture, strategically removing direct imports of `mcp_registry_server` to bypass direct ChromaDB SQLite initialization. It now dispatches `push_forensic_doc` commands over an SSE network boundary using `mcp.client.sse` and `mcp.client.session`, while retaining a crucial filesystem fallback for scenarios where the daemon might be offline.",
+    "one_liner": "`mine_session.py` refactored to FastMCP, leveraging SSE for robust, concurrent ChromaDB interaction with a filesystem fallback.",
+    "source_context": "Refactor mine_session.py to FastMCP",
+    "tags": [
+      "FastMCP",
+      "SSE",
+      "architecture",
+      "refactoring",
+      "ChromaDB",
+      "concurrency",
+      "mine_session.py",
+      "system design"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The EN-OS engine now boasts an 'Always-On' architecture, enabling it to boot silently and automatically without requiring any human intervention. This significant enhancement was achieved by integrating PM2 as an enterprise-grade process manager, which orchestrates critical background processes like `enos-router` and `ollama-keepalive` for seamless operation.",
+    "one_liner": "EN-OS engine now 'Always-On' with silent, automatic boot via PM2, enhancing operational autonomy.",
+    "source_context": "Issue #47 Walkthrough: Persistence & Auto-Boot Architecture",
+    "tags": [
+      "Always-On",
+      "PM2",
+      "architecture",
+      "automation",
+      "EN-OS",
+      "system startup",
+      "operational excellence"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "PM2's `ecosystem.config.js` was meticulously configured to manage two vital processes: `enos-router`, which runs `mcp_router_node.py` from its isolated virtual environment and binds silently to `http://127.0.0.1:8000/sse`; and `ollama-keepalive`, which ensures the `deepseek_r1:latest` model remains entirely resident in the GPU with the `--keepalive -1m` flag, optimizing performance.",
+    "one_liner": "PM2 configured to manage `enos-router` (SSE) and `ollama-keepalive` (GPU resident model) for optimized performance.",
+    "source_context": "1. `ecosystem.config.js`",
+    "tags": [
+      "PM2",
+      "ecosystem.config.js",
+      "enos_router",
+      "Ollama",
+      "keepalive",
+      "GPU",
+      "architecture",
+      "configuration"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "To achieve native and silent auto-boot capabilities on Windows, the `pm2-windows-startup` tool was strategically utilized. This integration configured the Windows Host Registry to automatically launch the PM2 process list, eliminating the need for a scheduled task wrapper and ensuring a seamless, robust system startup experience.",
+    "one_liner": "`pm2-windows-startup` enabled native, silent PM2 auto-boot on Windows, simplifying system management.",
+    "source_context": "2. Windows Startup Daemon",
+    "tags": [
+      "PM2",
+      "Windows",
+      "startup",
+      "automation",
+      "registry",
+      "pm2-windows-startup",
+      "system integration"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "Verification confirmed the successful implementation of the 'Always-On' architecture, demonstrating robust system health and readiness. `ollama ps` showed the `deepseek_r1:latest` model fully resident in the GPU, and `pm2 logs` confirmed the FastMCP daemon was properly listening on `http://127.0.0.1:8000/sse`, validating seamless operation.",
+    "one_liner": "Verified 'Always-On' architecture with Ollama model resident and FastMCP daemon active, confirming successful deployment.",
+    "source_context": "Verification Results",
+    "tags": [
+      "verification",
+      "Ollama",
+      "FastMCP",
+      "Always-On",
+      "success",
+      "deployment",
+      "system health"
+    ]
+  }
+]

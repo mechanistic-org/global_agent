@@ -113,3 +113,13 @@ Arc 002 marks a significant architectural shift for EN-OS, moving from static, m
 ## 2026-03-27 — The new visual strategy uses the live EN-OS Mission Control Dashboard as content, proving architecture through its own interface.
 
 A new visual strategy dictates abandoning static diagrams for marketing purposes. Instead, the EN-OS Mission Control Dashboard, a live telemetry UI, will serve as the primary content. This approach collapses the distance between "what is built" and "what is shown," allowing the system's actual interface exhaust to prove its architecture and functionality directly. It honors the core "X-Ray View" philosophy by providing authentic, real-time insights.
+
+
+## 2026-03-28 — `mine_session.py` refactored to FastMCP, leveraging SSE for robust, concurrent ChromaDB interaction with a filesystem fallback.
+
+`mine_session.py` was refactored to adopt the FastMCP architecture, strategically removing direct imports of `mcp_registry_server` to bypass direct ChromaDB SQLite initialization. It now dispatches `push_forensic_doc` commands over an SSE network boundary using `mcp.client.sse` and `mcp.client.session`, while retaining a crucial filesystem fallback for scenarios where the daemon might be offline.
+
+
+## 2026-03-28 — `pm2-windows-startup` enabled native, silent PM2 auto-boot on Windows, simplifying system management.
+
+To achieve native and silent auto-boot capabilities on Windows, the `pm2-windows-startup` tool was strategically utilized. This integration configured the Windows Host Registry to automatically launch the PM2 process list, eliminating the need for a scheduled task wrapper and ensuring a seamless, robust system startup experience.

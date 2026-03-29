@@ -9,7 +9,8 @@ module.exports = {
       autorestart: true,
       max_restarts: 10,
       env: {
-        PYTHONUNBUFFERED: "1"
+        PYTHONUNBUFFERED: "1",
+        MCP_TRANSPORT: "sse"
       }
     },
     {
