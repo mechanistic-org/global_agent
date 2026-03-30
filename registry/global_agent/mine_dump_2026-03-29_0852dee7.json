@@ -1,104 +1,90 @@
 [
   {
     "channel": "linkedin",
-    "confidence": "captured",
-    "destination": "registry",
-    "content": "The content achieved a remarkable 19x reach-to-follower ratio, indicating that distribution is primarily driven by network amplification and the LinkedIn algorithm, rather than the existing follower base. This highlights the effectiveness of the content in being surfaced cold to new audiences.",
-    "one_liner": "LinkedIn content is achieving 19x reach amplification, demonstrating strong algorithmic distribution beyond the follower base.",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "Our LinkedIn content achieved a remarkable 19x reach-to-follower ratio, indicating significant algorithmic amplification beyond our immediate network. This demonstrates LinkedIn's algorithm is actively surfacing our content cold, successfully reaching 12,753 unique members with only 671 followers. This sustained momentum is a critical asset for our content strategy, proving effective cold audience engagement.",
+    "one_liner": "LinkedIn content achieved 19x reach amplification, proving effective cold audience engagement.",
     "source_context": "The reach-to-follower ratio of 19x is the headline number. Distribution is happening almost entirely via network amplification \u2014 not followers.",
     "tags": [
-      "linkedin strategy",
-      "algorithmic amplification",
-      "content distribution",
-      "reach"
+      "linkedin",
+      "algorithm",
+      "reach",
+      "content strategy",
+      "win"
     ]
   },
   {
     "channel": "linkedin",
-    "confidence": "captured",
-    "destination": "registry",
-    "content": "The \"Arc 001 P1 \u2014 Git as Agent Substrate (Linus)\" post generated 15,313 impressions and 25 engagements, carrying the entire week's performance. This success is attributed to classic algorithmic amplification, where LinkedIn surfaced the post cold to people outside the network, likely driven by the recognizable \"Linus Torvalds\" framing.",
-    "one_liner": "Leveraging recognizable technical figures like Linus Torvalds can trigger significant algorithmic amplification for content.",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The \"Git as Agent Substrate (Linus)\" post (Arc 001 P1) generated an anomalous 15,313 impressions and 25 engagements, carrying the entire week's performance. This success is attributed to classic algorithmic amplification, likely driven by the recognizable \"Linus Torvalds\" framing, which LinkedIn's algorithm effectively pattern-matched for cold audience distribution.",
+    "one_liner": "Framing content with recognizable technical figures like Linus Torvalds significantly boosts algorithmic reach.",
     "source_context": "The Linus Torvalds framing likely drove the cold reach \u2014 it's a recognizable name in a technical context that the algorithm can pattern-match.",
     "tags": [
-      "linkedin strategy",
+      "linkedin",
+      "content strategy",
       "algorithmic amplification",
-      "content framing",
-      "technical audience",
-      "content breakthrough"
+      "framing",
+      "breakthrough"
     ]
   },
   {
     "channel": "law",
-    "confidence": "captured",
+    "confidence": "inferred",
     "destination": "registry",
-    "content": "Content creators must prioritize specificity and narratives of personal failure to maximize engagement rates. Posts detailing \"a real thing that failed and exactly why\" consistently outperform conceptual overviews, as evidenced by the \"Mechanical FMEA\" post's 1.44% engagement rate.",
-    "one_liner": "To maximize engagement, content must include specific details and authentic narratives of technical failures.",
-    "source_context": "Pattern: Engagement rate rises with specificity and personal failure. The posts that say 'here is a real thing that failed and here is exactly why' outperform the conceptual overview posts.",
+    "content": "Content creators must prioritize specificity and personal failure narratives to maximize engagement rates on platforms like LinkedIn. Posts detailing \"a real thing that failed and exactly why\" consistently outperform conceptual overviews, as evidenced by the \"Mechanical FMEA\" post's 1.44% engagement rate.",
+    "one_liner": "To maximize engagement, content must include specific details and personal failure stories.",
+    "source_context": "Pattern: Engagement rate rises with specificity and personal failure. The posts that say \"here is a real thing that failed and here is exactly why\" outperform the conceptual overview posts.",
     "tags": [
       "content strategy",
       "engagement",
-      "specificity",
-      "failure narrative",
-      "content law"
+      "linkedin",
+      "lessons learned",
+      "rule"
     ]
   },
   {
     "channel": "linkedin",
-    "confidence": "captured",
+    "confidence": "inferred",
     "destination": "portfolio",
-    "content": "The content successfully reaches a highly senior audience, with approximately 49% holding Senior, Director, or CXO roles, indicating engagement from decision-makers with budget and hiring authority. Furthermore, the audience is concentrated in the SF Bay Area and includes employees from top-tier companies like Apple and Google, validating the strategic targeting.",
-    "one_liner": "Content is effectively reaching senior decision-makers in the SF Bay Area, including employees from Apple and Google.",
-    "source_context": "Senior + Director + CXO = ~49% of your audience is senior decision-making level... 57.7% SF Bay Area is very high geographic concentration... Apple and Google employees are reading.",
+    "content": "Our LinkedIn content successfully reached a highly senior audience, with approximately 49% of viewers holding Senior, Director, or CXO-level positions. This indicates that the content is effectively engaging decision-makers with budget and hiring authority, aligning perfectly with strategic objectives.",
+    "one_liner": "Content successfully engages a senior audience, with nearly half of viewers in decision-making roles.",
+    "source_context": "Senior + Director + CXO = ~49% of your audience is senior decision-making level.",
     "tags": [
-      "audience insight",
-      "senior leadership",
-      "target audience",
-      "SF Bay Area",
-      "client win"
+      "linkedin",
+      "audience",
+      "strategic win",
+      "decision-makers"
     ]
   },
   {
     "channel": "colophon",
-    "confidence": "captured",
+    "confidence": "inferred",
     "destination": "portfolio",
-    "content": "The hybrid mechanical and software narrative is resonating precisely as intended, attracting a non-bifurcated audience where hardware manufacturing and software development industries are nearly at parity in engagement. This confirms the effectiveness of bridging these traditionally separate domains.",
-    "one_liner": "The hybrid mechanical-software narrative successfully resonates with a unified audience across both industries.",
+    "content": "The hybrid mechanical and software narrative, utilizing manufacturing metaphors like \"limit switches\" and \"CNC,\" is resonating strongly across both hardware manufacturing (11.7%) and software development (10.2%) industries. This confirms that our unique intersectional content strategy is effectively reaching a unified, relevant audience rather than bifurcating it.",
+    "one_liner": "Our hybrid mechanical+software narrative successfully unifies diverse hardware and software audiences.",
     "source_context": "Hardware manufacturing and software nearly at parity \u2014 the hybrid mechanical+software narrative is resonating exactly as intended. The audience isn't bifurcated; it's the intersection.",
     "tags": [
       "architecture pattern",
       "content strategy",
-      "hybrid narrative",
-      "mechanical engineering",
-      "software engineering",
-      "portfolio win"
+      "narrative",
+      "audience",
+      "validation"
     ]
   },
   {
     "channel": "internal",
-    "confidence": "captured",
-    "destination": "registry",
-    "content": "While follower growth is slow (0.045% conversion rate), the significant 19x reach amplification indicates that the content is effectively being distributed by LinkedIn's algorithm outside the follower base. This suggests a \"signal post\" strategy where consistent content will eventually convert readers into followers as the algorithmic track record builds.",
-    "one_liner": "Prioritize algorithmic reach amplification over immediate follower growth, as consistent \"signal posts\" will build long-term conversion.",
-    "source_context": "Follower growth is slow relative to impressions... The reach amplification (19x) means LinkedIn's algorithm is actively distributing this content outside your follower base. That's valuable momentum to protect.",
-    "tags": [
-      "linkedin strategy",
-      "follower growth",
-      "reach amplification",
-      "signal post strategy",
-      "content consistency"
-    ]
-  },
-  {
-    "channel": "discard",
     "confidence": "inferred",
-    "destination": "discard",
-    "content": "The observation that Arc 002 P3 had only been live for approximately two hours at the time of data export, making its impression count not comparable to other posts, is a routine data analysis note.",
-    "one_liner": "A post's low initial impression count was due to its recent publication, making it incomparable to other posts.",
-    "source_context": "Arc 002 P3 (51 impressions) had only been live for ~2 hours at export time. Not comparable.",
+    "destination": "registry",
+    "content": "The primary strategic focus for LinkedIn content should remain on maximizing algorithmic reach and engaging the target senior, geographically concentrated audience, rather than solely optimizing for follower growth. The current 19x reach amplification and strong demographic signals are more valuable indicators of success than the slow follower conversion rate.",
+    "one_liner": "Prioritize algorithmic reach and audience quality over raw follower count on LinkedIn.",
+    "source_context": "The follower base (671) is not the story. The reach amplification (19x) and the seniority/geography/company signals are the story. You are already in front of the right people.",
     "tags": [
-      "data analysis",
-      "routine observation"
+      "content strategy",
+      "linkedin",
+      "metrics",
+      "decision"
     ]
   }
 ]

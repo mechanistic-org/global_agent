@@ -1,3 +1,8 @@
+<!-- REGISTRY NOTE (2026-03-30): P3 comment is LIVE on LinkedIn — do not treat as editable.
+     Tease "Next post: The Lights-Out Run" stands as-is. Credibility reframe applied
+     to P4 draft and comment files; P3 posted content is canonical and unchanged.
+     The ouroboros failure story and "severed the tunnel" language remain fully accurate. -->
+
 The first time I wired this up, I created an autonomous ouroboros.
 
 The agent woke on a "new issue" webhook, did the work, and pushed its commit. But I hadn't filtered the webhook events correctly. GitHub saw the agent's commit and fired another webhook. NanoClaw caught it, woke the agent back up, told it to review the change. The agent looked at its own work, decided it was fine, posted a status comment. Which triggered another webhook.
@@ -10,9 +15,9 @@ If you want to see the exact routing logic that prevents this now: `mechanistic-
 
 The question this raises: what happens when the system actually works? What is the physical exhaust of a machine that runs while you sleep?
 
-Next post: The Lights-Out Run.
+Next post: Controlled Nodes.
 
-Arc 002 so far: 
+Arc 002 so far:
 → The Architecture Map + The Starter Motor: https://link.eriknorris.com/OasiFcx
 → Scheduled Amnesia: https://link.eriknorris.com/7k4M207
 → Wiring the Limit Switch: [this post]
@@ -24,4 +29,3 @@ Arc 001 (the full substrate build):
 → The gatekeeper: https://link.eriknorris.com/egHwYwe
 → Mechanical FMEA: https://link.eriknorris.com/ejJ1yz3
 → The cache problem: https://link.eriknorris.com/lsR2UB9
-

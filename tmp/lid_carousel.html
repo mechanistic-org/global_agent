@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Controlled Nodes — Arc 002 P4 Carousel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* === PRINT CONFIG ===
+     Chrome: Print → More settings → Paper size: Custom (8.1 x 10.125 in)
+     Margins: None | Scale: Default | ✅ Background graphics
+  */
+  @page {
+    size: 8.1in 10.125in;
+    margin: 0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #111;
+    font-family: 'Inter', sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .slide {
+    width: 8.1in;
+    height: 10.125in;
+    page-break-after: always;
+    page-break-inside: avoid;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* === PALETTE ===
+     Hyphen Green: #4FE6B4
+     Near-black:   #080B0A
+     Card:         #0F1714
+     Border:       rgba(79,230,180,0.18)
+  */
+
+  /* ────────────────────────────────────────────
+     SLIDE 1 — COVER
+  ──────────────────────────────────────────── */
+  .s1 {
+    background: #080B0A;
+    justify-content: space-between;
+    padding: 0.7in;
+  }
+  .s1-top { display: flex; flex-direction: column; gap: 0.18in; }
+  .s1-arc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.13in;
+    letter-spacing: 0.12em;
+    color: #4FE6B4;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .s1-rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #4FE6B4 0%, rgba(79,230,180,0) 70%);
+    margin: 0.12in 0;
+  }
+  .s1-title {
+    font-size: 0.82in;
+    font-weight: 900;
+    line-height: 0.92;
+    color: #F2FBF8;
+    letter-spacing: -0.025em;
+  }
+  .s1-title span { color: #4FE6B4; }
+  .s1-sub {
+    margin-top: 0.22in;
+    font-size: 0.175in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.55);
+    line-height: 1.5;
+    max-width: 5in;
+  }
+  .s1-bottom { display: flex; flex-direction: column; gap: 0.14in; }
+  .s1-project {
+    background: rgba(79,230,180,0.07);
+    border: 1px solid rgba(79,230,180,0.18);
+    border-radius: 0.08in;
+    padding: 0.18in 0.24in;
+    display: flex;
+    align-items: center;
+    gap: 0.16in;
+  }
+  .s1-project-dot {
+    width: 0.1in;
+    height: 0.1in;
+    border-radius: 50%;
+    background: #4FE6B4;
+    flex-shrink: 0;
+  }
+  .s1-project-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.14in;
+    color: #4FE6B4;
+    letter-spacing: 0.04em;
+  }
+  .s1-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .s1-byline {
+    font-size: 0.135in;
+    font-weight: 500;
+    color: rgba(242,251,248,0.4);
+    letter-spacing: 0.02em;
+  }
+  .s1-pagenum {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.12in;
+    color: rgba(79,230,180,0.4);
+  }
+
+  /* corner accent */
+  .corner-tl, .corner-br {
+    position: absolute;
+    width: 0.35in;
+    height: 0.35in;
+  }
+  .corner-tl {
+    top: 0.35in; left: 0.35in;
+    border-top: 2px solid rgba(79,230,180,0.5);
+    border-left: 2px solid rgba(79,230,180,0.5);
+  }
+  .corner-br {
+    bottom: 0.35in; right: 0.35in;
+    border-bottom: 2px solid rgba(79,230,180,0.5);
+    border-right: 2px solid rgba(79,230,180,0.5);
+  }
+
+  /* ────────────────────────────────────────────
+     SLIDE 2 — THE ITERATION HISTORY
+  ──────────────────────────────────────────── */
+  .s2 {
+    background: #080B0A;
+    flex-direction: column;
+  }
+  .s2-img-zone {
+    flex: 1;
+    background: #0D1210;
+    border-bottom: 1px solid rgba(79,230,180,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* ⚠ DROP YOUR ONSHAPE LIDS_9-UP SCREENSHOT HERE */
+  /* Replace the placeholder below with: <img src="your_screenshot.png" style="width:100%;height:100%;object-fit:cover;opacity:0.9;"> */
+  .s2-img-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15in;
+    text-align: center;
+    padding: 0.4in;
+  }
+  .s2-placeholder-icon {
+    font-size: 0.5in;
+    opacity: 0.3;
+  }
+  .s2-placeholder-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.13in;
+    color: rgba(79,230,180,0.5);
+    line-height: 1.6;
+  }
+  .s2-img-label {
+    position: absolute;
+    top: 0.18in; left: 0.22in;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.11in;
+    letter-spacing: 0.1em;
+    color: rgba(79,230,180,0.6);
+    background: rgba(8,11,10,0.8);
+    padding: 0.05in 0.1in;
+    border: 1px solid rgba(79,230,180,0.15);
+    border-radius: 0.03in;
+    text-transform: uppercase;
+  }
+  .s2-body {
+    padding: 0.38in 0.55in 0.42in;
+    display: flex;
+    flex-direction: column;
+    gap: 0.14in;
+    background: #080B0A;
+  }
+  .slide-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.11in;
+    letter-spacing: 0.14em;
+    color: #4FE6B4;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+  .slide-heading {
+    font-size: 0.36in;
+    font-weight: 800;
+    color: #F2FBF8;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .slide-body-text {
+    font-size: 0.155in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.65);
+    line-height: 1.6;
+  }
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.14in 0.55in 0.28in;
+    background: #080B0A;
+    border-top: 1px solid rgba(79,230,180,0.08);
+  }
+  .slide-footer-label {
+    font-size: 0.11in;
+    color: rgba(242,251,248,0.3);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .slide-footer-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.11in;
+    color: rgba(79,230,180,0.4);
+  }
+
+  /* ────────────────────────────────────────────
+     SLIDE 3 — THE SPEC REALITY
+  ──────────────────────────────────────────── */
+  .s3 {
+    background: #080B0A;
+    padding: 0.58in 0.6in;
+    gap: 0.3in;
+  }
+  .s3-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.18in;
+    flex: 1;
+  }
+  .spec-card {
+    background: #0F1714;
+    border: 1px solid rgba(79,230,180,0.14);
+    border-radius: 0.1in;
+    padding: 0.22in 0.24in;
+    display: flex;
+    flex-direction: column;
+    gap: 0.08in;
+  }
+  .spec-card.full-width { grid-column: 1 / -1; }
+  .spec-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.105in;
+    letter-spacing: 0.1em;
+    color: #4FE6B4;
+    text-transform: uppercase;
+    opacity: 0.75;
+  }
+  .spec-value {
+    font-size: 0.28in;
+    font-weight: 700;
+    color: #F2FBF8;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .spec-sub {
+    font-size: 0.12in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.45);
+    line-height: 1.4;
+  }
+  .spec-highlight {
+    border-color: rgba(79,230,180,0.4);
+    background: rgba(79,230,180,0.04);
+  }
+
+  /* ────────────────────────────────────────────
+     SLIDE 4 — THE 5 BLOCKERS
+  ──────────────────────────────────────────── */
+  .s4 {
+    background: #080B0A;
+    padding: 0.52in 0.6in;
+    gap: 0.28in;
+  }
+  .s4-intro {
+    font-size: 0.145in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.55);
+    line-height: 1.6;
+    border-left: 3px solid #4FE6B4;
+    padding-left: 0.18in;
+    font-style: italic;
+  }
+  .blocker-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.14in;
+    flex: 1;
+  }
+  .blocker {
+    display: flex;
+    gap: 0.18in;
+    align-items: flex-start;
+    padding: 0.18in 0.22in;
+    background: #0F1714;
+    border: 1px solid rgba(79,230,180,0.1);
+    border-radius: 0.08in;
+    border-left: 3px solid rgba(79,230,180,0.35);
+  }
+  .blocker-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.13in;
+    font-weight: 700;
+    color: #4FE6B4;
+    min-width: 0.28in;
+    padding-top: 0.01in;
+  }
+  .blocker-content { flex: 1; }
+  .blocker-title {
+    font-size: 0.155in;
+    font-weight: 700;
+    color: #F2FBF8;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .blocker-desc {
+    margin-top: 0.04in;
+    font-size: 0.125in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.5);
+    line-height: 1.45;
+  }
+  .blocker-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.095in;
+    color: rgba(79,230,180,0.6);
+    background: rgba(79,230,180,0.08);
+    border: 1px solid rgba(79,230,180,0.15);
+    border-radius: 0.04in;
+    padding: 0.03in 0.08in;
+    white-space: nowrap;
+    margin-top: 0.02in;
+    align-self: flex-start;
+  }
+
+  /* ────────────────────────────────────────────
+     SLIDE 5 — WHAT THE MACHINE ACTUALLY DID
+  ──────────────────────────────────────────── */
+  .s5 {
+    background: #080B0A;
+    padding: 0.52in 0.6in;
+    gap: 0.25in;
+  }
+  .s5-table {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(79,230,180,0.15);
+    border-radius: 0.1in;
+    overflow: hidden;
+  }
+  .s5-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: rgba(79,230,180,0.08);
+    border-bottom: 1px solid rgba(79,230,180,0.2);
+  }
+  .s5-header-cell {
+    padding: 0.15in 0.24in;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.11in;
+    letter-spacing: 0.1em;
+    color: #4FE6B4;
+    text-transform: uppercase;
+  }
+  .s5-header-cell:first-child {
+    border-right: 1px solid rgba(79,230,180,0.15);
+  }
+  .s5-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(79,230,180,0.07);
+  }
+  .s5-row:last-child { border-bottom: none; }
+  .s5-cell {
+    padding: 0.18in 0.24in;
+    font-size: 0.135in;
+    line-height: 1.5;
+    color: rgba(242,251,248,0.7);
+  }
+  .s5-cell:first-child {
+    border-right: 1px solid rgba(79,230,180,0.07);
+    color: rgba(242,251,248,0.45);
+    font-style: italic;
+  }
+  .s5-cell strong {
+    color: #F2FBF8;
+    font-weight: 600;
+    font-style: normal;
+  }
+  .s5-verdict {
+    background: rgba(79,230,180,0.06);
+    border: 1px solid rgba(79,230,180,0.2);
+    border-radius: 0.08in;
+    padding: 0.2in 0.26in;
+    font-size: 0.155in;
+    font-weight: 600;
+    color: #4FE6B4;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* ────────────────────────────────────────────
+     SLIDE 6 — TEASE / CTA
+  ──────────────────────────────────────────── */
+  .s6 {
+    background: #080B0A;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8in;
+    text-align: center;
+    gap: 0;
+    position: relative;
+  }
+  .s6-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.28in;
+  }
+  .s6-arc-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.115in;
+    letter-spacing: 0.15em;
+    color: rgba(79,230,180,0.6);
+    border: 1px solid rgba(79,230,180,0.2);
+    border-radius: 100px;
+    padding: 0.07in 0.2in;
+    text-transform: uppercase;
+  }
+  .s6-title {
+    font-size: 0.6in;
+    font-weight: 900;
+    color: #F2FBF8;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .s6-title span { color: #4FE6B4; }
+  .s6-next-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.115in;
+    letter-spacing: 0.1em;
+    color: rgba(79,230,180,0.5);
+    text-transform: uppercase;
+  }
+  .s6-next-title {
+    font-size: 0.22in;
+    font-weight: 600;
+    color: rgba(242,251,248,0.7);
+    line-height: 1.3;
+    max-width: 5in;
+  }
+  .s6-divider {
+    width: 0.5in;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(79,230,180,0) 0%, #4FE6B4 50%, rgba(79,230,180,0) 100%);
+  }
+  .s6-byline {
+    font-size: 0.135in;
+    font-weight: 400;
+    color: rgba(242,251,248,0.3);
+  }
+  .s6-byline strong {
+    color: rgba(242,251,248,0.6);
+    font-weight: 600;
+  }
+  /* Radial glow */
+  .s6::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5in;
+    height: 5in;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(79,230,180,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 — COVER
+══════════════════════════════════════════════ -->
+<section class="slide s1">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <div class="s1-top">
+    <div class="s1-arc">Arc 002, Post 4 &nbsp;·&nbsp; Erik Norris &nbsp;·&nbsp; EN-OS</div>
+    <div class="s1-rule"></div>
+    <div class="s1-title">CON<span>TROL</span>LED<br>NODES</div>
+    <div class="s1-sub">Not lights-out. Not AGI. Something more useful right now: discrete, bounded segments of the pipeline where an agent takes a defined input, applies a rigid constraint, and produces a trusted output — while you focus on the hard part.</div>
+  </div>
+
+  <div class="s1-bottom">
+    <div class="s1-project">
+      <div class="s1-project-dot"></div>
+      <div class="s1-project-text">Proof case: Hyphen Universal 1/3 GN Dispenser Lid &nbsp;·&nbsp; V5.0 Pre-CAD Freeze</div>
+    </div>
+    <div class="s1-footer">
+      <span class="s1-byline">eriknorris.com</span>
+      <span class="s1-pagenum">01 / 06</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 — THE ITERATION HISTORY
+     ⚠ REPLACE THE PLACEHOLDER WITH YOUR SCREENSHOT
+══════════════════════════════════════════════ -->
+<section class="slide s2">
+  <div class="s2-img-zone">
+    <!--
+      ════════════════════════════════════════
+      REPLACE THIS ENTIRE BLOCK WITH:
+      <img src="lids_9up.png"
+           style="width:100%;height:100%;object-fit:cover;opacity:0.88;">
+      Use your Onshape "Lids_9-up" screenshot.
+      Save it as lids_9up.png in the same folder as this HTML file.
+      ════════════════════════════════════════
+    -->
+    <div class="s2-img-placeholder">
+      <div class="s2-placeholder-icon">⬛</div>
+      <div class="s2-placeholder-text">
+        DROP LIDS_9-UP.PNG HERE<br>
+        (Onshape screenshot — all 9 lid iterations in one view)<br><br>
+        Save as: <strong>lids_9up.png</strong> in same folder as this HTML file<br>
+        Then replace this block with:<br>
+        &lt;img src="lids_9up.png" style="width:100%;height:100%;object-fit:cover;opacity:0.88;"&gt;
+      </div>
+    </div>
+
+    <div class="s2-img-label">Lid_1 → Lid_10 · Onshape · 10+ iterations</div>
+  </div>
+
+  <div class="s2-body">
+    <div class="slide-eyebrow">The Iteration History</div>
+    <div class="slide-heading">10+ CAD revisions.<br>Each one physically different.</div>
+    <div class="slide-body-text">Each revision created new administrative exhaust — updated specs, revised blocker matrices, new material constraints. That exhaust is exactly what the EN-OS was built to consume.</div>
+  </div>
+
+  <div class="slide-footer">
+    <span class="slide-footer-label">Controlled Nodes · Arc 002 P4</span>
+    <span class="slide-footer-num">02 / 06</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — THE SPEC REALITY
+══════════════════════════════════════════════ -->
+<section class="slide s3">
+  <div class="slide-eyebrow">The Spec Reality</div>
+  <div class="slide-heading">Real physics.<br>Real constraints.</div>
+
+  <div class="s3-grid">
+    <div class="spec-card spec-highlight">
+      <div class="spec-label">Footprint</div>
+      <div class="spec-value">325 × 176 mm</div>
+      <div class="spec-sub">+0.0 / −1.5mm unilateral — ensures drop-in freedom across all pan + hopper variants</div>
+    </div>
+    <div class="spec-card spec-highlight">
+      <div class="spec-label">Mass</div>
+      <div class="spec-value">~459g</div>
+      <div class="spec-sub">Pre-shrinkage-factor CAD. Final tooling vendor adjusts at 0.5–0.7%</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Thermal</div>
+      <div class="spec-value">195°F</div>
+      <div class="spec-sub">Must survive continuous commercial dishwasher cycles without crazing</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Drop Test</div>
+      <div class="spec-value">36 in.</div>
+      <div class="spec-sub">914mm onto commercial quarry tile — no crack, no delamination</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Stacking Pitch</div>
+      <div class="spec-value">40 mm</div>
+      <div class="spec-sub">Locked. Hub-centric registration with 0.5–2.0mm vacuum-lock prevention air gap</div>
+    </div>
+    <div class="spec-card">
+      <div class="spec-label">Compliance</div>
+      <div class="spec-value">NSF/ANSI 2</div>
+      <div class="spec-sub">All splash-zone intersecting corners ≥ 1/8 in. radius minimum</div>
+    </div>
+    <div class="spec-card full-width" style="grid-column: 1/-1;">
+      <div class="spec-label">Manufacturing</div>
+      <div class="spec-value" style="font-size:0.22in;">2-Shot Injection Molding</div>
+      <div class="spec-sub">Shot 1: Eastman Tritan™ TX1001 (rigid substrate) &nbsp;·&nbsp; Shot 2: Custom #4FE6B4 TPE overmold (handle, logos, anti-skid bumpers) — 4-point feed path from a single gate</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span class="slide-footer-label">Controlled Nodes · Arc 002 P4</span>
+    <span class="slide-footer-num">03 / 06</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 — THE 5 BLOCKERS
+══════════════════════════════════════════════ -->
+<section class="slide s4">
+  <div class="slide-eyebrow">The Pre-CAD-Freeze Gate</div>
+  <div class="slide-heading">No steel may be cut<br>until all 5 are resolved.</div>
+
+  <div class="s4-intro">
+    The EN-OS operates the same way. No agent commits until the constraint gates are cleared. Same discipline. Different substrate.
+  </div>
+
+  <div class="blocker-list">
+    <div class="blocker">
+      <div class="blocker-num">B-01</div>
+      <div class="blocker-content">
+        <div class="blocker-title">Shrinkage Factors</div>
+        <div class="blocker-desc">Apply 0.5–0.7% PC/Tritan shrink rate to master CAD. Without this, every cooled part will be oversized.</div>
+      </div>
+      <div class="blocker-badge">REQ-5.1</div>
+    </div>
+    <div class="blocker">
+      <div class="blocker-num">B-02</div>
+      <div class="blocker-content">
+        <div class="blocker-title">Material & Color Lock</div>
+        <div class="blocker-desc">Finalize resins. Execute custom elastomer compounding for Hyphen-Green (#4FE6B4) with UV stability validation.</div>
+      </div>
+      <div class="blocker-badge">REQ-5.2</div>
+    </div>
+    <div class="blocker">
+      <div class="blocker-num">B-03</div>
+      <div class="blocker-content">
+        <div class="blocker-title">Hopper Geometry Mapping</div>
+        <div class="blocker-desc">Resolve dimensional variances between 1/6 and 1/3 hopper ends/sidewalls to prevent binding.</div>
+      </div>
+      <div class="blocker-badge">REQ-5.3</div>
+    </div>
+    <div class="blocker">
+      <div class="blocker-num">B-04</div>
+      <div class="blocker-content">
+        <div class="blocker-title">Stacking System Lock</div>
+        <div class="blocker-desc">Final sign-off on 40mm pitch, hub registration, and geometric placement of the 4 elastomer feed points.</div>
+      </div>
+      <div class="blocker-badge">REQ-5.4</div>
+    </div>
+    <div class="blocker">
+      <div class="blocker-num">B-05</div>
+      <div class="blocker-content">
+        <div class="blocker-title">CAD Tolerance Sync</div>
+        <div class="blocker-desc">Final tolerance stack-up analysis of the ~459g V5 model. PRD must match physical CAD reality exactly.</div>
+      </div>
+      <div class="blocker-badge">REQ-5.5</div>
+    </div>
+  </div>
+
+  <div class="slide-footer">
+    <span class="slide-footer-label">Controlled Nodes · Arc 002 P4</span>
+    <span class="slide-footer-num">04 / 06</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 — WHAT THE MACHINE ACTUALLY DID
+══════════════════════════════════════════════ -->
+<section class="slide s5">
+  <div class="slide-eyebrow">The Honest Accounting</div>
+  <div class="slide-heading">What the machine<br>actually did.</div>
+
+  <div class="s5-table">
+    <div class="s5-header">
+      <div class="s5-header-cell">You (engineering)</div>
+      <div class="s5-header-cell">Machine (administration)</div>
+    </div>
+    <div class="s5-row">
+      <div class="s5-cell">10+ CAD iterations — fit, function, form</div>
+      <div class="s5-cell"><strong>Structured each session's output into PRD format</strong> — dimensions, tolerances, DFM constraints</div>
+    </div>
+    <div class="s5-row">
+      <div class="s5-cell">Identified NSF material blocker — team stuck</div>
+      <div class="s5-cell"><strong>Deep research pull:</strong> Tritan TX1001 + Versaflex TPE spec sheets. Updated PRD blocker matrix. Committed.</div>
+    </div>
+    <div class="s5-row">
+      <div class="s5-cell">Committed raw markdown of session chaos</div>
+      <div class="s5-cell"><strong>Webhook → NanoClaw → formatted output.</strong> Constraint linters prevented hallucinated tolerances.</div>
+    </div>
+    <div class="s5-row">
+      <div class="s5-cell">Reviewed structure, not prose</div>
+      <div class="s5-cell"><strong>Handled administrative form.</strong> You moved to the next physical problem.</div>
+    </div>
+  </div>
+
+  <div class="s5-verdict">
+    The tool didn't build the product.<br>
+    <span style="color:rgba(242,251,248,0.55);font-weight:400;">The tool was the administrative limit switch that let you move twice as fast.</span>
+  </div>
+
+  <div class="slide-footer">
+    <span class="slide-footer-label">Controlled Nodes · Arc 002 P4</span>
+    <span class="slide-footer-num">05 / 06</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 — TEASE
+══════════════════════════════════════════════ -->
+<section class="slide s6">
+  <div class="s6-inner">
+    <div class="s6-arc-badge">Arc 002 · EN-OS · Build in Public</div>
+
+    <div class="s6-title">NEXT:<br><span>THE HONEST</span><br>ACCOUNTING.</div>
+
+    <div class="s6-divider"></div>
+
+    <div class="s6-next-label">Post 5</div>
+    <div class="s6-next-title">The single-threaded factory — and what happens when an event trigger requires multiple disciplines to coordinate at the exact same time.</div>
+
+    <div class="s6-divider"></div>
+
+    <div class="s6-byline">
+      <strong>Erik Norris</strong> &nbsp;·&nbsp; Principal ME + AI Systems &nbsp;·&nbsp; eriknorris.com
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

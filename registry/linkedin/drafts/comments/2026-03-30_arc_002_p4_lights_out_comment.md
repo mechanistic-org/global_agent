@@ -1,10 +1,10 @@
 The most satisfying part wasn't the text the agent wrote. It was the silence of the execution.
 
-No confirmation prompt. No "does this look right?" No draft sitting in a queue waiting for me to approve it. The machine respected the physical constraints of the substrate, threaded the gatekeeper, and committed — without me touching it.
+Each session had the same rhythm: I committed the engineering chaos. The machine woke up, formatted it against the constraint linters, and went back to sleep. No back-and-forth. No queue. No administrative overhead bleeding into desk time. The documentation layer ran in discrete, bounded segments — lights-out on administration while I stayed focused on the physical problem.
 
 The live Colophon updates are being pushed continuously here: https://eriknorris.com/
 
-The question this raises: the machine can update a linear changelog autonomously. But what happens when a single webhook trigger requires mechanical engineering, software architecture, and documentation to all happen simultaneously? What happens when agents have to coordinate?
+The question this raises: the machine handles linear, single-agent flows well. But what happens when a single webhook trigger requires mechanical engineering, software architecture, and documentation to all happen simultaneously? What happens when agents have to coordinate?
 
 Next post: What Arc 002 still can't do.
 
@@ -12,7 +12,7 @@ Arc 002 so far:
 → The Architecture Map + The Starter Motor: https://link.eriknorris.com/OasiFcx
 → Scheduled Amnesia: https://link.eriknorris.com/7k4M207
 → Wiring the Limit Switch: https://link.eriknorris.com/HQQeu0Z
-→ The Lights-Out Run: [this post]
+→ Controlled Nodes: [this post]
 
 Arc 001 (the full substrate build):
 → Git as substrate: https://link.eriknorris.com/oz3KzKD
