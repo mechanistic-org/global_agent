@@ -1,0 +1,1 @@
+"The 'Aether' is where ideas start, but the 'Controlled Node' is where they become reality. I just posted Part 4 of the Arc, detailing how we moved the Hyphen lid project from a Slack question to a DFMEA-backed specification using local AI workflows. Check it out here: [Link to Post 4]"

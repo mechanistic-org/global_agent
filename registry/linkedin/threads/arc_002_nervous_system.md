@@ -18,8 +18,8 @@ posts:
     dub_link: "https://link.eriknorris.com/HQQeu0Z"
   - id: 2026-03-30_arc_002_p4_lights_out.md
     arc_position: 4
-    post_url: ""
-    dub_link: ""
+    post_url: "https://www.linkedin.com/posts/eriknorris_lid-dashboard-handoff-pack-activity-7444548376400060416-VwXj"
+    dub_link: "https://link.eriknorris.com/fUGdLzR"
   - id: 2026-03-31_arc_002_p5_single_threaded.md
     arc_position: 5
     post_url: ""

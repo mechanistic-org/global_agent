@@ -1,35 +1,35 @@
 ---
-title: "The Single-Threaded Factory (What the OS Still Can't Do)"
+title: "Single-Threaded Precision (Tightening the Tolerances)"
 pubDate: 2026-03-31
 status: draft
-tags: ["AgenticAI", "SovereignOS", "AgentSwarm", "Software30", "BuildInPublic"]
+tags: ["AgenticAI", "SovereignOS", "ModelSelection", "Software30", "AIEngineering"]
 ---
 
-Let's do the honest accounting.
+In engineering, we don’t add more parts to fix a tolerance issue — we simplify the stack. 
 
-The lights-out run proved the system works. The machine catches a webhook, wakes the right agent, threads the constraint gates, commits the exhaust, and goes back to sleep — without me touching the terminal.
+Post 4 showed the "Flow" of a cognitive assembly line. But the transition from a "fuzzy" Slack question to a "rigid" specification for @Hyphen wasn't the result of a noisy multi-agent swarm. It was the result of **Single-Threaded Precision**.
 
-It works. It is entirely single-threaded.
+**The VRAM Wall**
+True sovereignty is grounded in physical hardware. My OS runs on an **RTX 6000 Ada (48GB VRAM)**. In the high-performance engineering world, "more agents" doesn't equal more intelligence; it equals higher latency and "signal attenuation." 
 
-Right now, the EN-OS is brilliant at manufacturing one part at a time. A sprint ticket moves to "Done," the documentation agent wakes up, reads the diff, formats the Colophon, commits, burns. Linear. Safe. Correct.
+If I boot three agents simultaneously against the same git substrate, they develop a race condition with reality. They disagree on what's real.
 
-That is not how real engineering happens. Real engineering is a roundtable.
+To maintain the "Administrative Limit Switch," I had to tighten the tolerances.
 
-**The Swarm Problem**
-Change a physical tolerance on a CAD model, and the impact isn't isolated—it cascades. The Bill of Materials needs to update. The mechanical FMEA risk matrix needs recalculating. The firmware requirements must be adjusted. These aren't serial tasks; they require multi-disciplinary negotiation. 
+**The Optimization: Expert Nodes**
+Instead of a sprawling swarm, I moved to a **Single-Threaded Factory** of discrete Expert Nodes. We found the "sweet spot" in the **18B–19B parameter range**:
 
-Right now, the Cloudflare router receives an event and wakes up one agent.
+* **The Kernel (DeepSeek-Coder-V2-Lite):** Optimized for our hardware repository to ingest factoids and output rigid engineering requirements (like the 459g target).
+* **The Legal Node (Saul-7B):** A specialized model designed for regulatory compliance, SOW redlines, and NSF sanitation requirements.
 
-What it can't do yet is host a roundtable. If a mechanical reviewer, a software architect, and a documentation compiler all boot simultaneously against the same Git substrate, they read states that are changing under them. Two agents commit to the same branch. One reads a file the other just invalidated. The substrate — the one layer the entire OS trusts as ground truth — develops a race condition with itself.
+**Digital Sovereignty**
+Selecting the optimal power-to-weight ratio for local inference isn't "settling." It’s Engineering Efficiency. 
 
-The constraint cages were built to keep one agent honest. They weren't designed for three agents disagreeing about what's real.
+The screenshots below show the **Visual PRD Dashboard** in action. You aren't seeing a collective hallucination. You are seeing the output of a single-threaded system where the Principal Engineer is the final arbiter of truth between absolute expert models.
 
-**The Next Threshold**
-You can't solve multi-agent failure modes with toy scripts. You only find the breaking points when you force the system to orchestrate a genuine, multi-disciplinary engineering push. 
+The "roundtable" isn't for the agents. It's for me.
 
-The machine has memory. It has a nervous system.
-Now, we have to teach it how to collaborate.
+---
+*Next: Arc 003 — The Roundtable. Taking the OS out of single-threaded safety and forcing the Swarm to negotiate.*
 
-Next: Arc 003 — The Roundtable. Taking the EN-OS out of single-threaded safety and forcing the Swarm to negotiate.
-
-#AgenticAI #SovereignOS #AgentSwarm #Software30 #BuildInPublic
+#AgenticAI #SovereignOS #ModelSelection #Software30 #AIEngineering
