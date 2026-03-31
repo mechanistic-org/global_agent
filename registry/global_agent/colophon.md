@@ -153,3 +153,8 @@ The hybrid mechanical and software narrative, utilizing manufacturing metaphors 
 ## 2026-03-29 — Implemented a "Development Mode" landing page to isolate local development from live production redirects and ensure data integrity.
 
 To prevent local development servers from inadvertently exposing sensitive data or relying on external production states, a dedicated "Development Mode" landing page was implemented. This architectural choice ensures that local code changes can be verified in isolation, providing a secure and predictable development environment. It's a key pattern for maintaining data integrity during local testing.
+
+
+## 2026-03-30 — The RTX 6000 Ada (48GB) is explicitly named as the physical substrate anchoring the Sovereign OS architecture.
+
+The RTX 6000 Ada with 48GB of VRAM is explicitly established as the physical hardware foundation for the Sovereign OS. This decision grounds the system in tangible hardware constraints and capabilities, forming a core part of "how we built this."

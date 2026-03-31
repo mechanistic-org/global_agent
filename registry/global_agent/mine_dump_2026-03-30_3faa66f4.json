@@ -1,0 +1,109 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "draft",
+    "content": "Post 5's narrative is intentionally shifted from discussing \"swarm failure\" to framing \"Single-Threaded Execution\" as a deliberate architectural decision. This choice emphasizes achieving \"Reasoning Depth\" and maintaining \"Sovereign Control\" within the system.",
+    "one_liner": "Single-threaded execution is reframed as an intentional architectural choice for reasoning depth and sovereign control, moving beyond a narrative of swarm failure.",
+    "source_context": "Post 5 will no longer focus on 'failure' of the swarm. Instead, it will frame **Single-Threaded Execution** as an intentional architectural decision for **Reasoning Depth** and **Sovereign Control**.",
+    "tags": [
+      "architecture",
+      "narrative",
+      "single-threaded",
+      "sovereign-os",
+      "linkedin-post"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The RTX 6000 Ada with 48GB of VRAM is explicitly established as the physical hardware foundation for the Sovereign OS. This decision grounds the system in tangible hardware constraints and capabilities, forming a core part of \"how we built this.\"",
+    "one_liner": "The RTX 6000 Ada (48GB) is explicitly named as the physical substrate anchoring the Sovereign OS architecture.",
+    "source_context": "We will explicitly mention the **RTX 6000 Ada (48GB)** as the physical substrate of the OS.",
+    "tags": [
+      "hardware",
+      "architecture",
+      "sovereign-os",
+      "vram",
+      "design-decision"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The \"VRAM Wall\" and the 48GB limit of the RTX 6000 Ada are identified as critical constraints, leading to the justification of an \"18B-19B sweet spot\" for model selection. Specific models like DeepSeek-Coder-V2-Lite (for PRD/Kernel) and Saul-7B (for Legal/SOW) are chosen for specialized tasks to optimize performance within these hardware limits.",
+    "one_liner": "The 48GB VRAM limit necessitates a strategic 18B-19B model selection, with specialized LLMs like DeepSeek-Coder-V2-Lite and Saul-7B optimizing performance for specific tasks.",
+    "source_context": "The 'VRAM Wall.' Why more agents equal more signal attenuation. The 48GB limit of the RTX 6000 Ada. Model Selection: Justifying the **18B-19B sweet spot** (DeepSeek-Coder-V2-Lite for PRD/Kernel, Saul-7B for Legal/SOW).",
+    "tags": [
+      "constraint",
+      "vram",
+      "model-selection",
+      "llm",
+      "optimization",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "Design Failure Mode and Effects Analysis (DFMEA) has been positioned as the fundamental \"structural basis\" for the Product Requirements Document (PRD). This ensures that the PRD is built upon a rigorous analysis of potential failures and their impacts, enhancing the robustness of the design process.",
+    "one_liner": "DFMEA is established as the structural basis for the PRD, ensuring robust design by grounding requirements in failure analysis.",
+    "source_context": "DFMEA Basis: Positioned the Design Failure Mode and Effects Analysis as the 'structural basis' for the PRD.",
+    "tags": [
+      "dfmea",
+      "prd",
+      "process",
+      "documentation",
+      "quality-assurance",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "draft",
+    "content": "The agent's role is framed using the \"Administrative Limit Switch\" analogy, defining its core value proposition as a \"speed multiplier\" rather than merely a passive tool. This highlights the agent's active contribution to accelerating engineering workflows.",
+    "one_liner": "The agent's role is defined as an \"Administrative Limit Switch\" and a speed multiplier, emphasizing its active contribution beyond a mere tool.",
+    "source_context": "Integrated the 'Administrative Limit Switch' framing to define the agent's role as a speed multiplier, not just a tool.",
+    "tags": [
+      "agent-role",
+      "value-proposition",
+      "automation",
+      "narrative",
+      "linkedin-post"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The project's primary constraint, \"1 lid spanning both?\", was documented as originating from a casual Slack exchange on January 6, 2025. This highlights how initial, informal discussions can establish fundamental design limitations that guide the entire project.",
+    "one_liner": "A casual Slack exchange on Jan 6, 2025, established the project's primary constraint: \"1 lid spanning both?\".",
+    "source_context": "Documented the **Jan 6, 2025** Slack inception ('1 lid spanning both?') as the project's primary constraint.",
+    "tags": [
+      "constraint",
+      "project-origin",
+      "design-constraint",
+      "slack",
+      "decision-context"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "A rigorous process for data integrity verification is in place, where all engineering specifications integrated into posts, such as the 459g weight target, 40mm stacking pitch, and Tritan TX1001 material, are cross-referenced with physical project files. This ensures accuracy and consistency across documentation.",
+    "one_liner": "Engineering specifications are rigorously cross-referenced with physical project files to ensure data integrity and accuracy in documentation.",
+    "source_context": "All engineering specs integrated into the post are cross-referenced with the physical project files: - **459g Weight Target:** Verified in `misc_PRD_working.txt`. - **40mm Stacking Pitch:** Verified in `misc_PRD_working.txt`. - **Tritan TX1001 Material:** Verified in `vault_prd_hyphen_lid_v1.json`.",
+    "tags": [
+      "data-integrity",
+      "verification",
+      "engineering-specs",
+      "process",
+      "quality-assurance"
+    ]
+  }
+]

@@ -5,7 +5,7 @@
 # 🔴 NOW — Active Iteration & Overdue Blockers
 
   🔥 P0: BLOCKERS & PREREQUISITES (DO THIS FIRST)
-  - [Ready] global_agent#86 — [Task] Execute Arc 002 LinkedIn Rollout (The Nervous System) (Iteration 1)
+  - [Done] global_agent#86 — [Task] Execute Arc 002 LinkedIn Rollout (The Nervous System) (Iteration 1)
 
   ⚡ P1: HIGH PRIORITY
   - [Done] hyphen#7 — [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
