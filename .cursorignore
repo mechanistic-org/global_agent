@@ -1,0 +1,53 @@
+# ─── EN-OS TOKEN-BURN FIREWALL ───────────────────────────────────────────────
+# These files will CRASH the context window if ingested by an ambient indexer.
+# DO NOT REMOVE OR MODIFY without understanding the consequences.
+# Law: The enos_router MCP bridge is the ONLY legal context highway.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Catastrophic blobs ───────────────────────────────────────────────────────
+*_Master_Context*.txt
+*_Master_Context*.md
+Node_0_Master_Context.txt
+node_0_master_context.txt
+
+# ── Generated mining / orchestration output ──────────────────────────────────
+scripts/output.log
+scripts/output_*.log
+scripts/pipeline_output.json
+output/
+tmp/
+_inbox/
+*.tmp
+
+# ── Vector / database stores (binary, unreadable by LLM) ────────────────────
+registry/.chroma_db/
+.chroma/
+*.sqlite3
+*.db
+
+# ── Node / Python build artifacts ────────────────────────────────────────────
+node_modules/
+scripts/node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+
+# ── Secrets ──────────────────────────────────────────────────────────────────
+.env
+*.env
+gcp-oauth.keys.json
+.gdrive_tokens.json
+*oauth*.json
+*credentials*.json
+
+# ── Large data payloads ──────────────────────────────────────────────────────
+board.json
+gws_tree.json
+walk_transcripts.txt
+sprint_board_output.txt
+triage.txt
+download.txt
+gh_items.txt

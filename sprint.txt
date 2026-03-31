@@ -8,7 +8,7 @@
   - [Ready] global_agent#86 — [Task] Execute Arc 002 LinkedIn Rollout (The Nervous System) (Iteration 1)
 
   ⚡ P1: HIGH PRIORITY
-  - [Ready] hyphen#7 — [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
+  - [Done] hyphen#7 — [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
 
   🛠️ P2: STANDARD WORK
   - [Ready] MO#8 — [Deploy] Holy Grail v32 → mo.mechanistic.com Migration + CF Access Update (Iteration 1)

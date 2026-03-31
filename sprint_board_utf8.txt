@@ -4,10 +4,6 @@
 
 # ≡ƒö┤ NOW ΓÇö Active Iteration & Overdue Blockers
 
-  ≡ƒöÑ P0: BLOCKERS & PREREQUISITES (DO THIS FIRST)
-  - [Backlog] global_agent#47 ΓÇö Persistence & Auto-Boot Architecture (The "Always On" Router) (Iteration 1)
-  - [Backlog] global_agent#61 ΓÇö [Epic] NanoClaw Ephemeral Container Layer ├óΓé¼ΓÇ¥ Dockerfile + run_agent.py (Iteration 1)
-
   ΓÜí P1: HIGH PRIORITY
   - [Ready] hyphen#7 ΓÇö [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
 
@@ -18,7 +14,6 @@
 # ≡ƒƒí NEXT ΓÇö Upcoming Iterations
   - [Iteration 2] P1 | portfolio#53 ΓÇö Legacy Portfolio Cleanup (Ghost Code & Import Paths)
   - [Iteration 2] P2 | global_agent#54 ΓÇö [Backlog] R2 Endpoint Standardization ├óΓé¼ΓÇ¥ Custom Domains, CORS, and Public URL Audit
-  - [Iteration 2] P2 | global_agent#67 ΓÇö [Enhancement] ingest_watchdog.py ├óΓé¼ΓÇ¥ local inbox folder auto-routes to ChromaDB via NanoClaw
   - [Iteration 2] P2 | global_agent#68 ΓÇö [Enhancement] R2 Event Notification ├óΓÇáΓÇÖ Cloudflare Worker ├óΓÇáΓÇÖ asset ledger auto-update
   - [Iteration 2] P2 | portfolio#60 ΓÇö [Enhancement] Pagefind static search ├óΓé¼ΓÇ¥ sovereign full-text search over 25yr engineering corpus
   - [Iteration 3] P1 | portfolio#47 ΓÇö [Epic] Resume the C|24 Component Stitch Loop
@@ -29,7 +24,6 @@
   - [Iteration 3] P99 | global_agent#69 ΓÇö [Enhancement] Client-facing deliverable sanitizer ├óΓé¼ΓÇ¥ strip telemetry ├óΓÇáΓÇÖ PDF ├óΓÇáΓÇÖ email via GWS SA
   - [Iteration 3] P99 | portfolio#61 ΓÇö Schema Parity Check ├óΓé¼ΓÇ¥ Keystatic config ├óΓÇáΓÇ¥ content.config.ts drift detection
   - [Iteration 4] P1 | global_agent#51 ΓÇö [Epic] Pillar 1: GitHub-Driven Agent Lifecycles
-  - [Iteration 4] P2 | global_agent#49 ΓÇö Agent Tool/Skill Submodule Versioning (SKILL.md Drift)
   - [Iteration 4] P2 | global_agent#55 ΓÇö [Backlog] Stratified Intelligence Indexing ├óΓé¼ΓÇ¥ PROJECT_INTELLIGENCE.md + ChromaDB Push per Project
 
 

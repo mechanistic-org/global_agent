@@ -1,0 +1,90 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A critical issue where the local development server redirected to a live production site containing sensitive financial data was successfully resolved. This involved disabling the redirect and executing a comprehensive cross-repository cleanup to ensure all instances of the data were removed, thereby enabling secure local verification of fixes. This achievement highlights effective problem-solving and data security practices.",
+    "one_liner": "Successfully resolved a critical local dev redirect issue and performed a cross-repository sanitization of sensitive financial data.",
+    "source_context": "successfully performed a cross-repo cleanup of the sensitive financial data and fixed the \"broken\" local redirect",
+    "tags": [
+      "data security",
+      "development environment",
+      "problem solving",
+      "cross-repo cleanup",
+      "win"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "To prevent local development servers from inadvertently exposing sensitive data or relying on external production states, a dedicated \"Development Mode\" landing page was implemented. This architectural choice ensures that local code changes can be verified in isolation, providing a secure and predictable development environment. It's a key pattern for maintaining data integrity during local testing.",
+    "one_liner": "Implemented a \"Development Mode\" landing page to isolate local development from live production redirects and ensure data integrity.",
+    "source_context": "Removed the automatic redirect to `hyphen.mechanistic.com`. Replaced it with a **Development Mode** landing page.",
+    "tags": [
+      "architecture pattern",
+      "development environment",
+      "security",
+      "data integrity",
+      "best practice"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must always sanitize historical reference files in all relevant repositories, not just primary data sources. This is critical to prevent the accidental re-introduction of sensitive information during future development, deployments, or data migrations, ensuring comprehensive data security.",
+    "one_liner": "Always sanitize historical reference files across all repositories to prevent sensitive data re-introduction.",
+    "source_context": "The user mentioned these files exist for reference; they must be sanitized too or they may lead to accidental re-introduction of the data.",
+    "tags": [
+      "data security",
+      "data governance",
+      "multi-repo management",
+      "best practice",
+      "rule"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Sensitive financial data, specifically \"Account Value\" and \"Engagement Value\" metrics, underwent a systematic removal across multiple files within the `hyphen` repository. This included redacting figures from `PostmortemPage.tsx`, clearing fields in `vault_prd_hyphen_lid_v1.json`, and removing dollar amounts from `postmortem.md`. This comprehensive cleanup ensures no financial figures remain in the codebase or documentation.",
+    "one_liner": "Executed a systematic multi-file sanitization of sensitive financial data within the `hyphen` repository.",
+    "source_context": "Removed \"Account Value\" metric... Redacted engagement dollar amounts... Cleared the `accountValue` and `engagementValue` fields... Removed dollar figures from the project documentation header.",
+    "tags": [
+      "data sanitization",
+      "security",
+      "code cleanup",
+      "technical detail",
+      "financial data"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "inferred",
+    "destination": "docs",
+    "content": "For critical production updates, especially those involving sensitive data or security fixes, clear and explicit deployment commands must be provided. This practice minimizes the risk of human error, ensures the correct, sanitized code is pushed to the live environment, and streamlines the release process for future reference.",
+    "one_liner": "Codify explicit deployment commands for all critical production updates.",
+    "source_context": "How to Fix the Live Site... run: `npm run build` `npx wrangler pages deploy dist --project-name=hyphen-lid`",
+    "tags": [
+      "deployment",
+      "production",
+      "best practice",
+      "process documentation",
+      "release management"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "Should I trigger a `wrangler pages deploy` directly, or will you handle the final push once you approve the local preview?",
+    "one_liner": "Query regarding who should handle the final deployment to production.",
+    "source_context": "Open Questions - Deployment Mechanism",
+    "tags": [
+      "question",
+      "status update",
+      "logistics"
+    ]
+  }
+]

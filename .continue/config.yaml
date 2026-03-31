@@ -1,0 +1,100 @@
+# EN-OS Continue.dev Configuration
+# Docs: https://docs.continue.dev/reference/config
+#
+# Model routing strategy:
+#   autocomplete → qwen2.5-coder:7b  (sub-second, low VRAM)
+#   chat / edit  → qwen2.5-coder:32b (daily driver)
+#   deep reason  → deepseek-r1:32b   (hard problems, architecture)
+#   visual/cloud → claude (targeted, not default)
+
+name: EN-OS Local Stack
+version: 1.0.0
+
+# ── Models ──────────────────────────────────────────────────────────────────
+models:
+  - name: Qwen Coder 32B (Daily Driver)
+    provider: ollama
+    model: qwen2.5-coder:32b
+    apiBase: http://localhost:11434
+    roles:
+      - chat
+      - edit
+
+  - name: DeepSeek-R1 32B (Deep Reasoner)
+    provider: ollama
+    model: deepseek-r1:32b
+    apiBase: http://localhost:11434
+    roles:
+      - chat
+
+  - name: Claude Sonnet (Cloud — Targeted Use)
+    provider: anthropic
+    model: claude-sonnet-4-5
+    roles:
+      - chat
+
+# ── Autocomplete ─────────────────────────────────────────────────────────────
+tabAutocompleteModel:
+  name: Qwen Coder 7B (Autocomplete)
+  provider: ollama
+  model: qwen2.5-coder:7b
+  apiBase: http://localhost:11434
+
+# ── MCP Servers ──────────────────────────────────────────────────────────────
+# enos_router runs via PM2 on Streamable HTTP.
+# All context retrieval MUST go through this server.
+# Never use filesystem scans for context.
+mcpServers:
+  - name: enos_router
+    transport: http
+    url: http://127.0.0.1:8000/mcp
+
+# ── System Prompt Injection ───────────────────────────────────────────────────
+systemMessage: |
+  You are operating inside EN-OS (Engineering Operating System).
+
+  ABSOLUTE RULES:
+  1. Never recursively scan directories (no ls -R, find, Get-ChildItem -Recurse).
+  2. All context retrieval goes through enos_router MCP tools only.
+  3. Before any UI work, call read_design_system to retrieve the Dark Hangar aesthetic.
+  4. Every session declares a DoD from the GitHub sprint board before work begins.
+  5. All findings are persisted via push_forensic_doc before session close.
+
+  Router endpoint: http://127.0.0.1:8000/mcp
+  Key tools: semantic_search | search_registry | read_forensic_doc | push_forensic_doc | read_design_system
+
+# ── Context Providers ─────────────────────────────────────────────────────────
+contextProviders:
+  - name: code
+  - name: docs
+  - name: diff
+  - name: terminal
+  - name: problems
+  # Do NOT enable 'codebase' — this triggers recursive workspace indexing
+  # and violates the EN-OS token-burn firewall.
+
+# ── Slash Commands ────────────────────────────────────────────────────────────
+slashCommands:
+  - name: session_open
+    description: Run EN-OS session open ritual
+    prompt: |
+      Run the /session_open ritual:
+      1. Call router_health_check via enos_router MCP
+      2. Ask me to run: python D:\GitHub\global_agent\scripts\sprint_board.py --current-iteration
+      3. After I paste the output, state the active ticket and a one-sentence DoD
+      4. Do not begin work until I confirm the DoD
+
+  - name: session_close
+    description: Run EN-OS session close ritual
+    prompt: |
+      Run the /session_close ritual:
+      1. Summarize all decisions and findings from this session
+      2. Push key findings to registry via push_forensic_doc
+      3. Ask me to run: python D:\GitHub\global_agent\scripts\sprint_board.py to confirm ticket status
+      4. List any open items for the next session
+
+  - name: design
+    description: Retrieve Dark Hangar design system before UI work
+    prompt: |
+      Call read_design_system via enos_router and summarize the key design tokens
+      (color palette, typography, spacing, animation rules) before proceeding.

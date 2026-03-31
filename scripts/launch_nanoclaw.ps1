@@ -31,13 +31,14 @@ if (-Not $githubToken) {
     exit 1
 }
 
-# Remove network host requirement and explicitly inject ROUTER_SSE_URL for Docker Desktop bridging
+# Remove network host requirement and explicitly inject ROUTER_URL for Docker Desktop bridging
+# NOTE: Streamable HTTP transport (/mcp) — SSE (/sse) deprecated March 2025
 docker run --rm `
   --env-file $EnvFile `
   -e TARGET_ISSUE=$TargetIssue `
   -e TARGET_REPO=$TargetRepo `
   -e GITHUB_TOKEN=$githubToken `
-  -e ROUTER_SSE_URL="http://host.docker.internal:8000/sse" `
+  -e ROUTER_URL="http://host.docker.internal:8000/mcp" `
   -v "${RegistryDir}:/registry" `
   -v "${OutputDir}:/output" `
   en-os:latest

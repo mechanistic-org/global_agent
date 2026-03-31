@@ -122,16 +122,26 @@ def patch_astro_component(
 
 if __name__ == "__main__":
     print("-------------------------------------------------------")
-    print("BOOTING SOVEREIGN EN-OS ROUTER NODE (SSE TRANSPORT)")
-    print("Mounting to: http://127.0.0.1:8000/sse")
+    print("BOOTING SOVEREIGN EN-OS ROUTER NODE (STREAMABLE HTTP)")
+    print("Mounting to: http://127.0.0.1:8000/mcp")
+    print("NOTE: SSE transport deprecated (MCP spec, March 2025).")
     print("-------------------------------------------------------")
-    
-    # FastMCP natively exposes an SSE bridge. 
-    # Use environment var from PM2 to determine transport mode.
+
+    # FastMCP Streamable HTTP transport — the current MCP standard.
+    # SSE (http://127.0.0.1:8000/sse) is deprecated and removed.
+    # All clients (Claude Desktop, Claude Code, Continue.dev, VS Code)
+    # must connect to: http://127.0.0.1:8000/mcp
+    #
+    # PM2 env: MCP_TRANSPORT=http
+    # Fallback: stdio (for subprocess / test use)
     try:
         transport_mode = os.environ.get("MCP_TRANSPORT", "stdio")
         if transport_mode == "sse":
-            print("Booting as SSE Server on Port 8000")
+            # Legacy guard: auto-upgrade to http if someone sets old value
+            print("WARNING: MCP_TRANSPORT=sse is deprecated. Upgrading to http.")
+            transport_mode = "http"
+        if transport_mode == "http":
+            print("Booting as Streamable HTTP Server on Port 8000 (/mcp)")
         router_node.run(transport=transport_mode)
     except Exception as e:
         print(f"CRITICAL BOOT FAILURE: {e}")

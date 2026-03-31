@@ -9,7 +9,7 @@ import requests
 import chromadb
 import google.generativeai as genai
 from pathlib import Path
-from mcp.client.sse import sse_client
+from mcp.client.streamable_http import streamablehttp_client  # SSE deprecated March 2025
 from mcp.client.session import ClientSession
 
 # ── LOGGING ─────────────────────────────────────────────────────────────
@@ -55,11 +55,11 @@ def extract_asset_text(asset_path: str) -> str:
             return f.read()
 
 async def run_ingest_loop(raw_text: str, source_filename: str):
-    router_url = os.environ.get("ROUTER_SSE_URL", "http://host.docker.internal:8000/sse")
-    logger.info(f"Connecting to EN-OS Router SSE at {router_url} for ingestion...")
-    
+    router_url = os.environ.get("ROUTER_URL", "http://host.docker.internal:8000/mcp")
+    logger.info(f"Connecting to EN-OS Router (Streamable HTTP) at {router_url} for ingestion...")
+
     try:
-        async with sse_client(router_url) as (read_stream, write_stream):
+        async with streamablehttp_client(router_url) as (read_stream, write_stream, _):
             async with ClientSession(read_stream, write_stream) as session:
                 await session.initialize()
                 
@@ -154,13 +154,13 @@ def hydrate_chroma_context(query: str) -> str:
         logger.error(f"ChromaDB error: {e}")
         return ""
 
-# ── SSE ROUTER AGENT ─────────────────────────────────────────────────────
+# ── STREAMABLE HTTP ROUTER AGENT ────────────────────────────────────────────
 async def run_agent_loop(issue_context: str, chroma_context: str) -> str:
-    router_url = os.environ.get("ROUTER_SSE_URL", "http://host.docker.internal:8000/sse")
-    logger.info(f"Connecting to EN-OS Router SSE at {router_url}...")
-    
+    router_url = os.environ.get("ROUTER_URL", "http://host.docker.internal:8000/mcp")
+    logger.info(f"Connecting to EN-OS Router (Streamable HTTP) at {router_url}...")
+
     try:
-        async with sse_client(router_url) as (read_stream, write_stream):
+        async with streamablehttp_client(router_url) as (read_stream, write_stream, _):
             async with ClientSession(read_stream, write_stream) as session:
                 await session.initialize()
                 tools = await session.list_tools()
