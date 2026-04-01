@@ -1,0 +1,1 @@
+If you're building agentic loops locally and you are still mounting the Docker socket or running Docker-in-Docker to try to isolate them—stop. The microVM approach with Sandboxes entirely bypasses the privileged access risks. It's the exact architectural shift the ecosystem needed to make autonomous execution safe outside of heavy enterprise deployments.
