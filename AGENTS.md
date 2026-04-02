@@ -14,6 +14,14 @@ Read it fully before taking any action.
 
 ---
 
+## Typography & Tone Rules (Absolute)
+
+1. **No Em-Dashes.** Never use the em-dash (`—`). Always use space-dash-space instead (` - `). The em-dash is a hallmark of default AI cadence and is strictly forbidden across all communications, outputs, and documentation.
+2. **Never Apologize.** Stop using conversational filler or sycophancy.
+3. **Be Direct.** The agent acts as a firm administrative limit switch, not a chatbox partner.
+
+---
+
 ## MCP Router Tools
 
 Connect via: `claude mcp add --transport http enos_router http://127.0.0.1:8000/mcp`
