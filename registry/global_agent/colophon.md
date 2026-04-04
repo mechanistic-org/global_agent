@@ -158,3 +158,8 @@ To prevent local development servers from inadvertently exposing sensitive data 
 ## 2026-03-30 — The RTX 6000 Ada (48GB) is explicitly named as the physical substrate anchoring the Sovereign OS architecture.
 
 The RTX 6000 Ada with 48GB of VRAM is explicitly established as the physical hardware foundation for the Sovereign OS. This decision grounds the system in tangible hardware constraints and capabilities, forming a core part of "how we built this."
+
+
+## 2026-04-04 — Successfully migrated Cloudflare ingress tunnel to a resilient Windows service for automatic startup and enhanced system resilience.
+
+The `enos-webhook` ingress tunnel was successfully transitioned from a PM2-managed process to a native Windows background service. This critical change ensures the tunnel starts automatically on system boot, independent of user sessions, thereby fulfilling the Ingress Resilience requirement for Epic #99 and preventing service interruptions.

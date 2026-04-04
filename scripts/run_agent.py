@@ -12,6 +12,7 @@ import google.generativeai as genai
 from pathlib import Path
 from mcp.client.streamable_http import streamablehttp_client  # SSE deprecated March 2025
 from mcp.client.session import ClientSession
+from telemetry import TokenLedger, LoopDetector
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -36,11 +37,13 @@ AGENT_MODE = os.environ.get("AGENT_MODE", "plan").lower()
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 MAX_SESSION_TOKENS = int(os.environ.get("MAX_SESSION_TOKENS", "500000"))
+MAX_DAILY_BUDGET_USD = float(os.environ.get("MAX_DAILY_BUDGET_USD", "5.00"))
 
 missing_vars = []
 if not GEMINI_API_KEY: missing_vars.append("GEMINI_API_KEY")
 
 genai.configure(api_key=GEMINI_API_KEY)
+global_ledger = TokenLedger()
 
 # ── CIRCUIT BREAKERS & STATE ────────────────────────────────────────────
 
@@ -83,15 +86,15 @@ async def update_workflow_state(session: ClientSession, repo: str, issue: str, s
     except Exception as e:
         logger.error(f"Failed to update workflow state to {state}. Ensure FastMCP is online. Error: {e}")
 
-def track_token_telemetry(response) -> int:
+def track_token_telemetry(model_name: str, response) -> int:
     """Epic B: Unlocks historical baseline logic for the EN-OS dashboard."""
     try:
         if hasattr(response, 'usage_metadata'):
             u = response.usage_metadata
-            logger.info(f"🪙 TELEMETRY | Tokens: IN:{u.prompt_token_count} | OUT:{u.candidates_token_count} | TOT:{u.total_token_count}")
+            global_ledger.record_usage(model_name, u.prompt_token_count, u.candidates_token_count)
             return u.total_token_count
     except Exception as e:
-        pass
+        logger.error(f"Telemetry tracking failed: {e}")
     return 0
 
 
@@ -140,7 +143,7 @@ async def run_ingest_loop(raw_text: str, source_filename: str):
                 logger.info("Calling Gemini for document extraction...")
                 response = model.generate_content(prompt)
                 
-                track_token_telemetry(response)
+                track_token_telemetry("gemini-2.5-flash", response)
                 
                 structured_body = response.text
                 
@@ -244,6 +247,7 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
     max_strikes = 3
     iterations = 0
     max_iterations = 15
+    loop_detector = LoopDetector(max_consecutive_identical=3)
 
     try:
         async with streamablehttp_client(router_url) as (read_stream, write_stream, _):
@@ -279,9 +283,10 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                         await update_workflow_state(session, repo, issue_number, "halted")
                         return f"[HALTED] {halt_reason}"
                         
-                    # Circuit Breaker 2: Token Budget Accumulation (90% Hard Kill)
-                    if total_tokens_used > (MAX_SESSION_TOKENS * 0.9):
-                        halt_reason = f"Budget Exhausted: {total_tokens_used} tokens (>90% of {MAX_SESSION_TOKENS})"
+                    # Circuit Breaker 2: Token Budget Accumulation
+                    daily_cost = global_ledger.get_daily_cost()
+                    if daily_cost > MAX_DAILY_BUDGET_USD:
+                        halt_reason = f"Daily Budget Exceeded: ${daily_cost:.2f} > ${MAX_DAILY_BUDGET_USD:.2f}"
                         log_failsafe(repo, issue_number, halt_reason, runtime)
                         await update_workflow_state(session, repo, issue_number, "halted")
                         return f"[HALTED] {halt_reason}"
@@ -317,8 +322,15 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                             )
                         
                         response = model.generate_content(prompt)
-                        used_tokens = track_token_telemetry(response)
+                        used_tokens = track_token_telemetry("gemini-2.5-flash", response)
                         total_tokens_used += used_tokens
+                        
+                        # Circuit Breaker 3: Sanity Loop Detection
+                        if loop_detector.check_for_loop(response.text):
+                            halt_reason = "Infinite Loop Detected: 3 identical model outputs."
+                            log_failsafe(repo, issue_number, halt_reason, time.time() - start_time)
+                            await update_workflow_state(session, repo, issue_number, "halted")
+                            return f"[HALTED] {halt_reason}"
                         
                         # In the future, this is where tool routing loops back into the while.
                         # For now, it's a structural 1-shot mapping but we exit cleanly.

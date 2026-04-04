@@ -1,0 +1,76 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The `enos-webhook` ingress tunnel was successfully transitioned from a PM2-managed process to a native Windows background service. This critical change ensures the tunnel starts automatically on system boot, independent of user sessions, thereby fulfilling the Ingress Resilience requirement for Epic #99 and preventing service interruptions.",
+    "one_liner": "Successfully migrated Cloudflare ingress tunnel to a resilient Windows service for automatic startup and enhanced system resilience.",
+    "source_context": "implementation_plan.md: 'This plan transitions the `enos-webhook` ingress tunnel from a PM2-managed process to a native Windows background service.'",
+    "tags": [
+      "ingress",
+      "resilience",
+      "windows-service",
+      "pm2",
+      "architecture",
+      "epic-99"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The Cloudflare ingress tunnel is now exclusively managed by the Windows Service Control Manager (`services.msc` or `sc.exe`). Agents must no longer attempt to manage or monitor the `enos-ingress-tunnel` via PM2, as it has been removed from PM2's process list.",
+    "one_liner": "Manage Cloudflare tunnel via Windows Service Control Manager, not PM2.",
+    "source_context": "walkthrough.md: 'The tunnel is now managed by the Windows Service Control Manager. You will no longer see it in `pm2 list`.'",
+    "tags": [
+      "pm2",
+      "windows-service",
+      "operations",
+      "tooling",
+      "rule"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `setup_ingress.ps1` script is now responsible for registering `cloudflared.exe` as a native Windows system service, configured for automatic startup. This ensures the Cloudflare agent is always active and bound to the correct tunnel token, providing persistent ingress.",
+    "one_liner": "Cloudflared agent installed as an automatic Windows service via `setup_ingress.ps1`.",
+    "source_context": "implementation_plan.md: 'Run the script with the retrieved Tunnel Token to install the \"Cloudflared agent\" service.'",
+    "tags": [
+      "cloudflared",
+      "windows-service",
+      "scripting",
+      "installation",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "End-to-end connectivity for the `enos-webhook` ingress tunnel was successfully verified by hitting the `https://hooks.mechanistic.com/health` endpoint, which returned an 'online' status. This confirms the Cloudflared agent service is correctly routing traffic.",
+    "one_liner": "End-to-end connectivity for the Cloudflare ingress tunnel successfully verified.",
+    "source_context": "walkthrough.md: 'Validated end-to-end connectivity by hitting the health endpoint: `https://hooks.mechanistic.com/health`.'",
+    "tags": [
+      "verification",
+      "connectivity",
+      "health-check",
+      "win"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "It was clarified that the `nanoclaw_enabled` status, observed in the health endpoint response, is controlled by the `.env` file and is entirely unrelated to the operational status or connectivity of the Cloudflare ingress tunnel. This distinction is important for debugging and configuration understanding.",
+    "one_liner": "`nanoclaw_enabled` status is independent of Cloudflare tunnel connectivity.",
+    "source_context": "walkthrough.md: '`nanoclaw_enabled` is currently `false` in the heartbeat. This is controlled by the `.env` file and is unrelated to the tunnel connectivity.'",
+    "tags": [
+      "debugging",
+      "configuration",
+      "clarification",
+      "lesson"
+    ]
+  }
+]
