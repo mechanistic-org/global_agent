@@ -1,0 +1,802 @@
+[
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O-Y",
+    "number": 24,
+    "title": "[Epic] Structure the Core Orchestrator Agents for Client Deployments",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn88nA",
+    "number": 21,
+    "title": "[Enhancement] The 1-Click Client Bootstrapper Macro",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O-4",
+    "number": 26,
+    "title": "[Enhancement] MootMoat MCP Phase 2 (Walk): Live Agent Verification Loop",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O_c",
+    "number": 27,
+    "title": "[Enhancement] Sovereign Registry Phase 3 (Run): Vectorization & Webhook Sync",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn88nw",
+    "number": 22,
+    "title": "[Task] [CRITICAL] Inject __forensicSummary into Master Zod Schemas",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8tQ",
+    "number": 16,
+    "title": "Epic 12: Phase 3 - Custom Nanochat Model Training",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8to",
+    "number": 15,
+    "title": "Epic 11: Provision Node 0 (OpenClaw via WSL2)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8t0",
+    "number": 14,
+    "title": "[Epic 10] Node 0: The Intake Architect",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8uY",
+    "number": 13,
+    "title": "[Epic 9] Astro Hydration & Automated Deployment",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8uo",
+    "number": 12,
+    "title": "[Epic 8] Holy Grail V31 UI Constraint Alignment",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8vY",
+    "number": 5,
+    "title": "[Epic 1] Deploy \\\"Chief of Staff\\\" Agent",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8vw",
+    "number": 4,
+    "title": "[Epic 1] Configure GWS Boundary Rules",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8wU",
+    "number": 3,
+    "title": "Migrate general utility scripts from `eriknorris` to `global_agent`",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8wo",
+    "number": 2,
+    "title": "Post-Mortem: Strict schema dependencies causing fatal Knowledge Base indexer crashes on boot",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8vA",
+    "number": 7,
+    "title": "[Epic 4] Daily Swarm Briefing",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgnz8w8",
+    "number": 1,
+    "title": "Epic: The Sovereign Global Architecture",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O-o",
+    "number": 25,
+    "title": "[Epic] MootMoat MCP Phase 1 (Crawl): Zero-Dependency Python Router",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O_o",
+    "number": 3,
+    "title": "[Task] The R2 Forensic Telemetry Backfill for MO",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5O_w",
+    "number": 4,
+    "title": "[Epic] Draft the Master Zod Schemas for the Mobile Outfitters Dashboard",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5Yus",
+    "number": 48,
+    "title": "[Epic] RECON MODE: Global Architectural Stabilization & Indexing",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5cn8",
+    "number": 28,
+    "title": "[Enhancement] Implement Pydantic Routing Schema to Solve Context Asymmetry",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5coc",
+    "number": 29,
+    "title": "[Enhancement] Implement Persistent VRAM Caching API (Ollama/vLLM)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5qjY",
+    "number": 30,
+    "title": "[Task] Keep MootMoat MCP as a Separate FastMCP Server (Do NOT Merge with Grok Vault)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5qj8",
+    "number": 31,
+    "title": "[Task] Populate the Empty `laws/` Directory with the EN-OS Agent Protocol",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5qko",
+    "number": 32,
+    "title": "[Task] Refactor `run_inference()` in prd_orchestrator.py from llama_cpp to Ollama REST",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5tQ4",
+    "number": 33,
+    "title": "[Task] Author the Dark Hangar DESIGN.md and Commit as law_002_design_system.md",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5tRo",
+    "number": 49,
+    "title": "[Enhancement] Extract Existing Portfolio Design System via Stitch Reverse-Engineering",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5tSI",
+    "number": 34,
+    "title": "[Enhancement] Add `read_design_system` Tool to MootMoat MCP Server",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5tSc",
+    "number": 50,
+    "title": "[Epic] Integrate Stitch DESIGN.md into the EN-OS UI Generation Pipeline",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5u2o",
+    "number": 35,
+    "title": "[Task] Commit the Compounded DESIGN.md Master Template to global_agent",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5u3M",
+    "number": 36,
+    "title": "[Enhancement] Auto-Generate DESIGN.md When Ticket Moves to In-Progress",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5u3k",
+    "number": 51,
+    "title": "[Task] Document the 3 Stitch Workflow Paths in the Agent Orientation Laws",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5wHs",
+    "number": 37,
+    "title": "[Enhancement] Integrate AI Studio API as the Apex Router Brain in router.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5wIg",
+    "number": 38,
+    "title": "[Enhancement] Upgrade daemon.py with AI Studio Multimodal Ingestion (Voice Memos, DOCX)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn5wJI",
+    "number": 39,
+    "title": "[Task] Use AI Studio Structured Output to Pre-Validate Zod Schemas Before Deployment",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn88mo",
+    "number": 20,
+    "title": "[Task] Operationalize the Constraint Cage Loop Break",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn88ok",
+    "number": 23,
+    "title": "[Epic] [CRITICAL] Build the mootmoat Spoke Scraper Daemon",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn88pI",
+    "number": 40,
+    "title": "Standardize OTF GitHub Interactions via Central Utility",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-RoM",
+    "number": 41,
+    "title": "Architectural Pivot: Replace IDE-Managed Stdio with Standalone SSE Router Node",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-heQ",
+    "number": 42,
+    "title": "Scaffold the Control File Hierarchy (`.agent/personas/`)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-heg",
+    "number": 43,
+    "title": "Refactor `prd_orchestrator.py` for Hybrid Routing (Frontier Master + Local Spokes)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-he4",
+    "number": 44,
+    "title": "Embed Sovereign Registry Native Context-Streaming into LangGraph",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-hfc",
+    "number": 45,
+    "title": "Implement Persistent On-Demand Dashboards via the Stitch MCP",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn-lT8",
+    "number": 46,
+    "title": "Integrate `googleworkspace/cli` via `.agent/skills/` Control Files",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_l3Q",
+    "number": 49,
+    "title": "Agent Tool/Skill Submodule Versioning (SKILL.md Drift)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_l3Y",
+    "number": 47,
+    "title": "Persistence & Auto-Boot Architecture (The \"Always On\" Router)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_l3g",
+    "number": 48,
+    "title": "Testing & Health Check Diagnostic Harness",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_5Ts",
+    "number": 50,
+    "title": "Replace User OAuth with GCP Service Account for Headless GWS Daemonization",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_71w",
+    "number": 51,
+    "title": "[Epic] Pillar 1: GitHub-Driven Agent Lifecycles",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_72A",
+    "number": 52,
+    "title": "[Task] Pillar 2: Scaffold AST & DB Point-Update MCP Tools",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgn_72M",
+    "number": 53,
+    "title": "[Epic] Pillar 3: Transient State & 3-Strike Circuit Breakers",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoAXIM",
+    "number": 54,
+    "title": "[Backlog] R2 Endpoint Standardization \u0393\u00c7\u00f6 Custom Domains, CORS, and Public URL Audit",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoAaDE",
+    "number": 55,
+    "title": "[Backlog] Stratified Intelligence Indexing \u0393\u00c7\u00f6 PROJECT_INTELLIGENCE.md + ChromaDB Push per Project",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoApGg",
+    "number": 56,
+    "title": "[Registry] Audit Unread Handbook & System Docs \u0393\u00c7\u00f6 Incorporate or Archive",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoB7xU",
+    "number": 57,
+    "title": "[Epic] NanoClaw Ephemeral Container Layer \u0393\u00c7\u00f6 Dockerfile + run_agent.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoB8eY",
+    "number": 58,
+    "title": "[Epic] NanoClaw Ephemeral Container Layer \u0393\u00c7\u00f6 Dockerfile + run_agent.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoB9Fw",
+    "number": 59,
+    "title": "[Epic] NanoClaw Ephemeral Container Layer \u0393\u00c7\u00f6 Dockerfile + run_agent.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCAP8",
+    "number": 60,
+    "title": "[Epic] NanoClaw Ephemeral Container Layer \u0393\u00c7\u00f6 Dockerfile + run_agent.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ4E",
+    "number": 8,
+    "title": "[Deploy] Holy Grail v32 \u0393\u00e5\u00c6 mo.mechanistic.com Migration + CF Access Update",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ4Q",
+    "number": 1,
+    "title": "[Epic] The Mobile Outfitters Clone-and-Purge Extraction",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ4c",
+    "number": 6,
+    "title": "fix routing",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ4k",
+    "number": 7,
+    "title": "[Security] Add CF Access Protection to hyphen.mechanistic.com",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ48",
+    "number": 58,
+    "title": "[Keystatic] Fix audio_url Field Validation Error \u0393\u00c7\u00f6 Add to keystatic.config.tsx",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ5s",
+    "number": 57,
+    "title": "[Maintenance] Investigate R2_STAGING vs R2_MASTER Slug Delta (103 vs 94)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ54",
+    "number": 53,
+    "title": "Legacy Portfolio Cleanup (Ghost Code & Import Paths)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ6w",
+    "number": 47,
+    "title": "[Epic] Resume the C|24 Component Stitch Loop",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCJ7E",
+    "number": 44,
+    "title": "[Epic] Physical Transfer to Hybrid Engine Organization",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCSdc",
+    "number": 61,
+    "title": "[Epic] NanoClaw Ephemeral Container Layer \u0393\u00c7\u00f6 Dockerfile + run_agent.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCgqM",
+    "number": 62,
+    "title": "[Enhancement] Reinstate Conversation Miner with Flag-Routing \u0393\u00c7\u00f6 Automated Session Close Mining",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoClMw",
+    "number": 63,
+    "title": "[Infra] Bootstrap ChromaDB \u0393\u00c7\u00f6 install, seed forensic_telemetry collection, wire to diag.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCoHY",
+    "number": 64,
+    "title": "[Task] Define $ENOS_ROOT \u0393\u00c7\u00f6 replace hardcoded Windows paths for portability",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCoIg",
+    "number": 65,
+    "title": "[Task] Add query_sprint_board MCP tool \u0393\u00c7\u00f6 GraphQL-backed live board read + auto-generate Sprint_Plan.md",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCyQo",
+    "number": 66,
+    "title": "[Task] Pydantic validation interlock for push_forensic_doc \u0393\u00c7\u00f6 schema-enforce before registry write",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCyRw",
+    "number": 59,
+    "title": "[Task] Pre-commit Zod schema validator for agent-generated portfolio content",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCySw",
+    "number": 67,
+    "title": "[Enhancement] ingest_watchdog.py \u0393\u00c7\u00f6 local inbox folder auto-routes to ChromaDB via NanoClaw",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCyT8",
+    "number": 68,
+    "title": "[Enhancement] R2 Event Notification \u0393\u00e5\u00c6 Cloudflare Worker \u0393\u00e5\u00c6 asset ledger auto-update",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCyUs",
+    "number": 69,
+    "title": "[Enhancement] Client-facing deliverable sanitizer \u0393\u00c7\u00f6 strip telemetry \u0393\u00e5\u00c6 PDF \u0393\u00e5\u00c6 email via GWS SA",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoCyV4",
+    "number": 60,
+    "title": "[Enhancement] Pagefind static search \u0393\u00c7\u00f6 sovereign full-text search over 25yr engineering corpus",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoDF-Y",
+    "number": 70,
+    "title": "GWS User OAuth token expires between sessions \u0393\u00c7\u00f6 add auto-refresh to diag.py",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoDo1c",
+    "number": 61,
+    "title": "Schema Parity Check \u0393\u00c7\u00f6 Keystatic config \u0393\u00e5\u00f6 content.config.ts drift detection",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoD68c",
+    "number": 71,
+    "title": "[Infra] Consolidate GitHub Projects \u0393\u00c7\u00f6 Migrate #4/#7/#8/#9 into #5, Delete Redundant Boards",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoIkbA",
+    "number": 72,
+    "title": "[Content] LinkedIn: Reply to Allan Evans",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOhI",
+    "number": 45,
+    "title": "[Epic] Rebuild Ecosystem Metadata Superstructure in New Org",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOiE",
+    "number": 37,
+    "title": "[Stretch Goal] Automate Portfolio Curation: \\\"Ready\\\" to \\\"CEO-Ready\\\"",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOi0",
+    "number": 36,
+    "title": "[MPVAS Epic] System-Wide Validation CI/CD (The Constraint Cage)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOjE",
+    "number": 35,
+    "title": "[MPVAS Epic] Automated R2 Sync Integration & Sovereignty Enforcer",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOjY",
+    "number": 34,
+    "title": "[MPVAS Epic] The File Watcher Daemon (Auto-Triggering)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOj4",
+    "number": 33,
+    "title": "Erik Norris Venn",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOkY",
+    "number": 32,
+    "title": "[Epic 5] Portfolio Agent Chat Integration",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOkk",
+    "number": 31,
+    "title": "[Epic 5] Headless Portfolio API (projects.json)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOlU",
+    "number": 30,
+    "title": "[Epic 5] The Project OS UI Shell (Dark Hangar)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOmo",
+    "number": 29,
+    "title": "Epic: Homepage Diagnostic Terminal Pivot",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOnk",
+    "number": 28,
+    "title": "Epic: Project-as-Dashboard (Diagnostic Terminal) Architecture Pivot",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOoU",
+    "number": 27,
+    "title": "Stitch Loop Development Pipeline & Figma Integration",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOpI",
+    "number": 26,
+    "title": "Scripts: Robustify Forensic Extraction & Architect R2 Forensics Storage",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOpY",
+    "number": 25,
+    "title": "Docs: Formalize 'Domain Identity' Separation in Engine Room",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOpw",
+    "number": 24,
+    "title": "Architecture: Define the Hybrid Agentic Workflow (Inner CLI vs Outer MCP)",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOqA",
+    "number": 23,
+    "title": "Global Agents: Centralize and Refactor Ecosystem Utility Scripts",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOqo",
+    "number": 22,
+    "title": "c24: Massive Regression of Deep Dive DataHUD",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  },
+  {
+    "id": "PVTI_lADOEA3Ajc4BSLlfzgoJOq8",
+    "number": 19,
+    "title": "Resume NLM Hack Pack Mining & C24 Hydration",
+    "status": null,
+    "priority": null,
+    "iteration": null
+  }
+]

@@ -1,11 +1,45 @@
 from mcp.server.fastmcp import FastMCP
 import os
 import yaml
+import json
+import urllib.request
 import chromadb
 from pydantic import BaseModel, Field, ValidationError
 from typing import Optional
 
 mcp = FastMCP("sovereign-registry")
+
+# ─── MICROCOMPACTION PIPELINE (EPIC A) ──────────────────────────────────────
+def apply_microcompaction(payload: str) -> str:
+    """Intercepts massive payloads and forcibly distills them to save Apex Tokens."""
+    if len(payload) <= 8000:
+        return payload
+        
+    print(f"[KAIROS] Triggering Microcompaction on {len(payload)} chars...")
+    req = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=json.dumps({
+        "model": "qwen2.5-coder:32b",
+        "prompt": (
+            "You are KAIROS, a strict micro-compaction pipeline constraint.\n"
+            "Pre-digest the following massive forensic data wall exactly as strict Markdown.\n"
+            "Retain all structural schemas, constraints, and actionable code elements.\n"
+            "DO NOT include conversational fluff.\n\n"
+            f"--- RAW BOLUS ({len(payload)} chars) ---\n"
+            f"{payload[:150000]}"
+        ),
+        "stream": False
+    }).encode('utf-8'))
+    req.add_header("Content-Type", "application/json")
+    
+    try:
+        with urllib.request.urlopen(req, timeout=180.0) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            distilled = data.get('response', '')
+            if distilled:
+                return f"--- [NODE 0: MICROCOMPACTED BOLUS] ---\n{distilled}"
+            return payload
+    except Exception as e:
+        print(f"[KAIROS] Microcompaction Failed: {e}")
+        return payload
 
 # ─── Pydantic Frontmatter Schemas ───────────────────────────────────────────
 
@@ -85,7 +119,7 @@ def semantic_search(query: str, n_results: int = 3) -> str:
             comp = meta.get('component', 'UNKNOWN')
             payload += f"--- Result {i+1} [Geometry Vector Rank: {dist:.2f} | Execution Source: {comp}] ---\n{doc}\n\n"
             
-        return payload
+        return apply_microcompaction(payload)
     except Exception as e:
         return f"CRITICAL: Structural geometric query loop violently failed. {str(e)}"
 
@@ -98,7 +132,7 @@ def read_forensic_doc(filepath: str) -> str:
         
     try:
         with open(abs_filepath, 'r', encoding='utf-8') as f:
-            return f.read()
+            return apply_microcompaction(f.read())
     except Exception as e:
         return f"Structural File Read completely failed: {str(e)}"
 
@@ -161,6 +195,8 @@ def push_forensic_doc(
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(full_document)
+            f.flush()
+            os.fsync(f.fileno())
 
         # ── Embed into ChromaDB ──────────────────────────────────────────────
         collection.upsert(

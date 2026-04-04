@@ -30,21 +30,28 @@ module.exports = {
         // Reads GITHUB_WEBHOOK_SECRET and NANOCLAW_ENABLED from .env via dotenv
       }
     },
+
+/*
     {
-      name: "ollama-reasoning-keepalive",
-      script: "ollama",
-      args: "run deepseek-r1:32b --keepalive -1",
+      name: "enos-ingress-tunnel",
+      script: "cloudflared",
+      args: "tunnel --config .cloudflared/config.yml run enos-webhook",
       cwd: "D:/GitHub/global_agent",
-      autorestart: false, // Run once on boot to load reasoning model into VRAM
-      watch: false
-    },
+      watch: false,
+      autorestart: true,
+      max_restarts: 10
+    },*/
     {
-      name: "ollama-coder-keepalive",
-      script: "ollama",
-      args: "run qwen2.5-coder:32b --keepalive -1",
+      name: "enos-autodream-daemon",
+      script: "scripts/autodream_daemon.py",
+      interpreter: "venv/Scripts/python.exe",
       cwd: "D:/GitHub/global_agent",
-      autorestart: false, // Run once on boot to load daily coding model into VRAM
-      watch: false
+      watch: false,
+      autorestart: true,
+      max_restarts: 10,
+      env: {
+        PYTHONUNBUFFERED: "1"
+      }
     }
   ]
 };

@@ -136,12 +136,10 @@ if __name__ == "__main__":
     # Fallback: stdio (for subprocess / test use)
     try:
         transport_mode = os.environ.get("MCP_TRANSPORT", "stdio")
-        if transport_mode == "sse":
-            # Legacy guard: auto-upgrade to http if someone sets old value
-            print("WARNING: MCP_TRANSPORT=sse is deprecated. Upgrading to http.")
-            transport_mode = "http"
-        if transport_mode == "http":
-            print("Booting as Streamable HTTP Server on Port 8000 (/mcp)")
-        router_node.run(transport=transport_mode)
+        # FastMCP natively expects the string "sse" to boot the streamable HTTP transport layer
+        internal_transport = "sse" if transport_mode in ["http", "sse"] else transport_mode
+        print(f"Booting as Streamable HTTP Server (FastMCP mapped to {internal_transport})")
+        
+        router_node.run(transport=internal_transport)
     except Exception as e:
         print(f"CRITICAL BOOT FAILURE: {e}")

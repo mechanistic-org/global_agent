@@ -80,7 +80,7 @@ def verify_signature(payload_body: bytes, signature_header: str | None) -> bool:
 
 # ── State 3: NANOCLAW_IGNITION ─────────────────────────────────────────────
 
-def ignite_nanoclaw(issue_number: int, repo_name: str) -> None:
+def ignite_nanoclaw(issue_number: int, repo_name: str, agent_mode: str = "plan") -> None:
     """
     Fire a fully isolated NanoClaw container and immediately drop the reference.
     The daemon does NOT wait for the container — it returns 202 instantly.
@@ -97,6 +97,8 @@ def ignite_nanoclaw(issue_number: int, repo_name: str) -> None:
     cmd = [
         "docker", "run", "--rm",
         "--env-file", str(Path(__file__).parent.parent / ".env"),
+        "--label", f"enos.mode={agent_mode}",
+        "-e", f"AGENT_MODE={agent_mode}",
         "-e", f"TARGET_ISSUE={issue_number}",
         "-e", f"TARGET_REPO={repo_name}",
         "nanoclaw:latest",
@@ -151,12 +153,15 @@ async def github_webhook(request: Request):
         "full_name", "mechanistic-org/global_agent"
     )
 
+    target_mode = "plan"
+
     # Trigger A: Manual /execute comment on any issue
     if event_type == "issue_comment" and payload.get("action") == "created":
         body = payload.get("comment", {}).get("body", "")
-        if "/execute" in body.lower():
+        if "/execute" in body.lower() or "/exec" in body.lower():
             target_issue = payload.get("issue", {}).get("number")
-            logger.info(f"TRIGGER A: /execute detected → {target_repo}#{target_issue}")
+            target_mode = "exec"
+            logger.info(f"TRIGGER A: /execute detected → {target_repo}#{target_issue} [EXEC MODE]")
 
     # Trigger B: Project V2 item moved to "In progress"
     elif event_type == "projects_v2_item" and payload.get("action") == "edited":
@@ -179,10 +184,10 @@ async def github_webhook(request: Request):
 
     # ── STATE 3: NANOCLAW IGNITION ─────────────────────────────────────────
     if target_issue:
-        ignite_nanoclaw(target_issue, target_repo)
+        ignite_nanoclaw(target_issue, target_repo, agent_mode=target_mode)
         return {
             "status": "accepted",
-            "message": f"NanoClaw ignition queued for {target_repo}#{target_issue}",
+            "message": f"NanoClaw ignition queued for {target_repo}#{target_issue} in {target_mode.upper()} mode.",
         }
 
     # Noise — acknowledge and drop cleanly
@@ -213,7 +218,7 @@ if __name__ == "__main__":
     logger.info("=" * 60)
 
     uvicorn.run(
-        "scripts.webhook_daemon:app",
+        "webhook_daemon:app",
         host="127.0.0.1",
         port=WEBHOOK_DAEMON_PORT,
         reload=False,
