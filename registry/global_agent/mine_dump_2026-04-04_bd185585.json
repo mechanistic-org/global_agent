@@ -1,91 +1,79 @@
 [
   {
-    "channel": "docs",
-    "confidence": "inferred",
+    "channel": "internal",
+    "confidence": "captured",
     "destination": "registry",
-    "content": "A new 'Ticketing Hygiene' phase has been introduced into the `/session_close` ritual to address orphaned GitHub Issue objects. This mandates checking off the Definition of Done, leaving a summary comment, and explicitly closing the issue before moving it to 'Done' on the project board, ensuring a complete audit trail and accountability.",
-    "one_liner": "New protocol ensures GitHub issues are properly closed and documented during the `/session_close` ritual.",
-    "source_context": "This plan resolves that process gap by modifying the core `/session_close` ritual to explicitly mandate GitHub issue hygiene.",
+    "content": "The EN-OS identified a critical inconsistency in its own ticket closure behavior, often auto-closing tickets but hesitating on 'side quests' like #24. This fluctuating behavior, dictated by generic AI deference logic rather than a hardcoded rule, breaks the 'Deterministic Limit Switch' philosophy and requires formal definition for predictable operation.",
+    "one_liner": "Inconsistent AI ticket closure behavior violates the 'Deterministic Limit Switch' philosophy, necessitating a formal rule.",
+    "source_context": "You have identified a critical inconsistency in my behavior.",
     "tags": [
-      "process",
-      "github",
-      "agent_workflow",
-      "session_close",
-      "hygiene"
+      "AI behavior",
+      "ticket management",
+      "system constraint",
+      "deterministic limit switch"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must strictly adhere to the 'Focal Ticket Constraint' rule. This means an agent is only authorized to automatically execute closure hygiene and state-change on the exact ticket number declared during `/session_open`. If work incidentally satisfies other 'collateral' tickets, the agent must not close them automatically, but instead escalate by asking the human for secondary closure execution.",
+    "one_liner": "Agents must only auto-close the focal ticket of a session, escalating collateral ticket closures to humans.",
+    "source_context": "I propose we create a strict rule that mathematically binds my closure authority *only* to the ticket declared at the start of the session.",
+    "tags": [
+      "AI behavior",
+      "ticket management",
+      "rule",
+      "focal ticket",
+      "collateral tickets"
     ]
   },
   {
     "channel": "colophon",
-    "confidence": "inferred",
+    "confidence": "captured",
     "destination": "portfolio",
-    "content": "The architectural cleanup of duplicate ecosystem scripts is now complete, firmly establishing the 'Write Once, Run Anywhere' paradigm within the `global_agent` repository. This involved deleting redundant scripts from feature repositories and migrating generic processing tools into the centralized `global_agent` framework, ensuring a single source of truth for common utilities.",
-    "one_liner": "Centralized ecosystem scripts into `global_agent`, enforcing a 'Write Once, Run Anywhere' architectural paradigm.",
+    "content": "The architectural cleanup of duplicate ecosystem scripts is now fully complete, successfully enforcing the 'Write Once, Run Anywhere' paradigm within the `global_agent` repository. This involved deleting 11 duplicates from `portfolio/scripts/`, migrating specialized processing tools like CAD and audio engines to `global_agent/scripts/`, and purging stale scripts from `mechanistic/scripts/`.",
+    "one_liner": "Successfully centralized ecosystem scripts, enforcing 'Write Once, Run Anywhere' and streamlining `global_agent`.",
     "source_context": "The architectural cleanup of duplicate ecosystem scripts is now fully complete, enforcing the 'Write Once, Run Anywhere' paradigm within the `global_agent` repository.",
     "tags": [
       "architecture",
-      "script_centralization",
+      "code quality",
+      "refactoring",
       "global_agent",
-      "code_hygiene",
-      "refactoring"
+      "write once run anywhere",
+      "project win"
     ]
   },
   {
     "channel": "internal",
-    "confidence": "inferred",
+    "confidence": "captured",
     "destination": "registry",
-    "content": "During the script centralization, the `run_audio_generation.py` script was dynamically patched to accept generic `--prompt` arguments instead of a hardcoded path. This enhancement makes the audio generation tool more flexible and reusable across different contexts within the `global_agent` framework, improving its utility.",
-    "one_liner": "`run_audio_generation.py` was dynamically patched to accept generic `--prompt` arguments, increasing its reusability.",
-    "source_context": "`run_audio_generation.py` (NLM Audio trigger - *dynamically patched to accept generic `--prompt` args instead of a hardcoded path*)",
+    "content": "During the script centralization, the `run_audio_generation.py` script was dynamically patched to accept generic `--prompt` arguments instead of a hardcoded path. This enhancement makes the audio generation utility more flexible and reusable, allowing it to be seamlessly integrated and triggered within the `global_agent` framework for various applications.",
+    "one_liner": "Dynamically patched `run_audio_generation.py` to accept generic prompts, enhancing its reusability.",
+    "source_context": "run_audio_generation.py (NLM Audio trigger - *dynamically patched to accept generic `--prompt` args instead of a hardcoded path*)",
     "tags": [
-      "code_breakthrough",
-      "script_enhancement",
+      "code breakthrough",
+      "scripting",
       "reusability",
-      "audio_generation",
-      "global_agent"
+      "global_agent",
+      "audio generation",
+      "tooling"
     ]
   },
   {
-    "channel": "colophon",
+    "channel": "docs",
     "confidence": "inferred",
     "destination": "portfolio",
-    "content": "The script centralization effort has firmly anchored repository boundaries, establishing feature repositories as clean frontend environments. All complex intelligence logic and common utilities are now localized entirely within `global_agent`, simplifying maintenance and promoting a clear separation of concerns.",
-    "one_liner": "Script centralization firmly anchors repository boundaries, localizing complex logic in `global_agent` and keeping feature repos clean.",
+    "content": "The script centralization effort firmly anchors repository boundaries, establishing `global_agent` as the sole location for complex intelligence logic. This architectural decision leaves feature repositories as clean frontend environments, ensuring a clear separation of concerns and improved maintainability across the system by localizing core intelligence.",
+    "one_liner": "Centralizing intelligence logic in `global_agent` firmly anchors repository boundaries and clarifies system architecture.",
     "source_context": "This firmly anchors the repository boundaries, leaving the feature repositories as clean frontend environments while complex intelligence logic is localized entirely in `global_agent`.",
     "tags": [
       "architecture",
-      "repository_design",
-      "separation_of_concerns",
+      "system design",
+      "repository structure",
       "global_agent",
-      "code_hygiene"
-    ]
-  },
-  {
-    "channel": "internal",
-    "confidence": "inferred",
-    "destination": "registry",
-    "content": "During the script centralization, project-specific domain scripts such as `audit_keystatic_compliance.py`, `check_schema_parity.py`, and `harvest_linkedin.py` were intentionally retained within the `portfolio` repository. This decision was made due to their strict dependencies on `portfolio`'s unique data structures, preventing unnecessary coupling with `global_agent` and maintaining project integrity.",
-    "one_liner": "Project-specific scripts were retained in `portfolio` due to strict data structure dependencies, avoiding unnecessary coupling.",
-    "source_context": "Left the `portfolio` project-specific domain scripts safely intact (...), as they hold strict dependencies on its unique data structures.",
-    "tags": [
-      "architecture",
-      "design_decision",
-      "dependencies",
-      "coupling",
-      "portfolio"
-    ]
-  },
-  {
-    "channel": "internal",
-    "confidence": "inferred",
-    "destination": "registry",
-    "content": "An open question remains regarding the preferred method for agents to interact with GitHub issues: whether to use native `mcp_github` tools (e.g., `mcp_github_update_issue`) for cleaner integration or explicitly write out `gh` CLI bash commands. This decision impacts agent workflow consistency and tool adoption.",
-    "one_liner": "Decision pending on whether agents should use native `mcp_github` tools or `gh` CLI commands for GitHub issue interactions.",
-    "source_context": "Do you prefer the workflow to instruct the agent to use the native `mcp_github` tools (...) or would you prefer it explicitly writes out the `gh issue comment` and `gh issue close` bash commands (...)?",
-    "tags": [
-      "tooling",
-      "agent_workflow",
-      "github_api",
-      "decision_point"
+      "separation of concerns",
+      "documentation"
     ]
   }
 ]

@@ -6,16 +6,16 @@
 
   ΓÜí P1: HIGH PRIORITY
   - [Ready] hyphen#7 ΓÇö [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
+  - [Backlog] portfolio#53 ΓÇö Legacy Portfolio Cleanup (Ghost Code & Import Paths) (Iteration 2)
 
   ≡ƒ¢á∩╕Å P2: STANDARD WORK
   - [Ready] MO#8 ΓÇö [Deploy] Holy Grail v32 ├óΓÇáΓÇÖ mo.mechanistic.com Migration + CF Access Update (Iteration 1)
+  - [Backlog] global_agent#54 ΓÇö [Backlog] R2 Endpoint Standardization ├óΓé¼ΓÇ¥ Custom Domains, CORS, and Public URL Audit (Iteration 2)
+  - [Backlog] global_agent#68 ΓÇö [Enhancement] R2 Event Notification ├óΓÇáΓÇÖ Cloudflare Worker ├óΓÇáΓÇÖ asset ledger auto-update (Iteration 2)
+  - [Backlog] portfolio#60 ΓÇö [Enhancement] Pagefind static search ├óΓé¼ΓÇ¥ sovereign full-text search over 25yr engineering corpus (Iteration 2)
 
 
 # ≡ƒƒí NEXT ΓÇö Upcoming Iterations
-  - [Iteration 2] P1 | portfolio#53 ΓÇö Legacy Portfolio Cleanup (Ghost Code & Import Paths)
-  - [Iteration 2] P2 | global_agent#54 ΓÇö [Backlog] R2 Endpoint Standardization ├óΓé¼ΓÇ¥ Custom Domains, CORS, and Public URL Audit
-  - [Iteration 2] P2 | global_agent#68 ΓÇö [Enhancement] R2 Event Notification ├óΓÇáΓÇÖ Cloudflare Worker ├óΓÇáΓÇÖ asset ledger auto-update
-  - [Iteration 2] P2 | portfolio#60 ΓÇö [Enhancement] Pagefind static search ├óΓé¼ΓÇ¥ sovereign full-text search over 25yr engineering corpus
   - [Iteration 3] P1 | portfolio#47 ΓÇö [Epic] Resume the C|24 Component Stitch Loop
   - [Iteration 3] P2 | portfolio#51 ΓÇö [Task] Document the 3 Stitch Workflow Paths in the Agent Orientation Laws
   - [Iteration 3] P2 | portfolio#44 ΓÇö [Epic] Physical Transfer to Hybrid Engine Organization
@@ -38,8 +38,6 @@
   - [Backlog] P99 | global_agent#46 ΓÇö Integrate `googleworkspace/cli` via `.agent/skills/` Control Files
   - [Backlog] P99 | portfolio#19 ΓÇö Resume NLM Hack Pack Mining & C24 Hydration
   - [Backlog] P99 | portfolio#22 ΓÇö c24: Massive Regression of Deep Dive DataHUD
-  - [Backlog] P99 | portfolio#23 ΓÇö Global Agents: Centralize and Refactor Ecosystem Utility Scripts
-  - [Backlog] P99 | portfolio#24 ΓÇö Architecture: Define the Hybrid Agentic Workflow (Inner CLI vs Outer MCP)
   - [Backlog] P99 | portfolio#25 ΓÇö Docs: Formalize 'Domain Identity' Separation in Engine Room
   - [Backlog] P99 | portfolio#26 ΓÇö Scripts: Robustify Forensic Extraction & Architect R2 Forensics Storage
   - [Backlog] P99 | portfolio#27 ΓÇö Stitch Loop Development Pipeline & Figma Integration
