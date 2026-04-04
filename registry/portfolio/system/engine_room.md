@@ -203,7 +203,6 @@ The timeline includes a **"Dreamjob" Node (2025-2040)**.
 
 Located in `scripts/`:
 
-- `scaffold_projects.py`: The Main Engine. Merges Multiverse + MDX.
 - `sync_r2.py`: Uploads `R2_STAGING` to Cloudflare.
 - `process_images.py`: The Darkroom. Optimizes images.
 - `doctor.py` (Planned): Automated diagnostics.
