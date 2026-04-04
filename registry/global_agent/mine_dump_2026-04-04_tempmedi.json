@@ -1,0 +1,15 @@
+[
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "The conversation mining process encountered no readable artifacts in the temporary media storage. This indicates that there was no content available from which to extract 'Gold' items, such as decisions, problems solved, or architectural patterns.",
+    "one_liner": "No readable conversation artifacts were found for mining.",
+    "source_context": "[No readable artifacts found in conversation tempmediaStorage]",
+    "tags": [
+      "system_status",
+      "no_content",
+      "mining_failure"
+    ]
+  }
+]

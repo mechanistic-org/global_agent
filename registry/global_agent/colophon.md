@@ -188,3 +188,13 @@ The script centralization effort has firmly anchored repository boundaries, esta
 ## 2026-04-04 — Successfully centralized ecosystem scripts, enforcing 'Write Once, Run Anywhere' and streamlining `global_agent`.
 
 The architectural cleanup of duplicate ecosystem scripts is now fully complete, successfully enforcing the 'Write Once, Run Anywhere' paradigm within the `global_agent` repository. This involved deleting 11 duplicates from `portfolio/scripts/`, migrating specialized processing tools like CAD and audio engines to `global_agent/scripts/`, and purging stale scripts from `mechanistic/scripts/`.
+
+
+## 2026-04-04 — A core architectural decision formalizes the separation of physical infrastructure from ideological domain identity.
+
+This plan formalizes a critical architectural decision: the separation between the physical proxy architecture (how the machine runs, known as the Engine Room) and the ideological identity of the domains (why it exists, embodied by MootMoat). This distinction clarifies the roles of infrastructure versus philosophy in the overall system.
+
+
+## 2026-04-04 — The Engine Room is the technical infrastructure; MootMoat is the philosophical protocol for sovereign digital identity.
+
+The Engine Room is formally defined as "The Machinery"—the physical proxy encompassing the static site generator, Cloudflare infrastructure, markdown compilers, and agentic scripts. Conversely, MootMoat is "The Protocol"—the ideological core documenting digital identity and sovereignty, framed as a DIY framework for physical builders.
