@@ -173,3 +173,13 @@ A persistent, JSON-based token ledger has been implemented at `.system_generated
 ## 2026-04-04 — The token ledger now tracks costs with a model-specific matrix, distinguishing between fast and frontier models.
 
 The new persistent token ledger incorporates a sophisticated model-specific cost matrix, which accurately differentiates pricing between `gemini-2.5-flash` (fast, cheap) and `gemini-3.1-pro` (frontier, expensive) models. This granular cost tracking provides precise insights into where the budget is being consumed, whether by background tasks or heavy reasoning.
+
+
+## 2026-04-04 — Centralized ecosystem scripts into `global_agent`, enforcing a 'Write Once, Run Anywhere' architectural paradigm.
+
+The architectural cleanup of duplicate ecosystem scripts is now complete, firmly establishing the 'Write Once, Run Anywhere' paradigm within the `global_agent` repository. This involved deleting redundant scripts from feature repositories and migrating generic processing tools into the centralized `global_agent` framework, ensuring a single source of truth for common utilities.
+
+
+## 2026-04-04 — Script centralization firmly anchors repository boundaries, localizing complex logic in `global_agent` and keeping feature repos clean.
+
+The script centralization effort has firmly anchored repository boundaries, establishing feature repositories as clean frontend environments. All complex intelligence logic and common utilities are now localized entirely within `global_agent`, simplifying maintenance and promoting a clear separation of concerns.

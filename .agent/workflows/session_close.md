@@ -33,6 +33,9 @@ Do NOT leave tickets as orphaned issues. Every issue = project board entry = ful
 
 1. **State outcome** — what shipped, what didn't, any blockers. One paragraph.
 
+> [!WARNING]
+> **Focal Ticket Authority Only:** As defined in `.agent/rules/ticket_closure.md`, you may only execute the closure protocol (Step 2 and 3) on the actual focal ticket of this session. If you happened to satisfy *collateral* tickets, do not close them. Mention them in the outcome statement and wait for explicit human triage.
+
 // turbo
 2. **Issue Hygiene & Ticket Closure** (If DoD is met):
    - **Check DoD:** Use your native MCP GitHub tools (e.g., `mcp_github_update_issue`) to fetch the issue, cleanly check off the Markdown DoD boxes (`- [x]`), and push the updated body. (Do this via API to avoid markdown parsing errors in PowerShell).
