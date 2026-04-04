@@ -20,9 +20,9 @@ posts:
     arc_position: 4
     post_url: "https://www.linkedin.com/posts/eriknorris_lid-dashboard-handoff-pack-activity-7444548376400060416-VwXj"
     dub_link: "https://link.eriknorris.com/fUGdLzR"
-  - id: 2026-03-31_arc_002_p5_single_threaded.md
+  - id: 2026-03-31_arc_002_p5_SOU-next-steps.md
     arc_position: 5
-    post_url: ""
+    post_url: "https://www.linkedin.com/posts/eriknorris_weve-traced-the-transition-from-chaotic-share-7445540932499914752-U6Ik?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
     dub_link: ""
 ---
 
