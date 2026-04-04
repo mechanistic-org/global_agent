@@ -198,3 +198,13 @@ This plan formalizes a critical architectural decision: the separation between t
 ## 2026-04-04 — The Engine Room is the technical infrastructure; MootMoat is the philosophical protocol for sovereign digital identity.
 
 The Engine Room is formally defined as "The Machinery"—the physical proxy encompassing the static site generator, Cloudflare infrastructure, markdown compilers, and agentic scripts. Conversely, MootMoat is "The Protocol"—the ideological core documenting digital identity and sovereignty, framed as a DIY framework for physical builders.
+
+
+## 2026-04-04 — Automated 'Forensic Flag' extraction and persistence using Gemini API significantly streamlines session metadata processing.
+
+The `mine_session.py` script will now automatically call the Gemini API to extract a 'Forensic Flag' whenever a `--ticket-id` is provided. This new flag, synthesizing absolute delta, blocked dependencies, and pivots from session artifacts, will be automatically pushed to the `flags` ChromaDB collection via the FastMCP bridge and saved to `registry/flags/<ticket_id>.md`.
+
+
+## 2026-04-04 — Manual `push_forensic_doc` step retired, achieving fully autonomous session metadata extraction.
+
+The manual `push_forensic_doc` step (Step 5) in `.agent/workflows/session_close.md` is being retired. This change drastically simplifies the session closing workflow, making the entire session metadata extraction process fully autonomous and eliminating a previously manual intervention point.

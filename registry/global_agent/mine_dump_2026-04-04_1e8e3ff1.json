@@ -1,0 +1,72 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The `mine_session.py` script will now automatically call the Gemini API to extract a 'Forensic Flag' whenever a `--ticket-id` is provided. This new flag, synthesizing absolute delta, blocked dependencies, and pivots from session artifacts, will be automatically pushed to the `flags` ChromaDB collection via the FastMCP bridge and saved to `registry/flags/<ticket_id>.md`.",
+    "one_liner": "Automated 'Forensic Flag' extraction and persistence using Gemini API significantly streamlines session metadata processing.",
+    "source_context": "`mine_session.py` will automatically call the Gemini API to extract a separate `Forensic Flag`... The new flag will be pushed to the `flags` ChromaDB collection...",
+    "tags": [
+      "automation",
+      "Gemini API",
+      "Forensic Flags",
+      "ChromaDB",
+      "workflow improvement"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The manual `push_forensic_doc` step (Step 5) in `.agent/workflows/session_close.md` is being retired. This change drastically simplifies the session closing workflow, making the entire session metadata extraction process fully autonomous and eliminating a previously manual intervention point.",
+    "one_liner": "Manual `push_forensic_doc` step retired, achieving fully autonomous session metadata extraction.",
+    "source_context": "The manual `push_forensic_doc` step (Step 5) in `.agent/workflows/session_close.md` will be retired, drastically simplifying the workflow and making the session metadata extraction fully autonomous.",
+    "tags": [
+      "workflow automation",
+      "process simplification",
+      "agent workflow",
+      "efficiency"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The system is implementing a MapReduce extraction logic to create highly dense 'Forensic Flags' from raw chronological session logs. This pattern involves using the Gemini API to synthesize critical information such as absolute deltas, blocked dependencies, and pivots, which are then stored and indexed for future reference.",
+    "one_liner": "MapReduce compression logic established for creating dense 'Forensic Flags' from session logs.",
+    "source_context": "# Implemeting MapReduce Compression for session_close (Forensic Flags)",
+    "tags": [
+      "architecture",
+      "MapReduce",
+      "Forensic Flags",
+      "data compression",
+      "design pattern"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must update their session closing workflow to include the new requirement: `python scripts\\mine_session.py --conversation-id <uuid> --ticket-id <ticket_id>`. This command ensures the automatic extraction and persistence of Forensic Flags, replacing the previous manual steps.",
+    "one_liner": "Agents must use `mine_session.py` with `--ticket-id` for automated Forensic Flag extraction during session close.",
+    "source_context": "Update step 4 to include the new requirement: `python scripts\\mine_session.py --conversation-id <uuid> --ticket-id <ticket_id>`.",
+    "tags": [
+      "agent workflow",
+      "rule",
+      "command line",
+      "Forensic Flags"
+    ]
+  },
+  {
+    "channel": "discard",
+    "confidence": "inferred",
+    "destination": "discard",
+    "content": "The `mine_session.py` script will now accept a new CLI argument, `--ticket-id`, to facilitate the automated extraction of Forensic Flags linked to specific tickets.",
+    "one_liner": "New `--ticket-id` CLI argument added to `mine_session.py`.",
+    "source_context": "New CLI arg: Add `--ticket-id` argument.",
+    "tags": [
+      "CLI",
+      "implementation detail"
+    ]
+  }
+]
