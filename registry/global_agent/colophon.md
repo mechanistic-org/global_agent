@@ -163,3 +163,13 @@ The RTX 6000 Ada with 48GB of VRAM is explicitly established as the physical har
 ## 2026-04-04 — Successfully migrated Cloudflare ingress tunnel to a resilient Windows service for automatic startup and enhanced system resilience.
 
 The `enos-webhook` ingress tunnel was successfully transitioned from a PM2-managed process to a native Windows background service. This critical change ensures the tunnel starts automatically on system boot, independent of user sessions, thereby fulfilling the Ingress Resilience requirement for Epic #99 and preventing service interruptions.
+
+
+## 2026-04-04 — A persistent JSON ledger now tracks token usage and cost per model across sessions.
+
+A persistent, JSON-based token ledger has been implemented at `.system_generated/logs/token_ledger.json` to track token usage across invocations. This replaces ephemeral reporting, providing a durable record of `prompt_tokens`, `candidate_tokens`, and `cost_usd` broken down by model, which is crucial for long-term cost analysis and transparency.
+
+
+## 2026-04-04 — The token ledger now tracks costs with a model-specific matrix, distinguishing between fast and frontier models.
+
+The new persistent token ledger incorporates a sophisticated model-specific cost matrix, which accurately differentiates pricing between `gemini-2.5-flash` (fast, cheap) and `gemini-3.1-pro` (frontier, expensive) models. This granular cost tracking provides precise insights into where the budget is being consumed, whether by background tasks or heavy reasoning.

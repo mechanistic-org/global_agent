@@ -62,6 +62,11 @@ The IDE is now augmented with a persistent brain located in `.agent/`. This move
 - **Rules (`.agent/rules`):** Inviolable constraints (Asset Sovereignty, Coding Standards).
 - **Workflows (`.agent/workflows`):** Deterministic scripts for Scaffolding and Deployment.
 
+### The Hybrid Agentic Workflow
+All agentic operations must strictly govern their tool usage between these architectural boundaries to maintain Sovereign token control and limit execution drift:
+- **The "Inner Loop" (Native `gh` CLI / Shell):** Used for local development, rapid speed, and direct filesystem/evidence manipulation. It consumes fewer tokens and allows the agent to naturally chain commands and handle large binary payloads (e.g., uploading massive forensic `.webp` recordings to tickets or running heavy build routines) safely and predictably.
+- **The "Outer Loop" (GitHub / Custom MCP Servers):** Used for structured data operations, semantic repository governance, and stateful issue analysis. The MCP protocol excels at executing complex API queries, reading schemas, and providing deterministic surgical accuracy (like editing a markdown check-box payload) precisely where native shell pipes and string-escaping would fail.
+
 ---
 
 ## 1.6 The Stealth Protocol (Prompt Architecture)

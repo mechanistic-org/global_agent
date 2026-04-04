@@ -33,7 +33,16 @@ Do NOT leave tickets as orphaned issues. Every issue = project board entry = ful
 
 1. **State outcome** — what shipped, what didn't, any blockers. One paragraph.
 
-2. **Update GitHub Project board status** (primary surface):
+// turbo
+2. **Issue Hygiene & Ticket Closure** (If DoD is met):
+   - **Check DoD:** Use your native MCP GitHub tools (e.g., `mcp_github_update_issue`) to fetch the issue, cleanly check off the Markdown DoD boxes (`- [x]`), and push the updated body. (Do this via API to avoid markdown parsing errors in PowerShell).
+   - **Leave Receipt & Close:** Use the `gh` CLI to post a closing summary and formally close the issue.
+```powershell
+gh issue comment <ticket#> --repo mechanistic-org/<repo> --body "Session closed. [Summary of execution results/forensic receipt]"
+gh issue close <ticket#> --repo mechanistic-org/<repo>
+```
+
+3. **Update GitHub Project board status** (primary surface):
    - If DoD met → move ticket to `Done`
    - If blocked → move to `Backlog`, leave a comment with blocker
    - If partial → leave in `In progress`, comment with exactly where things stand

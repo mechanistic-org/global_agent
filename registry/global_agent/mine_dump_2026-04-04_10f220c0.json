@@ -1,76 +1,102 @@
 [
   {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "The implementation of \"Outbound\" circuit breakers in `run_agent.py` successfully addresses the critical problems of runaway token burn and infinite execution loops. These robust safety constraints ensure the agent operates within defined financial and algorithmic boundaries, preventing costly and unproductive behavior.",
+    "one_liner": "Robust safety constraints were added to `run_agent.py` to prevent runaway token burn and infinite loops.",
+    "source_context": "This plan covers adding robust safety constraints to `run_agent.py` to stop runaway token burn and prevent infinite loops.",
+    "tags": [
+      "safety",
+      "cost control",
+      "agent stability",
+      "problem solved"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "A persistent, JSON-based token ledger has been implemented at `.system_generated/logs/token_ledger.json` to track token usage across invocations. This replaces ephemeral reporting, providing a durable record of `prompt_tokens`, `candidate_tokens`, and `cost_usd` broken down by model, which is crucial for long-term cost analysis and transparency.",
+    "one_liner": "A persistent JSON ledger now tracks token usage and cost per model across sessions.",
+    "source_context": "Instead of just printing token usage during the session, we will track it across invocations by writing to a JSON ledger file.",
+    "tags": [
+      "architecture",
+      "telemetry",
+      "cost tracking",
+      "data persistence"
+    ]
+  },
+  {
     "channel": "colophon",
     "confidence": "captured",
     "destination": "portfolio",
-    "content": "The `enos-webhook` ingress tunnel was successfully transitioned from a PM2-managed process to a native Windows background service. This critical change ensures the tunnel starts automatically on system boot, independent of user sessions, thereby fulfilling the Ingress Resilience requirement for Epic #99 and preventing service interruptions.",
-    "one_liner": "Successfully migrated Cloudflare ingress tunnel to a resilient Windows service for automatic startup and enhanced system resilience.",
-    "source_context": "implementation_plan.md: 'This plan transitions the `enos-webhook` ingress tunnel from a PM2-managed process to a native Windows background service.'",
+    "content": "The new persistent token ledger incorporates a sophisticated model-specific cost matrix, which accurately differentiates pricing between `gemini-2.5-flash` (fast, cheap) and `gemini-3.1-pro` (frontier, expensive) models. This granular cost tracking provides precise insights into where the budget is being consumed, whether by background tasks or heavy reasoning.",
+    "one_liner": "The token ledger now tracks costs with a model-specific matrix, distinguishing between fast and frontier models.",
+    "source_context": "It doesn't just track raw tokens; it understands the massive pricing difference between Fast models (`gemini-2.5-flash`) and Frontier models (`gemini-3.1-pro`).",
     "tags": [
-      "ingress",
-      "resilience",
-      "windows-service",
-      "pm2",
       "architecture",
-      "epic-99"
+      "cost tracking",
+      "telemetry",
+      "model management"
     ]
   },
   {
     "channel": "law",
-    "confidence": "captured",
+    "confidence": "inferred",
     "destination": "registry",
-    "content": "The Cloudflare ingress tunnel is now exclusively managed by the Windows Service Control Manager (`services.msc` or `sc.exe`). Agents must no longer attempt to manage or monitor the `enos-ingress-tunnel` via PM2, as it has been removed from PM2's process list.",
-    "one_liner": "Manage Cloudflare tunnel via Windows Service Control Manager, not PM2.",
-    "source_context": "walkthrough.md: 'The tunnel is now managed by the Windows Service Control Manager. You will no longer see it in `pm2 list`.'",
+    "content": "Agents must query the global `TokenLedger` before every model call. If the daily cost exceeds `MAX_DAILY_BUDGET_USD` (default $5.00), the agent must immediately trigger `log_failsafe()`, set the ticket to `halted` to flag a human, and gracefully exit, preventing further token burn.",
+    "one_liner": "Agents must immediately halt execution and flag a human if the daily token budget is exceeded.",
+    "source_context": "If `daily_cost > MAX_DAILY_BUDGET_USD`, the agent immediately triggers `log_failsafe()`, sets the ticket to `halted` to flag a human, and gracefully exits.",
     "tags": [
-      "pm2",
-      "windows-service",
-      "operations",
-      "tooling",
-      "rule"
+      "agent rules",
+      "cost control",
+      "safety",
+      "failsafe"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must employ a `LoopDetector` to hash `response.text` from every model round. If the agent generates the exact same output sequence three times in a row, the circuit breaker must trip, halting the agent and flagging a human to prevent \"whack-a-mole\" loops and wasted budget.",
+    "one_liner": "Agents must halt if they generate the same output sequence three times consecutively, preventing infinite loops.",
+    "source_context": "If the agent gets stuck in a \"whack-a-mole\" loop\u2014specifically, outputting the exact same sequence **3 times in a row**\u2014the circuit breaker trips. It halts and flags the human immediately.",
+    "tags": [
+      "agent rules",
+      "stability",
+      "loop detection",
+      "failsafe"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "draft",
+    "content": "With the successful implementation of \"Outbound\" constraints, the system is no longer \"flying blind.\" This significant achievement provides critical visibility into token burn rates and prevents runaway costs, marking a major step forward in agent stability, cost management, and operational transparency.",
+    "one_liner": "With new constraints, the system is no longer \"flying blind,\" gaining critical visibility and control.",
+    "source_context": "The system is no longer 'flying blind.'",
+    "tags": [
+      "win",
+      "narrative",
+      "agent stability",
+      "cost control",
+      "transparency"
     ]
   },
   {
     "channel": "internal",
     "confidence": "captured",
     "destination": "registry",
-    "content": "The `setup_ingress.ps1` script is now responsible for registering `cloudflared.exe` as a native Windows system service, configured for automatic startup. This ensures the Cloudflare agent is always active and bound to the correct tunnel token, providing persistent ingress.",
-    "one_liner": "Cloudflared agent installed as an automatic Windows service via `setup_ingress.ps1`.",
-    "source_context": "implementation_plan.md: 'Run the script with the retrieved Tunnel Token to install the \"Cloudflared agent\" service.'",
+    "content": "The newly implemented persistent token ledger and detailed cost tracking are strategically positioning the system for seamless integration with the upcoming Epic #28/30 Project OS Dashboard. This foundational work will enable future time-series graph visualization and provide invaluable operational insights for monitoring agent performance and resource consumption.",
+    "one_liner": "The new telemetry system sets the stage for future Project OS Dashboard integration.",
+    "source_context": "perfectly positioning us for the Epic #28/30 Project OS Dashboard integration.",
     "tags": [
-      "cloudflared",
-      "windows-service",
-      "scripting",
-      "installation",
-      "architecture"
-    ]
-  },
-  {
-    "channel": "internal",
-    "confidence": "captured",
-    "destination": "registry",
-    "content": "End-to-end connectivity for the `enos-webhook` ingress tunnel was successfully verified by hitting the `https://hooks.mechanistic.com/health` endpoint, which returned an 'online' status. This confirms the Cloudflared agent service is correctly routing traffic.",
-    "one_liner": "End-to-end connectivity for the Cloudflare ingress tunnel successfully verified.",
-    "source_context": "walkthrough.md: 'Validated end-to-end connectivity by hitting the health endpoint: `https://hooks.mechanistic.com/health`.'",
-    "tags": [
-      "verification",
-      "connectivity",
-      "health-check",
-      "win"
-    ]
-  },
-  {
-    "channel": "internal",
-    "confidence": "captured",
-    "destination": "registry",
-    "content": "It was clarified that the `nanoclaw_enabled` status, observed in the health endpoint response, is controlled by the `.env` file and is entirely unrelated to the operational status or connectivity of the Cloudflare ingress tunnel. This distinction is important for debugging and configuration understanding.",
-    "one_liner": "`nanoclaw_enabled` status is independent of Cloudflare tunnel connectivity.",
-    "source_context": "walkthrough.md: '`nanoclaw_enabled` is currently `false` in the heartbeat. This is controlled by the `.env` file and is unrelated to the tunnel connectivity.'",
-    "tags": [
-      "debugging",
-      "configuration",
-      "clarification",
-      "lesson"
+      "roadmap",
+      "integration",
+      "dashboard",
+      "telemetry",
+      "future proofing"
     ]
   }
 ]
