@@ -223,3 +223,23 @@ A standard YAML frontmatter schema has been established for `PROJECT_INTELLIGENC
 ## 2026-04-04 — A new Python script automates syncing `PROJECT_INTELLIGENCE.md` content to ChromaDB for routine intelligence updates.
 
 A new Python script, `sync_intelligence.py`, has been developed to automate the synchronization of `PROJECT_INTELLIGENCE.md` files to ChromaDB. This lightweight script traverses active EN-OS roots, parses the frontmatter, and programmatically calls `push_forensic_doc`, providing an easy command for routine intelligence updates.
+
+
+## 2026-04-05 — A singleton `timeline.md` will centralize all OS activity logs, inspired by Karpathy's LLM-Wiki.
+
+To address siloed session logs, a decision was made to implement a singleton `timeline.md` at the root of the `registry/` as an append-only chronological ledger of all OS activity, inspired by Karpathy's LLM-Wiki. This provides a centralized, auditable history of system operations.
+
+
+## 2026-04-05 — An `index.md` catalog will provide agents a zero-hallucination map of the registry's topology.
+
+To prevent agent hallucinations and provide a clear navigation path, a top-level `index.md` catalog will be enforced to map the topology of the registry, serving as a deterministic 'Map' for agents before they initiate semantic search. This enhances agent autonomy and reliability.
+
+
+## 2026-04-05 — A new epic aims to build a sovereign, local multi-format asset ingestion pipeline for on-the-fly conversion to markdown.
+
+A major research and development epic has been initiated to build a robust, local, multi-format asset ingestion pipeline. This pipeline will convert various organizational assets (PDFs, Word docs, spreadsheets, emails) into standard markdown formats on-the-fly, ensuring full data sovereignty without reliance on cloud APIs, and will culminate in a new `normalize_asset` MCP Tool.
+
+
+## 2026-04-05 — Pagefind integration enables sovereign, zero-JS impact full-text search for the engineering corpus.
+
+The portfolio successfully integrated Pagefind to provide sovereign full-text search over its 25-year engineering corpus. This architectural decision eliminated the need for a backend or third-party APIs, replacing legacy React components with a new vanilla JS/Astro component. The design ensures zero JavaScript bundle size impact on initial page load by dynamically loading search-related scripts only when invoked.

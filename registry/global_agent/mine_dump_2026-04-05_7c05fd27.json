@@ -1,0 +1,96 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The portfolio successfully integrated Pagefind to provide sovereign full-text search over its 25-year engineering corpus. This architectural decision eliminated the need for a backend or third-party APIs, replacing legacy React components with a new vanilla JS/Astro component. The design ensures zero JavaScript bundle size impact on initial page load by dynamically loading search-related scripts only when invoked.",
+    "one_liner": "Pagefind integration enables sovereign, zero-JS impact full-text search for the engineering corpus.",
+    "source_context": "Integrate Pagefind into the portfolio to provide sovereign full-text search over the 25yr engineering corpus without the need for a backend or third-party APIs. ... This satisfies the 'Zero JS bundle size impact' requirement.",
+    "tags": [
+      "pagefind",
+      "search",
+      "architecture",
+      "zero-js",
+      "performance",
+      "astro"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Search interfaces must guarantee zero JavaScript bundle impact on initial page load for all non-search interactions. Search-related scripts and styles must be dynamically loaded only upon user invocation, such as a keyboard shortcut or explicit UI trigger.",
+    "one_liner": "Search components must achieve zero initial JS bundle impact through lazy loading.",
+    "source_context": "This guarantees **zero JS bundle impact** on initial page load for all non-search interactions.",
+    "tags": [
+      "performance",
+      "javascript",
+      "lazy-loading",
+      "architecture",
+      "rule"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "An Astro build failure was intercepted and resolved during the pipeline upgrade. The issue stemmed from unescaped quote tokens within YAML description blocks in deep markdown files, which caused parsing constraint errors. The solution involved scrubbing and properly escaping these tokens to ensure CI pipeline stability.",
+    "one_liner": "Resolved Astro build failures caused by unescaped quote tokens in markdown YAML, ensuring CI pipeline stability.",
+    "source_context": "During the pipeline upgrade, an overarching Astro build failure was intercepted and resolved. The EN-OS Intelligence pipeline had synthesized deep markdown files containing unescaped quote tokens within the YAML description blocks...",
+    "tags": [
+      "astro",
+      "ci-cd",
+      "markdown",
+      "yaml",
+      "build-failure",
+      "error-handling",
+      "lessons-learned"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The `data-pagefind-body` attribute was strategically applied to the `<main>` payload within `BaseLayout.astro`. This ensures that Pagefind's indexing process focuses exclusively on the core content of the pages, effectively ignoring navigation menus and footers to produce cleaner and more relevant search results.",
+    "one_liner": "`data-pagefind-body` ensures precise search indexing by targeting only core page content.",
+    "source_context": "Updated the primary application canopy (`BaseLayout.astro`) to apply the `data-pagefind-body` attribute perfectly encircling the `<main>` payload, ignoring navigation bars and footers to give clean index results.",
+    "tags": [
+      "pagefind",
+      "indexing",
+      "astro",
+      "html-attributes",
+      "search-relevance",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "draft",
+    "content": "The new Pagefind static search engine successfully indexed 199 pages and approximately 16,030 engineering keywords across the portfolio. This achievement demonstrates the system's robust capability to provide comprehensive and efficient full-text search over a vast engineering corpus without external dependencies.",
+    "one_liner": "Pagefind successfully indexed 199 pages and over 16,000 engineering keywords.",
+    "source_context": "Indexed 1 language, Indexed 199 pages, Indexed 16030 words",
+    "tags": [
+      "pagefind",
+      "search",
+      "metrics",
+      "engineering-corpus",
+      "win"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The legacy React-based `CommandMenu.tsx` component and the obsolete `search-index.json.js` endpoint were entirely removed from the codebase. This cleanup was a critical step in streamlining the architecture following the Pagefind integration, eliminating outdated dependencies and simplifying maintenance.",
+    "one_liner": "Legacy React search components and index generation scripts were successfully removed.",
+    "source_context": "The current `CommandMenu.tsx` React component and its corresponding `search-index.json.js` endpoint will be entirely removed... Eradicated the outdated `search-index.json.js` endpoint and the legacy React `CommandMenu.tsx`.",
+    "tags": [
+      "cleanup",
+      "legacy-code",
+      "react",
+      "pagefind",
+      "architecture"
+    ]
+  }
+]

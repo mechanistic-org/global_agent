@@ -83,3 +83,14 @@ All UI work must comply with the Dark Hangar aesthetic. Before touching any UI:
 Call: read_design_system
 ```
 No generic colors. No MVPs. No Bootstrap templates.
+
+---
+
+## Skill Architecture Law
+
+The EN-OS operates strictly on formal $S=(C, \pi, T, R)$ skill boundaries to prevent Agent Sprawl and Ghost Actions. 
+*   **Prohibited:** Creating flat markdown workflows relying on LLM intuition.
+*   **Mandatory:** ALL new and refactored skills must meticulously implement the YAML frontmatter and Progressive Disclosure architecture defined centrally.
+*   **Initialization:** Before creating or editing ANY skill, you MUST execute a `view_file` on `D:\GitHub\global_agent\.agent\skills\SKILL_TEMPLATE.md` to retrieve the explicit JSON/YAML contract structure. Failure to do so violates the deterministic system boundary.
+
+---
