@@ -1,11 +1,35 @@
 import os
 import sys
-import json
-import subprocess
-import tempfile
+
+# --- BOMB DEFUSAL ---
+# Complete lockdown of native Python logging to prevent JSON-RPC parser crashes
+_log_file = open(os.path.join(os.path.dirname(__file__), "enos_native.log"), "w")
+
+class ShieldedStdout:
+    def __init__(self, original_buffer, log_file):
+        self.buffer = original_buffer  # FastMCP reads this binary stream directly!
+        self._log_file = log_file
+    def write(self, data):
+        self._log_file.write(data)
+    def flush(self):
+        self._log_file.flush()
+    def isatty(self):
+        return False
+    def close(self):
+        pass
+
+sys.stderr = _log_file
+sys.stdout = ShieldedStdout(sys.stdout.buffer, _log_file)
 from pathlib import Path
 from typing import Any, Optional
 from mcp.server.fastmcp import FastMCP
+
+# Suppress ALL rogue library logging/warnings that might leak into sys.stdout and crash the Go JSON-RPC parser
+logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
+warnings.filterwarnings("ignore")
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 
 # Modulize the raw Python scripts natively without duplicating their logic
 import mcp_registry_server
@@ -121,11 +145,9 @@ def patch_astro_component(
             pass
 
 if __name__ == "__main__":
-    print("-------------------------------------------------------")
-    print("BOOTING SOVEREIGN EN-OS ROUTER NODE (STREAMABLE HTTP)")
-    print("Mounting to: http://127.0.0.1:8000/mcp")
-    print("NOTE: SSE transport deprecated (MCP spec, March 2025).")
-    print("-------------------------------------------------------")
+    print("=======================================================", file=sys.stderr)
+    print("BOOTING SOVEREIGN EN-OS ROUTER NODE", file=sys.stderr)
+    print("=======================================================", file=sys.stderr)
 
     # FastMCP Streamable HTTP transport — the current MCP standard.
     # SSE (http://127.0.0.1:8000/sse) is deprecated and removed.
@@ -138,8 +160,8 @@ if __name__ == "__main__":
         transport_mode = os.environ.get("MCP_TRANSPORT", "stdio")
         # FastMCP natively expects the string "sse" to boot the streamable HTTP transport layer
         internal_transport = "sse" if transport_mode in ["http", "sse"] else transport_mode
-        print(f"Booting as Streamable HTTP Server (FastMCP mapped to {internal_transport})")
+        print(f"Booting as Streamable HTTP Server (FastMCP mapped to {internal_transport})", file=sys.stderr)
         
         router_node.run(transport=internal_transport)
     except Exception as e:
-        print(f"CRITICAL BOOT FAILURE: {e}")
+        print(f"CRITICAL BOOT FAILURE: {e}", file=sys.stderr)

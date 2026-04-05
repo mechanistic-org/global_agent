@@ -1,5 +1,6 @@
 from mcp.server.fastmcp import FastMCP
 import os
+import sys
 import yaml
 import json
 import urllib.request
@@ -15,7 +16,7 @@ def apply_microcompaction(payload: str) -> str:
     if len(payload) <= 8000:
         return payload
         
-    print(f"[KAIROS] Triggering Microcompaction on {len(payload)} chars...")
+    print(f"[KAIROS] Triggering Microcompaction on {len(payload)} chars...", file=sys.stderr)
     req = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=json.dumps({
         "model": "qwen2.5-coder:32b",
         "prompt": (
@@ -38,7 +39,7 @@ def apply_microcompaction(payload: str) -> str:
                 return f"--- [NODE 0: MICROCOMPACTED BOLUS] ---\n{distilled}"
             return payload
     except Exception as e:
-        print(f"[KAIROS] Microcompaction Failed: {e}")
+        print(f"[KAIROS] Microcompaction Failed: {e}", file=sys.stderr)
         return payload
 
 # ─── Pydantic Frontmatter Schemas ───────────────────────────────────────────
