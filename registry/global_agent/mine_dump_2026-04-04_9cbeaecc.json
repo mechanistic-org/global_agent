@@ -1,0 +1,74 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A standard YAML frontmatter schema has been established for `PROJECT_INTELLIGENCE.md`, ensuring full compatibility with `push_forensic_doc` and providing structured metadata for project intelligence. This schema includes essential fields like `project`, `type`, `last_updated`, and a table for source details, standardizing how project insights are documented.",
+    "one_liner": "A standardized YAML schema for `PROJECT_INTELLIGENCE.md` ensures structured intelligence indexing and compatibility with forensic documentation.",
+    "source_context": "Schema Definition",
+    "tags": [
+      "schema",
+      "architecture",
+      "standardization",
+      "ChromaDB",
+      "metadata"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must ensure that if a project utilizes a NotebookLM notebook or Google Gem, the corresponding `PROJECT_INTELLIGENCE.md` file is updated BEFORE closing the browser tab. This non-negotiable rule is integrated into the `scaffold_project` workflow to guarantee timely and comprehensive capture of project intelligence.",
+    "one_liner": "A new workflow rule mandates immediate update of `PROJECT_INTELLIGENCE.md` when using NotebookLM or Gem.",
+    "source_context": "Establish the non-negotiable rule in the workflow: \"If a project has a NotebookLM notebook or Gem, `PROJECT_INTELLIGENCE.md` must be updated BEFORE closing the browser tab.\"",
+    "tags": [
+      "workflow",
+      "process",
+      "data_capture",
+      "rule",
+      "agent_behavior"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A new Python script, `sync_intelligence.py`, has been developed to automate the synchronization of `PROJECT_INTELLIGENCE.md` files to ChromaDB. This lightweight script traverses active EN-OS roots, parses the frontmatter, and programmatically calls `push_forensic_doc`, providing an easy command for routine intelligence updates.",
+    "one_liner": "A new Python script automates syncing `PROJECT_INTELLIGENCE.md` content to ChromaDB for routine intelligence updates.",
+    "source_context": "[NEW] `d:\\GitHub\\global_agent\\scripts\\sync_intelligence.py`",
+    "tags": [
+      "automation",
+      "scripting",
+      "ChromaDB",
+      "data_sync",
+      "tooling"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A plan is in place to backfill existing EN-OS projects by generating `PROJECT_INTELLIGENCE.md` files in their respective root directories. This ensures that historical and ongoing projects, including `global_agent`, `portfolio`, `hyphen`, and `mechanistic`, are integrated into the new stratified intelligence indexing system.",
+    "one_liner": "Existing projects will be backfilled with `PROJECT_INTELLIGENCE.md` files to integrate them into the new intelligence indexing system.",
+    "source_context": "Backfilling Existing Projects",
+    "tags": [
+      "migration",
+      "project_management",
+      "data_onboarding"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A comprehensive four-step verification plan has been established for the Stratified Intelligence Indexing implementation. This plan includes manual inspection of workflow updates, execution tests for file scaffolding, ingestion tests to confirm ChromaDB embeds, and agent recall tests to verify semantic search functionality, ensuring robust system performance.",
+    "one_liner": "A rigorous four-step verification plan ensures the successful implementation and functionality of stratified intelligence indexing.",
+    "source_context": "Verification Plan",
+    "tags": [
+      "quality_assurance",
+      "testing",
+      "implementation",
+      "process"
+    ]
+  }
+]

@@ -213,3 +213,13 @@ The manual `push_forensic_doc` step (Step 5) in `.agent/workflows/session_close.
 ## 2026-04-04 — A Browser Subagent is proposed for automating Cloudflare UI navigation for infrastructure changes.
 
 The implementation plan proposes using a Browser Subagent to automate the configuration of Cloudflare Zero Trust settings. This demonstrates an advanced operational pattern where an AI agent can navigate complex web UIs to implement infrastructure changes, showcasing efficient automation capabilities.
+
+
+## 2026-04-04 — A standardized YAML schema for `PROJECT_INTELLIGENCE.md` ensures structured intelligence indexing and compatibility with forensic documentation.
+
+A standard YAML frontmatter schema has been established for `PROJECT_INTELLIGENCE.md`, ensuring full compatibility with `push_forensic_doc` and providing structured metadata for project intelligence. This schema includes essential fields like `project`, `type`, `last_updated`, and a table for source details, standardizing how project insights are documented.
+
+
+## 2026-04-04 — A new Python script automates syncing `PROJECT_INTELLIGENCE.md` content to ChromaDB for routine intelligence updates.
+
+A new Python script, `sync_intelligence.py`, has been developed to automate the synchronization of `PROJECT_INTELLIGENCE.md` files to ChromaDB. This lightweight script traverses active EN-OS roots, parses the frontmatter, and programmatically calls `push_forensic_doc`, providing an easy command for routine intelligence updates.
