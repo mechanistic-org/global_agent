@@ -198,16 +198,19 @@ def push_forensic_doc(
             f.flush()
             os.fsync(f.fileno())
 
-        # ── Embed into ChromaDB ──────────────────────────────────────────────
-        collection.upsert(
-            documents=[full_document],
-            metadatas=[{"project": project_name, "component": component_name}],
-            ids=[doc_id],
-        )
-
-        return f"SUCCESS: '{component_name}' written to '{project_name}/' and embedded in ChromaDB."
+        try:
+            # ── Embed into ChromaDB ──────────────────────────────────────────────
+            collection.upsert(
+                documents=[full_document],
+                metadatas=[{"project": project_name, "component": component_name}],
+                ids=[doc_id],
+            )
+            return f"SUCCESS: '{component_name}' written to '{project_name}/' and embedded in ChromaDB."
+        except Exception as e:
+            return f"WARNING: Flat-file saved successfully, but ChromaDB upsert failed due to lock/error: {str(e)}"
+            
     except Exception as e:
-        return f"CRITICAL: Registry write failed. {str(e)}"
+        return f"CRITICAL: Registry disk write failed. {str(e)}"
 
 @mcp.tool()
 def read_design_system() -> str:
