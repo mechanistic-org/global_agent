@@ -1,5 +1,10 @@
 import os
 import sys
+import logging
+import warnings
+import json
+import subprocess
+import tempfile
 
 # --- BOMB DEFUSAL ---
 # Complete lockdown of native Python logging to prevent JSON-RPC parser crashes

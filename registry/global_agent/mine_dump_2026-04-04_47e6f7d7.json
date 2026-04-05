@@ -3,13 +3,12 @@
     "channel": "discard",
     "confidence": "captured",
     "destination": "discard",
-    "content": "The provided conversation artifact explicitly stated that no readable content or actionable insights were found. This indicates a lack of 'Gold' for extraction, as the source material was empty.",
-    "one_liner": "No readable artifacts were found in the conversation, resulting in no extractable 'Gold'.",
+    "content": "The provided conversation artifact explicitly stated that no readable artifacts were found. Therefore, no 'Gold' items such as decisions, problems solved, or architectural patterns could be extracted from this input.",
+    "one_liner": "No readable artifacts or 'Gold' found in the conversation.",
     "source_context": "[No readable artifacts found in conversation 47e6f7d7-1878-4eda-a801-dcd0811d64bf]",
     "tags": [
-      "no_content",
-      "empty_input",
-      "audit"
+      "no_gold",
+      "empty_input"
     ]
   }
 ]

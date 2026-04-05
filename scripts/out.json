@@ -1,0 +1,8 @@
+[
+  "event: endpoint",
+  "data: /messages/?session_id=a931845430054d1cae61deb913ba0d28",
+  "event: message",
+  "data: {\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{\"protocolVersion\":\"2024-11-05\",\"capabilities\":{\"experimental\":{},\"prompts\":{\"listChanged\":false},\"resources\":{\"subscribe\":false,\"listChanged\":false},\"tools\":{\"listChanged\":false}},\"serverInfo\":{\"name\":\"enos-router\",\"version\":\"1.26.0\"}}}",
+  "event: message",
+  "data: {\"jsonrpc\":\"2.0\",\"id\":2,\"result\":{\"content\":[{\"type\":\"text\",\"text\":\"SUCCESS: EN-OS Sovereign Router Node is online and routing beautifully.\"}],\"structuredContent\":{\"result\":\"SUCCESS: EN-OS Sovereign Router Node is online and routing beautifully.\"},\"isError\":false}}"
+]

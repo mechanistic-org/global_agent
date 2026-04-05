@@ -1,0 +1,14 @@
+[
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "No readable artifacts were found in the provided conversation text, indicating an absence of extractable 'Gold' such as decisions made, problems solved, architecture patterns established, or memorable insights.",
+    "one_liner": "No extractable 'Gold' found in the conversation.",
+    "source_context": "[No readable artifacts found in conversation c3828fa0-8f2b-4da7-a804-c6dde1d824c9]",
+    "tags": [
+      "no_gold",
+      "empty_input"
+    ]
+  }
+]
