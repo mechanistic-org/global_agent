@@ -1,0 +1,74 @@
+[
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A plan has been established to secure `hyphen.mechanistic.com` by implementing Cloudflare Zero Trust Access protection. This resolution for `hyphen#7` aims to restrict access to the Hyphen Dashboard, enhancing its security posture.",
+    "one_liner": "Cloudflare Zero Trust Access protection is being implemented for `hyphen.mechanistic.com` to secure the Hyphen Dashboard.",
+    "source_context": "This plan outlines the resolution for `hyphen#7`: Securing the target domain using Cloudflare Zero Trust.",
+    "tags": [
+      "security",
+      "cloudflare",
+      "zero-trust",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The implementation plan proposes using a Browser Subagent to automate the configuration of Cloudflare Zero Trust settings. This demonstrates an advanced operational pattern where an AI agent can navigate complex web UIs to implement infrastructure changes, showcasing efficient automation capabilities.",
+    "one_liner": "A Browser Subagent is proposed for automating Cloudflare UI navigation for infrastructure changes.",
+    "source_context": "I propose using the **Browser Subagent** to navigate the Cloudflare UI on your behalf...",
+    "tags": [
+      "automation",
+      "subagent",
+      "cloudflare",
+      "operations",
+      "AI"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The detailed Cloudflare Access configuration for `hyphen.mechanistic.com` specifies setting the application name to 'Hyphen Dashboard', the domain to `hyphen.mechanistic.com`, and a session duration of 24 hours. A 'Hyphen Whitelist' policy will be created, restricted solely to the email `erik@eriknorris.com`.",
+    "one_liner": "Detailed Cloudflare Access configuration steps for `hyphen.mechanistic.com` are outlined, including specific policy rules.",
+    "source_context": "1. Navigate to the Cloudflare Zero Trust Dashboard... 7. Set the policy to include only the email: `erik@eriknorris.com`.",
+    "tags": [
+      "cloudflare",
+      "configuration",
+      "security",
+      "zero-trust"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must ensure pre-authentication for external service dashboards when performing automated UI tasks. If a browser subagent is dispatched to navigate a dashboard like Cloudflare Zero Trust, it must not be blocked by a login screen, requiring prior authentication in its default browser data.",
+    "one_liner": "Agents must ensure pre-authentication for external service dashboards when performing automated UI tasks.",
+    "source_context": "Are you already authenticated into Cloudflare Zero Trust in your default browser data, or would the subagent be blocked by a login screen?",
+    "tags": [
+      "agent-operations",
+      "automation",
+      "authentication",
+      "constraints",
+      "lesson"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The verification plan for Cloudflare Access protection involves checking if an incognito request to `https://hyphen.mechanistic.com/hyphen-lid/` returns the Cloudflare Access login screen. This confirms that the protection is actively blocking direct content access and is correctly configured.",
+    "one_liner": "Cloudflare Access protection is verified by checking for the login screen on incognito requests to the protected URL.",
+    "source_context": "Once the application is created, verify the protection by checking if an incognito request to `https://hyphen.mechanistic.com/hyphen-lid/` returns the Cloudflare Access login screen instead of the direct content.",
+    "tags": [
+      "verification",
+      "security",
+      "testing",
+      "cloudflare"
+    ]
+  }
+]
