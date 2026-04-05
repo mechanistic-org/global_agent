@@ -14,7 +14,7 @@ description: "Documentation for The Engine Room: Architecture & Maintenance."
 
 ## 1. System Architecture
 
-The EN-OS uses a **Pure Hyperspace** architecture (Dynamic Astro Collections) to maintain "Zero-Bloat" speed.
+The EN-OS uses a **Pure Hyperspace** architecture (Dynamic Astro Collections) primarily for the `eriknorris.com` portfolio site to maintain "Zero-Bloat" speed. Note: "Pure Hyperspace" refers exclusively to this portfolio site's strategy (no CSV/manual files, driven by Keystatic → MDX) and does not apply laterally across other projects.
 
 ### Core Protocols (The Law)
 
@@ -24,7 +24,7 @@ _Synthesized from Agency Memory_
 2.  **The Sovereign Color Law:** `src/config/color_registry.ts` is the ONLY Source of Truth for Entity Coloring. `Colors.csv` retrieval is FORBIDDEN.
 3.  **The Module Naming Law:** Do not use `.json.ts` for standard TypeScript modules/arrays. Rename to `.ts` to prevent TS Server resolution confusion.
 4.  **The Resilience Law (Safe-by-Default D3):** Visualization components must implement defensive `get(key) || default_color` logic to prevent crashing the entire graph on a single missing key.
-5.  **The Air Gap Law:** `eriknorris-assets\R2_STAGING` is the ONLY Production Vault. `portfolio_working` is the ONLY Staging Input. `eriknorris-workspace\R2_MASTER` is DEAD (Legacy).
+5.  **The Air Gap Law (Portfolio Scope):** For the `eriknorris/portfolio` project, `eriknorris-assets\R2_STAGING` is the ONLY Production Vault. `portfolio_working` is the ONLY Staging Input. `eriknorris-workspace\R2_MASTER` is DEAD (Legacy). Note: Ensure all other projects adhere to their own `{project}-assets/R2_STAGING` pattern.
 
 ### The Stack
 
@@ -79,6 +79,18 @@ All agentic operations must strictly govern their tool usage between these archi
 3.  **Stage 2 (Audio):** The Host Prompt (`PODCAST_READY`). Contains the `AUDIO_PROTOCOL` (Phonetics). Reads the Source as "Fact."
 
 **Result:** High-Fidelity Audio without "Protocol Leakage."
+
+---
+
+## 1.7 The Sovereign OS Layer
+
+This layer acts as the global control plane above the portfolio site, connecting projects through standardized tooling and state management:
+
+- **The MCP Router:** (`global_agent/server/mcp_registry_server.py`) Exposes intelligent tools into the agent architecture.
+- **Vector Intelligence:** (`registry/.chroma_db`) ChromaDB vector store mapped with topological Cosine-Similarity.
+- **Flat-file Forensic Registry:** (`registry/portfolio/`, `registry/linkedin/`, etc.) Markdown-native storage for constraints, logs, and architectural history.
+- **Mechanisms:** The `push_forensic_doc` and `semantic_search` workflow directly embeds memory natively.
+- **Global Centralization:** `global_config.py` path resolution and the `sync_r2.py` global engine unify operation across repos.
 
 ---
 
@@ -203,6 +215,7 @@ The timeline includes a **"Dreamjob" Node (2025-2040)**.
 
 Located in `scripts/`:
 
-- `sync_r2.py`: Uploads `R2_STAGING` to Cloudflare.
+- `sync_r2.py`: **[MOVED TO global_agent/scripts]** FULLY CO-OPTED into a global multi-project engine. Operates via a `BUCKET_MAP` spanning all active projects. Invoked centrally via the `/sync_assets` workflow, not directly. Usage: `python global_agent/scripts/sync_r2.py --target eriknorris [--prune] [--dry-run]`.
+- `scaffold_projects.py`: **[ARCHIVED / OBSOLETE]** Legacy artifact. No longer active in the main engine.
 - `process_images.py`: The Darkroom. Optimizes images.
 - `doctor.py` (Planned): Automated diagnostics.
