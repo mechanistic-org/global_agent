@@ -4,16 +4,16 @@ slug: quickstart
 sidebar:
   group: Handbook
   order: 0
-description: Documentation for Quickstart (Cheat Sheet).
+description: Documentation for Portfolio Quickstart (Cheat Sheet).
 ---
-# ⚡ Quickstart: Daily Operations
+# ⚡ Quickstart: Portfolio Daily Ops
 
-> **Role:** Operator / Pilot
-> **Objective:** Maintain, Update, and Deploy the EN-OS.
+> **Role:** Portfolio Operator
+> **Objective:** Maintain, Update, and Deploy the Mechanistic Portfolio site.
 
 ## 1. Start Engine (Dev Server & CMS)
 
-Keystatic is essential for content management.
+Keystatic is essential for content management for the portfolio site.
 
 **Command:**
 
@@ -34,8 +34,7 @@ npm run dev
 
 ## 2. The Data & Asset Refinery
 
-We work in **Pure Hyperspace**. No CSVs. No Manual Content files.
-But we still need to sync assets and timeline data.
+The portfolio is generated procedurally from the R2_MASTER buckets and global mining databases. We must sync assets and timeline data.
 
 **Commands:**
 
@@ -75,7 +74,7 @@ npm run assets:process
 
 ## 4. Diagnostics ("Doctor")
 
-If the system behaves erratically:
+If the portfolio behaves erratically:
 
 **1. Verify Ports:**
 
@@ -103,6 +102,6 @@ _(Pre-flight check before pushing. Catch TypeErrors here.)_
 
 **Protocol:** Git-Triggered (CD).
 
-1.  **Commit:** `git commit -m "feat: upgrade warp drive"`
+1.  **Commit:** `git commit -m "feat: upgrade portfolio UI"`
 2.  **Push:** `git push`
 3.  **Monitor:** Check Cloudflare Pages dashboard for build status.
