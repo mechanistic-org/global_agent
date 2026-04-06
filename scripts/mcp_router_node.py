@@ -39,6 +39,7 @@ os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 # Modulize the raw Python scripts natively without duplicating their logic
 import mcp_registry_server
 import mcp_grok_server
+import mcp_prd_linter
 
 # ---------------------------------------------------------------------------
 # SOVEREIGN EN-OS ROUTER NODE
@@ -60,6 +61,9 @@ router_node.add_tool(mcp_registry_server.read_design_system)
 # --- GROK VAULT MOUNTS ---
 router_node.add_tool(mcp_grok_server.search_truth_engine)
 router_node.add_tool(mcp_grok_server.search_rainmaker_corpus)
+
+# --- CONSTRAINT CAGE MOUNTS ---
+router_node.add_tool(mcp_prd_linter.lint_hardware_prd)
 
 @router_node.tool()
 def router_health_check() -> str:
