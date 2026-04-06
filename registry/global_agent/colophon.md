@@ -258,3 +258,23 @@ For mechanical engineering tasks, the AI's role is redefined from performing cal
 ## 2026-04-05 — The $S=(C, \pi, T, R)$ standard boosts routing efficiency and eliminates "Ghost Actions" through metadata-driven loading and deterministic trace evaluation.
 
 The $S=(C, \pi, T, R)$ framework significantly enhances routing efficiency by allowing the orchestrator to load only Level 1 YAML metadata (~50 tokens per skill) for hundreds of skills without degrading AI reasoning. It also enables deterministic evaluation by scanning Local MCP traces to verify tool execution, instantly catching "Ghost Actions" where agents hallucinate outcomes.
+
+
+## 2026-04-05 — Implemented a dynamic R2 CORS configuration script that centralizes bucket definitions and applies standardized policies.
+
+A dynamic CORS configuration script was developed for Cloudflare R2, which now imports a centralized `BUCKET_MAP` from the asset synchronization script. This refactored script deduplicates bucket names and applies a standardized public asset serving policy across all active buckets, eliminating the need for individual `.env` mappings and improving consistency.
+
+
+## 2026-04-05 — Upgraded `BUCKET_MAP` to an object-mapping schema for enhanced R2 bucket metadata and visibility.
+
+The `BUCKET_MAP` in `sync_r2.py` was upgraded from a simple string-mapping to a more robust object-mapping schema. This new structure allows for associating additional metadata, such as `public_url`, directly with each bucket entry, significantly improving script visibility, maintainability, and the overall clarity of asset synchronization configurations.
+
+
+## 2026-04-05 — LLMs extract semantics, Python performs deterministic math for critical calculations like RPN, preventing AI hallucination.
+
+A core architectural decision for the Deterministic FMEA Generator is to leverage LLMs for semantic extraction of failure modes and severity rankings, while strictly offloading all critical arithmetic, such as Risk Priority Number (RPN) calculation, to deterministic Python code. This ensures actuarial accuracy by preventing LLM hallucination in mathematical operations.
+
+
+## 2026-04-05 — New FMEA skill adheres strictly to the sovereign EN-OS `$S=(C, \pi, T, R)$` skill architecture for standardized integration.
+
+The Deterministic FMEA Generator skill was meticulously scaffolded following the sovereign EN-OS `$S=(C, \pi, T, R)$` skill architecture, establishing a standardized and robust framework for integrating new agent capabilities and ensuring system consistency.

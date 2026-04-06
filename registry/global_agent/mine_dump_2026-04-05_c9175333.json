@@ -1,0 +1,96 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The project to standardize Cloudflare R2 endpoints and CORS policies, outlined in Epic #54, has been successfully completed. This initiative involved creating a centralized endpoint registry, refactoring asset synchronization scripts, and implementing dynamic CORS configuration across all active buckets. This marks a significant improvement in the management and accessibility of sovereign infrastructure assets.",
+    "one_liner": "Successfully standardized Cloudflare R2 endpoints and CORS policies, completing Epic #54 and enhancing asset management.",
+    "source_context": "walkthrough.md: \"I've completed the implementation plan to standardize your Cloudflare R2 ecosystem according to Epic #54.\"",
+    "tags": [
+      "project completion",
+      "cloudflare",
+      "r2",
+      "cors",
+      "infrastructure"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Cloudflare R2 API tokens used for modifying bucket-level configurations, such as CORS policies via the S3 API, must be scoped with \"Admin Read & Write\" permissions. Tokens with only \"Object Read & Write\" permissions will result in `Access Denied` errors for these operations, preventing successful configuration updates.",
+    "one_liner": "Cloudflare R2 API tokens for bucket-level configurations require \"Admin Read & Write\" permissions.",
+    "source_context": "walkthrough.md: \"To alter bucket-level configurations like CORS via the S3 API, Cloudflare requires an \"Admin Read & Write\" level token.\"",
+    "tags": [
+      "cloudflare",
+      "r2",
+      "api",
+      "permissions",
+      "cors",
+      "access control"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "A dynamic CORS configuration script was developed for Cloudflare R2, which now imports a centralized `BUCKET_MAP` from the asset synchronization script. This refactored script deduplicates bucket names and applies a standardized public asset serving policy across all active buckets, eliminating the need for individual `.env` mappings and improving consistency.",
+    "one_liner": "Implemented a dynamic R2 CORS configuration script that centralizes bucket definitions and applies standardized policies.",
+    "source_context": "walkthrough.md: \"I rewrote `configure_r2_cors.py` to no longer look for a single `.env` bucket mapping. It now imports the `BUCKET_MAP` from `sync_r2.py`...\"",
+    "tags": [
+      "cloudflare",
+      "r2",
+      "cors",
+      "automation",
+      "architecture",
+      "scripting"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A new sovereign infrastructure registry file, `r2_endpoints.md`, has been created to centralize documentation for all active Cloudflare R2 buckets. This registry provides a single source of truth, pairing each bucket's custom domain with its Cloudflare-provided `.r2.dev` URL, and explicitly notes the removal of the `assets-mo` bucket.",
+    "one_liner": "Established a centralized registry for Cloudflare R2 endpoints, documenting custom domains and Cloudflare URLs.",
+    "source_context": "walkthrough.md: \"I've created the sovereign infrastructure record at `D:\\GitHub\\global_agent\\registry\\infrastructure\\r2_endpoints.md`. This matrix documents the 5 active buckets (dropping `assets-mo`).\"",
+    "tags": [
+      "documentation",
+      "cloudflare",
+      "r2",
+      "infrastructure",
+      "registry"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Auditing Cloudflare R2 custom domains and randomly generated `.r2.dev` public URLs cannot be performed solely via the standard S3 (`boto3`) API. Comprehensive data collection for these endpoints requires direct access to the Cloudflare Dashboard or specific Cloudflare API keys, highlighting a limitation of the standard S3 interface for Cloudflare-specific features.",
+    "one_liner": "Standard S3 APIs cannot audit Cloudflare R2 custom domains or `.r2.dev` URLs, requiring Cloudflare-specific access.",
+    "source_context": "implementation_plan.md: \"Since Cloudflare R2 custom domains and randomly generated `.r2.dev` public URLs cannot be audited solely via the standard S3 (`boto3`) API...\"",
+    "tags": [
+      "cloudflare",
+      "r2",
+      "api limitation",
+      "boto3",
+      "audit",
+      "tooling"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The `BUCKET_MAP` in `sync_r2.py` was upgraded from a simple string-mapping to a more robust object-mapping schema. This new structure allows for associating additional metadata, such as `public_url`, directly with each bucket entry, significantly improving script visibility, maintainability, and the overall clarity of asset synchronization configurations.",
+    "one_liner": "Upgraded `BUCKET_MAP` to an object-mapping schema for enhanced R2 bucket metadata and visibility.",
+    "source_context": "walkthrough.md: \"I refactored `sync_r2.py` to upgrade the `BUCKET_MAP` from a string-mapping to an object-mapping schema...\"",
+    "tags": [
+      "code breakthrough",
+      "architecture",
+      "python",
+      "data structure",
+      "r2",
+      "refactoring"
+    ]
+  }
+]
