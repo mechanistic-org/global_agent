@@ -11,13 +11,30 @@ from global_config import get_repo_root
 # All projects use the {project}-assets/R2_STAGING/ local staging pattern.
 # Add new projects here as they are onboarded.
 BUCKET_MAP = {
-    'eriknorris':  'assets-eriknorris-com',
-    'portfolio':   'assets-eriknorris-com',   # portfolio-assets still feeds eriknorris bucket
-    'mechanistic': 'assets-mechanistic-com',
-    'mootmoat':    'assets-mootmoat-com',
-    'moreplay':    'assets-moreplay-com',
-    'MO':          'assets-mo',
-    'hyphen':      'assets-hyphen-com',
+    'eriknorris':  {
+        'bucket_name': 'assets-eriknorris-com',
+        'public_url': 'https://assets.eriknorris.com'
+    },
+    'portfolio':   {
+        'bucket_name': 'assets-eriknorris-com',
+        'public_url': 'https://assets.eriknorris.com'
+    },
+    'mechanistic': {
+        'bucket_name': 'assets-mechanistic-com',
+        'public_url': 'https://assets.mechanistic.com'
+    },
+    'mootmoat': {
+        'bucket_name': 'assets-mootmoat-com',
+        'public_url': 'https://assets.mootmoat.com'
+    },
+    'moreplay': {
+        'bucket_name': 'assets-moreplay-com',
+        'public_url': 'https://assets.moreplay.com'
+    },
+    'hyphen': {
+        'bucket_name': 'assets-hyphen-com',
+        'public_url': 'https://assets-hyphen.mechanistic.com'
+    },
 }
 
 def get_r2_credentials(target: str) -> dict:
@@ -26,15 +43,16 @@ def get_r2_credentials(target: str) -> dict:
     Bucket name is resolved from BUCKET_MAP based on --target,
     not from a single R2_BUCKET_NAME env var (which caused cross-bucket uploads).
     """
-    bucket = BUCKET_MAP.get(target)
-    if not bucket:
+    config = BUCKET_MAP.get(target)
+    if not config:
         known = ', '.join(BUCKET_MAP.keys())
         raise ValueError(f"Unknown target '{target}'. Known targets: {known}")
     return {
         'ACCOUNT_ID':       os.getenv('R2_ACCOUNT_ID'),
         'ACCESS_KEY_ID':    os.getenv('R2_ACCESS_KEY_ID'),
         'SECRET_ACCESS_KEY': os.getenv('R2_SECRET_ACCESS_KEY'),
-        'BUCKET_NAME':      bucket,
+        'BUCKET_NAME':      config['bucket_name'],
+        'PUBLIC_URL':       config['public_url']
     }
 
 def get_r2_client(creds):
@@ -135,6 +153,7 @@ def sync_assets():
     print(f"   Target Repo Context: {args.target}")
     print(f"   Local Source: {staging_path}")
     print(f"   Cloudflare Bucket: {creds['BUCKET_NAME']}")
+    print(f"   Public Base URL:   {creds['PUBLIC_URL']}")
     
     if not os.path.exists(staging_path):
         print(f"❌ Error: Staging directory '{staging_path}' not found.")

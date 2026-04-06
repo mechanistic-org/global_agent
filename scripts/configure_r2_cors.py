@@ -2,6 +2,7 @@ import os
 import boto3
 from botocore.exceptions import NoCredentialsError
 from dotenv import load_dotenv
+from sync_r2 import BUCKET_MAP
 
 # Load environment variables
 env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
@@ -11,7 +12,6 @@ load_dotenv(env_path)
 R2_ACCOUNT_ID = os.getenv('R2_ACCOUNT_ID')
 R2_ACCESS_KEY_ID = os.getenv('R2_ACCESS_KEY_ID')
 R2_SECRET_ACCESS_KEY = os.getenv('R2_SECRET_ACCESS_KEY')
-R2_BUCKET_NAME = os.getenv('R2_BUCKET_NAME')
 
 def get_r2_client():
     try:
@@ -34,23 +34,22 @@ def configure_cors():
         'CORSRules': [{
             'AllowedHeaders': ['*'],
             'AllowedMethods': ['GET', 'HEAD'],
-            'AllowedOrigins': [
-                'https://eriknorris.com',
-                'https://www.eriknorris.com',
-                'http://localhost:4321',
-                'https://*.eriknorris-com.pages.dev'
-            ],
+            'AllowedOrigins': ['*'],
             'ExposeHeaders': ['ETag'],
             'MaxAgeSeconds': 3000
         }]
     }
 
-    print(f"🚀 Configuring CORS for bucket: {R2_BUCKET_NAME}")
-    try:
-        s3.put_bucket_cors(Bucket=R2_BUCKET_NAME, CORSConfiguration=cors_configuration)
-        print("✅ CORS configuration applied successfully.")
-    except Exception as e:
-        print(f"❌ Failed to apply CORS configuration: {e}")
+    # Use sets to avoid duplicate bucket configs if multiple aliases point to same bucket
+    unique_buckets = set([config['bucket_name'] for config in BUCKET_MAP.values()])
+
+    print(f"🚀 Configuring uniform CORS for {len(unique_buckets)} unique buckets...")
+    for bucket_name in unique_buckets:
+        try:
+            s3.put_bucket_cors(Bucket=bucket_name, CORSConfiguration=cors_configuration)
+            print(f"✅ CORS configuration applied successfully to: {bucket_name}")
+        except Exception as e:
+            print(f"❌ Failed to apply CORS configuration to {bucket_name}: {e}")
 
 if __name__ == "__main__":
     configure_cors()

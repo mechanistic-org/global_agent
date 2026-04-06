@@ -243,3 +243,18 @@ A major research and development epic has been initiated to build a robust, loca
 ## 2026-04-05 — Pagefind integration enables sovereign, zero-JS impact full-text search for the engineering corpus.
 
 The portfolio successfully integrated Pagefind to provide sovereign full-text search over its 25-year engineering corpus. This architectural decision eliminated the need for a backend or third-party APIs, replacing legacy React components with a new vanilla JS/Astro component. The design ensures zero JavaScript bundle size impact on initial page load by dynamically loading search-related scripts only when invoked.
+
+
+## 2026-04-05 — The new Skill Standard ($S=(C, \pi, T, R)$) is driving a major architectural refactor, shrinking AI complexity and boosting deterministic execution.
+
+The application of the $S=(C, \pi, T, R)$ framework and Progressive Disclosure mechanic has fundamentally reshaped the scope of Epics 109-112, significantly reducing the need for complex AI reasoning in areas like routing and emphasizing deterministic boundaries. This shift prevents agent hallucination and ensures reliable execution.
+
+
+## 2026-04-05 — AI's role in mechanical tasks is redefined as an orchestrator for deterministic scripts, preventing hallucination in critical calculations.
+
+For mechanical engineering tasks, the AI's role is redefined from performing calculations to orchestrating deterministic "Level 3 Deterministic Scripts." This approach, exemplified by the `FMEA_Compliance_Checker.py` script, ensures accuracy and prevents the agent from hallucinating CAD structures or engineering tolerances.
+
+
+## 2026-04-05 — The $S=(C, \pi, T, R)$ standard boosts routing efficiency and eliminates "Ghost Actions" through metadata-driven loading and deterministic trace evaluation.
+
+The $S=(C, \pi, T, R)$ framework significantly enhances routing efficiency by allowing the orchestrator to load only Level 1 YAML metadata (~50 tokens per skill) for hundreds of skills without degrading AI reasoning. It also enables deterministic evaluation by scanning Local MCP traces to verify tool execution, instantly catching "Ghost Actions" where agents hallucinate outcomes.
