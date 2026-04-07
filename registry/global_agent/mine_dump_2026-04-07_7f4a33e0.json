@@ -1,0 +1,77 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The NanoClaw container agent now features \"Crash Resurrection,\" allowing it to detect previous workflow crashes by reading local state files and dynamically informing the LLM to resume execution. This significantly enhances agent resilience and continuity, ensuring that operations can pick up exactly where they left off after an unexpected termination.",
+    "one_liner": "NanoClaw agents can now resurrect from crashes, resuming workflows with LLM awareness for enhanced resilience.",
+    "source_context": "This plan implements 'Crash Resurrection' within the NanoClaw container agent layer... I have implemented the overarching requested work for Epic 102 (Crash Resurrection)...",
+    "tags": [
+      "NanoClaw",
+      "Crash Resurrection",
+      "Agent Resilience",
+      "Workflow Management"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A critical design decision for Crash Resurrection is the injection of a specific warning string into the LLM's payload prompt. This ensures the model is dynamically aware that it's continuing a failed run, allowing it to execute tasks efficiently and avoid repeating timeout failures, thereby optimizing recovery.",
+    "one_liner": "LLMs are dynamically informed of previous crashes via prompt injection to optimize recovery efficiency.",
+    "source_context": "Inject a WARNING: The previous worker was killed... string into the payload prompt to make the LLM aware of the state crash. Injected a runtime string block (`resurrection_warning`) into the LLM payload...",
+    "tags": [
+      "LLM",
+      "Prompt Engineering",
+      "Crash Recovery",
+      "Agent State",
+      "Design Pattern"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "draft",
+    "content": "The successful local verification and build of the `nanoclaw:latest` Docker image (`Task #92`) is a significant milestone. This directly clears a prerequisite blocker for `Epic #101`, which mandates agent mode parsing baked into Docker container metadata, enabling further critical development and accelerating the project timeline.",
+    "one_liner": "Successful NanoClaw Docker build unblocks a major prerequisite for Epic #101, accelerating development.",
+    "source_context": "I fired `docker build -t nanoclaw:latest .` successfully... The completion of this task directly clears out the prerequisite blocker for NanoClaw Execution gating (`Epic #101`)...",
+    "tags": [
+      "Docker",
+      "NanoClaw",
+      "Prerequisite",
+      "Epic #101",
+      "Development Milestone",
+      "Team Win"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must persist their workflow state locally in markdown artifacts, utilizing YAML frontmatter for structured data. This explicit local registry parsing enables robust state tracking, allowing for features like crash resurrection and providing a clear, persistent record of agent activity for debugging and auditing.",
+    "one_liner": "Agents must persist workflow state locally in markdown artifacts for robust tracking and resilience.",
+    "source_context": "Add a helper function to read `registry/global_agent/{safe_repo}_workflow_state_issue_{issue_number}.md`, parsing its YAML frontmatter... Added `check_for_crash_resurrection()`, a native function built to read `f\"{safe_repo}_workflow_state_issue_{issue_number}.md\"` local text artifacts...",
+    "tags": [
+      "Workflow State",
+      "Persistence",
+      "Agent Architecture",
+      "YAML",
+      "Principle"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The Circuit Breaker timeout mechanism is designed to automatically halt a `workflow_state` back to `halted` upon an unexpected drop or termination. This critical design ensures that when `run_agent.py` is re-initiated, it can correctly identify and respond to a previous violent crash, effectively leveraging the crash resurrection feature for seamless recovery.",
+    "one_liner": "The Circuit Breaker ensures graceful state halting upon drops, enabling effective crash resurrection.",
+    "source_context": "[!TIP] The Circuit breaker timeout halts drop `workflow_state` back to *halted*.",
+    "tags": [
+      "Circuit Breaker",
+      "Timeout",
+      "Workflow State",
+      "Crash Recovery",
+      "System Design"
+    ]
+  }
+]

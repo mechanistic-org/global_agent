@@ -288,3 +288,8 @@ The `normalize_asset.py` extraction skill is designed to safely parse inbound da
 ## 2026-04-06 — Local vision extracts mechanical constraints from drawings and enforces Y14.5 compliance, enabling automated design verification.
 
 The Vision Pipeline includes a 'Mechanical X-Section Extractor' that processes cross-sectional drawings locally. This skill calculates mechanical stack constraints and enforces Y14.5 Truth Engine compliance, demonstrating a powerful application of local vision capabilities for automated engineering design verification and quality assurance.
+
+
+## 2026-04-07 — NanoClaw agents can now resurrect from crashes, resuming workflows with LLM awareness for enhanced resilience.
+
+The NanoClaw container agent now features "Crash Resurrection," allowing it to detect previous workflow crashes by reading local state files and dynamically informing the LLM to resume execution. This significantly enhances agent resilience and continuity, ensuring that operations can pick up exactly where they left off after an unexpected termination.

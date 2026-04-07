@@ -18,7 +18,7 @@ def apply_microcompaction(payload: str) -> str:
         
     print(f"[KAIROS] Triggering Microcompaction on {len(payload)} chars...", file=sys.stderr)
     req = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=json.dumps({
-        "model": "qwen2.5-coder:32b",
+        "model": "phi3",
         "prompt": (
             "You are KAIROS, a strict micro-compaction pipeline constraint.\n"
             "Pre-digest the following massive forensic data wall exactly as strict Markdown.\n"
