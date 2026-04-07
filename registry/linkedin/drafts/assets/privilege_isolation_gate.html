@@ -1,0 +1,133 @@
+<div style="padding:2.5rem; background-color:#000000; font-family:'JetBrains Mono', monospace; color:#E0E0E0;">
+  <div style="display:flex;gap:12px;margin-bottom:1.5rem">
+    <button id="btn-plan" onclick="setMode('plan')" style="padding:8px 24px;border:1px solid #00FFFF;border-radius:0;background:#002222;cursor:pointer;font-size:14px;color:#00FFFF;font-family:'JetBrains Mono', monospace;text-transform:uppercase;">PLAN mode</button>
+    <button id="btn-exec" onclick="setMode('exec')" style="padding:8px 24px;border:1px solid rgba(255,255,255,0.2);border-radius:0;background:transparent;cursor:pointer;font-size:14px;color:rgba(255,255,255,0.4);font-family:'JetBrains Mono', monospace;text-transform:uppercase;">EXEC mode</button>
+  </div>
+
+  <svg width="100%" viewBox="0 0 680 330" style="background:#000000; overflow:visible;">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="#E0E0E0" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter"/>
+      </marker>
+    </defs>
+
+    <!-- Source Node -->
+    <g class="node">
+      <rect x="30" y="115" width="130" height="90" rx="0" fill="#0A0A0A" stroke="#E0E0E0" stroke-width="1"/>
+      <text x="95" y="153" text-anchor="middle" dominant-baseline="central" fill="#E0E0E0" font-size="14" font-weight="700">NanoClaw</text>
+      <text x="95" y="173" text-anchor="middle" dominant-baseline="central" fill="rgba(255,255,255,0.6)" font-size="12">AGENT_NODE</text>
+    </g>
+
+    <line x1="160" y1="160" x2="197" y2="160" stroke="#E0E0E0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Gate Node -->
+    <g id="gate-group">
+      <rect id="gate-rect" x="200" y="50" width="180" height="220" rx="0" fill="#001100" stroke="#00FF00" stroke-width="1"/>
+      <text id="gm" x="290" y="84" text-anchor="middle" dominant-baseline="central" fill="#00FF00" font-size="14" font-weight="700">PLAN_MODE</text>
+      <text id="gs" x="290" y="106" text-anchor="middle" fill="#00FF00" font-size="11">WHITELIST_ACTIVE</text>
+      <line x1="220" y1="124" x2="360" y2="124" stroke="#00FF00" stroke-width="0.5" opacity="0.5"/>
+      <text id="gc1" x="224" y="148" fill="#00FF00" font-size="12">READ_ONLY</text>
+      <text id="gc2" x="224" y="166" fill="#00FF00" font-size="12">WHITELIST</text>
+      <text id="gc3" x="224" y="184" fill="#00FF00" font-size="12">STABLE</text>
+      <line x1="220" y1="202" x2="360" y2="202" stroke="#00FF00" stroke-width="0.5" opacity="0.5"/>
+      <text id="gn1" x="290" y="224" text-anchor="middle" fill="#00FF00" font-size="12">[ 3 / 6 TOOLS ]</text>
+      <text id="gn2" x="290" y="242" text-anchor="middle" fill="#00FF00" font-size="12">ALLOWED</text>
+    </g>
+
+    <line x1="380" y1="160" x2="412" y2="160" stroke="#E0E0E0" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Allowed Tools -->
+    <g class="node">
+      <rect x="415" y="22" width="240" height="34" rx="0" fill="#001100" stroke="#00FF00" stroke-width="1"/>
+      <text x="435" y="39" dominant-baseline="central" fill="#00FF00" font-size="12">read_file</text>
+      <text x="645" y="39" text-anchor="end" dominant-baseline="central" fill="#00FF00" font-size="12">[ OK ]</text>
+    </g>
+    <g class="node">
+      <rect x="415" y="64" width="240" height="34" rx="0" fill="#001100" stroke="#00FF00" stroke-width="1"/>
+      <text x="435" y="81" dominant-baseline="central" fill="#00FF00" font-size="12">query_memory</text>
+      <text x="645" y="81" text-anchor="end" dominant-baseline="central" fill="#00FF00" font-size="12">[ OK ]</text>
+    </g>
+    <g class="node">
+      <rect x="415" y="106" width="240" height="34" rx="0" fill="#001100" stroke="#00FF00" stroke-width="1"/>
+      <text x="435" y="123" dominant-baseline="central" fill="#00FF00" font-size="12">list_tasks</text>
+      <text x="645" y="123" text-anchor="end" dominant-baseline="central" fill="#00FF00" font-size="12">[ OK ]</text>
+    </g>
+
+    <!-- Separator -->
+    <line id="sep-line" x1="415" y1="160" x2="655" y2="160" stroke="#FF6600" stroke-width="1" stroke-dasharray="4 4" opacity="1"/>
+    <text id="sep-text" x="535" y="152" text-anchor="middle" fill="#FF6600" font-size="10" opacity="1">EXEC_ONLY -&gt; MASKED_IN_PLAN</text>
+
+    <!-- Restricted Tools -->
+    <g id="rt1">
+      <rect id="rr1" x="415" y="180" width="240" height="34" rx="0" fill="#1A0A00" stroke="#FF6600" stroke-width="1"/>
+      <text id="rh1" x="435" y="197" dominant-baseline="central" fill="#FF6600" font-size="12">write_file</text>
+      <text id="rl1" x="645" y="197" text-anchor="end" dominant-baseline="central" fill="#FF6600" font-size="12">[ MASKED ]</text>
+    </g>
+    <g id="rt2">
+      <rect id="rr2" x="415" y="222" width="240" height="34" rx="0" fill="#1A0A00" stroke="#FF6600" stroke-width="1"/>
+      <text id="rh2" x="435" y="239" dominant-baseline="central" fill="#FF6600" font-size="12">execute_bash</text>
+      <text id="rl2" x="645" y="239" text-anchor="end" dominant-baseline="central" fill="#FF6600" font-size="12">[ MASKED ]</text>
+    </g>
+    <g id="rt3">
+      <rect id="rr3" x="415" y="264" width="240" height="34" rx="0" fill="#1A0A00" stroke="#FF6600" stroke-width="1"/>
+      <text id="rh3" x="435" y="281" dominant-baseline="central" fill="#FF6600" font-size="12">deploy_skill</text>
+      <text id="rl3" x="645" y="281" text-anchor="end" dominant-baseline="central" fill="#FF6600" font-size="12">[ MASKED ]</text>
+    </g>
+  </svg>
+
+  <div style="margin-top:1.5rem;background:#0A0A0A;border:1px solid rgba(255,255,255,0.1);padding:16px;font-size:13px;line-height:1.6">
+    <span style="color:#00FFFF">if</span> AGENT_MODE == <span style="color:#00FF00">"plan"</span>:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;tools = [t <span style="color:#00FFFF">for</span> t <span style="color:#00FFFF">in</span> tools <span style="color:#00FFFF">if</span> t.name <span style="color:#00FFFF">in</span> READ_ONLY_WHITELIST]
+  </div>
+</div>
+
+<script>
+function setMode(mode) {
+  const plan = mode === 'plan';
+  
+  // Toggles Buttons
+  const btnPlan = document.getElementById('btn-plan');
+  const btnExec = document.getElementById('btn-exec');
+  
+  btnPlan.style.background = plan ? '#002222' : 'transparent';
+  btnPlan.style.color = plan ? '#00FFFF' : 'rgba(255,255,255,0.4)';
+  btnPlan.style.borderColor = plan ? '#00FFFF' : 'rgba(255,255,255,0.2)';
+
+  btnExec.style.background = !plan ? '#002222' : 'transparent';
+  btnExec.style.color = !plan ? '#00FFFF' : 'rgba(255,255,255,0.4)';
+  btnExec.style.borderColor = !plan ? '#00FFFF' : 'rgba(255,255,255,0.2)';
+
+  // Toggles Gate
+  document.getElementById('gate-rect').setAttribute('fill', plan ? '#001100' : '#1A0A00');
+  document.getElementById('gate-rect').setAttribute('stroke', plan ? '#00FF00' : '#FF6600');
+  
+  const gateTexts = ['gm', 'gs', 'gc1', 'gc2', 'gc3', 'gn1', 'gn2'];
+  gateTexts.forEach(id => {
+    document.getElementById(id).setAttribute('fill', plan ? '#00FF00' : '#FF6600');
+  });
+
+  document.getElementById('gm').textContent = plan ? 'PLAN_MODE' : 'EXEC_MODE';
+  document.getElementById('gs').textContent = plan ? 'WHITELIST_ACTIVE' : 'WHITELIST_DISABLED';
+  document.getElementById('gc1').textContent = plan ? 'READ_ONLY' : 'EXECUTION';
+  document.getElementById('gc2').textContent = plan ? 'WHITELIST' : 'UNMASKED';
+  document.getElementById('gc3').textContent = plan ? 'STABLE' : 'CRITICAL';
+  document.getElementById('gn1').textContent = plan ? '[ 3 / 6 TOOLS ]' : '[ 6 / 6 TOOLS ]';
+  
+  // Toggles Lower Tools
+  const rects = ['rr1', 'rr2', 'rr3'];
+  const heads = ['rh1', 'rh2', 'rh3'];
+  const labels = ['rl1', 'rl2', 'rl3'];
+  
+  for(let i=0; i<3; i++) {
+    document.getElementById(rects[i]).setAttribute('stroke', plan ? '#FF6600' : '#00FF00');
+    document.getElementById(rects[i]).setAttribute('fill', plan ? '#1A0A00' : '#001100');
+    document.getElementById(heads[i]).setAttribute('fill', plan ? '#FF6600' : '#00FF00');
+    document.getElementById(labels[i]).setAttribute('fill', plan ? '#FF6600' : '#00FF00');
+    document.getElementById(labels[i]).textContent = plan ? '[ MASKED ]' : '[ OK ]';
+  }
+
+  // Toggles Separator
+  document.getElementById('sep-line').style.opacity = plan ? '1' : '0';
+  document.getElementById('sep-text').style.opacity = plan ? '1' : '0';
+}
+</script>
