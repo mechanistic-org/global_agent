@@ -278,3 +278,13 @@ A core architectural decision for the Deterministic FMEA Generator is to leverag
 ## 2026-04-05 — New FMEA skill adheres strictly to the sovereign EN-OS `$S=(C, \pi, T, R)$` skill architecture for standardized integration.
 
 The Deterministic FMEA Generator skill was meticulously scaffolded following the sovereign EN-OS `$S=(C, \pi, T, R)$` skill architecture, establishing a standardized and robust framework for integrating new agent capabilities and ensuring system consistency.
+
+
+## 2026-04-06 — Core asset parsing is designed to be entirely local, utilizing standard libraries and zero cloud APIs for privacy and independence.
+
+The `normalize_asset.py` extraction skill is designed to safely parse inbound data blobs using only standard libraries and zero cloud APIs. This architectural decision ensures local processing, maintains data privacy, and reduces external dependencies for core ingestion, reinforcing a 'local-first' principle.
+
+
+## 2026-04-06 — Local vision extracts mechanical constraints from drawings and enforces Y14.5 compliance, enabling automated design verification.
+
+The Vision Pipeline includes a 'Mechanical X-Section Extractor' that processes cross-sectional drawings locally. This skill calculates mechanical stack constraints and enforces Y14.5 Truth Engine compliance, demonstrating a powerful application of local vision capabilities for automated engineering design verification and quality assurance.

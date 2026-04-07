@@ -1,0 +1,95 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The Arc 003 implementation plan aims to move beyond theoretical OS definition to achieve actual traction by building specific, working tools that ingest real-world data and produce artifact-grade outputs. This marks a critical shift from conceptualization to tangible engineering deliverables, focusing on practical application.",
+    "one_liner": "Arc 003 shifts from OS definition to building working tools for real-world data ingestion and artifact production.",
+    "source_context": "The goal is to move from OS definition to **actual traction**\u2014building the specific, working tools that swallow real-world data and produce artifact-grade outputs.",
+    "tags": [
+      "project goal",
+      "implementation",
+      "traction",
+      "engineering mandate"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The `normalize_asset.py` extraction skill is designed to safely parse inbound data blobs using only standard libraries and zero cloud APIs. This architectural decision ensures local processing, maintains data privacy, and reduces external dependencies for core ingestion, reinforcing a 'local-first' principle.",
+    "one_liner": "Core asset parsing is designed to be entirely local, utilizing standard libraries and zero cloud APIs for privacy and independence.",
+    "source_context": "The Extraction Skill (`normalize_asset.py`): An MCP-exposed Python orchestrator that takes an inbound blob, detects the MIME type, safely parses it (using standard libraries, zero cloud APIs), and drops it into the system.",
+    "tags": [
+      "architecture",
+      "local-first",
+      "privacy",
+      "data ingestion",
+      "engineering principle"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The Voice Pipeline automates the conversion of unstructured voice notes into structured, action-oriented registry documents. This is achieved by automatically transcribing audio locally and then triggering an existing mining workflow to generate formal timeline updates and categorized registry entries without any manual intervention, representing a significant efficiency gain.",
+    "one_liner": "Unstructured voice notes are automatically transformed into structured registry documents and timeline updates, eliminating manual clicks.",
+    "source_context": "Automatically triggering the existing `mine_session.py` workflow against the transcript, outputting formal timeline updates and categorized registry updates without any human clicks.",
+    "tags": [
+      "automation",
+      "voice processing",
+      "workflow",
+      "efficiency",
+      "AI/ML",
+      "registry"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "inferred",
+    "destination": "portfolio",
+    "content": "The Vision Pipeline includes a 'Mechanical X-Section Extractor' that processes cross-sectional drawings locally. This skill calculates mechanical stack constraints and enforces Y14.5 Truth Engine compliance, demonstrating a powerful application of local vision capabilities for automated engineering design verification and quality assurance.",
+    "one_liner": "Local vision extracts mechanical constraints from drawings and enforces Y14.5 compliance, enabling automated design verification.",
+    "source_context": "Mechanical X-Section Extractor: Write a Python vision-wrapper that accepts a cross-sectional drawing, calculates mechanical stack constraints locally, and enforces Y14.5 Truth Engine compliance.",
+    "tags": [
+      "vision",
+      "engineering",
+      "CAD",
+      "compliance",
+      "local processing",
+      "AI/ML"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Every piece of extracted data, regardless of its source (e.g., from an ingested PDF), must explicitly list its `sources: []` in its frontmatter. This rule is critical for preventing hallucinated context and ensuring the integrity, traceability, and reliability of all information within the system.",
+    "one_liner": "All extracted data must explicitly list its sources in frontmatter to prevent hallucination and ensure provenance.",
+    "source_context": "Provenance (Issue 115): Every piece of extracted data (e.g. from an ingested PDF) must list its `sources: []` in the frontmatter, preventing hallucinated context.",
+    "tags": [
+      "law",
+      "data integrity",
+      "provenance",
+      "AI ethics",
+      "architecture",
+      "hallucination prevention"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "To prevent inbound data from becoming disorganized, foundational structural enhancements are implemented, including strictly formatted logging to a global `timeline.md`, automatic registration of new topological nodes in a central `index.md`, and mandatory provenance tracking. These components act as 'the glue' for data integrity, discoverability, and system coherence.",
+    "one_liner": "Foundational logging, mapmaking, and provenance ensure inbound data remains organized and discoverable, preventing a 'junk drawer' scenario.",
+    "source_context": "To ensure this inbound data doesn't degenerate into a messy junk drawer, the following structural enhancements must be running underneath the three pipelines natively: Logging (Issue 113)... Mapmaking (Issue 114)... Provenance (Issue 115)...",
+    "tags": [
+      "architecture",
+      "data management",
+      "logging",
+      "indexing",
+      "discoverability",
+      "system design"
+    ]
+  }
+]
