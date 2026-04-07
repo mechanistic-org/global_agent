@@ -318,3 +318,13 @@ To prevent GitHub webhook timeouts during rigorous security analysis, the FastAP
 ## 2026-04-07 — Thread State Machine established to track and manage sequences of related LinkedIn posts.
 
 An architectural tracking ledger, the Thread State Machine (`registry/linkedin/threads/trilogy_001.md`), has been established and initialized to manage sequences of related LinkedIn posts. This ledger formalizes relationships, tracks live URLs, and monitors engagement states for future cross-linking and content strategy, providing a structured approach to multi-post narratives.
+
+
+## 2026-04-07 — A 'Single Pane of Glass' Streamlit dashboard provides actuarial-grade observability for EN-OS agentic infrastructure.
+
+The EN-OS sovereign agentic infrastructure now features an actuarial-grade 'Single Pane of Glass' observability dashboard. This dashboard, built with Streamlit, provides zero-friction local filesystem querying across four primary operational quadrants, offering comprehensive insight into system health and performance.
+
+
+## 2026-04-07 — Introducing 'Resurrection Bay': precise native agent respawns from issue markers for robust workflow recovery.
+
+A key safety feature, 'Resurrection Bay,' has been developed within the EN-OS dashboard. This allows administrators to precisely respawn native agents from an exact issue marker in the background, providing robust recovery capabilities for halted workflows while maintaining an annotated audit history.

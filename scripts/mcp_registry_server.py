@@ -5,6 +5,7 @@ import yaml
 import json
 import urllib.request
 import chromadb
+import subprocess
 from pydantic import BaseModel, Field, ValidationError
 from typing import Optional
 
@@ -222,6 +223,32 @@ def read_design_system() -> str:
             return f.read()
     except Exception as e:
         return f"ERROR: FastMCP Hub violently failed to aggregate tokens: {str(e)}"
+
+@mcp.tool()
+def normalize_local_asset(filepath: str, target_path: Optional[str] = None) -> str:
+    """
+    Ingest and normalize a local Office artifact (.pdf, .docx, .pptx, .xlsx, .csv, .eml) into Markdown.
+    Provides the agent with access to non-markdown payloads by translating them strictly locally using Docling, Pandas, or Email parsers.
+    
+    Args:
+        filepath: Absolute path to the original target asset.
+        target_path: Optional absolute path indicating where the Markdown equivalent should be deposited.
+                     If missing, the system forces ephemeral write to registry/.tmp/normalized/ and returns that path.
+    """
+    script_path = os.path.abspath(os.path.join(ENOS_ROOT, "scripts", "normalize_asset.py"))
+    
+    cmd = ["python", script_path, "--input", filepath]
+    if target_path:
+        cmd.extend(["--output", target_path])
+        
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        if result.returncode == 0:
+            return f"SUCCESS: Asset normalized successfully.\\nExecution Log:\\n{result.stdout.strip()}"
+        else:
+            return f"ERROR: Normalization failed.\\nStdout: {result.stdout.strip()}\\nStderr: {result.stderr.strip()}"
+    except Exception as e:
+        return f"CRITICAL: Failed to execute normalization script: {str(e)}"
 
 if __name__ == "__main__":
     mcp.run()
