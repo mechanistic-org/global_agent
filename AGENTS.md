@@ -11,6 +11,8 @@ Read it fully before taking any action.
 2. **All context retrieval goes through the MCP router.** The `enos_router` is at `http://127.0.0.1:8000/mcp`.
 3. **Every session must declare a DoD** before work begins, sourced from the live sprint board.
 4. **All ephemeral findings must be persisted** via `push_forensic_doc` before ending the session.
+5. **Registry Structuration Law:** Before operating in `registry/`, agents must consult `registry/index.md` for topography. If an agent creates a new structural node or sub-directory in `registry/`, they must unconditionally log the new structural definition in `registry/index.md`.
+6. **Documentation & Provenance Law:** Any analytical artifact or forensic document written to the registry MUST include a `sources: []` array in its underlying markdown/frontmatter. This array must contain absolute URIs or commit hashes of the core codebase files that directly informed the analysis. Eradicate un-cited claims.
 
 ---
 

@@ -2,6 +2,7 @@
 project_id: "HW-001"
 npi_stage: "EVT"
 bom_health_flags: "Active, Second-Source Confirmed, Placeholder $1000 for bespoke chassis"
+sources: []
 ---
 
 # Physical Hardware Product Requirements Document (PRD)

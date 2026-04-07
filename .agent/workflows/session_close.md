@@ -84,9 +84,16 @@ push_forensic_doc(
 )
 ```
 
-6. **Update Sprint_Plan.md** — mark completed items `~~strikethrough~~`, promote next Sprint Now item if applicable.
+// turbo
+6. **Append to Singleton Timeline:** Log this teardown to the `registry/timeline.md` chronological ledger. Format must be `grep`-able.
+```powershell
+$date = Get-Date -Format "yyyy-MM-dd"
+Add-Content -Path "D:\GitHub\global_agent\registry\timeline.md" -Value "## [$date] action: session_close | agent: Antigravity | docs: <ticket#>"
+```
 
-7. **Close this conversation. Open a new one for the next ticket.**
+7. **Update Sprint_Plan.md** — mark completed items `~~strikethrough~~`, promote next Sprint Now item if applicable.
+
+8. **Close this conversation. Open a new one for the next ticket.**
 
 ## Drift Symptoms — Close Immediately If You See These
 
