@@ -24,6 +24,10 @@ posts:
     arc_position: 5
     post_url: "https://www.linkedin.com/posts/eriknorris_weve-traced-the-transition-from-chaotic-share-7445540932499914752-U6Ik?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
     dub_link: ""
+  - id: 2026-04-07_arc_002_p6_native_post.md
+    arc_position: 6
+    post_url: "https://www.linkedin.com/posts/eriknorris_agenticai-sovereignos-aiengineering-activity-7447297209748066304-UvzJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+    dub_link: ""
 ---
 
 # Thread: Wiring the Nervous System (Arc 002)

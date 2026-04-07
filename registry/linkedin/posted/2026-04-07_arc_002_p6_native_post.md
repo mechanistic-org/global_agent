@@ -1,3 +1,9 @@
+---
+thread_id: arc_002_nervous_system
+status: posted
+arc_position: 6
+post_url: "https://www.linkedin.com/posts/eriknorris_agenticai-sovereignos-aiengineering-activity-7447297209748066304-UvzJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
+---
 It all comes down to orchestration. And in this case, the answer is three lines of Python.
 
 ```python

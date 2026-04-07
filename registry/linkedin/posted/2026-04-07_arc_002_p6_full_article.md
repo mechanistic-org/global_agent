@@ -1,3 +1,9 @@
+---
+thread_id: arc_002_nervous_system
+status: posted
+arc_position: 6
+post_url: "https://www.linkedin.com/pulse/architecture-sovereign-ai-why-we-killed-swarm-erik-norris-ndnzc"
+---
 # The Architecture of Sovereign AI: Why We Killed the Swarm
 
 Arc 002, Post 6 · EN-OS Engineering Series
