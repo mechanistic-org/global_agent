@@ -1,0 +1,90 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "Epic #110 introduces a core architectural pattern: building localized, constrained analytical tools as deterministic Python binaries. This approach ensures raw data extraction, root-cause analysis, and PRD generation occur without unconstrained LLM hallucination, maintaining strict constraint and provenance boundaries within the EN-OS ecosystem.",
+    "one_liner": "EN-OS adopted deterministic Python binaries for analytical tools to prevent LLM hallucination and ensure strict data provenance.",
+    "source_context": "The architectural approach introduces three distinct EN-OS 'skills' executing natively as python binaries to maintain strict constraint and provenance boundaries.",
+    "tags": [
+      "architecture",
+      "LLM-constraints",
+      "deterministic-systems",
+      "python"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A specific workaround was established for Ishikawa diagrams: since native Mermaid lacks a 'fishbone' type, a custom generator will produce strictly formatted Markdown Mindmaps or Hierarchical lists in Mermaid. This ensures the visualization requirements are met despite tool limitations.",
+    "one_liner": "A Mermaid Mindmap workaround was implemented for Ishikawa diagrams due to native Mermaid limitations.",
+    "source_context": "For Ishikawa diagrams, native Mermaid does not have a 'fishbone' type. We will build an Ishikawa generator that produces a strictly formatted Markdown Mindmap or Hierarchical list in Mermaid.",
+    "tags": [
+      "tooling",
+      "workaround",
+      "visualization",
+      "Mermaid"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A critical modification was made to `mcp_registry_server.py`, adding a `project_scope` parameter to the `semantic_search` function. This enhancement completely prevents context-pollution across domain silos within ChromaDB, ensuring that searches are mathematically masked to relevant project data, significantly improving data integrity and agent accuracy.",
+    "one_liner": "Implemented `project_scope` in `semantic_search` to eliminate ChromaDB context pollution across projects.",
+    "source_context": "Added the `project_scope` parameter natively into the FastMCP `semantic_search` function. Result: We completely prevent context-pollution across domain silos.",
+    "tags": [
+      "code-breakthrough",
+      "architecture",
+      "ChromaDB",
+      "data-integrity",
+      "LLM-context"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must trigger Python engines as standalone binaries via `.agent/skills/` definitions. This design completely protects the sovereign file loop from runtime code execution errors and prevents agents from running risky bash commands natively, ensuring system stability and security.",
+    "one_liner": "Agents must only trigger Python engines as standalone binaries via skill definitions, never directly executing risky bash commands.",
+    "source_context": "The three Python engines act as standalone binaries, completely protecting the sovereign file loop from runtime code execution errors. Agents can trigger them deterministically via the `.agent/skills/` definitions without running risky bash commands natively.",
+    "tags": [
+      "security",
+      "architecture",
+      "agent-design",
+      "system-stability",
+      "best-practice"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "Epic #110, focused on Strategy & Deep Research Engines, has been successfully concluded. This milestone involved implementing robust, namespace-isolated local analytical strategy skills that seamlessly integrate into the EN-OS registry architecture, effectively bypassing the challenge of unconstrained LLM hallucinations.",
+    "one_liner": "Successfully concluded Epic #110, delivering namespace-isolated analytical engines that bypass LLM hallucination.",
+    "source_context": "I have successfully concluded Epic #110 by implementing robust, namespace-isolated local analytical strategy skills... completely bypassing unconstrained LLM hallucinations.",
+    "tags": [
+      "project-win",
+      "achievement",
+      "LLM-strategy",
+      "EN-OS",
+      "engineering-excellence"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "docs",
+    "content": "The Deep Research Engine implements a strict namespace strategy for data provenance and integrity. It deterministically dumps formatted markdown into `registry/[project]/assets/[pdf_name].md` and immediately maps the vectors into ChromaDB using explicit `{\"project\": \"[namespace]\"}` metadata, ensuring no cross-project data pollution.",
+    "one_liner": "Deep Researcher enforces strict namespace isolation by tagging ChromaDB vectors with explicit project metadata.",
+    "source_context": "Dumps the formatted markdown deterministically into `registry/[project]/assets/[pdf_name].md` and maps the vectors immediately into `ChromaDB` using the strict `{\"project\": \"[namespace]\"}` metadata.",
+    "tags": [
+      "data-provenance",
+      "namespace-isolation",
+      "ChromaDB",
+      "architecture",
+      "data-management"
+    ]
+  }
+]

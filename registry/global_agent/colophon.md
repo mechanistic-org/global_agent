@@ -348,3 +348,8 @@ IBM's `docling` library was instrumental in the asset ingestion pipeline, provid
 ## 2026-04-07 — Local Whisper transcription now natively processes diverse video formats and automatically routes extracted 'Gold' to the registry.
 
 The local transcription engine, `transcribe_local.py`, has been significantly extended to natively support `.mp4`, `.webm`, and `.mkv` files, enabling direct ingestion of NotebookLM video-audio exports without explicit FFmpeg conversion. Crucially, upon successful transcription, it now programmatically invokes `mine_session.py` to `extract_gold()` and `route_item()` to the global registry, automating the distillation of insights from raw transcripts.
+
+
+## 2026-04-07 — EN-OS adopted deterministic Python binaries for analytical tools to prevent LLM hallucination and ensure strict data provenance.
+
+Epic #110 introduces a core architectural pattern: building localized, constrained analytical tools as deterministic Python binaries. This approach ensures raw data extraction, root-cause analysis, and PRD generation occur without unconstrained LLM hallucination, maintaining strict constraint and provenance boundaries within the EN-OS ecosystem.
