@@ -1,0 +1,50 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The LinkedIn Publish Workflow (#80) has been fully implemented, establishing a tactical execution pipeline within the OS that directly publishes posts, eliminates manual steps, and ensures state consistency. This comprehensive solution streamlines content publication, from schema enforcement and thread tracking to automated file management and post-publication reminders, marking a significant step in operational efficiency.",
+    "one_liner": "Comprehensive LinkedIn publishing workflow implemented, automating content publication and ensuring system consistency.",
+    "source_context": "This plan establishes the tactical execution pipeline for publishing LinkedIn posts directly from the OS..."
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A mandatory Frontmatter Schema has been retroactively applied and enforced for all LinkedIn post files, standardizing metadata such as `title`, `pubDate`, `status`, `thread_id`, `arc_position`, and `post_url`. This ensures consistent content management and data integrity across all published posts, preventing orphaned drafts and inconsistent states.",
+    "one_liner": "Mandatory Frontmatter Schema implemented and enforced for LinkedIn posts, standardizing metadata.",
+    "source_context": "I will retroactively apply the mandatory Frontmatter Schema to the three 'Trilogy' files..."
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "An architectural tracking ledger, the Thread State Machine (`registry/linkedin/threads/trilogy_001.md`), has been established and initialized to manage sequences of related LinkedIn posts. This ledger formalizes relationships, tracks live URLs, and monitors engagement states for future cross-linking and content strategy, providing a structured approach to multi-post narratives.",
+    "one_liner": "Thread State Machine established to track and manage sequences of related LinkedIn posts.",
+    "source_context": "Create the architectural tracking ledger for the trilogy sequence."
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The `@[/publish_post]` agentic workflow is now fully defined and operational, codifying the LinkedIn publishing ritual. This workflow automates critical steps: validating draft paths, stripping YAML for clean text, requiring live `post_url`s, orchestrating file moves, and prompting for timely self-comment deployment within the 30-minute window, ensuring a seamless and compliant publication process.",
+    "one_liner": "New `publish_post` agentic workflow automates LinkedIn publication from draft to self-comment deployment.",
+    "source_context": "Create the agentic workflow that will be executed whenever the user runs the `@[/publish_post]` command."
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must enforce the convention that content iteration happens exclusively via Git history, not through the creation of parallel files or `_v2` versions. Orphaned copy files, such as `2026-03-31_arc_002_p5_SOU-next-steps - Copy.md`, must be removed to maintain a clean and consistent repository state, promoting disciplined version control.",
+    "one_liner": "Agents must enforce Git-centric iteration, prohibiting parallel draft files.",
+    "source_context": "Remove this orphaned copy file to enforce the 'iteration happens via Git, not parallel files' convention."
+  },
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "A critical dependency for the LinkedIn Publish Workflow implementation was the provision of actual, live LinkedIn post URLs for the 'Trilogy' posts. These URLs were required to properly enforce the schema requirements and complete the backfill process, highlighting the need for external input in certain automated workflows before full completion.",
+    "one_liner": "Live LinkedIn URLs were a critical external dependency for workflow completion.",
+    "source_context": "To properly enforce the schema requirement per DoD, I require the actual, live LinkedIn post URLs for the 'Trilogy' posts."
+  }
+]

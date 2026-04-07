@@ -1,0 +1,15 @@
+[
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "The provided conversation artifact explicitly stated that no readable artifacts were found, indicating a lack of actionable content for mining. This input is considered noise as it contains no extractable 'Gold'.",
+    "one_liner": "No readable artifacts were found in the conversation.",
+    "source_context": "[No readable artifacts found in conversation b24159c0-932f-4d48-aad7-c16435d5062f]",
+    "tags": [
+      "no_content",
+      "empty_input",
+      "noise"
+    ]
+  }
+]

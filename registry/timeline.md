@@ -6,3 +6,5 @@ Append-only chronological ledger of all OS activity, session teardowns, and syst
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: global_agent#92, global_agent#102
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: global_agent#100
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: 101
+## [2026-04-07] action: session_close | agent: Antigravity | docs: 74
+## [2026-04-07] action: session_close | agent: Antigravity | docs: global_agent#80

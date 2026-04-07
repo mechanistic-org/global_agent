@@ -313,3 +313,8 @@ Beyond mechanical checks, a semantic LLM security gate using `gemini-2.5-flash` 
 ## 2026-04-07 — FastAPI BackgroundTasks prevent GitHub webhook timeouts during security validation.
 
 To prevent GitHub webhook timeouts during rigorous security analysis, the FastAPI event loop was modified to utilize `BackgroundTasks`. This allows the daemon to instantly return HTTP 202, acknowledging GitHub, while the mechanical and semantic security gates run non-blockingly in the background before container ignition.
+
+
+## 2026-04-07 — Thread State Machine established to track and manage sequences of related LinkedIn posts.
+
+An architectural tracking ledger, the Thread State Machine (`registry/linkedin/threads/trilogy_001.md`), has been established and initialized to manage sequences of related LinkedIn posts. This ledger formalizes relationships, tracks live URLs, and monitors engagement states for future cross-linking and content strategy, providing a structured approach to multi-post narratives.
