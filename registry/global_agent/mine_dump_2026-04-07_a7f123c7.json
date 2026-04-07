@@ -1,0 +1,14 @@
+[
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "The provided conversation artifact explicitly stated that no readable artifacts were found for the given conversation ID a7f123c7-cf97-414e-895a-b691910c6948. This indicates an absence of content suitable for extraction.",
+    "one_liner": "No readable artifacts were found in the provided conversation.",
+    "source_context": "[No readable artifacts found in conversation a7f123c7-cf97-414e-895a-b691910c6948]",
+    "tags": [
+      "empty_input",
+      "no_gold_found"
+    ]
+  }
+]

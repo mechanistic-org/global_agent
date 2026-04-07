@@ -7,6 +7,7 @@ import argparse
 import datetime
 import requests
 import time
+import yaml
 import chromadb
 import google.generativeai as genai
 from pathlib import Path
@@ -85,6 +86,24 @@ async def update_workflow_state(session: ClientSession, repo: str, issue: str, s
         logger.info(f"Epic D State Manifested: {state}")
     except Exception as e:
         logger.error(f"Failed to update workflow state to {state}. Ensure FastMCP is online. Error: {e}")
+
+def check_for_crash_resurrection(repo: str, issue: str) -> bool:
+    """Epic 102: Detects if the last recorded execution state crashed abruptly"""
+    safe_repo = repo.replace('/', '_')
+    state_file = Path(__file__).parent.parent / "registry" / "global_agent" / f"{safe_repo}_workflow_state_issue_{issue}.md"
+    if state_file.exists():
+        try:
+            with open(state_file, "r", encoding="utf-8") as f:
+                content = f.read()
+                if content.startswith("---"):
+                    end_idx = content.find("---", 3)
+                    if end_idx != -1:
+                        fm = yaml.safe_load(content[3:end_idx])
+                        if fm.get("state") == "executing":
+                            return True
+        except Exception as e:
+            logger.error(f"Failed to check crash resurrection state: {e}")
+    return False
 
 def track_token_telemetry(model_name: str, response) -> int:
     """Epic B: Unlocks historical baseline logic for the EN-OS dashboard."""
@@ -264,6 +283,9 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                     logger.info(f"Connected (EXEC MODE). All tools armed: {[t.name for t in tools.tools]}")
                 
                 # Epic D: Boot-Up State
+                is_resurrection = check_for_crash_resurrection(repo, issue_number)
+                if is_resurrection:
+                    logger.warning(f"CRASH RESURRECTION FLAG ACTIVATED: Worker previously dropped mid-execution.")
                 await update_workflow_state(session, repo, issue_number, "executing")
 
                 model = genai.GenerativeModel("gemini-2.5-flash")
@@ -300,6 +322,8 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                         iterations += 1
                         logger.info(f"Model iteration {iterations}/{max_iterations}...")
                         
+                        resurrection_warning = "\nWARNING: A previous worker executed this task and was violently terminated. Do NOT repeat failed LLM behaviors. Read your ChromaDB history very carefully. Execute your plan cleanly to avoid further crashes.\n" if is_resurrection else ""
+                        
                         if AGENT_MODE == "plan":
                             prompt = (
                                 "You are NanoClaw operating in STRICT PLAN MODE.\n"
@@ -308,6 +332,7 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                                 f"{chroma_context}\n\n"
                                 "--- GITHUB ISSUE ---\n"
                                 f"{issue_context}\n\n"
+                                f"{resurrection_warning}"
                                 "If your plan requires execution logic, end your markdown strictly by indicating we are 'Awaiting the /execute command'."
                             )
                         else:
@@ -318,6 +343,7 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                                 f"{chroma_context}\n\n"
                                 "--- GITHUB ISSUE ---\n"
                                 f"{issue_context}\n\n"
+                                f"{resurrection_warning}"
                                 "Ensure all changes adhere to strict Dark Hangar SCADA logic."
                             )
                         
