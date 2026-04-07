@@ -1,0 +1,64 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The EN-OS Watchdog Ingestion Test Spec outlines a critical validation process for the NanoClaw autonomous ingestion pipeline. This test ensures that documents are correctly parsed by Gemini, transformed into a `forensic_inbox` markdown node, and successfully inserted into ChromaDB, confirming the pipeline's end-to-end functionality and data flow.",
+    "one_liner": "The NanoClaw ingestion pipeline test validates parsing, conversion to `forensic_inbox`, and ChromaDB insertion.",
+    "source_context": "Overview: This is a synthetic engineering document created to test the NanoClaw autonomous ingestion pipeline.",
+    "tags": [
+      "NanoClaw",
+      "ingestion",
+      "testing",
+      "Gemini",
+      "ChromaDB",
+      "forensic_inbox"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "NanoClaw's ingestion process must operate ephemerally. This means NanoClaw must boot, read the asset, process it, and then terminate, ensuring a clean, stateless, and efficient operation for each individual ingestion task.",
+    "one_liner": "NanoClaw must operate ephemerally for each ingestion task.",
+    "source_context": "1. The ingestion must happen purely ephemerally. NanoClaw must boot, read the asset, process, and die.",
+    "tags": [
+      "NanoClaw",
+      "architecture",
+      "ephemeral",
+      "design_principle",
+      "ingestion"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The FastMCP router is an essential architectural dependency for the NanoClaw ingestion pipeline. It must be actively listening at `http://host.docker.internal:8000/sse` to facilitate proper communication and data streaming required for the ingestion process to function correctly.",
+    "one_liner": "The FastMCP router must be actively listening at `http://host.docker.internal:8000/sse` for NanoClaw ingestion.",
+    "source_context": "2. The FastMCP router must be actively listening at http://host.docker.internal:8000/sse.",
+    "tags": [
+      "FastMCP",
+      "router",
+      "dependency",
+      "NanoClaw",
+      "architecture",
+      "SSE"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "After successful processing, the original ingested file must be seamlessly extracted and moved to the `archive/` folder. This archiving procedure is critical and must be implemented to prevent any file collisions, thereby ensuring data integrity and maintaining an organized repository of source assets.",
+    "one_liner": "Original files must be seamlessly archived without collisions after ingestion.",
+    "source_context": "3. The original file must be seamlessly extracted to the `archive/` folder without collisions.",
+    "tags": [
+      "file_management",
+      "archiving",
+      "data_integrity",
+      "NanoClaw",
+      "ingestion"
+    ]
+  }
+]

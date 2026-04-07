@@ -1,0 +1,121 @@
+[
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The EN-OS team has successfully implemented the sovereign asset ingestion pipeline, a significant breakthrough enabling agents to seamlessly parse diverse Office formats (PDF, Word, PowerPoint, Excel, CSV, Email) directly into LLM-optimized Markdown. This achievement completely bypasses cloud APIs, reinforcing data sovereignty and greatly expanding agent capabilities for processing unstructured data.",
+    "one_liner": "Sovereign asset ingestion pipeline fully implemented, enabling EN-OS agents to parse all Office formats locally into LLM-optimized Markdown.",
+    "source_context": "The sovereign asset ingestion pipeline has been fully implemented...",
+    "tags": [
+      "technical-win",
+      "sovereignty",
+      "asset-ingestion",
+      "llm-integration",
+      "breakthrough",
+      "cloud-agnostic"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The team selected IBM's `docling` library as the unified backend for processing `.pdf`, `.docx`, and `.pptx` files. `docling` was chosen for its 100% local operation, utilizing PyTorch models for precise layout analysis and OCR, which strictly adheres to EN-OS sovereignty rules by avoiding cloud APIs and producing high-fidelity markdown.",
+    "one_liner": "`docling` by IBM was chosen for local, sovereign, and high-fidelity conversion of PDFs, Word, and PowerPoint to Markdown.",
+    "source_context": "Decision: We will proceed with `docling` as the unified backend.",
+    "tags": [
+      "library-selection",
+      "docling",
+      "sovereignty",
+      "local-processing",
+      "technical-decision",
+      "pytorch"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A new architectural document, `registry/architecture/asset_ingestion.md`, will be created to detail the local asset ingestion pipeline. This document will cover local sovereignty requirements, a matrix of supported formats and their parsing libraries, and outline any limitations and fallback strategies for robust system operation.",
+    "one_liner": "New documentation will codify the local asset ingestion pipeline, its sovereignty, supported formats, and limitations.",
+    "source_context": "System Architecture Documentation: `registry/architecture/asset_ingestion.md`",
+    "tags": [
+      "documentation",
+      "architecture",
+      "sovereignty",
+      "asset-ingestion"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The Python normalization orchestrator implements a flexible output strategy: if an `output_path` is provided, the normalized Markdown is written directly to the specified location for distributed ingestion. Otherwise, it defaults to an ephemeral `registry/.tmp/normalized/` path, preventing FastMCP JSON-RPC pipeline bloat and allowing agents to read via standard file-system tools.",
+    "one_liner": "Flexible `output_path` in the orchestrator enables direct writes to target locations or ephemeral storage, optimizing agent interaction and avoiding RPC bloat.",
+    "source_context": "To address distributed ingestion targets... the orchestrator will accept an **optional `output_path`**.",
+    "tags": [
+      "design-pattern",
+      "orchestration",
+      "file-management",
+      "agent-interaction",
+      "performance"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must not receive large file contents directly through the JSON-RPC pipeline. Instead, MCP tools that generate significant output, such as normalized Markdown files, must return a success string containing the absolute path to the generated file, compelling the agent to read the content via standard file-system tools.",
+    "one_liner": "MCP tools must return file paths, not content, to prevent JSON-RPC bloat and ensure agents use file-system reads.",
+    "source_context": "**Return Behavior:** Returns a success string with the absolute path of the generated `.md` file, forcing the agent to read it via standard file-system tools instead of bloating the JSON-RPC pipeline.",
+    "tags": [
+      "agent-design",
+      "mcp-tool",
+      "json-rpc",
+      "performance",
+      "system-rule"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "All foundational questions regarding the local asset ingestion pipeline have been successfully resolved. The team is proceeding with the chosen `docling` library for fully local processing and implementing disk-streaming via the `target_path` mechanism to optimize agent interaction and data handling, marking a clear path forward.",
+    "one_liner": "Foundational questions for local asset ingestion resolved, confirming `docling` and disk-streaming approach.",
+    "source_context": "All foundational questions resolved. Proceeding with `docling` (fully local) and disk-streaming via `target_path`.",
+    "tags": [
+      "decision",
+      "project-milestone",
+      "docling",
+      "disk-streaming"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "IBM's `docling` library was instrumental in the asset ingestion pipeline, providing an incredibly robust, PyTorch-backed solution for 100% local OCR and element extraction. It's specifically engineered to handle complex geometries within PDFs, Word documents, and PowerPoints, ensuring high-fidelity conversion to Markdown while maintaining data sovereignty.",
+    "one_liner": "`docling` by IBM, a PyTorch-backed local OCR engine, proved robust for high-fidelity PDF/Office conversion in EN-OS.",
+    "source_context": "`docling` provides an incredibly robust, PyTorch-backed 100% local OCR and element extraction pipeline engineered by IBM...",
+    "tags": [
+      "docling",
+      "library-review",
+      "pytorch",
+      "ocr",
+      "local-processing",
+      "technical-detail"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The sovereign asset ingestion pipeline has been thoroughly verified, with local CSV arrays generating clean markdown and the PM2 daemon gracefully handling the MCP tool restart. The system is now fully ready for active extraction operations against real external files, marking a successful completion of Epic 116.",
+    "one_liner": "Asset ingestion pipeline verified and ready for active extraction operations against real external files.",
+    "source_context": "Ready for active extraction operations against real external files.",
+    "tags": [
+      "project-completion",
+      "verification",
+      "readiness"
+    ]
+  }
+]

@@ -328,3 +328,18 @@ The EN-OS sovereign agentic infrastructure now features an actuarial-grade 'Sing
 ## 2026-04-07 — Introducing 'Resurrection Bay': precise native agent respawns from issue markers for robust workflow recovery.
 
 A key safety feature, 'Resurrection Bay,' has been developed within the EN-OS dashboard. This allows administrators to precisely respawn native agents from an exact issue marker in the background, providing robust recovery capabilities for halted workflows while maintaining an annotated audit history.
+
+
+## 2026-04-07 — `docling` by IBM was chosen for local, sovereign, and high-fidelity conversion of PDFs, Word, and PowerPoint to Markdown.
+
+The team selected IBM's `docling` library as the unified backend for processing `.pdf`, `.docx`, and `.pptx` files. `docling` was chosen for its 100% local operation, utilizing PyTorch models for precise layout analysis and OCR, which strictly adheres to EN-OS sovereignty rules by avoiding cloud APIs and producing high-fidelity markdown.
+
+
+## 2026-04-07 — Flexible `output_path` in the orchestrator enables direct writes to target locations or ephemeral storage, optimizing agent interaction and avoiding RPC bloat.
+
+The Python normalization orchestrator implements a flexible output strategy: if an `output_path` is provided, the normalized Markdown is written directly to the specified location for distributed ingestion. Otherwise, it defaults to an ephemeral `registry/.tmp/normalized/` path, preventing FastMCP JSON-RPC pipeline bloat and allowing agents to read via standard file-system tools.
+
+
+## 2026-04-07 — `docling` by IBM, a PyTorch-backed local OCR engine, proved robust for high-fidelity PDF/Office conversion in EN-OS.
+
+IBM's `docling` library was instrumental in the asset ingestion pipeline, providing an incredibly robust, PyTorch-backed solution for 100% local OCR and element extraction. It's specifically engineered to handle complex geometries within PDFs, Word documents, and PowerPoints, ensuring high-fidelity conversion to Markdown while maintaining data sovereignty.

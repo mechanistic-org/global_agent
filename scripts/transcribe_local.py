@@ -5,8 +5,8 @@ import argparse
 import warnings
 
 # --- CONFIGURATION ---
-SOURCE_DIR = r"D:\GitHub\portfolio-workspace\podcasts"
-EXTENSIONS = (".wav", ".mp3", ".m4a")
+SOURCE_DIR = r"D:\GitHub\global_agent\inbox"
+EXTENSIONS = (".wav", ".mp3", ".m4a", ".mp4", ".webm", ".mkv")
 MODEL_SIZE = "turbo" # "large-v3" is too slow on CPU
 MINING_REPORT_PATH = os.path.join(SOURCE_DIR, "mining_report.md")
 
@@ -100,6 +100,8 @@ def main():
             # Still scan existing transcripts for the report
             with open(transcript_path, "r", encoding="utf-8") as f:
                 content = f.read()
+                
+                # Check for mine_session routing if it hasn't been extracted before (could use a tracker, but let's just do gold scan for reports)
                 gold = scan_for_gold(content, filename)
                 if gold:
                     report_lines.append(f"- **{filename}**: Found keywords: `{', '.join(gold)}`")
@@ -117,12 +119,32 @@ def main():
             with open(transcript_path, "w", encoding="utf-8") as f:
                 f.write(clean_text)
                 
-            # Mine
+            # Mine specifically for Gold
             gold = scan_for_gold(clean_text, filename)
             if gold:
                 print(f"  💎 Potential Gold: {', '.join(gold)}")
                 report_lines.append(f"- **{filename}**: Found keywords: `{', '.join(gold)}`")
             
+            # Epic 112: Integration with mine_session
+            print(f"  🧠 Routing map-reduce items into registry via EN-OS Conversation Miner...")
+            try:
+                import mine_session
+                from datetime import date
+                today = date.today().isoformat()
+                
+                extracted_items = mine_session.extract_gold(clean_text)
+                if extracted_items:
+                    print(f"    ↳ Extracted {len(extracted_items)} structural insights. Routing...")
+                    for item in extracted_items:
+                        status = mine_session.route_item(item, today)
+                        print(f"    {status}")
+                else:
+                    print(f"    ↳ No architectural gold detected in transcript.")
+            except ImportError:
+                print("  ⚠️  Could not import mine_session.py. Transcripts saved locally but not routed to registry.")
+            except Exception as routing_err:
+                print(f"  ❌ Miner failure: {routing_err}")
+
             print(f"  ✅ Saved: {os.path.basename(transcript_path)}")
             process_count += 1
             
