@@ -293,3 +293,8 @@ The Vision Pipeline includes a 'Mechanical X-Section Extractor' that processes c
 ## 2026-04-07 — NanoClaw agents can now resurrect from crashes, resuming workflows with LLM awareness for enhanced resilience.
 
 The NanoClaw container agent now features "Crash Resurrection," allowing it to detect previous workflow crashes by reading local state files and dynamically informing the LLM to resume execution. This significantly enhances agent resilience and continuity, ensuring that operations can pick up exactly where they left off after an unexpected termination.
+
+
+## 2026-04-07 — `push_forensic_doc()` enforces strict write discipline using `flush()` and `os.fsync()` before ChromaDB UPSERTs for data integrity.
+
+A strict write discipline has been perfectly implemented in `push_forensic_doc()` within `mcp_registry_server.py`. This ensures data integrity by explicitly calling `flush()` and `os.fsync()` to commit data to the underlying storage before any ChromaDB UPSERT operations are executed.

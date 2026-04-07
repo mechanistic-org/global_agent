@@ -333,12 +333,13 @@ async def run_agent_loop(issue_context: str, chroma_context: str, repo: str, iss
                                 "--- GITHUB ISSUE ---\n"
                                 f"{issue_context}\n\n"
                                 f"{resurrection_warning}"
-                                "If your plan requires execution logic, end your markdown strictly by indicating we are 'Awaiting the /execute command'."
+                                "If your plan requires execution logic, end your markdown strictly by indicating we are 'Awaiting the /execute command from an authorized user'."
                             )
                         else:
                             prompt = (
                                 "You are NanoClaw operating in FULL EXECUTION MODE.\n"
                                 "You have full write access to the filesystem and external endpoints via your tools.\n"
+                                "This container was spawned via an authorized /execute command that passed Secondary Classifier Gating.\n"
                                 "Your objective is to review the following Git Issue context and ChromaDB context, execute the necessary changes natively, and output the final structural changes applied.\n\n"
                                 f"{chroma_context}\n\n"
                                 "--- GITHUB ISSUE ---\n"
