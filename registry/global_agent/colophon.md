@@ -298,3 +298,18 @@ The NanoClaw container agent now features "Crash Resurrection," allowing it to d
 ## 2026-04-07 — `push_forensic_doc()` enforces strict write discipline using `flush()` and `os.fsync()` before ChromaDB UPSERTs for data integrity.
 
 A strict write discipline has been perfectly implemented in `push_forensic_doc()` within `mcp_registry_server.py`. This ensures data integrity by explicitly calling `flush()` and `os.fsync()` to commit data to the underlying storage before any ChromaDB UPSERT operations are executed.
+
+
+## 2026-04-07 — NanoClaw implements a formal Plan/Execute separation to prevent unauthorized agent actions.
+
+The NanoClaw container execution environment now formally separates the Intent (Planning) and Action (Execution) layers. This critical architectural decision prevents large stochastic models from blindly modifying the local filesystem or triggering side-effects without explicit human approval, enhancing sovereign agent operations.
+
+
+## 2026-04-07 — Gemini 2.5 Flash powers a semantic LLM gate for robust prompt injection detection.
+
+Beyond mechanical checks, a semantic LLM security gate using `gemini-2.5-flash` was implemented to classify `/execute` comments. This model acts as a strict 'Pass/Fail' classifier, analyzing comments for hidden injections or subverted contexts, ensuring only genuine human approvals proceed to execution.
+
+
+## 2026-04-07 — FastAPI BackgroundTasks prevent GitHub webhook timeouts during security validation.
+
+To prevent GitHub webhook timeouts during rigorous security analysis, the FastAPI event loop was modified to utilize `BackgroundTasks`. This allows the daemon to instantly return HTTP 202, acknowledging GitHub, while the mechanical and semantic security gates run non-blockingly in the background before container ignition.

@@ -1,0 +1,90 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The NanoClaw container execution environment now formally separates the Intent (Planning) and Action (Execution) layers. This critical architectural decision prevents large stochastic models from blindly modifying the local filesystem or triggering side-effects without explicit human approval, enhancing sovereign agent operations.",
+    "one_liner": "NanoClaw implements a formal Plan/Execute separation to prevent unauthorized agent actions.",
+    "source_context": "This epic implements a formal separation between the Intent layer (Planning) and Action layer (Execution) within the NanoClaw container execution environment.",
+    "tags": [
+      "architecture",
+      "agent-security",
+      "nanoclaw",
+      "sovereign-agents"
+    ]
+  },
+  {
+    "channel": "linkedin",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A critical prompt injection vulnerability, the '50-Subcommand bypass,' was addressed by implementing a deterministic mechanical gate. This gate strictly counts subcommands (like `&&`, `||`, `;`, `|`, `&`) in `/execute` payloads via regex, rejecting execution instantly if more than five are detected, effectively blocking complex bash logic attacks before LLM interaction.",
+    "one_liner": "A deterministic mechanical gate now blocks the '50-Subcommand bypass' prompt injection.",
+    "source_context": "If `subcommand_count > 5`, hard halt. This directly prevents the Claude Code 50-subcommand bypass.",
+    "tags": [
+      "security",
+      "prompt-injection",
+      "llm-security",
+      "vulnerability-fix",
+      "nanoclaw"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "Beyond mechanical checks, a semantic LLM security gate using `gemini-2.5-flash` was implemented to classify `/execute` comments. This model acts as a strict 'Pass/Fail' classifier, analyzing comments for hidden injections or subverted contexts, ensuring only genuine human approvals proceed to execution.",
+    "one_liner": "Gemini 2.5 Flash powers a semantic LLM gate for robust prompt injection detection.",
+    "source_context": "Implement an LLM call to classify if the comment is a genuine human approval vs a prompt injection attempt. We will use `gemini-2.5-flash` for this.",
+    "tags": [
+      "llm-security",
+      "gemini-flash",
+      "prompt-injection",
+      "security-classifier",
+      "nanoclaw"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "To prevent GitHub webhook timeouts during rigorous security analysis, the FastAPI event loop was modified to utilize `BackgroundTasks`. This allows the daemon to instantly return HTTP 202, acknowledging GitHub, while the mechanical and semantic security gates run non-blockingly in the background before container ignition.",
+    "one_liner": "FastAPI BackgroundTasks prevent GitHub webhook timeouts during security validation.",
+    "source_context": "To ensure we don't timeout the GitHub webhook (10s max), the webhook will return HTTP 202 instantly, and hand the classification & ignition off to a FastAPI `BackgroundTask`.",
+    "tags": [
+      "fastapi",
+      "webhook",
+      "async-processing",
+      "system-design",
+      "performance"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Specific boundary statements were enforced in system prompts for `run_agent.py` to anchor language models to their privilege scope. In 'plan' mode, agents are directed to await `/execute` approval, while in 'exec' mode, they are explicitly notified of authorized spawning, preventing context window drift and unauthorized actions.",
+    "one_liner": "System prompts now anchor agents to their 'plan' or 'exec' mode privilege scope.",
+    "source_context": "In `plan` mode, the agent's prompt strictly directs it to finish planning assessments by signaling it is 'Awaiting the `/execute` command from an authorized user.'",
+    "tags": [
+      "prompt-engineering",
+      "agent-behavior",
+      "llm-control",
+      "security",
+      "context-management"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must never execute commands without explicit authorization from a whitelisted GitHub user. The system enforces this by checking the `payload.get(\"comment\", {}).get(\"user\", {}).get(\"login\")` against a predefined list of authorized users before any `/execute` transition.",
+    "one_liner": "Only whitelisted GitHub users can trigger agent execution.",
+    "source_context": "Only allow specific GitHub users to trigger an `/execute` transition, checking `payload.get(\"comment\", {}).get(\"user\", {}).get(\"login\")` against a whitelist (e.g. `eriknorris`).",
+    "tags": [
+      "security-policy",
+      "access-control",
+      "agent-security",
+      "rule"
+    ]
+  }
+]
