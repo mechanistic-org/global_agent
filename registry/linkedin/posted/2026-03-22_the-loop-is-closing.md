@@ -1,11 +1,11 @@
 ---
 title: The loop is closing
 pubDate: 2026-03-22
-status: ready
+status: posted
 tags: [agent-memory, autonomous-systems, solopreneur]
 source: manual-draft
-post_url: ""
-thread_id: "arc_001_architecture"
+post_url: "https://www.linkedin.com/posts/eriknorris_three-bugs-decomposed-to-six-tickets-fully-activity-7441639233418743808-U6Zm"
+thread_id: "trilogy_001"
 arc_position: 2
 ---
 

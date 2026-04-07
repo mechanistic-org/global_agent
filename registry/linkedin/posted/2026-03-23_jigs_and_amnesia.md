@@ -1,11 +1,11 @@
 ---
 title: Jigs, Amnesia, and the Old Testament of Project Management
 pubDate: 2026-03-23
-status: draft-v2
+status: posted
 tags: [ai-engineering, StateMachines, mental-models, tooling]
 source: hired-gun-synthesis
-post_url: ""
-thread_id: "arc_001_architecture"
+post_url: "https://www.linkedin.com/posts/eriknorris_hours-of-architecture-decisions-made-patterns-activity-7442004759336615936-My6e"
+thread_id: "trilogy_001"
 arc_position: 3
 ---
 

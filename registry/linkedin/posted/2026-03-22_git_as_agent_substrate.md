@@ -1,9 +1,12 @@
-# Git as Agent Memory Substrate
-
-**Date:** 2026-03-22
-**Type:** LinkedIn Draft
-**Status:** Ready to post
-
+---
+title: Git as Agent Memory Substrate
+pubDate: 2026-03-22
+status: posted
+tags: [agent-memory, ai-engineering, Devops]
+source: manual-draft
+post_url: "https://www.linkedin.com/posts/eriknorris_one-day-soon-a-robot-will-make-you-a-salad-activity-6900148693434019840-lfqj"
+thread_id: "trilogy_001"
+arc_position: 1
 ---
 
 I've spent months building an autonomous AI engineering OS.
