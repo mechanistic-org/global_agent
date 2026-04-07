@@ -343,3 +343,8 @@ The Python normalization orchestrator implements a flexible output strategy: if 
 ## 2026-04-07 — `docling` by IBM, a PyTorch-backed local OCR engine, proved robust for high-fidelity PDF/Office conversion in EN-OS.
 
 IBM's `docling` library was instrumental in the asset ingestion pipeline, providing an incredibly robust, PyTorch-backed solution for 100% local OCR and element extraction. It's specifically engineered to handle complex geometries within PDFs, Word documents, and PowerPoints, ensuring high-fidelity conversion to Markdown while maintaining data sovereignty.
+
+
+## 2026-04-07 — Local Whisper transcription now natively processes diverse video formats and automatically routes extracted 'Gold' to the registry.
+
+The local transcription engine, `transcribe_local.py`, has been significantly extended to natively support `.mp4`, `.webm`, and `.mkv` files, enabling direct ingestion of NotebookLM video-audio exports without explicit FFmpeg conversion. Crucially, upon successful transcription, it now programmatically invokes `mine_session.py` to `extract_gold()` and `route_item()` to the global registry, automating the distillation of insights from raw transcripts.

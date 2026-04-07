@@ -100,16 +100,20 @@ def search_registry(query: str, project_scope: str = None) -> list[str]:
     return results
 
 @mcp.tool()
-def semantic_search(query: str, n_results: int = 3) -> str:
+def semantic_search(query: str, project_scope: str = None, n_results: int = 3) -> str:
     """
     Execute a deep structural Cosine-Similarity extraction loop mapping ChromaDB vectors.
     Node 0 utilizes this native tool to retrieve topological documents natively escaping explicit LLM Hallucination loops.
     """
     try:
-        results = collection.query(
-            query_texts=[query],
-            n_results=n_results
-        )
+        kwargs = {
+            "query_texts": [query],
+            "n_results": n_results
+        }
+        if project_scope:
+            kwargs["where"] = {"project": project_scope}
+            
+        results = collection.query(**kwargs)
         
         if not results['documents'] or not results['documents'][0]:
             return "No structurally embedded mapping found natively inside the Sovereign Vector Hub."
