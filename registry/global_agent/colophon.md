@@ -353,3 +353,23 @@ The local transcription engine, `transcribe_local.py`, has been significantly ex
 ## 2026-04-07 — EN-OS adopted deterministic Python binaries for analytical tools to prevent LLM hallucination and ensure strict data provenance.
 
 Epic #110 introduces a core architectural pattern: building localized, constrained analytical tools as deterministic Python binaries. This approach ensures raw data extraction, root-cause analysis, and PRD generation occur without unconstrained LLM hallucination, maintaining strict constraint and provenance boundaries within the EN-OS ecosystem.
+
+
+## 2026-04-07 — A manual, error-prone documentation hydration process is being automated with a robust "Finite Headless" architecture.
+
+The manual "titration" pipeline for hydrating legacy documentation into the C24 schema, involving manual querying, JSON pasting, and frontmatter compilation issues, has been resolved. This friction is transformed into an autonomous "Finite Headless" machine using the Evaluator-Optimizer + Durable Agents architecture to scale out to 25+ Deep Dives.
+
+
+## 2026-04-07 — A Maker-Checker pattern with `qwen2.5-coder` and Pydantic ensures strict schema validation for fuzzy AI outputs.
+
+A robust Maker-Checker translation process ensures the notoriously fuzzy NotebookLM output strictly conforms to the C24 Schema. A Python routine (the Maker) formats the raw JSON using `qwen2.5-coder`, while a Pydantic-based Checker rigidly validates the output, looping and "violently kicking it back" to the Maker until 100% schema compliance is achieved.
+
+
+## 2026-04-07 — Surgical AST injection and SQLite-based state checkpointing ensure robust, resumable content updates.
+
+The pipeline employs a Durable Agent pattern for content injection and state management. It surgically updates Astro frontmatter variables using `patch_astro_component` to avoid layout disruption, and an SQLite `/state/hydration_ledger.db` logs project status, enabling the Orchestrator to resume from the last successful checkpoint if a script crashes.
+
+
+## 2026-04-07 — Programmatic NotebookLM access is achieved via reverse-engineered RPCs using the `notebooklm-py` library, bypassing the lack of an official API.
+
+Despite Google lacking an official NotebookLM API, the community has standardized on reverse-engineering internal RPC requests for programmatic access. The `teng-lin/notebooklm-py` library, which uses this RPC approach and supports headless operation after initial browser-based cookie authentication, has been selected as the robust solution.

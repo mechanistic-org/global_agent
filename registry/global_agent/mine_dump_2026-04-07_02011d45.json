@@ -1,0 +1,93 @@
+[
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The manual \"titration\" pipeline for hydrating legacy documentation into the C24 schema, involving manual querying, JSON pasting, and frontmatter compilation issues, has been resolved. This friction is transformed into an autonomous \"Finite Headless\" machine using the Evaluator-Optimizer + Durable Agents architecture to scale out to 25+ Deep Dives.",
+    "one_liner": "A manual, error-prone documentation hydration process is being automated with a robust \"Finite Headless\" architecture.",
+    "source_context": "You spent months manually executing a very specific 'titration' pipeline... To resolve issue `portfolio#19`... we will leverage the Evaluator-Optimizer + Durable Agents architecture...",
+    "tags": [
+      "automation",
+      "architecture",
+      "problem-solving",
+      "portfolio",
+      "NLM"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "A robust Maker-Checker translation process ensures the notoriously fuzzy NotebookLM output strictly conforms to the C24 Schema. A Python routine (the Maker) formats the raw JSON using `qwen2.5-coder`, while a Pydantic-based Checker rigidly validates the output, looping and \"violently kicking it back\" to the Maker until 100% schema compliance is achieved.",
+    "one_liner": "A Maker-Checker pattern with `qwen2.5-coder` and Pydantic ensures strict schema validation for fuzzy AI outputs.",
+    "source_context": "NLM output is notoriously fuzzy... The Maker: A Python routine hands the newly dumped `_raw_nlm` JSON to `qwen2.5-coder`... The Checker: A native Python Zod equivalent (using Pydantic) rigidly checks... The Loop: If it fails... the Checker violently kicks it back to `qwen`...",
+    "tags": [
+      "validation",
+      "AI",
+      "schema",
+      "pydantic",
+      "qwen2.5-coder",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "The pipeline employs a Durable Agent pattern for content injection and state management. It surgically updates Astro frontmatter variables using `patch_astro_component` to avoid layout disruption, and an SQLite `/state/hydration_ledger.db` logs project status, enabling the Orchestrator to resume from the last successful checkpoint if a script crashes.",
+    "one_liner": "Surgical AST injection and SQLite-based state checkpointing ensure robust, resumable content updates.",
+    "source_context": "Once the payload is pristine, we do not blindly Regex/append the file... The pipeline generates the `set_variable` payload and fires it natively via your FastMCP router (`patch_astro_component`)... The Orchestrator logs `{ \"status\": \"HYDRATED\", \"timestamp\": \"2026-X-X\" }` into a local SQLite `/state/hydration_ledger.db`.",
+    "tags": [
+      "durable-agents",
+      "AST",
+      "state-management",
+      "sqlite",
+      "resilience",
+      "astro"
+    ]
+  },
+  {
+    "channel": "colophon",
+    "confidence": "captured",
+    "destination": "portfolio",
+    "content": "Despite Google lacking an official NotebookLM API, the community has standardized on reverse-engineering internal RPC requests for programmatic access. The `teng-lin/notebooklm-py` library, which uses this RPC approach and supports headless operation after initial browser-based cookie authentication, has been selected as the robust solution.",
+    "one_liner": "Programmatic NotebookLM access is achieved via reverse-engineered RPCs using the `notebooklm-py` library, bypassing the lack of an official API.",
+    "source_context": "Google has still not released an official public API for NotebookLM... The community has coalesced around reverse-engineering Google's internal RPC requests... `teng-lin/notebooklm-py`... is currently the most heavily backed Python client.",
+    "tags": [
+      "API-workaround",
+      "notebooklm",
+      "reverse-engineering",
+      "tooling",
+      "python"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Agents must always prefer importing Python libraries natively over invoking CLI tools via `subprocess` for external tool integration. This practice ensures direct error handling, prevents encoding issues, and significantly enhances the stability and maintainability of automated processes.",
+    "one_liner": "Agents must prioritize native library imports over `subprocess` calls for robust tool integration.",
+    "source_context": "By importing the Python library natively into our `run_campaign.py` script instead of calling a CLI tool via `subprocess`, we gain direct error handling, prevent encoding issues, and make the Great Backport orchestrator significantly more stable.",
+    "tags": [
+      "best-practice",
+      "tooling",
+      "stability",
+      "error-handling",
+      "architecture"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The legacy `nlm.exe` shim, previously used for NotebookLM interaction, has been identified as unmaintained and a \"ghost.\" The decision has been made to abandon it in favor of directly importing the `notebooklm-py` Python library, ensuring a more stable and maintainable integration.",
+    "one_liner": "The unmaintained `nlm.exe` shim is being abandoned for a direct `notebooklm-py` library integration.",
+    "source_context": "Neither `notebooklm-py` nor `notebooklm-mcp-cli` output a binary explicitly named `nlm.exe`... It is highly probable that in previous sessions, we either created a custom PowerShell alias... or wrote a localized `.exe` shim... Instead of wasting time chasing a ghost `nlm.exe` shim, we will start fresh...",
+    "tags": [
+      "tooling",
+      "legacy-tech",
+      "refactoring",
+      "problem-solving"
+    ]
+  }
+]
