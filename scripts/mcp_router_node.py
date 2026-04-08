@@ -159,17 +159,27 @@ if __name__ == "__main__":
     print("=======================================================", file=sys.stderr)
 
     # FastMCP Streamable HTTP transport — the current MCP standard.
-    # SSE (http://127.0.0.1:8000/sse) is deprecated and removed.
-    # All clients (Claude Desktop, Claude Code, Continue.dev, VS Code)
-    # must connect to: http://127.0.0.1:8000/mcp
+    # Transport string map:
+    #   MCP_TRANSPORT=http   -> "streamable-http" -> serves at http://127.0.0.1:8000/mcp
+    #   MCP_TRANSPORT=sse    -> "sse"             -> serves at http://127.0.0.1:8000/sse (DEPRECATED)
+    #   MCP_TRANSPORT=stdio  -> "stdio"           -> subprocess mode (fallback/test only)
     #
+    # All clients (Antigravity, Claude Code, Claude Desktop, Continue.dev)
+    # MUST connect to: http://127.0.0.1:8000/mcp  (transport: http in mcp.json)
     # PM2 env: MCP_TRANSPORT=http
-    # Fallback: stdio (for subprocess / test use)
     try:
         transport_mode = os.environ.get("MCP_TRANSPORT", "stdio")
-        # FastMCP natively expects the string "sse" to boot the streamable HTTP transport layer
-        internal_transport = "sse" if transport_mode in ["http", "sse"] else transport_mode
-        print(f"Booting as Streamable HTTP Server (FastMCP mapped to {internal_transport})", file=sys.stderr)
+        # Map "http" -> "streamable-http" (the FastMCP string for the /mcp endpoint)
+        # CRITICAL: "sse" maps to /sse only — NOT /mcp. Using "sse" causes Claude Code
+        # to get 404 on /mcp and fall back to spawning orphan stdio subprocesses.
+        if transport_mode == "http":
+            internal_transport = "streamable-http"
+        elif transport_mode == "sse":
+            internal_transport = "sse"
+        else:
+            internal_transport = "stdio"
+        print(f"Booting as transport={internal_transport} (MCP_TRANSPORT={transport_mode})", file=sys.stderr)
+        print(f"Endpoint: http://127.0.0.1:8000/mcp", file=sys.stderr)
         
         router_node.run(transport=internal_transport)
     except Exception as e:

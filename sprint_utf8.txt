@@ -3,28 +3,21 @@
 ============================================================
 
 # ≡ƒö┤ NOW ΓÇö Active Iteration & Overdue Blockers
-
-  ΓÜí P1: HIGH PRIORITY
-  - [Ready] hyphen#7 ΓÇö [Security] Add CF Access Protection to hyphen.mechanistic.com (Iteration 1)
-  - [Backlog] portfolio#53 ΓÇö Legacy Portfolio Cleanup (Ghost Code & Import Paths) (Iteration 2)
-
-  ≡ƒ¢á∩╕Å P2: STANDARD WORK
-  - [Ready] MO#8 ΓÇö [Deploy] Holy Grail v32 ├óΓÇáΓÇÖ mo.mechanistic.com Migration + CF Access Update (Iteration 1)
-  - [Backlog] global_agent#54 ΓÇö [Backlog] R2 Endpoint Standardization ├óΓé¼ΓÇ¥ Custom Domains, CORS, and Public URL Audit (Iteration 2)
+  (No active items in the current iteration)
 
 
 # ≡ƒƒí NEXT ΓÇö Upcoming Iterations
   - [Iteration 3] P1 | portfolio#47 ΓÇö [Epic] Resume the C|24 Component Stitch Loop
   - [Iteration 3] P2 | portfolio#51 ΓÇö [Task] Document the 3 Stitch Workflow Paths in the Agent Orientation Laws
-  - [Iteration 3] P2 | portfolio#44 ΓÇö [Epic] Physical Transfer to Hybrid Engine Organization
   - [Iteration 3] P2 | portfolio#59 ΓÇö [Task] Pre-commit Zod schema validator for agent-generated portfolio content
   - [Iteration 3] P99 | global_agent#56 ΓÇö [Registry] Audit Unread Handbook & System Docs ├óΓé¼ΓÇ¥ Incorporate or Archive
-  - [Iteration 3] P99 | global_agent#69 ΓÇö [Enhancement] Client-facing deliverable sanitizer ├óΓé¼ΓÇ¥ strip telemetry ├óΓÇáΓÇÖ PDF ├óΓÇáΓÇÖ email via GWS SA
+  - [Iteration 3] P99 | global_agent#69 ΓÇö [Enhancement] Client-facing deliverable generation ├óΓé¼ΓÇ¥ local script ├óΓÇáΓÇÖ PDF ├óΓÇáΓÇÖ staging draft
   - [Iteration 3] P99 | portfolio#61 ΓÇö Schema Parity Check ├óΓé¼ΓÇ¥ Keystatic config ├óΓÇáΓÇ¥ content.config.ts drift detection
   - [Iteration 4] P2 | global_agent#55 ΓÇö [Backlog] Stratified Intelligence Indexing ├óΓé¼ΓÇ¥ PROJECT_INTELLIGENCE.md + ChromaDB Push per Project
 
 
 # ≡ƒö╡ LATER ΓÇö Backlog / Unassigned
+  - [Backlog] P1 | portfolio#53 ΓÇö Legacy Portfolio Cleanup (Ghost Code & Import Paths)
   - [Backlog] P2 | global_agent#13 ΓÇö [Epic 9] Astro Hydration & Automated Deployment
   - [Backlog] P99 | MO#1 ΓÇö [Epic] The Mobile Outfitters Clone-and-Purge Extraction
   - [Backlog] P99 | global_agent#12 ΓÇö [Epic 8] Holy Grail V31 UI Constraint Alignment
@@ -38,6 +31,5 @@
   - [Backlog] P99 | portfolio#31 ΓÇö [Epic 5] Headless Portfolio API (projects.json for LLM Answer Engines)
   - [Backlog] P99 | portfolio#32 ΓÇö [Epic 5] Portfolio Agent Chat Integration
   - [Backlog] P99 | portfolio#33 ΓÇö Erik Norris Venn
-  - [Backlog] P99 | portfolio#37 ΓÇö [Stretch Goal] Automate Portfolio Curation: \"Ready\" to \"CEO-Ready\"
 
 ============================================================

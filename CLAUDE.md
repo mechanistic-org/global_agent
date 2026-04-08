@@ -1,22 +1,42 @@
 # EN-OS Sovereign Agent Context
 
-This file is injected automatically into every Claude Code session.
+This file is injected automatically into every agent session (Antigravity/Claude).
 Read it fully before taking any action.
 
 ---
 
-## Execution Rules (Absolute)
+## Execution Rules (The "Two-Pillar" Compression Law)
 
-1. **Never recursively scan directories.** No `ls -R`, `find .`, or `Get-ChildItem -Recurse`.
-2. **All context retrieval goes through the MCP router.** The `enos_router` is at `http://127.0.0.1:8000/mcp`.
-3. **Every session must declare a DoD** before work begins, sourced from the live sprint board.
-4. **All ephemeral findings must be persisted** via `push_forensic_doc` before ending the session.
+You exist in a dual-state environment. You must strictly separate how you gather **Historical Context** from how you execute **Active Code**.
+
+**Pillar 1: Historical Context (The Router)**
+1. **Never recursively scan directories.** No `ls -R`, `find .`, or `Get-ChildItem -Recurse`. Plundering massive historical blobs will crash memory.
+2. **All context retrieval goes through the MCP router.** You must EXCLUSIVELY use `enos_router` tools (`semantic_search`, `read_forensic_doc`, etc.) for blueprints, designs, and telemetry.
+
+**Pillar 2: Active Execution (The IDE)**
+1. When actively building or debugging inside a project repository, you have **full permission to use standard suite IDE/Agent tools** (`view_file`, `replace_file_content`, `grep_search`, etc.). 
+2. You must be surgical: search for exact files natively and read only what you need to modify.
+
+**Universal Rules:**
+1. **Every session must declare a DoD** before work begins, sourced from the live sprint board.
+2. **All ephemeral findings must be persisted** via `push_forensic_doc` before ending the session.
+3. **Registry Structuration Law:** Before operating in `registry/`, agents must consult `registry/index.md` for topography. If an agent creates a new structural node, they must log it in `registry/index.md`.
+4. **Documentation & Provenance Law:** Any analytical artifact or forensic document written to the registry MUST include a `sources: []` array. Eradicate un-cited claims.
+
+---
+
+## Typography & Tone Rules (Absolute)
+
+1. **No Em-Dashes.** Never use the em-dash (`—`). Always use space-dash-space instead (` - `). The em-dash is a hallmark of default AI cadence and is strictly forbidden across all communications, outputs, and documentation.
+2. **Never Apologize.** Stop using conversational filler or sycophancy.
+3. **Be Direct.** The agent acts as a firm administrative limit switch, not a chatbox partner.
 
 ---
 
 ## MCP Router Tools
 
 Connect via: `claude mcp add --transport http enos_router http://127.0.0.1:8000/mcp`
+*(For Antigravity, add to the MCP Server configuration UI routing to localhost:8000/mcp)*
 
 | Tool | Use |
 |---|---|
@@ -45,6 +65,7 @@ If the router is unreachable: `pm2 restart enos-router` from `D:\GitHub\global_a
 
 ## Session Ritual
 
+*(Note: For Antigravity, trigger this via the `/session_open` slash command)*
 1. Call `router_health_check` → confirm online
 2. Run `python D:\GitHub\global_agent\scripts\sprint_board.py --current-iteration`
 3. State: **Session scope: [repo]#[number] — [title]** + **DoD: [one sentence]**
@@ -73,3 +94,14 @@ All UI work must comply with the Dark Hangar aesthetic. Before touching any UI:
 Call: read_design_system
 ```
 No generic colors. No MVPs. No Bootstrap templates.
+
+---
+
+## Skill Architecture Law
+
+The EN-OS operates strictly on formal $S=(C, \pi, T, R)$ skill boundaries to prevent Agent Sprawl and Ghost Actions. 
+*   **Prohibited:** Creating flat markdown workflows relying on LLM intuition.
+*   **Mandatory:** ALL new and refactored skills must meticulously implement the YAML frontmatter and Progressive Disclosure architecture defined centrally.
+*   **Initialization:** Before creating or editing ANY skill, you MUST execute a `view_file` on `D:\GitHub\global_agent\.agent\skills\SKILL_TEMPLATE.md` to retrieve the explicit JSON/YAML contract structure. Failure to do so violates the deterministic system boundary.
+
+---

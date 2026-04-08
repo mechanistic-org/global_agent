@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "enos_router": {
+      "transport": "http",
+      "url": "http://127.0.0.1:8000/mcp",
+      "description": "Sovereign EN-OS Router Node — ChromaDB registry, semantic search, forensic push, AST patcher, design system reader. MUST be running via PM2. This is the ONLY context highway. Do not read the filesystem directly. Transport: Streamable HTTP."
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "gws": {
+      "command": "npx",
+      "args": ["-y", "@googleworkspace/mcp-server"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}"
+      }
+    }
+  }
+}
