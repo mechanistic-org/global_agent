@@ -1,5 +1,5 @@
 ---
-title: "The Estimation Fallacy: 12 Days vs 30 Minutes"
+title: "\"The Estimation Fallacy: 12 Days vs 30 Minutes\""
 pubDate: 
 status: draft
 post_url: 

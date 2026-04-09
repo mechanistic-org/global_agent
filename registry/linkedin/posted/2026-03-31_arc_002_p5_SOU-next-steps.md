@@ -1,5 +1,5 @@
 ---
-title: "State of the Union: Closing the Nervous System and What Comes Next"
+title: "\"State of the Union: Closing the Nervous System and What Comes Next\""
 pubDate: 2026-04-02
 status: posted
 post_url: "https://www.linkedin.com/posts/eriknorris_weve-traced-the-transition-from-chaotic-share-7445540932499914752-U6Ik?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"

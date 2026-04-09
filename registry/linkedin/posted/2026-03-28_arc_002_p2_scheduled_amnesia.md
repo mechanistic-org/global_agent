@@ -1,5 +1,5 @@
 ---
-title: "Scheduled Amnesia: Why Polling Fails the Autonomous Test"
+title: "\"Scheduled Amnesia: Why Polling Fails the Autonomous Test\""
 pubDate: 2026-03-28
 status: posted
 post_url: "https://www.linkedin.com/posts/eriknorris_agenticai-sovereignos-eventdriven-activity-7443811239484624896-YyY8?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABdXVoBKKhtjiCX7nis-4b57W2tJQIdL2I"
