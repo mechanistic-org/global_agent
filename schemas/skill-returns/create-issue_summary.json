@@ -1,0 +1,31 @@
+{
+  "description": "Returned by create-issue skill. Confirms GitHub issue created and fully wired to project board.",
+  "required": ["issue_url", "issue_number", "project_item_id", "fields_set"],
+  "properties": {
+    "issue_url": {
+      "type": "string",
+      "description": "Full GitHub issue URL, e.g. https://github.com/mechanistic-org/global_agent/issues/135"
+    },
+    "issue_number": {
+      "type": "integer",
+      "description": "Issue number in its repo"
+    },
+    "project_item_id": {
+      "type": "string",
+      "description": "PVTI_ prefixed project item ID from gh project item-add output"
+    },
+    "fields_set": {
+      "type": "object",
+      "description": "Confirmation that all 5 project board fields were wired",
+      "required": ["iteration", "priority", "size", "node", "impact"],
+      "properties": {
+        "iteration": { "type": "boolean" },
+        "priority":  { "type": "boolean" },
+        "size":      { "type": "boolean" },
+        "node":      { "type": "boolean" },
+        "impact":    { "type": "boolean" }
+      }
+    }
+  },
+  "validation_note": "Agent must confirm issue_url resolves and all fields_set values are true before declaring success."
+}

@@ -4,14 +4,22 @@ description: Session close ritual — commit work, update sprint board, persist 
 
 # /session_close
 
-Run this when: (a) the DoD for the session ticket is met, OR (b) you notice context drift symptoms (déjà vu, tool amnesia, misattribution). Do not keep working through drift.
+Run when: (a) the DoD for the session ticket is met, OR (b) context drift symptoms appear. Do not keep working through drift.
+
+**Drift symptoms — close immediately:**
+- Agent corrects something already confirmed earlier in session
+- Agent proposes a command contradicting a prior decision
+- Déjà vu — you are re-explaining something from earlier in the session
+- Agent blames failure on something inconsistent with the session timeline
+
+---
 
 ## ⚠️ Issue Creation Protocol (applies DURING session, not just at close)
 
 Whenever a new GitHub issue is created in ANY session, the agent MUST immediately:
 
 ```powershell
-# 1. Create the issue (agent writes structured body with context)
+# 1. Create the issue
 $url = gh issue create --repo mechanistic-org/REPO --title "..." --label "..." --body "..."
 
 # 2. Add to global project board
@@ -27,84 +35,113 @@ gh project item-edit --project-id PVT_kwDOEA3Ajc4BSLlf --id ITEM_ID \
   --field-id PVTIF_lADOEA3Ajc4BSLlfzg_ynvU --iteration-id ITER_ID
 ```
 
-Do NOT leave tickets as orphaned issues. Every issue = project board entry = full metadata. The board IS the sprint.
+Do NOT leave tickets as orphaned issues. Every issue = project board entry = full metadata.
 
-## Steps
+---
 
-1. **State outcome** — what shipped, what didn't, any blockers. One paragraph.
+## Step 1 — State Outcome
 
-> [!WARNING]
-> **Focal Ticket Authority Only:** As defined in `.agent/rules/ticket_closure.md`, you may only execute the closure protocol (Step 2 and 3) on the actual focal ticket of this session. If you happened to satisfy *collateral* tickets, do not close them. Mention them in the outcome statement and wait for explicit human triage.
+One paragraph: what shipped, what did not, any blockers. Reference file paths and issue numbers specifically.
 
-// turbo
-2. **Issue Hygiene & Ticket Closure** (If DoD is met):
-   - **Check DoD:** Use your native MCP GitHub tools (e.g., `mcp_github_update_issue`) to fetch the issue, cleanly check off the Markdown DoD boxes (`- [x]`), and push the updated body. (Do this via API to avoid markdown parsing errors in PowerShell).
-   - **Leave Receipt & Close:** Use the `gh` CLI to post a closing summary and formally close the issue.
+> **Focal Ticket Authority Only:** Per `.agent/rules/ticket_closure.md`, only execute closure (Steps 2-3) on the focal ticket declared at session open. Collateral tickets satisfied incidentally — mention them in the outcome, wait for explicit human triage before closing.
+
+---
+
+## Step 2 — Issue Hygiene and Ticket Closure (if DoD is met)
+
 ```powershell
-gh issue comment <ticket#> --repo mechanistic-org/<repo> --body "Session closed. [Summary of execution results/forensic receipt]"
+# Check off DoD boxes via MCP GitHub tool (avoids PowerShell markdown parsing errors)
+# Use mcp_github_update_issue to push updated body with [x] checkboxes
+
+# Post receipt and close
+gh issue comment <ticket#> --repo mechanistic-org/<repo> --body "Session closed. [execution summary]"
 gh issue close <ticket#> --repo mechanistic-org/<repo>
 ```
 
-3. **Update GitHub Project board status** (primary surface):
-   - If DoD met → move ticket to `Done`
-   - If blocked → move to `Backlog`, leave a comment with blocker
-   - If partial → leave in `In progress`, comment with exactly where things stand
+---
 
-// turbo
-3. **Commit all changes:**
+## Step 3 — Update Project Board Status
+
+- DoD met → move ticket to `Done`
+- Blocked → move to `Backlog`, comment with exact blocker
+- Partial → leave `In Progress`, comment with exactly where things stand
+
+---
+
+## Step 4 — Commit Changes
+
+Stage surgically — never `git add .` or `git add -A`:
+
 ```powershell
 cd D:\GitHub\global_agent
-git add .
+
+# Review working tree first
+git status --short
+
+# Stage only files explicitly modified this session
+git add <file1> <file2>
+
+# Verify staged content before committing
+git diff --cached --stat
+
 git commit -m "Session close: [ticket#] - [one line summary]"
 git push
 ```
 
-// turbo
-4. **Mine the session** — extract Gold and route to registry:
+---
+
+## Step 5 — Mine the Session
+
 ```powershell
 cd D:\GitHub\global_agent
 python scripts\mine_session.py --conversation-id <uuid>
-# or 'python scripts\mine_session.py' for the most recent brain dir
-# add --dry-run to preview without writing files
+# omit --conversation-id to use most recent brain dir
+# add --dry-run to preview without writing
 ```
-Routes items to: `linkedin_drafts/`, `colophon.md`, ChromaDB, `testimonials/`, `law_candidates/`.
 
-> [!WARNING]
-> **Sequential Execution Required:** You MUST wait for Step 4 (`mine_session.py`) to fully exit before starting Step 5. They both write to ChromaDB. Running them concurrently will cause a SQLite WAL lock deadlock and hang the session close.
+Routes to: `linkedin_drafts/`, `colophon.md`, ChromaDB, `law_candidates/`.
 
-// turbo
-5. **Push a forensic doc** with key decisions made this session (decisions only — not a summary of work):
+> **Sequential gate:** Wait for `mine_session.py` to fully exit before Step 6. Both write to ChromaDB. Concurrent execution causes SQLite WAL lock deadlock.
+
+---
+
+## Step 6 — Memory Flush *(future: pending #133)*
+> When `enos_router` session-close flush is implemented, call it here to persist curated session findings to ChromaDB. Skip for now.
+
+---
+
+## Step 7 — Push Forensic Doc
+
+Persist key decisions (decisions only — not a work summary):
+
 ```python
-# Via MCP tool call — split signature from #66:
+# Via MCP tool call
 push_forensic_doc(
     project_name="session_logs",
     component_name="YYYY-MM-DD_[ticket]",
-    markdown_body="## Decisions\n- [decision 1]\n- [decision 2]\n\n## Blockers\n- [any]\n\n## Next: [what next session picks up]",
+    markdown_body="## Decisions\n- [decision 1]\n\n## Blockers\n- [any]\n\n## Next\n[what next session picks up]",
     frontmatter_dict={"title": "Session [ticket#] Decisions", "date": "YYYY-MM-DD", "context_node": "session_close"}
 )
 ```
 
-// turbo
-6. **Append to Singleton Timeline:** Log this teardown to the `registry/timeline.md` chronological ledger. Format must be `grep`-able.
+---
+
+## Step 8 — Append to Timeline
+
 ```powershell
 $date = Get-Date -Format "yyyy-MM-dd"
-Add-Content -Path "D:\GitHub\global_agent\registry\timeline.md" -Value "## [$date] action: session_close | agent: Antigravity | docs: <ticket#>"
+Add-Content -Path "D:\GitHub\global_agent\registry\timeline.md" -Value "## [$date] action: session_close | ticket: [ticket#] | agent: Antigravity"
 ```
 
-7. **Update Sprint_Plan.md** — mark completed items `~~strikethrough~~`, promote next Sprint Now item if applicable.
+---
 
-8. **Close this conversation. Open a new one for the next ticket.**
+## Step 9 — Close
 
-## Drift Symptoms — Close Immediately If You See These
+Close this conversation. Open a new one for the next ticket. Work survives in git and GitHub Issues — the session is disposable.
 
-- Agent corrects something already confirmed earlier in session
-- Agent proposes a command that contradicts a decision already made
-- You feel déjà vu explaining something you explained an hour ago
-- Agent blames a failure on something that doesn't make sense given the timeline
-
-**When drift appears: run steps 3-5 and close. Don't try to fix the session.**
+---
 
 ## Notes
 
-- The conversation is closed whether the ticket is done or not. Work survives in git and GitHub Issues. The session is disposable.
-- Next session starts with `/session_open` — the sprint board and forensic doc tell the new agent everything it needs.
+- Claude Code users: use `.claude/commands/session_close.md` — it is the environment-native shim for this workflow.
+- The `// turbo` annotation used in prior versions of this file was Antigravity-specific. It has been removed. Antigravity executes bash blocks automatically regardless.

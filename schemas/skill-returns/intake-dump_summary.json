@@ -1,0 +1,32 @@
+{
+  "description": "Returned by intake-dump skill. Summary of classified items from an unstructured input dump.",
+  "required": ["source", "tickets_created", "registry_entries_pushed", "skipped"],
+  "properties": {
+    "source": {
+      "type": "string",
+      "description": "Drive folder ID or local inbox path that was processed"
+    },
+    "tickets_created": {
+      "type": "array",
+      "description": "List of GitHub issues created from actionable triage items",
+      "items": {
+        "type": "object",
+        "required": ["issue_url", "repo", "classification"],
+        "properties": {
+          "issue_url":       { "type": "string" },
+          "repo":            { "type": "string", "enum": ["global_agent", "portfolio", "mechanistic", "hyphen"] },
+          "classification":  { "type": "string", "enum": ["infrastructure", "feature", "content"] }
+        }
+      }
+    },
+    "registry_entries_pushed": {
+      "type": "integer",
+      "description": "Count of strategic framing items pushed to ChromaDB via push_forensic_doc"
+    },
+    "skipped": {
+      "type": "integer",
+      "description": "Count of items classified as duplicate or already ticketed"
+    }
+  },
+  "validation_note": "Agent must confirm tickets_created URLs resolve before declaring success. registry_entries_pushed must be > 0 if any strategic framing content was found."
+}

@@ -10,7 +10,7 @@ inputs:
   none: "boolean"
 returns: 
   type: "json"
-  schema: "file://assets/update_resume_summary.json"
+  schema: "file://schemas/skill-returns/update-resume_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

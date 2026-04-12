@@ -10,7 +10,7 @@ inputs:
   notebook_name: "string"
 returns: 
   type: "json"
-  schema: "file://assets/mining_campaign_summary.json"
+  schema: "file://schemas/skill-returns/run-mining-campaign_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

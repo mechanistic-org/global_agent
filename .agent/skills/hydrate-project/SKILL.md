@@ -10,7 +10,7 @@ inputs:
   slug: "string (Project identifier linking to notebook_dumps/)"
 returns: 
   type: "json"
-  schema: "file://assets/hydration_summary.json"
+  schema: "file://schemas/skill-returns/hydrate-project_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

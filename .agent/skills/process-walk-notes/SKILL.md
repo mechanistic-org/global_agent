@@ -10,7 +10,7 @@ inputs:
   folder_id: "string (Google Drive Folder ID containing walk notes)"
 returns: 
   type: "json"
-  schema: "file://assets/processed_notes_summary.json"
+  schema: "file://schemas/skill-returns/process-walk-notes_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

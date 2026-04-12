@@ -1,0 +1,20 @@
+{
+  "description": "Completion confirmation returned by update_resume skill.",
+  "required": ["status", "output_path"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["success", "failure"],
+      "description": "Terminal state of the skill execution"
+    },
+    "output_path": {
+      "type": "string",
+      "description": "Absolute path to the primary artifact produced, or resource ID/URL for non-file outputs"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional: warnings, partial completions, or operator action required"
+    }
+  },
+  "validation_note": "status must be success and output_path must resolve before declaring done. Any notes field content must be surfaced to the operator."
+}

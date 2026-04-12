@@ -10,7 +10,7 @@ inputs:
   payload_location: "string (Google Drive Folder ID or local path)"
 returns: 
   type: "json"
-  schema: "file://assets/triage_results.json"
+  schema: "file://schemas/skill-returns/intake-dump_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

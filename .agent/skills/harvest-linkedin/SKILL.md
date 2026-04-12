@@ -10,7 +10,7 @@ inputs:
   none: "boolean"
 returns: 
   type: "json"
-  schema: "file://assets/linkedin_harvest_summary.json"
+  schema: "file://schemas/skill-returns/harvest-linkedin_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

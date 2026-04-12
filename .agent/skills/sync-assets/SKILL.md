@@ -11,7 +11,7 @@ inputs:
   flags: "string (e.g., --dry-run or --prune)"
 returns: 
   type: "json"
-  schema: "file://assets/sync_assets_summary.json"
+  schema: "file://schemas/skill-returns/sync-assets_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

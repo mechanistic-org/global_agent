@@ -4,6 +4,9 @@ venv/
 __pycache__/
 .env
 .DS_Store
+.claude/*
+!.claude/commands/
+!.claude/commands/**
 
 # Logs and Outputs
 *.log
@@ -17,7 +20,7 @@ gcp-oauth.keys.json
 
 .gdrive_tokens.json
 
-# ChromaDB — binary SQLite, never commit (causes git push hangs)
+# ChromaDB - binary SQLite, never commit (causes git push hangs)
 registry/.chroma_db/
 .chroma_db/
 

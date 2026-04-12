@@ -12,7 +12,7 @@ inputs:
   employer: "string"
 returns: 
   type: "json"
-  schema: "file://assets/scaffold_project_summary.json"
+  schema: "file://schemas/skill-returns/scaffold-project_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

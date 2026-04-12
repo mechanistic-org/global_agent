@@ -8,9 +8,10 @@ version: "2.0.0"
 
 inputs:
   topic: "string (The core subject or working title of the post)"
+  persona: "string (Optional: 'me_builder' or 'hired_gun'. Defaults to 'me_builder')"
 returns: 
   type: "json"
-  schema: "file://assets/linkedin_scaffold_summary.json"
+  schema: "file://schemas/skill-returns/draft-linkedin-post_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up
@@ -40,12 +41,16 @@ termination:
 
 When triggered, execute the strict scaffolding pipeline:
 
-1. **Parameter Verification:** Read the `topic` variable.
-2. **Actuation - Ticketing (Level 3):** Use `mcp_github` to create a tracking issue connecting the post to the project board.
+1. **Parameter Verification & Tone Check:** 
+   * Read the `topic` and `persona` variables. 
+   * If `persona` is not explicitly provided, analyze the `topic`. If the topic sounds highly reactive, defensive, or aimed at tearing down an industry standard, HALT and use `ask_question` to ask the operator: "This topic leans toward a 'Hired Gun' tone. Should I proceed with the default 'me_builder' or switch to 'hired_gun'?"
+   * Otherwise, default to `me_builder`.
+2. **Context Injection:** Execute `view_file` to strictly read the exact contents of `D:\GitHub\global_agent\registry\linkedin\ERIK_VOICE_PRIMER.md`. You must not proceed without understanding the requested persona constraints from this document.
+3. **Actuation - Ticketing (Level 3):** Use `mcp_github` to create a tracking issue connecting the post to the project board.
    *   Title: "Draft LinkedIn Post: [Topic]"
    *   Body: Must include checkboxes for Draft written, Comment written, and Persona validation.
    *   Labels: ["content"]
-3. **Actuation - Scaffolding (Level 3):** Use `run_command` in powershell to create the physical files. Do not rewrite existing files.
-   *   File 1 (Draft): `registry\linkedin\drafts\$(Get-Date -Format 'yyyy-MM-dd')_$topicSlug.md`. Must contain strict Keystatic frontmatter (title, pubDate, status, post_url, thread_id, arc_position, tags).
+4. **Actuation - Scaffolding (Level 3):** Use `run_command` in powershell to create the physical files. Do not rewrite existing files.
+   *   File 1 (Draft): `registry\linkedin\drafts\$(Get-Date -Format 'yyyy-MM-dd')_$topicSlug.md`. Must contain strict Keystatic frontmatter. Embed the selected persona tone strictly mirroring `ERIK_VOICE_PRIMER.md`.
    *   File 2 (Comment): `registry\linkedin\drafts\comments\$(Get-Date -Format 'yyyy-MM-dd')_$topicSlug_comment.md`.
-4. **Termination (T):** Verify files exist on disk. Yield control to the operator, reminding them to apply `law_004_linkedin_persona.md` rules during the actual writing phase.
+5. **Termination (T):** Verify files exist on disk. Yield control to the operator, confirming the exact voice/gear that was deployed based on `ERIK_VOICE_PRIMER.md`.

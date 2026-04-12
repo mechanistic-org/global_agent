@@ -12,7 +12,7 @@ inputs:
   metadata: "object containing Iteration, Priority, Size, Node, Impact, Status"
 returns: 
   type: "json"
-  schema: "file://assets/create_issue_summary.json"
+  schema: "file://schemas/skill-returns/create-issue_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

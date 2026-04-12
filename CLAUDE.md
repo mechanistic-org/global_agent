@@ -33,8 +33,11 @@ You exist in a dual-state environment. You must strictly separate how you gather
 
 ---
 
-## MCP Router Tools
+## MCP Tool Surface
 
+Three MCP servers are available in every session. Agents must be aware of all three — do not route GitHub or GWS operations manually when native tools exist.
+
+### 1. `enos_router` (Sovereign Context Router)
 Connect via: `claude mcp add --transport http enos_router http://127.0.0.1:8000/mcp`
 *(For Antigravity, add to the MCP Server configuration UI routing to localhost:8000/mcp)*
 
@@ -49,6 +52,22 @@ Connect via: `claude mcp add --transport http enos_router http://127.0.0.1:8000/
 | `patch_astro_component` | AST surgical patcher for Astro components |
 
 If the router is unreachable: `pm2 restart enos-router` from `D:\GitHub\global_agent`.
+
+### 2. `github` (Native GitHub MCP)
+Use for: issue creation, PR management, repo queries, project board operations.
+Do not shell out to `gh` CLI when this server is active — prefer native MCP tools.
+
+### 3. `gws` (Google Workspace MCP)
+Use for: Gmail, Calendar, Drive, Docs, Sheets operations.
+Do not use GWS skills that shell to `gcloud` or `oauth` flows when this server is active.
+
+---
+
+## Context Bloat Hazard
+
+> **WARNING:** A file named `Node_0_Master_Context.txt` exists near the global workspace root. It is approximately 23MB uncompressed. If any agent, IDE scanner, or bash script reads this file raw, it causes complete token exhaustion, 30+ minute latencies, and context window crashes.
+>
+> **Never read this file directly.** All context retrieval goes through `enos_router` → ChromaDB. This is not advisory — it is a hard constraint enforced by the Two-Pillar law above.
 
 ---
 

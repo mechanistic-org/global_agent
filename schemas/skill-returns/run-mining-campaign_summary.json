@@ -1,0 +1,28 @@
+{
+  "description": "Returned by run-mining-campaign skill. Summary of a NotebookLM extraction run.",
+  "required": ["notebook_name", "extraction_method", "raw_output_path", "maker_checker_passed"],
+  "properties": {
+    "notebook_name": {
+      "type": "string",
+      "description": "Target NLM notebook name or ID"
+    },
+    "extraction_method": {
+      "type": "string",
+      "enum": ["mind_map_json", "chat_query"],
+      "description": "Which extraction path was used. mind_map_json is preferred."
+    },
+    "raw_output_path": {
+      "type": "string",
+      "description": "Absolute path to the raw output file written to src/content/_raw_nlm/"
+    },
+    "maker_checker_passed": {
+      "type": "boolean",
+      "description": "Confirms Maker output passed Pydantic schema validation"
+    },
+    "retry_count": {
+      "type": "integer",
+      "description": "Number of Maker re-prompts required (0 is ideal)"
+    }
+  },
+  "validation_note": "maker_checker_passed must be true before passing output to AST injector."
+}

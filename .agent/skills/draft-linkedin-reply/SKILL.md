@@ -11,7 +11,7 @@ inputs:
   inbound_text: "string (Raw comment text)"
 returns: 
   type: "json"
-  schema: "file://assets/linkedin_reply_summary.json"
+  schema: "file://schemas/skill-returns/draft-linkedin-reply_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

@@ -11,7 +11,9 @@ inputs:
   target_param: "string"
 returns: 
   type: "json"
-  schema: "file://assets/output_schema.json"
+  # Convention: all skill return schemas live in D:/GitHub/global_agent/schemas/skill-returns/
+  # Name the file after the skill: <skill-name>_summary.json
+  schema: "file://schemas/skill-returns/output_schema.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

@@ -1,0 +1,27 @@
+{
+  "description": "Returned by publish-post skill. Confirms LinkedIn post state transition is complete.",
+  "required": ["filename", "post_url", "draft_moved", "comment_moved", "git_pushed"],
+  "properties": {
+    "filename": {
+      "type": "string",
+      "description": "Base filename of the published post (without extension)"
+    },
+    "post_url": {
+      "type": "string",
+      "description": "Live LinkedIn post URL provided by operator"
+    },
+    "draft_moved": {
+      "type": "boolean",
+      "description": "Confirms registry/linkedin/drafts/{filename}.md moved to posted/"
+    },
+    "comment_moved": {
+      "type": "boolean",
+      "description": "Confirms self-comment file moved to posted/comments/ (false if no comment existed)"
+    },
+    "git_pushed": {
+      "type": "boolean",
+      "description": "Confirms git commit and push completed successfully"
+    }
+  },
+  "validation_note": "draft_moved must be true. git_pushed must be true. post_url must be a valid linkedin.com URL."
+}

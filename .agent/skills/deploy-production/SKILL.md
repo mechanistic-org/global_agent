@@ -10,7 +10,7 @@ inputs:
   commit_message: "string"
 returns: 
   type: "json"
-  schema: "file://assets/deploy_production_summary.json"
+  schema: "file://schemas/skill-returns/deploy-production_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

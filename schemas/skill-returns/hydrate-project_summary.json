@@ -1,0 +1,27 @@
+{
+  "description": "Returned by hydrate-project skill. Confirms a portfolio project has been hydrated via the mining pipeline.",
+  "required": ["slug", "vectors_written", "mdx_patched", "schema_valid"],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "Project slug that was hydrated"
+    },
+    "vectors_written": {
+      "type": "integer",
+      "description": "Number of ChromaDB vectors written for this project"
+    },
+    "mdx_patched": {
+      "type": "boolean",
+      "description": "Confirms AST patcher successfully injected data into index.mdx frontmatter"
+    },
+    "schema_valid": {
+      "type": "boolean",
+      "description": "Confirms Pydantic/Zod schema validation passed on injected payload"
+    },
+    "ledger_entry": {
+      "type": "string",
+      "description": "SQLite ledger row ID confirming this project is marked complete"
+    }
+  },
+  "validation_note": "schema_valid must be true. mdx_patched must be true. If either is false, do not mark ticket complete."
+}

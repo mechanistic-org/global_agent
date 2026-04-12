@@ -11,7 +11,7 @@ inputs:
   recordings: "array of strings (paths to local .webp files)"
 returns: 
   type: "json"
-  schema: "file://assets/evidence_extraction_summary.json"
+  schema: "file://schemas/skill-returns/evidence-extraction_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up

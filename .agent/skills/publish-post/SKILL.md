@@ -10,7 +10,7 @@ inputs:
   filename: "string (The target markdown file base name)"
 returns: 
   type: "json"
-  schema: "file://assets/publish_post_summary.json"
+  schema: "file://schemas/skill-returns/publish-post_summary.json"
 
 # ==========================================
 # (C) Applicability Conditions: When to Wake Up
