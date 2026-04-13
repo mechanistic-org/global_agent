@@ -1,5 +1,5 @@
 ---
-title: Identified and addressed ChromaDB SQLite locking issues in `mine_session.py`.
+title: "Identified and addressed ChromaDB SQLite locking issues in `mine_session.py`."
 date: 2026-03-28
 context_node: conversation_miner
 ---

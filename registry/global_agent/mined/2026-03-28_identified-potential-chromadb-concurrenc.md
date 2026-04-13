@@ -1,5 +1,5 @@
 ---
-title: Identified potential ChromaDB concurrency issues between `enos_router` and `mine_session.py`, suggesting SSE for inter-process communication.
+title: "Identified potential ChromaDB concurrency issues between `enos_router` and `mine_session.py`, suggesting SSE for inter-process communication."
 date: 2026-03-28
 context_node: conversation_miner
 ---

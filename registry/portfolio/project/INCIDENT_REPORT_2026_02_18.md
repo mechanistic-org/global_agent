@@ -1,5 +1,5 @@
 ---
-title: "Incident Report: The M700 Build Crash"
+title: "\"Incident Report: The M700 Build Crash\""
 date: 2026-02-18
 tags: [Forensics, Debugging, Bisection, Astro]
 description: "Forensic analysis of a critical build failure caused by type mismatches in frontmatter tags, resolved via automated bisection."

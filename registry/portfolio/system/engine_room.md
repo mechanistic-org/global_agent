@@ -1,5 +1,5 @@
 ---
-title: "The Engine Room: Architecture & Maintenance"
+title: "\"The Engine Room: Architecture & Maintenance\""
 slug: the_engine_room
 sidebar:
   group: Handbook

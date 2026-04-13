@@ -1,5 +1,5 @@
 ---
-title: "Audit: LinkedIn Content Strategy"
+title: "\"Audit: LinkedIn Content Strategy\""
 slug: "linkedin-strategy-audit"
 description: "Tactical analysis of 'Building in Public' for the Forensic Architect persona."
 date: "2026-02-12"

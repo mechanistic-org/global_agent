@@ -116,7 +116,7 @@ def process_animation_sequence(input_dir, output_dir):
                 if match:
                     duration = int(match.group(1))
                     print(f"    [CONFIG] Custom duration found: {duration}ms")
-            except:
+            except Exception:
                 pass
 
             # Save as Animated WebP

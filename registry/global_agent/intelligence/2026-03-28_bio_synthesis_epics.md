@@ -1,5 +1,5 @@
 ---
-title: "Session 90/91 Decisions: Bio Synthesis & Venn Asset"
+title: "\"Session 90/91 Decisions: Bio Synthesis & Venn Asset\""
 date: "2026-03-28"
 context_node: "session_close"
 ---

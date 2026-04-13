@@ -1,5 +1,5 @@
 ---
-title: Eliminated redundant `Sprint_Plan.md` artifact by leveraging live GitHub Project data.
+title: "Eliminated redundant `Sprint_Plan.md` artifact by leveraging live GitHub Project data."
 date: 2026-03-24
 context_node: conversation_miner
 ---

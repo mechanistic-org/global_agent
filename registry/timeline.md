@@ -16,3 +16,5 @@ Append-only chronological ledger of all OS activity, session teardowns, and syst
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: 109
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: 122
 ## [2026-04-07] action: session_close | agent: Antigravity | docs: portfolio#53, global_agent#123
+## [2026-04-08] action: session_close | agent: Antigravity | docs: Figma_Intel_and_Personas
+## [2026-04-13] action: session_close | ticket: 139 | agent: Antigravity

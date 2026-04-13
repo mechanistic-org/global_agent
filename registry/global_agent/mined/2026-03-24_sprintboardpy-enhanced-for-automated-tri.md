@@ -1,5 +1,5 @@
 ---
-title: `sprint_board.py` enhanced for automated triage and future sprint visibility.
+title: "`sprint_board.py` enhanced for automated triage and future sprint visibility."
 date: 2026-03-24
 context_node: conversation_miner
 ---

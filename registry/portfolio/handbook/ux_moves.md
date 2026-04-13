@@ -1,5 +1,5 @@
 ---
-title: "UX Moves: The Personality Engine"
+title: "\"UX Moves: The Personality Engine\""
 description: "A registry of signature interactions and motion designs that define the site's unique feel."
 ---
 

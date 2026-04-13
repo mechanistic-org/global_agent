@@ -1,5 +1,5 @@
 ---
-title: Existing projects will be backfilled with `PROJECT_INTELLIGENCE.md` files to integrate them into the new intelligence indexing system.
+title: "Existing projects will be backfilled with `PROJECT_INTELLIGENCE.md` files to integrate them into the new intelligence indexing system."
 date: 2026-04-04
 context_node: conversation_miner
 ---

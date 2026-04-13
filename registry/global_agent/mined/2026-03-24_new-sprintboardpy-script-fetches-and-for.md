@@ -1,5 +1,5 @@
 ---
-title: New `sprint_board.py` script fetches and formats live GitHub sprint data for agents.
+title: "New `sprint_board.py` script fetches and formats live GitHub sprint data for agents."
 date: 2026-03-24
 context_node: conversation_miner
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Site Audit: 2025-12-04"
+title: "\"Site Audit: 2025-12-04\""
 date: "2025-12-04"
 type: audit
 description: "Documentation for Site Audit: 2025-12-04."

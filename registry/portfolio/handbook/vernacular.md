@@ -1,5 +1,5 @@
 ---
-title: "The Antigravity Lexicon: A Vernacular scrub"
+title: "\"The Antigravity Lexicon: A Vernacular scrub\""
 description: "High-signal breakdown of terms used in the project."
 slug: "vernacular"
 ---

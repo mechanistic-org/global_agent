@@ -1,5 +1,5 @@
 ---
-title: "Site Audit: 2025-12-05"
+title: "\"Site Audit: 2025-12-05\""
 description: "Audit performed by The Council of Voices & The Data God"
 sidebar:
   group: Audits

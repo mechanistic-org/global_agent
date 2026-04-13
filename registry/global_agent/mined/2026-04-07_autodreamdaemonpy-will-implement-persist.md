@@ -1,5 +1,5 @@
 ---
-title: `autodream_daemon.py` will implement persistent hash-based state tracking and switch to an append-only master log to centralize system distillations.
+title: "`autodream_daemon.py` will implement persistent hash-based state tracking and switch to an append-only master log to centralize system distillations."
 date: 2026-04-07
 context_node: conversation_miner
 ---

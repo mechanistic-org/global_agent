@@ -1,0 +1,24 @@
+# FILE DESTINATION: mechanistic-org/.github repo
+# PATH IN THAT REPO: .github/workflows/add-to-project.yml
+#
+# This is the single reusable workflow that all repos call via board-sync.yml.
+# Change project-url here and every repo picks it up on next trigger.
+#
+# PREREQUISITE: Set ADD_TO_PROJECT_PAT as an org-level secret in mechanistic-org.
+# The PAT needs scopes: repo + project (classic token) or project (fine-grained).
+# Settings > Developer settings > Personal access tokens
+# Then: mechanistic-org > Settings > Secrets > Actions > New org secret
+
+name: Add to Project Board (reusable)
+
+on:
+  workflow_call:
+
+jobs:
+  add-to-project:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@v1.0.2
+        with:
+          project-url: https://github.com/orgs/mechanistic-org/projects/5
+          github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}

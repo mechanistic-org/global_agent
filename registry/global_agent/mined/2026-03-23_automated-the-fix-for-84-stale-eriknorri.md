@@ -1,5 +1,5 @@
 ---
-title: Automated the fix for 84 stale `eriknorris` path references using a pre-existing, verified script.
+title: "Automated the fix for 84 stale `eriknorris` path references using a pre-existing, verified script."
 date: 2026-03-23
 context_node: conversation_miner
 ---

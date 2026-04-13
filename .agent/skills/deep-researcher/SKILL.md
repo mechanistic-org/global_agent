@@ -9,7 +9,7 @@ inputs:
   query: "string (optional specific research extraction parameters)"
 returns: 
   type: "filesystem_and_chromadb"
-  schema: "Markdown file written to registry/[project]/assets/[pdf_name]_research.md and indexed under {"project": "[project]"}"
+  schema: 'Markdown file written to registry/[project]/assets/[pdf_name]_research.md and indexed under {"project": "[project]"}'
 
 applicability:
   trigger_events:

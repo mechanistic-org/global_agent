@@ -1,5 +1,5 @@
 ---
-title: "Diagnostic Portal: The 'Lagging Key'"
+title: "\"Diagnostic Portal: The 'Lagging Key'\""
 description: "Live diagnostic matrix for the 8 Deep Dive projects, highlighting congruence and integrity gaps."
 slug: "DIAGNOSTIC_PORTAL"
 sidebar:

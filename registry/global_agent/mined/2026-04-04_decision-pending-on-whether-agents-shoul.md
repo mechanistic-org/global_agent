@@ -1,5 +1,5 @@
 ---
-title: Decision pending on whether agents should use native `mcp_github` tools or `gh` CLI commands for GitHub issue interactions.
+title: "Decision pending on whether agents should use native `mcp_github` tools or `gh` CLI commands for GitHub issue interactions."
 date: 2026-04-04
 context_node: conversation_miner
 ---

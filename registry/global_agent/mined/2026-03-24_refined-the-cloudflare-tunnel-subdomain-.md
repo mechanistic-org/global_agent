@@ -1,5 +1,5 @@
 ---
-title: Refined the Cloudflare Tunnel subdomain to `hooks.mechanistic.com` for clearer purpose.
+title: "Refined the Cloudflare Tunnel subdomain to `hooks.mechanistic.com` for clearer purpose."
 date: 2026-03-24
 context_node: conversation_miner
 ---

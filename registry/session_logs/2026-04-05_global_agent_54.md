@@ -1,5 +1,5 @@
 ---
-title: 'Session #54: R2 Endpoint Standardization Decisions'
+title: "'Session #54: R2 Endpoint Standardization Decisions'"
 date: '2026-04-05'
 context_node: session_close
 ---

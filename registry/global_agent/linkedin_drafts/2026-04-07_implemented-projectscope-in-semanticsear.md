@@ -1,5 +1,5 @@
 ---
-title: Implemented `project_scope` in `semantic_search` to eliminate ChromaDB context pollution across projects.
+title: "Implemented `project_scope` in `semantic_search` to eliminate ChromaDB context pollution across projects."
 pubDate: 2026-04-07
 audio_url: ''
 isDraft: true

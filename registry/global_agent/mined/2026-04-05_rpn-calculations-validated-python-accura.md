@@ -1,5 +1,5 @@
 ---
-title: RPN calculations validated: Python accurately computed examples like $10 \times 5 \times 2 = 100$, confirming deterministic reliability.
+title: "RPN calculations validated: Python accurately computed examples like $10 \times 5 \times 2 = 100$, confirming deterministic reliability."
 date: 2026-04-05
 context_node: conversation_miner
 ---

@@ -1,5 +1,5 @@
 ---
-title: Session Hotfix: MCP JSON RPC SQLite Lock Patch
+title: "Session Hotfix: MCP JSON RPC SQLite Lock Patch"
 date: 2026-04-04
 context_node: session_close
 ---

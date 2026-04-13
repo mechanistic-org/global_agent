@@ -1,5 +1,5 @@
 ---
-title: "Audit: SEO & AEO Infrastructure"
+title: "\"Audit: SEO & AEO Infrastructure\""
 slug: "seo-aeo-infrastructure-audit"
 description: "Forensic analysis of the 'Product Reality Engine' search and social visibility stack."
 date: "2026-02-12"

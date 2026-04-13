@@ -1,5 +1,5 @@
 ---
-title: Identified a critical tooling limitation: import graph scanner fails to follow barrel re-exports, impacting dependency analysis.
+title: "Identified a critical tooling limitation: import graph scanner fails to follow barrel re-exports, impacting dependency analysis."
 date: 2026-03-23
 context_node: conversation_miner
 ---

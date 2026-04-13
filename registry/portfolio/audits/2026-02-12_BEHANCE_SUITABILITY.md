@@ -1,5 +1,5 @@
 ---
-title: "Audit: Behance Platform Suitability"
+title: "\"Audit: Behance Platform Suitability\""
 date: "2026-02-12"
 type: "Strategy Audit"
 status: "Concluded"

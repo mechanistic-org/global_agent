@@ -1,5 +1,5 @@
 ---
-title: "JUDGMENT DAY: 2025-12-05"
+title: "\"JUDGMENT DAY: 2025-12-05\""
 description: "The Sacred Timeline has been pruned."
 slug: "audit_2025_12_05_v2"
 sidebar:

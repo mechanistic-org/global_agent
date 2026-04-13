@@ -1,5 +1,5 @@
 ---
-title: Foundational questions for local asset ingestion resolved, confirming `docling` and disk-streaming approach.
+title: "Foundational questions for local asset ingestion resolved, confirming `docling` and disk-streaming approach."
 date: 2026-04-07
 context_node: conversation_miner
 ---

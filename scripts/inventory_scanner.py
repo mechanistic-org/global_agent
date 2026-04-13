@@ -28,7 +28,7 @@ def get_js_comment(filepath):
                     else:
                         break
                 return " ".join(lines)
-    except:
+    except Exception:
         pass
     return "No header comment."
 

@@ -1,0 +1,14 @@
+[
+  {
+    "channel": "discard",
+    "confidence": "captured",
+    "destination": "discard",
+    "content": "The provided conversation artifact contained no readable content or discernible information, indicating an empty or unprocessable input for mining.",
+    "one_liner": "No readable artifacts were found in the conversation.",
+    "source_context": "[No readable artifacts found in conversation 4755319d-04fc-4cd7-9dfe-f87f9f318ca7]",
+    "tags": [
+      "empty_input",
+      "no_gold"
+    ]
+  }
+]

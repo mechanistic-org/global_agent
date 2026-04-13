@@ -1,5 +1,5 @@
 ---
-title: Cloudflared agent installed as an automatic Windows service via `setup_ingress.ps1`.
+title: "Cloudflared agent installed as an automatic Windows service via `setup_ingress.ps1`."
 date: 2026-04-04
 context_node: conversation_miner
 ---

@@ -1,5 +1,5 @@
 ---
-title: Robust failure handling ensures files remain in `inbox/` for review upon ingestion errors, preventing data loss.
+title: "Robust failure handling ensures files remain in `inbox/` for review upon ingestion errors, preventing data loss."
 date: 2026-03-28
 context_node: conversation_miner
 ---

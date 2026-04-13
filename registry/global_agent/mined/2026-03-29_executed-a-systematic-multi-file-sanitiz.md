@@ -1,5 +1,5 @@
 ---
-title: Executed a systematic multi-file sanitization of sensitive financial data within the `hyphen` repository.
+title: "Executed a systematic multi-file sanitization of sensitive financial data within the `hyphen` repository."
 date: 2026-03-29
 context_node: conversation_miner
 ---

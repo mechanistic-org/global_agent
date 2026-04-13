@@ -1,5 +1,5 @@
 ---
-title: "Audit: Broken Intent (Data Pipeline Analysis)"
+title: "\"Audit: Broken Intent (Data Pipeline Analysis)\""
 slug: "broken-intent-audit-2026-02-12"
 description: "Forensic analysis of data loss between Source (JSON), Storage (MDX), and Layout (UI)."
 date: "2026-02-12"

@@ -1,5 +1,5 @@
 ---
-title: Robust safety constraints were added to `run_agent.py` to prevent runaway token burn and infinite loops.
+title: "Robust safety constraints were added to `run_agent.py` to prevent runaway token burn and infinite loops."
 date: 2026-04-04
 context_node: conversation_miner
 ---

@@ -1,5 +1,5 @@
 ---
-title: `watchdog` and `pypdf` libraries are integrated for robust filesystem monitoring and PDF text extraction.
+title: "`watchdog` and `pypdf` libraries are integrated for robust filesystem monitoring and PDF text extraction."
 date: 2026-03-28
 context_node: conversation_miner
 ---

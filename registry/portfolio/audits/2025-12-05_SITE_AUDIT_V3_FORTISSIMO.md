@@ -1,5 +1,5 @@
 ---
-title: "AUDIT V3: FORTISSIMO"
+title: "\"AUDIT V3: FORTISSIMO\""
 description: "VOLUME: 11 / 10"
 slug: "audit_2025_12_05_fortissimo"
 sidebar:

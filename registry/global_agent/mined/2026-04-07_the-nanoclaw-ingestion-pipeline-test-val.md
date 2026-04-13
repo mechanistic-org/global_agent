@@ -1,5 +1,5 @@
 ---
-title: The NanoClaw ingestion pipeline test validates parsing, conversion to `forensic_inbox`, and ChromaDB insertion.
+title: "The NanoClaw ingestion pipeline test validates parsing, conversion to `forensic_inbox`, and ChromaDB insertion."
 date: 2026-04-07
 context_node: conversation_miner
 ---

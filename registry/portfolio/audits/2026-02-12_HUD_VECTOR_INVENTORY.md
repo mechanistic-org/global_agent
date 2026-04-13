@@ -1,5 +1,5 @@
 ---
-title: "Inventory: HUD Vectors (The Heavy 12)"
+title: "\"Inventory: HUD Vectors (The Heavy 12)\""
 slug: "hud-vector-inventory-2026-02-12"
 description: "Detailed mapping of Forensic Vectors across the 12 heaviest projects."
 date: "2026-02-12"

@@ -1,5 +1,5 @@
 ---
-title: The FastMCP router must be actively listening at `http://host.docker.internal:8000/sse` for NanoClaw ingestion.
+title: "The FastMCP router must be actively listening at `http://host.docker.internal:8000/sse` for NanoClaw ingestion."
 date: 2026-04-07
 context_node: conversation_miner
 ---

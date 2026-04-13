@@ -1,5 +1,5 @@
 ---
-title: "The Studio: Building & Customizing"
+title: "\"The Studio: Building & Customizing\""
 slug: the_studio
 sidebar:
   group: Handbook

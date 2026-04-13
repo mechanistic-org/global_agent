@@ -14,7 +14,8 @@ module.exports = {
       env: {
         PYTHONUNBUFFERED: "1",
         // SSE deprecated March 2025 — Streamable HTTP is the MCP standard
-        MCP_TRANSPORT: "http"
+        MCP_TRANSPORT: "http",
+        FOR_DISABLE_CONSOLE_CTRL_HANDLER: "1"
       }
     },
     {

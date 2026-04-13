@@ -1,5 +1,5 @@
 ---
-title: Phase 1: Security & Observability for EN-OS is complete, featuring a universal dashboard and secured token circuits.
+title: "Phase 1: Security & Observability for EN-OS is complete, featuring a universal dashboard and secured token circuits."
 pubDate: 2026-04-07
 audio_url: ''
 isDraft: true

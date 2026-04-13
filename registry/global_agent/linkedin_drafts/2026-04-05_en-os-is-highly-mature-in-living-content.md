@@ -1,5 +1,5 @@
 ---
-title: EN-OS is highly mature in living content management with `ast-patcher` and LinkedIn workflows, needing only "Monitor" and "Diff" loops to complete the Three-Agent Architecture.
+title: "EN-OS is highly mature in living content management with `ast-patcher` and LinkedIn workflows, needing only \"Monitor\" and \"Diff\" loops to complete the Three-Agent Architecture."
 pubDate: 2026-04-05
 audio_url: ''
 isDraft: true

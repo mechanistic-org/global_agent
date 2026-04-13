@@ -1,5 +1,5 @@
 ---
-title: "The Mechanical Claws: Physics and Constraint Engines"
+title: "\"The Mechanical Claws: Physics and Constraint Engines\""
 date: "2026-04-07"
 status: "DRAFT"
 project: "global_agent"

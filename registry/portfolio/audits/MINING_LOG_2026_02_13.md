@@ -1,5 +1,5 @@
 ---
-title: "Mining Log: Forensic Titration M700 & 320-Slot Carousel"
+title: "\"Mining Log: Forensic Titration M700 & 320-Slot Carousel\""
 slug: "mining-log-2026-02-13"
 description: "Forensic analysis of M700 and 320-Slot Carousel titration."
 date: "2026-02-13"

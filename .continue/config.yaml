@@ -44,10 +44,7 @@ tabAutocompleteModel:
 # enos_router runs via PM2 on Streamable HTTP.
 # All context retrieval MUST go through this server.
 # Never use filesystem scans for context.
-mcpServers:
-  - name: enos_router
-    transport: http
-    url: http://127.0.0.1:8000/mcp
+# (Server definition moved to global ~/.gemini/antigravity/mcp_config.json)
 
 # ── System Prompt Injection ───────────────────────────────────────────────────
 systemMessage: |

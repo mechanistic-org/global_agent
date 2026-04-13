@@ -2,8 +2,8 @@
 	"folders": [
 		{
 			"name": "Global Agent (Repo)",
-			"path": ".",
-		},
+			"path": "."
+		}
 	],
 	"settings": {
 		"files.exclude": {
@@ -11,8 +11,8 @@
 			"**/dist": true,
 			"**/.astro": true,
 			"**/venv": true,
-			"**/.venv*": true
-		},
-		"powershell.cwd": "Global Agent (Repo)",
-	},
+			"**/.venv*": true,
+			"**/.claude": true
+		}
+	}
 }

@@ -1,5 +1,5 @@
 ---
-title: "Deep Prompt Engineering: Strategy & Gap Analysis"
+title: "\"Deep Prompt Engineering: Strategy & Gap Analysis\""
 slug: "prompt_engineering_strategy"
 sidebar:
   group: "Meta"

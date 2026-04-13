@@ -1,5 +1,5 @@
 ---
-title: Improved repository hygiene by untracking `.chroma_db` and updating `.gitignore`.
+title: "Improved repository hygiene by untracking `.chroma_db` and updating `.gitignore`."
 date: '2026-03-24'
 context_node: conversation_miner
 ---

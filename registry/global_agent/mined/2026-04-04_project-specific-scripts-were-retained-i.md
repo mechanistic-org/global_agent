@@ -1,5 +1,5 @@
 ---
-title: Project-specific scripts were retained in `portfolio` due to strict data structure dependencies, avoiding unnecessary coupling.
+title: "Project-specific scripts were retained in `portfolio` due to strict data structure dependencies, avoiding unnecessary coupling."
 date: 2026-04-04
 context_node: conversation_miner
 ---

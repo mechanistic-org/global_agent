@@ -1,5 +1,5 @@
 ---
-title: `run_audio_generation.py` was dynamically patched to accept generic `--prompt` arguments, increasing its reusability.
+title: "`run_audio_generation.py` was dynamically patched to accept generic `--prompt` arguments, increasing its reusability."
 date: 2026-04-04
 context_node: conversation_miner
 ---

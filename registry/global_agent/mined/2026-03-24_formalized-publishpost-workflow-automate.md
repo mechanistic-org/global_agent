@@ -1,5 +1,5 @@
 ---
-title: Formalized `/publish_post` workflow automates LinkedIn publishing, ensuring consistency and reducing manual errors.
+title: "Formalized `/publish_post` workflow automates LinkedIn publishing, ensuring consistency and reducing manual errors."
 date: 2026-03-24
 context_node: conversation_miner
 ---

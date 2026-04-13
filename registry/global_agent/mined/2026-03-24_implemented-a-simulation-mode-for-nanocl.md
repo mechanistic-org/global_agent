@@ -1,5 +1,5 @@
 ---
-title: Implemented a simulation mode for `nanoclaw` execution, enabling development ahead of dependency availability.
+title: "Implemented a simulation mode for `nanoclaw` execution, enabling development ahead of dependency availability."
 date: 2026-03-24
 context_node: conversation_miner
 ---

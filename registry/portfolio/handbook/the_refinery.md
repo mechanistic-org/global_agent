@@ -1,5 +1,5 @@
 ---
-title: 'The Refinery: Asset & Content Sovereignty'
+title: "'The Refinery: Asset & Content Sovereignty'"
 slug: the_refinery
 sidebar:
   group: Handbook

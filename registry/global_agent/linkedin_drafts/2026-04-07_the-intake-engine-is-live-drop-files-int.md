@@ -1,5 +1,5 @@
 ---
-title: The Intake Engine is live: drop files into the inbox for autonomous, intelligent parsing and knowledge capture.
+title: "The Intake Engine is live: drop files into the inbox for autonomous, intelligent parsing and knowledge capture."
 pubDate: 2026-04-07
 audio_url: ''
 isDraft: true

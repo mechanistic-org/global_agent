@@ -193,7 +193,7 @@ def sync_assets():
                         if remote_size == local_size:
                             skipped_count += 1
                             should_upload = False
-                    except:
+                    except Exception:
                         # File doesn't exist, proceed
                         pass
 
