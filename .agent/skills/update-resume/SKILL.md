@@ -40,7 +40,7 @@ termination:
 
 Execute the Resume Pipeline:
 
-1. **Synthesis (Level 2 - Data Migration):** If updating content, read `src/config/linkedin_master.ts` and `LINKEDIN_READY.txt`. Synthesize the new data into brutalist, "Hard Ore" bullets (focusing on metrics and force). Inject the new bullets into `src/config/resume_master.ts` using `multi_replace_file_content`. *DO NOT GUESS IMAGINARY DATA.* Wait for user review if ambiguous.
+1. **Synthesis (Level 2 - Data Migration):** If updating content, read `src/config/linkedin_master.ts` and `LINKEDIN_READY.txt`. Synthesize new data into standard engineering impact bullets: action verb + specific technical problem + measurable outcome. Do not use bold drama headers (e.g., "The Trigger:", "The Intervention:", "The Result:"), incident-report structure, or Trigger/Intervention/Result framing. Specificity of mechanism is the credential - not dramatic structure. Inject the new bullets into `src/config/resume_master.ts` using `multi_replace_file_content`. *DO NOT GUESS IMAGINARY DATA.* Wait for user review if ambiguous.
 2. **PDF Actuation (Level 3 - Headless):** Use `run_command` to execute: `node scripts/generate_resume_pdf.cjs`. This spins up an isolated server and prints the PDF to `public/assets/resume/Erik_Norris_Resume_Current.pdf`.
 3. **Cloudflare Deploy Actuation (Level 3 - Hotfix):** Use `run_command` to hot-swap the PDF directly to R2: `python scripts/upload_resume_hotfix.py`.
 4. **Termination (T):** Notify the user with: "Update complete. Please verify the deployed resume at https://resume.eriknorris.com."

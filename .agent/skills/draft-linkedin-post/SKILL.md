@@ -45,6 +45,7 @@ When triggered, execute the strict scaffolding pipeline:
    * Read the `topic` and `persona` variables. 
    * If `persona` is not explicitly provided, analyze the `topic`. If the topic sounds highly reactive, defensive, or aimed at tearing down an industry standard, HALT and use `ask_question` to ask the operator: "This topic leans toward a 'Hired Gun' tone. Should I proceed with the default 'me_builder' or switch to 'hired_gun'?"
    * Otherwise, default to `me_builder`.
+   * **Hard tone constraints (apply to all personas):** Before scaffolding any draft, verify the framing does not contain: (1) edgy hooks designed to spike novelty through provocation or shock, (2) preachy conclusions that tell the audience what lesson to draw, or (3) any passage that lectures the reader about what they should be doing differently. The camera points at the work, not at the audience. Violating these constraints requires HALT and operator confirmation before proceeding.
 2. **Context Injection:** Execute `view_file` to strictly read the exact contents of `D:\GitHub\global_agent\registry\linkedin\ERIK_VOICE_PRIMER.md`. You must not proceed without understanding the requested persona constraints from this document.
 3. **Actuation - Ticketing (Level 3):** Use `mcp_github` to create a tracking issue connecting the post to the project board.
    *   Title: "Draft LinkedIn Post: [Topic]"
