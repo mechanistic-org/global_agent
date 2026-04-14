@@ -1,0 +1,90 @@
+[
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The \"asshole\" tone in agent-generated LinkedIn drafts and resumes was identified as a critical issue, stemming from hyper-aggressive prompting instructions and corrupted persona definitions. Specifically, directives like \"brutalist, 'Hard Ore' bullets\" and the \"Hired Gun\" persona were found to be bleeding into default outputs, leading to pretentious and preachy content. This highlights a significant challenge in maintaining desired agent voice.",
+    "one_liner": "Aggressive prompting and persona definitions caused an \"asshole\" tone in agent outputs.",
+    "source_context": "the root cause of the \"asshole\" tone stems from aggressive prompting instructions and a corrupted persona definitions.",
+    "tags": [
+      "agent behavior",
+      "LLM prompting",
+      "persona management",
+      "tone control",
+      "problem identification"
+    ]
+  },
+  {
+    "channel": "law",
+    "confidence": "inferred",
+    "destination": "registry",
+    "content": "Agents must never adopt a \"Hired Gun\" persona as a default or allow it to bleed into general outputs, as it leads to an arrogant and preachy tone. This persona, characterized by \"unapologetic, challenges sloppy thinking,\" should be deprecated or restricted to only explicit, rare, and carefully controlled use cases to maintain a professional and collaborative voice.",
+    "one_liner": "Agents must restrict or deprecate problematic personas like 'Hired Gun' to prevent negative tone bleed.",
+    "source_context": "Deprecate or restrict the \"Hired Gun\" persona.",
+    "tags": [
+      "agent behavior",
+      "LLM persona",
+      "tone control",
+      "best practices"
+    ]
+  },
+  {
+    "channel": "docs",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "To prevent undesirable tones in agent outputs, explicit anti-patterns will be added to the `ERIK_VOICE_PRIMER.md` configuration. These include \"No preachy lecturing,\" \"No edgy hooks,\" and \"No incident-report formatting.\" This decision codifies negative examples directly into the persona definition, providing clear guidance for LLM behavior and ensuring a more grounded and professional communication style.",
+    "one_liner": "Explicit anti-patterns will be added to persona definitions to prevent preachy or edgy LLM outputs.",
+    "source_context": "Add explicit Anti-Patterns: \"No preachy lecturing,\" \"No edgy hooks,\" \"No incident-report formatting.\"",
+    "tags": [
+      "LLM prompting",
+      "persona definition",
+      "anti-patterns",
+      "tone control",
+      "system design"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "The problematic directive for \"brutalist, 'Hard Ore' bullets\" in the `update-resume` skill is being removed. This aggressive instruction resulted in pretentious incident-report formatting. It will be replaced with instructions for standard professional engineering impact formatting, focusing on the engineering complexity without adopting a military post-mortem tone, thereby improving readability and professionalism.",
+    "one_liner": "The \"brutalist\" bullet directive in the `update-resume` skill is being replaced with standard professional formatting.",
+    "source_context": "Remove the directive for \"brutalist, 'Hard Ore' bullets.\" Replace with formatting instructions for standard professional engineering impact...",
+    "tags": [
+      "LLM prompting",
+      "skill configuration",
+      "resume generation",
+      "tone control",
+      "formatting"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "Hyperbolic phrasing, exemplified by \"I stabilize the entropy of product development: structure the chaos, index the decisions, ship the hardware,\" was identified as an anti-pattern in agent-generated content. This type of language will be trimmed and replaced with simpler, more grounded expressions like \"I lead complex hardware architectures from prototype to high-yield production.\" This change aims to enhance professionalism and clarity in agent communications.",
+    "one_liner": "Hyperbolic phrasing like \"stabilize the entropy\" will be replaced with grounded, professional language.",
+    "source_context": "Trim hyperbolic phrasing like \"I stabilize the entropy of product development: structure the chaos, index the decisions, ship the hardware.\" (to something simpler like \"I lead complex hardware architectures from prototype to high-yield production.\")",
+    "tags": [
+      "LLM output",
+      "writing style",
+      "hyperbole",
+      "professionalism",
+      "content refinement"
+    ]
+  },
+  {
+    "channel": "internal",
+    "confidence": "captured",
+    "destination": "registry",
+    "content": "A critical open question remains regarding the \"Hired Gun\" persona: whether it should be completely excised from the `ERIK_VOICE_PRIMER.md` or retained for explicit, rare use cases. The resolution of this decision will significantly impact the flexibility and potential pitfalls associated with future agent persona applications, balancing control with specialized utility.",
+    "one_liner": "A decision is pending on whether to fully excise or restrict the \"Hired Gun\" persona to rare use cases.",
+    "source_context": "Do you want to keep the \"Hired Gun\" persona around for explicit, rare use cases, or should we completely excise it from the primer?",
+    "tags": [
+      "LLM persona",
+      "agent architecture",
+      "decision point",
+      "persona management"
+    ]
+  }
+]
