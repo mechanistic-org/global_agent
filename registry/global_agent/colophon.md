@@ -373,3 +373,8 @@ The pipeline employs a Durable Agent pattern for content injection and state man
 ## 2026-04-07 — Programmatic NotebookLM access is achieved via reverse-engineered RPCs using the `notebooklm-py` library, bypassing the lack of an official API.
 
 Despite Google lacking an official NotebookLM API, the community has standardized on reverse-engineering internal RPC requests for programmatic access. The `teng-lin/notebooklm-py` library, which uses this RPC approach and supports headless operation after initial browser-based cookie authentication, has been selected as the robust solution.
+
+
+## 2026-04-14 — The "Hired Gun" persona is being restricted, and "ME Builder in Public" redefined for humility and collaboration.
+
+A key architectural decision involves deprecating or restricting the "Hired Gun" persona to prevent its aggressive tone from inadvertently influencing default agent outputs. Concurrently, the "ME Builder in Public" persona will be redefined to explicitly emphasize humility, collaboration, and peer-to-peer sharing, establishing a new foundational voice for agent interactions.

@@ -1,14 +1,14 @@
 [
   {
     "channel": "discard",
-    "confidence": "captured",
+    "confidence": "inferred",
     "destination": "discard",
-    "content": "The provided conversation explicitly stated that no readable artifacts were found. This indicates a complete absence of 'Gold' such as decisions, problems solved, or memorable moments for extraction.",
-    "one_liner": "No readable artifacts or 'Gold' were found in the conversation.",
+    "content": "The provided conversation artifact explicitly stated that no readable artifacts were found, indicating an absence of any content from which to extract 'Gold'.",
+    "one_liner": "No readable artifacts were found in the conversation.",
     "source_context": "[No readable artifacts found in conversation d2da8725-0cea-45c9-804a-375f29cf3f81]",
     "tags": [
-      "no_gold",
-      "empty_conversation"
+      "no_content",
+      "empty_input"
     ]
   }
 ]

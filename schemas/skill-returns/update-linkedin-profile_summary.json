@@ -1,0 +1,33 @@
+{
+  "description": "Terminal state returned by the update-linkedin-profile skill after operator review and optional write.",
+  "required": ["status", "section", "entry_target"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": ["success", "failure", "awaiting_lgtm"],
+      "description": "Terminal state: success = approved diff written, failure = halted before write, awaiting_lgtm = draft presented, no write yet"
+    },
+    "section": {
+      "type": "string",
+      "enum": ["about", "experience", "tagline"],
+      "description": "The linkedin_master.ts section targeted by this skill execution"
+    },
+    "entry_target": {
+      "type": ["string", "null"],
+      "description": "Company name string when section=experience; null for about and tagline sections"
+    },
+    "file_written": {
+      "type": ["string", "null"],
+      "description": "Absolute path to linkedin_master.ts if and only if an approved write occurred; null otherwise"
+    },
+    "halt_reason": {
+      "type": ["string", "null"],
+      "description": "Assertion ID and human-readable reason if skill halted before write (FA-01 through FA-04)"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Optional: warnings, follow-up items, or operator action required"
+    }
+  },
+  "validation_note": "status=success requires file_written to be non-null and resolve to an existing file. status=failure requires halt_reason to be non-null. awaiting_lgtm is an intermediate state only — the skill must not terminate permanently in this state; it must yield and wait for operator response."
+}
