@@ -3,7 +3,6 @@ import os
 import sys
 import yaml
 import json
-import urllib.request
 import chromadb
 import subprocess
 from pydantic import BaseModel, Field, ValidationError
@@ -12,36 +11,16 @@ from typing import Optional
 mcp = FastMCP("sovereign-registry")
 
 # ─── MICROCOMPACTION PIPELINE (EPIC A) ──────────────────────────────────────
+MICROCOMPACTION_LIMIT = 8000
+
 def apply_microcompaction(payload: str) -> str:
-    """Intercepts massive payloads and forcibly distills them to save Apex Tokens."""
-    if len(payload) <= 8000:
+    """Truncates oversized payloads deterministically. Upstream distillation (seed_chromadb.py)
+    is the correct place to control document size — this is a hard safety ceiling only."""
+    if len(payload) <= MICROCOMPACTION_LIMIT:
         return payload
-        
-    print(f"[KAIROS] Triggering Microcompaction on {len(payload)} chars...", file=sys.stderr)
-    req = urllib.request.Request("http://127.0.0.1:11434/api/generate", data=json.dumps({
-        "model": "phi3",
-        "prompt": (
-            "You are KAIROS, a strict micro-compaction pipeline constraint.\n"
-            "Pre-digest the following massive forensic data wall exactly as strict Markdown.\n"
-            "Retain all structural schemas, constraints, and actionable code elements.\n"
-            "DO NOT include conversational fluff.\n\n"
-            f"--- RAW BOLUS ({len(payload)} chars) ---\n"
-            f"{payload[:150000]}"
-        ),
-        "stream": False
-    }).encode('utf-8'))
-    req.add_header("Content-Type", "application/json")
-    
-    try:
-        with urllib.request.urlopen(req, timeout=180.0) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            distilled = data.get('response', '')
-            if distilled:
-                return f"--- [NODE 0: MICROCOMPACTED BOLUS] ---\n{distilled}"
-            return payload
-    except Exception as e:
-        print(f"[KAIROS] Microcompaction Failed: {e}", file=sys.stderr)
-        return payload
+
+    print(f"[KAIROS] Payload {len(payload)} chars exceeds limit — truncating to {MICROCOMPACTION_LIMIT}.", file=sys.stderr)
+    return payload[:MICROCOMPACTION_LIMIT] + f"\n\n--- [TRUNCATED: original {len(payload)} chars, ceiling {MICROCOMPACTION_LIMIT}] ---"
 
 # ─── Pydantic Frontmatter Schemas ───────────────────────────────────────────
 
@@ -69,12 +48,11 @@ SCHEMA_ROUTING: dict = {
 ENOS_ROOT = os.environ.get("ENOS_ROOT", r"D:\GitHub\global_agent")
 REGISTRY_ROOT = os.path.abspath(os.path.join(ENOS_ROOT, "registry"))
 
-# Initialize ChromaDB mapping locally inside the registry for offline execution
-chroma_client = chromadb.PersistentClient(path=os.path.join(REGISTRY_ROOT, ".chroma_db"))
-
-# Built-in embedding — no model download, no cold-start penalty.
-# Switch to GeminiEmbeddingFunction if semantic quality becomes a concern.
-collection = chroma_client.get_or_create_collection(name="forensic_telemetry")
+def _get_collection():
+    """Opens a fresh PersistentClient on every call so the router never holds a stale
+    in-memory reference after seed_chromadb.py writes new documents to disk."""
+    client = chromadb.PersistentClient(path=os.path.join(REGISTRY_ROOT, ".chroma_db"))
+    return client.get_or_create_collection(name="forensic_telemetry")
 
 @mcp.tool()
 def search_registry(query: str, project_scope: str = None) -> list[str]:
@@ -112,8 +90,8 @@ def semantic_search(query: str, project_scope: str = None, n_results: int = 3) -
         }
         if project_scope:
             kwargs["where"] = {"project": project_scope}
-            
-        results = collection.query(**kwargs)
+
+        results = _get_collection().query(**kwargs)
         
         if not results['documents'] or not results['documents'][0]:
             return "No structurally embedded mapping found natively inside the Sovereign Vector Hub."
@@ -206,7 +184,7 @@ def push_forensic_doc(
 
         try:
             # ── Embed into ChromaDB ──────────────────────────────────────────────
-            collection.upsert(
+            _get_collection().upsert(
                 documents=[full_document],
                 metadatas=[{"project": project_name, "component": component_name}],
                 ids=[doc_id],
