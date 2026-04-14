@@ -94,7 +94,7 @@ git push
 
 ```powershell
 cd D:\GitHub\global_agent
-python scripts\mine_session.py --conversation-id <uuid>
+venv\Scripts\python.exe scripts\mine_session.py --conversation-id <uuid>
 # omit --conversation-id to use most recent brain dir
 # add --dry-run to preview without writing
 ```

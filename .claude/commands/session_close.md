@@ -68,7 +68,7 @@ Extract intelligence and route to registry:
 
 ```bash
 cd D:/GitHub/global_agent
-python scripts/mine_session.py --conversation-id <uuid>
+venv/Scripts/python.exe scripts/mine_session.py --conversation-id <uuid>
 # or omit --conversation-id to use the most recent Antigravity brain dir
 # add --dry-run to preview without writing
 ```

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 mine_session.py — Conversation Miner for EN-OS
 
