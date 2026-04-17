@@ -90,6 +90,12 @@ Do not use GWS skills that shell to `gcloud` or `oauth` flows when this server i
 3. State: **Session scope: [repo]#[number] — [title]** + **DoD: [one sentence]**
 4. Begin work only after step 3 is confirmed
 
+## Board Governance
+
+Triage cadence: 25 minutes, weekly. Protocol and milestone structure: `registry/global_agent/board_governance.md`.
+To run a triage session: `/triage` (skill: `.agent/skills/triage/SKILL.md`).
+If sprint board shows unassigned issues at session open, flag it to the operator before beginning sprint work.
+
 ---
 
 ## Local Model Routing

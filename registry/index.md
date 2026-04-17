@@ -4,7 +4,7 @@ This file acts as the determinisitic structural map for the `registry/` director
 
 ## Core Domains & Topology
 
-- `global_agent/` - Documentation, system laws, and artifacts specific to the EN-OS orchestration layer.
+- `global_agent/` - Documentation, system laws, and artifacts specific to the EN-OS orchestration layer. Key governance doc: `global_agent/board_governance.md` (milestone structure, triage protocol, label taxonomy, issue lifecycle).
 - `infrastructure/` - Artifacts and constraints representing the underlying server and networking deployments.
 - `linkedin/` - The staging ground for social publishing flows (interactions, drafts, and posted artifacts).
 - `portfolio/` - Backing content and logs for the front-facing engineering portfolio OS.
